@@ -1,0 +1,12 @@
+.mbg-base-content-container {
+	height: 100%;
+	width: calc(100% - 255px);
+	display: inline-block;
+	font-family: 'MontSerrat', sans-serif;
+}
+
+@media (max-width: 768px) {
+	.mbg-base-content-container {
+		width: 100%;
+	}
+}

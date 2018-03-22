@@ -1,0 +1,25 @@
+<div class="mbg-base-topbar">
+	<div class="mbg-base-topbar-content">
+		<div class="mbg-base-topbar-content-container">
+			<div class="mbg-base-topbar-logo-container">
+				<div class="mbg-base-topbar-logo" ng-style="{'background-image': 'url(' + $ctrl.config.logo + ')'}"></div>
+			</div>
+			<div class="mbg-base-topbar-inside-content-container">
+				<div class="mbg-base-topbar-search-container">
+					<mbg-base-topbar-search></mbg-base-topbar-search>
+				</div>
+				<div class="mbg-base-topbar-notifications-icon-container">
+					<div class="mbg-base-topbar-notifications-icon">
+						<i class="far fa-envelope"></i>
+						<div class="mbg-base-topbar-notifications-number">
+							2
+						</div>
+					</div>
+				</div>
+				<div class="mbg-base-topbar-user-container">
+					<mbg-base-topbar-user config="$ctrl.config.user"></mbg-base-topbar-user>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

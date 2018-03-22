@@ -1,0 +1,40 @@
+.mbg-base-side-menu-category {
+	user-select: none;
+	padding-bottom: 5px;
+}
+
+.mbg-base-side-menu-category .mbg-base-side-menu-dot {
+	height: 7px;
+	width: 7px;
+	border-radius: 3.5px;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #00bdc1;
+}
+
+.mbg-base-side-menu-title {
+	padding-top: 7.5px;
+	padding-bottom: 7.5px;
+}
+
+.mbg-base-side-menu-category .mbg-base-side-menu-title {
+	font-size: 12px;
+	font-weight: 700;
+	color: #00bdc1;
+}
+
+.mbg-base-side-menu-detail-container {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.mbg-base-side-menu-detail {
+	width: 50px;
+}
+
+.mbg-base-side-menu-detail-path {
+	fill: #d8d8d8;
+	stroke: #d8d8d8;
+	stroke-miterlimit: 10;
+	stroke-width: 2px;
+}

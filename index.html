@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mobiage - Teste do Componente</title>
+
+	<!-- Dependências do Componente -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="node_modules/sanitize.css/sanitize.css">
+
+</head>
+
+<body ng-controller="appController">
+
+	<mbg-base>
+		<mbg-base-topbar config="configTopbar"></mbg-base-topbar>
+		<mbg-base-container>
+			<mbg-base-side-menu config="configMenu"></mbg-base-side-menu>
+			<mbg-base-content-container>
+				
+			</mbg-base-content-container>
+		</mbg-base-container>
+	</mbg-base>
+
+	<!-- Dependedências do Componente -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="node_modules/angular/angular.min.js"></script>
+
+	<!-- Import do App de Teste -->
+	<script src="app.js"></script>
+
+	<!-- 
+		========================================================================
+		Para testar a versão de distribuição, descomente as duas linhas abaixo: 
+		========================================================================
+	-->
+
+	<!-- <link rel="stylesheet" href="dist/mobiage-login.min.css">
+	<script src="dist/mobiage-login.min.js"></script> -->
+
+	<!-- 
+		No servidor de desenvolvimento, o Javascript do componente 
+		é adicionado automaticamente (pelo webpack) aqui no fim 
+		do arquivo, e o css no <head>
+	-->
+
+</body>
+
+</html>

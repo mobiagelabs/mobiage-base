@@ -1,0 +1,8 @@
+<div class="mbg-base-topbar-input-container" ng-class="{'ativo' : $ctrl.focus, 'error' : $ctrl.error}">
+	<div class="icone-container">
+		<i class="fas" ng-class="$ctrl.icon"></i>
+	</div>
+	<div class="inside-container">
+		<input ng-change="$ctrl.onChangeValue({text: $ctrl.value})" ng-model="$ctrl.value" ng-focus="$ctrl.focusInputInside()" ng-blur="$ctrl.blurInputInside()" placeholder="{{$ctrl.placeholder}}" class="input" type="{{$ctrl.type}}" name="{{$ctrl.name}}">
+	</div>
+</div>

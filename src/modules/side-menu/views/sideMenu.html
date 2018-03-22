@@ -1,0 +1,11 @@
+<div class="mbg-base-side-menu" ng-class="{'active':state.menuOpen}">
+	<mbg-base-side-menu-quick-menu config="quickMenu"></mbg-base-side-menu-quick-menu>
+	<div data-simplebar class="mbg-base-side-menu-content-container">
+		<div class="mbg-base-side-menu-content">
+			<mbg-base-side-menu-item
+				ng-repeat="item in structure"
+				config="item">
+			</mbg-base-side-menu-item>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,95 @@
+.mbg-base-topbar {
+	width: 100%;
+	height: 100px;
+	background-color: #ffffff;
+	border-bottom: solid 1px #f4f4f4;
+	text-align: center;
+	font-family: 'MontSerrat', sans-serif;
+	position: relative;
+	z-index: 500;
+}
+
+.mbg-base-topbar-content {
+	width: 100%;
+	height: 100%;
+	max-width: 1920px;
+	display: inline-block;
+}
+
+.mbg-base-topbar-content-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+}
+
+.mbg-base-topbar-logo-container {
+	min-width: 250px;
+	height: 100%;
+	border-bottom: 3px solid #D6DD48;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mbg-base-topbar-inside-content-container{
+	width: calc(100% - 250px);
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+}
+
+.mbg-base-topbar-logo {
+	height: 85%;
+	width: 90%;
+	background-size: contain;
+	background-position: center center;
+}
+
+.mbg-base-topbar-search-container {
+	height: 100%;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 25px;
+}
+
+.mbg-base-topbar-notifications-icon-container {
+	height: 100%;
+	width: 100px;
+	position: relative;
+}
+
+.mbg-base-topbar-notifications-icon {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	line-height: 50px;
+	font-size: 22px;
+	color: #8034ad;
+	cursor: pointer;
+}
+
+.mbg-base-topbar-notifications-number {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	line-height: 20px;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: #ff1057;
+	font-size: 12px;
+	font-weight: 700;
+	color: white;
+}

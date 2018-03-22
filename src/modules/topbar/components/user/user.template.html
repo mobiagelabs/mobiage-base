@@ -1,0 +1,40 @@
+<div class="mbg-base-topbar-user-company">
+		<div class="mbg-base-topbar-names-container" ng-click="toggleMenu()">
+			<div class="mbg-base-topbar-names user" ng-class="{'focus-company' : state.focus === 'company'}">
+				<div class="mbg-base-topbar-greetings-small">
+					Bom Dia,
+				</div>
+				<div class="mbg-base-topbar-greetings-name">
+					Amália Fernandes
+				</div>
+			</div>
+			<div class="mbg-base-topbar-names company" ng-class="{'focus-company' : state.focus === 'company'}">
+				<div class="mbg-base-topbar-greetings-small">
+					Spotify Limitada ME.
+				</div>
+				<div class="mbg-base-topbar-greetings-name">
+					Spotify
+				</div>
+			</div>
+		</div>
+		<div class="mbg-base-topbar-arrow-container">
+			<div class="mbg-base-topbar-arrow" ng-class="{'active':state.menuOpen}">
+			</div>
+		</div>
+		<div class="mbg-base-topbar-avatar-container" ng-class="{'focus-company': state.focus === 'company', 'changeZIndex': changeZIndex === true, 'focus-user': state.focus === 'user'}">
+			<div class="mbg-topbar-user-avatar" ng-style="{'background-image': 'url(' + $ctrl.config.userAvatar + ')'}" ng-click="focusUser()">
+			</div>
+			<div class="mbg-topbar-company-avatar" ng-style="{'background-image': 'url(' + $ctrl.config.companyAvatar + ')'}" ng-click="focusCompany()">
+			</div>
+		</div>
+	</div>
+	<div class="mbg-base-topbar-user-menu" ng-class="{'active':state.menuOpen}">
+		<div ng-if="state.focus === 'user' || state.focus === ''" class="mbg-base-topbar-user-menu-content">
+			conteudo usuario
+		</div>
+		<div ng-if="state.focus === 'company'" class="mbg-base-topbar-user-menu-content">
+			conteudo empresa
+		</div>
+	</div>
+	<div class="mbg-base-topbar-user-menu-bottom" ng-class="{'active':state.menuOpen}">
+	</div>

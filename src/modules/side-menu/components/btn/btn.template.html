@@ -1,0 +1,24 @@
+<a href="{{$ctrl.link}}">
+	<div class="mbg-base-side-menu-btn" ng-class="{'lastChild' : $ctrl.lastChild, 'firstChild' : $ctrl.firstChild}" >
+
+		<div class="mbg-base-side-menu-text" ng-if="$ctrl.iconSide === 'right'">
+			{{ $ctrl.label }}
+		</div>
+
+		<div class="mbg-base-side-menu-icon" ng-if="$ctrl.iconSrc === 'fontawesome'" ng-style="{'font-size': $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'line-height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'width' : $ctrl.iconSize ? 'auto' : undefined }">
+			<i class="{{$ctrl.icon}}"></i>
+		</div>
+		<div class="mbg-base-side-menu-icon" ng-if="$ctrl.iconSrc === 'material'" ng-style="{ 'height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'width' : $ctrl.iconSize ? 'auto' : undefined }">
+			<i class="material-icons" ng-style="{'font-size': $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'line-height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined }">{{ $ctrl.icon }}</i>
+		</div>
+		<div class="mbg-base-side-menu-icon" ng-if="$ctrl.iconSrc !== 'material' && $ctrl.iconSrc !== 'fontawesome' && $ctrl.iconSrc !== undefined && $ctrl.iconSrc.length > 0"
+		 ng-style="{ 'height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'width' : $ctrl.iconSize ? 'auto' : undefined }">
+			<img class="mbg-base-side-menu-custom-icon" ng-src="{{ $ctrl.iconSrc }}" alt="">
+		</div>
+
+		<div class="mbg-base-side-menu-text" ng-if="$ctrl.iconSide !== 'right'">
+			{{ $ctrl.label }}
+		</div>
+
+	</div>
+</a>

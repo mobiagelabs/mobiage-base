@@ -1,0 +1,48 @@
+{
+  "name": "mobiage-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./config/webpack.config.dev.js",
+    "build": "webpack --config ./config/webpack.config.prod.js",
+    "lint:js": "eslint index.js ./src/**/*.js"
+  },
+  "author": {
+    "name": "Alfredo Peres",
+    "email": "alfredoperes.filho@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.9",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.18.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-angular": "^3.2.0",
+    "eslint-plugin-import": "^2.8.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^2.30.1",
+    "postcss-loader": "^2.1.0",
+    "style-loader": "^0.20.2",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended": "^2.0.1",
+    "uglifyjs-webpack-plugin": "^1.2.0",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-hotkeys": "^1.7.0",
+    "sanitize.css": "^5.0.0",
+    "simplebar": "^2.5.1"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ]
+}
