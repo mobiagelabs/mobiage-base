@@ -5,7 +5,9 @@ import './css/style.desktop.css';
 import input from './components/input';
 
 const component = {
-	// bindings: {},
+	bindings: {
+		config: '='
+	},
 	template,
 	controller
 };

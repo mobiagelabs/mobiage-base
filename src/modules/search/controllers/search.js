@@ -1,54 +1,9 @@
-const controller = $scope => {
+const controller = function ($scope, $timeout) {
 	$scope.state = {
 		searchValue: '',
 		autoCompleteActive: false,
 		result: []
 	};
-
-	const conteudoTeste = [
-		{
-			type: 'Clientes',
-			name: 'Alfredo Peres',
-			empresa: 'Mobiage',
-			cpf: '029.202.594-54'
-		},
-		{
-			type: 'Clientes',
-			name: 'Thiago Martins',
-			cpf: '208.290.390-45'
-		},
-		{
-			type: 'Clientes',
-			name: 'Cesar Baleco'
-		},
-		{
-			type: 'Clientes',
-			name: 'aaaaaaaaa Pereaaaaaas',
-			empresa: 'Mobiage',
-			cpf: '029.202.594-54'
-		},
-		{
-			type: 'Clientes',
-			name: 'Bruno Garcia'
-		},
-		{
-			type: 'Empresa',
-			name: 'Sicoob',
-			cnpj: '029.202.594-54'
-		},
-		{
-			type: 'Empresa',
-			name: 'Mobiage',
-			cnpj: '029.202.594-54'
-		},
-		{
-			type: 'Empresa',
-			name: 'Gumga',
-			cnpj: '029.202.594-54'
-		}
-	];
-
-	const camposIndexados = ['name', 'empresa', 'cnpj', 'cpf'];
 
 	const makeAutocompleteObject = array => {
 		const types = [];
@@ -110,47 +65,57 @@ const controller = $scope => {
 
 		/* Caso a search string seja maior que zero */
 		if (searchString.length > 0) {
+			/* O Algoritmo precisa fazer uma busca em
+				cada endpoint fornecido, e no conteúdo estático:
+			*/
 			/* Para cada item do conteudo */
-			conteudoTeste.forEach(element => {
-				const elementTmp = Object.assign({}, element);
-				elementTmp.matches = [];
-				elementTmp.matchesCount = 0;
-				/* Busca por cada tipo de dado indexável */
-				indexes.forEach(index => {
-					/* Caso tenha o dado indexável */
-					if (index in element) {
-						const string = element[index];
-						/* Procura pela string digitada */
-						const searchAux = string.toLowerCase().search(searchString.toLowerCase());
-						if (searchAux !== -1) {
-							const allOcurrences = allOcurrencesOf(index, element[index], searchString);
-							elementTmp.matchesCount += allOcurrences.matches.length;
-							elementTmp.matches.push(allOcurrences);
-						}
-					}
-				});
-				if (elementTmp.matches.length > 0) {
-					result.push(elementTmp);
-				}
-			});
+			// conteudoTeste.forEach(element => {
+			// 	const elementTmp = Object.assign({}, element);
+			// 	elementTmp.matches = [];
+			// 	elementTmp.matchesCount = 0;
+			// 	/* Busca por cada tipo de dado indexável */
+			// 	indexes.forEach(index => {
+			// 		/* Caso tenha o dado indexável */
+			// 		if (index in element) {
+			// 			const string = element[index];
+			// 			/* Procura pela string digitada */
+			// 			const searchAux = string.toLowerCase().search(searchString.toLowerCase());
+			// 			if (searchAux !== -1) {
+			// 				const allOcurrences = allOcurrencesOf(index, element[index], searchString);
+			// 				elementTmp.matchesCount += allOcurrences.matches.length;
+			// 				elementTmp.matches.push(allOcurrences);
+			// 			}
+			// 		}
+			// 	});
+			// 	if (elementTmp.matches.length > 0) {
+			// 		result.push(elementTmp);
+			// 	}
+			// });
 		}
-		console.log(result);
 		$scope.state.result = makeAutocompleteObject(result.slice());
 	};
 
 	$scope.blurInput = () => {
-		$scope.state.searchValue = '';
-		// $scope.state.autoCompleteActive = false;
+		$scope.state.autoCompleteActive = false;
+		/* Limpa a varíavel depois que faz a animação */
+		$timeout(() => {
+			$scope.state.searchValue = '';
+		}, 500);
 	};
 
 	$scope.onChangeSearch = text => {
+		/* Não considera espaços */
 		if ($scope.state.searchValue.length === 0 && text.trim().length > 0) {
 			$scope.state.autoCompleteActive = true;
 		} else if (text.trim().length === 0) {
 			$scope.state.autoCompleteActive = false;
 		}
-		search(text, conteudoTeste, camposIndexados);
+		// search(text, conteudoTeste, camposIndexados);
 		$scope.state.searchValue = text;
+	};
+
+	this.$onInit = () => {
+		// console.log(JSON.stringify(this.config));
 	};
 };
 
