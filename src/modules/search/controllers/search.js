@@ -1,9 +1,8 @@
-const controller = function ($scope, $timeout) {
-	$scope.state = {
-		searchValue: '',
-		autoCompleteActive: false,
-		result: []
-	};
+const controller = function ($scope, $timeout, sideMenuService) {
+	$scope.searchValue = '';
+	$scope.autoCompleteActive = false;
+	$scope.data = [];
+	$scope.result = [];
 
 	const makeAutocompleteObject = array => {
 		const types = [];
@@ -34,88 +33,153 @@ const controller = function ($scope, $timeout) {
 
 		/* Para cada tipo, faz um elemento no array */
 		types.forEach(type => {
-			autocomplete.push({ type, children: allElementsOfType(type) });
+			const children = allElementsOfType(type);
+			let matchesCount = 0;
+			children.forEach(element => { matchesCount += element.matchesCount; });
+			autocomplete.push({ type, children, matchesCount });
 		});
 		return autocomplete;
 	};
 
 	const allOcurrencesOf = (index, string, ocurrence) => {
 		const result = { index, matches: [] };
-		let actualString = string.toLowerCase();
-		const searchSlice = () => {
-			let indiceFinal;
-			const indiceInicial = actualString.search(ocurrence.toLowerCase());
-			if (indiceInicial !== -1) {
-				indiceFinal = indiceInicial + ocurrence.length;
-				result.matches.push([indiceInicial, indiceFinal]);
-				actualString = actualString.replace(ocurrence.toLowerCase(), '');
-				searchSlice();
+		let lastMatch = 0;
+		for (let i = 0; i < string.length; i += 1) {
+			if (i >= lastMatch) {
+				if (string.substring(i, i + ocurrence.length).toLowerCase() === ocurrence.toLowerCase()) {
+					result.matches.push([i, i + ocurrence.length]);
+					lastMatch = i + ocurrence.length;
+				}
 			}
-		};
-		searchSlice();
+		}
 		return result;
 	};
 
 	const search = (searchParam, fixedData, indexes) => {
-		/* Inicia a variavel de resultados */
-		const result = [];
-
 		/* Retira espaços da search string */
 		const searchString = searchParam.trim();
 
 		/* Caso a search string seja maior que zero */
 		if (searchString.length > 0) {
+			/* Inicia a variavel de resultados */
+			const result = [];
 			/* O Algoritmo precisa fazer uma busca em
 				cada endpoint fornecido, e no conteúdo estático:
 			*/
 			/* Para cada item do conteudo */
-			// conteudoTeste.forEach(element => {
-			// 	const elementTmp = Object.assign({}, element);
-			// 	elementTmp.matches = [];
-			// 	elementTmp.matchesCount = 0;
-			// 	/* Busca por cada tipo de dado indexável */
-			// 	indexes.forEach(index => {
-			// 		/* Caso tenha o dado indexável */
-			// 		if (index in element) {
-			// 			const string = element[index];
-			// 			/* Procura pela string digitada */
-			// 			const searchAux = string.toLowerCase().search(searchString.toLowerCase());
-			// 			if (searchAux !== -1) {
-			// 				const allOcurrences = allOcurrencesOf(index, element[index], searchString);
-			// 				elementTmp.matchesCount += allOcurrences.matches.length;
-			// 				elementTmp.matches.push(allOcurrences);
-			// 			}
-			// 		}
-			// 	});
-			// 	if (elementTmp.matches.length > 0) {
-			// 		result.push(elementTmp);
-			// 	}
-			// });
+			$scope.data.forEach(element => {
+				const elementTmp = Object.assign({}, element);
+				elementTmp.matches = [];
+				elementTmp.matchesCount = 0;
+				/* Busca por cada tipo de dado indexável */
+				indexes.forEach(index => {
+					/* Caso tenha o dado indexável */
+					if (index.name in element) {
+						const string = element[index.name];
+						/* Procura pela string digitada */
+						const searchAux = string.toLowerCase().search(searchString.toLowerCase());
+						if (searchAux !== -1) {
+							const allOcurrences = allOcurrencesOf(index, element[index.name], searchString);
+							elementTmp.matchesCount += allOcurrences.matches.length;
+							elementTmp.matches.push(allOcurrences);
+						}
+					}
+				});
+				if (elementTmp.matches.length > 0) {
+					result.push(elementTmp);
+				}
+			});
+			$scope.result = makeAutocompleteObject(result);
 		}
-		$scope.state.result = makeAutocompleteObject(result.slice());
 	};
 
 	$scope.blurInput = () => {
-		$scope.state.autoCompleteActive = false;
+		$scope.autoCompleteActive = false;
 		/* Limpa a varíavel depois que faz a animação */
 		$timeout(() => {
-			$scope.state.searchValue = '';
+			$scope.searchValue = '';
 		}, 500);
 	};
 
 	$scope.onChangeSearch = text => {
 		/* Não considera espaços */
-		if ($scope.state.searchValue.length === 0 && text.trim().length > 0) {
-			$scope.state.autoCompleteActive = true;
-		} else if (text.trim().length === 0) {
-			$scope.state.autoCompleteActive = false;
+		const inputText = text.trim();
+
+		if (inputText.length > 0) {
+			$scope.autoCompleteActive = true;
+			search(text, $scope.data, $scope.indexFields);
+			$scope.searchValue = text;
+		} else {
+			$scope.autoCompleteActive = false;
 		}
-		// search(text, conteudoTeste, camposIndexados);
-		$scope.state.searchValue = text;
+	};
+
+	const extractMenuLinksFromConfig = config => {
+		const links = [];
+
+		const prepareLink = link => {
+			if ((link.type === 'category' || link.type === 'sub-category') && link.children !== undefined && link.children.length > 0) {
+				link.children.forEach(element => {
+					prepareLink(element);
+				});
+			} else if (link.type === undefined || link.type === 'btn') {
+				links.push({
+					type: 'Menu',
+					name: link.label,
+					action: link.action,
+					actionType: link.actionType
+				});
+			}
+		};
+
+		if (config.quickMenu !== undefined && config.quickMenu.links !== undefined && config.quickMenu.links.length > 0) {
+			config.quickMenu.links.forEach(element => {
+				prepareLink(element);
+			});
+		}
+		if (config.structure !== undefined && config.structure.length > 0) {
+			config.structure.forEach(element => {
+				prepareLink(element);
+			});
+		}
+		return links;
+	};
+
+	const prepareData = data => {
+		const dataTmp = [];
+		data.forEach(element => {
+			if (element.type !== undefined) {
+				if (element.type === 'static') {
+					if (element.data === 'sideMenuLinks') {
+						let sideMenuConfig;
+						const getConfig = () => {
+							$timeout(() => {
+								sideMenuConfig = sideMenuService.getMenuConfig();
+								if (sideMenuConfig === undefined) {
+									getConfig();
+								} else {
+									const links = extractMenuLinksFromConfig(sideMenuConfig);
+									links.forEach(item => {
+										dataTmp.push(item);
+									});
+								}
+							}, 10);
+						};
+						getConfig();
+					} else if (typeof element.data !== 'string' && element.data.length > 0) {
+						element.data.forEach(item => {
+							dataTmp.push(item);
+						});
+					}
+				}
+			}
+		});
+		$scope.data = dataTmp;
 	};
 
 	this.$onInit = () => {
-		// console.log(JSON.stringify(this.config));
+		$scope.indexFields = this.config.indexFields;
+		prepareData(this.config.data);
 	};
 };
 

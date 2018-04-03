@@ -3,6 +3,7 @@ import template from './views/search.html';
 import './css/style.desktop.css';
 
 import input from './components/input';
+import line from './components/resultLine';
 
 const component = {
 	bindings: {
@@ -14,4 +15,5 @@ const component = {
 
 angular.module('mbgBaseTopbarSearch', [])
 	.component('mbgBaseTopbarSearch', component)
-	.component('mbgBaseTopbarInput', input);
+	.component('mbgBaseTopbarInput', input)
+	.component('mbgBaseTopbarResultLine', line);

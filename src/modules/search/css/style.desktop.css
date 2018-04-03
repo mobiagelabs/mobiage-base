@@ -34,13 +34,13 @@
 
 .mbg-base-search-autocomplete-nothingfound-search {
 	font-weight: 700;
+	word-wrap: break-word;
 	color: #8228A2;
 }
 
 
 .mbg-base-search-autocomplete-content {
 	color: #8228A2;
-	/* background-color: red; */
 	padding: 10px 0px 10px 0px;
 }
 
@@ -83,17 +83,23 @@
 
 .mbg-base-search-autocomplete-line {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	text-align: left;
 	align-items: flex-start;
 	color: #727272;
 	background-color: #F2F2F2;
 	transition: background-color 100ms linear;
 	font-weight: 700;
 	font-size: 14px;
-	padding: 7.5px 15px 7.5px 35px;
 	cursor: pointer;
+}
+
+.mbg-base-autocomplete-link {
+	padding: 7.5px 15px 7.5px 35px;
+	width: 100%;
+	height: 100%;
+	color: inherit;
+	text-decoration: none;
+	display: block;
 }
 
 .mbg-base-search-autocomplete-line:hover {

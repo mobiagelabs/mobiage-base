@@ -39,13 +39,6 @@ const controller = function ($scope, $timeout, sideMenuService) {
 			}
 		}
 	};
-	this.$onInit = () => {
-		$scope.structure = this.config.structure;
-		$scope.quickMenu = this.config.quickMenu;
-		$scope.marginTop = this.config.marginTop;
-		document.addEventListener('touchstart', handleTouchStart);
-		document.addEventListener('touchend', handleTouchEnd);
-	};
 
 	$scope.toggleMenu = () => {
 		if (this.active === true) {
@@ -53,6 +46,15 @@ const controller = function ($scope, $timeout, sideMenuService) {
 		} else {
 			this.active = true;
 		}
+	};
+
+	this.$onInit = () => {
+		sideMenuService.setMenuConfig(this.config);
+		$scope.structure = this.config.structure;
+		$scope.quickMenu = this.config.quickMenu;
+		$scope.marginTop = this.config.marginTop;
+		document.addEventListener('touchstart', handleTouchStart);
+		document.addEventListener('touchend', handleTouchEnd);
 	};
 
 	this.$onDestroy = () => {

@@ -1,0 +1,13 @@
+<div class="mbg-base-search-autocomplete-line">
+	<div class="mbg-base-search-autocomplete-line-content">
+		<a class="mbg-base-autocomplete-link" ng-if="$ctrl.line.actionType === 'state'" ui-sref="{{$ctrl.line.action}}">
+			<span ng-repeat="text in maintext" class="mbg-base-search-autocomplete-line-text" ng-class="{'highlight':text.highLight}">{{text.text}}</span>
+		</a>
+		<a class="mbg-base-autocomplete-link" ng-if="$ctrl.line.actionType === 'link'" href="{{$ctrl.line.action}}">
+			<span ng-repeat="text in maintext" class="mbg-base-search-autocomplete-line-text" ng-class="{'highlight':text.highLight}">{{text.text}}</span>
+		</a>
+		<a class="mbg-base-autocomplete-link" ng-if="$ctrl.line.actionType === 'function'" ng-click="$ctrl.line.action()">
+			<span ng-repeat="text in maintext" class="mbg-base-search-autocomplete-line-text" ng-class="{'highlight':text.highLight}">{{text.text}}</span>
+		</a>
+	</div>
+</div>
