@@ -8,16 +8,32 @@
 				<div class="mbg-base-topbar-search-container">
 					<mbg-base-topbar-search config="$ctrl.config.search"></mbg-base-topbar-search>
 				</div>
-				<div class="mbg-base-topbar-notifications-icon-container">
+				<!-- <div class="mbg-base-topbar-notifications-icon-container">
 					<div class="mbg-base-topbar-notifications-icon">
 						<i class="far fa-envelope"></i>
 						<div class="mbg-base-topbar-notifications-number">
 							2
 						</div>
 					</div>
+				</div> -->
+				<div class="mbg-base-topbar-change-software-container">
+					<mbg-base-topbar-change-software></mbg-base-topbar-change-software>
 				</div>
 				<div class="mbg-base-topbar-user-container">
 					<mbg-base-topbar-user config="$ctrl.config.user"></mbg-base-topbar-user>
+				</div>
+				<div class="mbg-base-topbar-alternative">
+					<div class="topbar-alternative-content">
+						<div class="topbar-alternative-content-arrow">
+							<i class="fas fa-caret-left"></i>
+						</div>
+						<div class="topbar-alternative-alternatives">
+							<div ng-click="toggleFullscreen()" class="topbar-alternative-alternatives-item">
+								<i class="material-icons">fullscreen</i><br>
+								Tela <br> Cheia
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

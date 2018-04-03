@@ -1,6 +1,6 @@
 .mbg-base-topbar-user-container {
 	height: 100%;
-	padding-right: 30px;
+	/* padding-right: 10px; */
 	position: relative;
 	background-color: white;
 	z-index: 550;
@@ -120,11 +120,8 @@
 }
 
 .mbg-base-topbar-arrow {
-	width: 0px;
-	height: 0px;
-	border-left: solid 5px transparent;
-	border-right: solid 5px transparent;
-	border-top: solid 7px #8034ad;
+	color: #8034ad;
+	font-size: 19px;
 	transform: rotateZ(0deg);
 	transition: transform 0.5s ease;
 }
