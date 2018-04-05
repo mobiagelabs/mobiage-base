@@ -1,6 +1,7 @@
 const controller = function ($scope, $timeout, sideMenuService) {
 	$scope.searchValue = '';
 	$scope.autoCompleteActive = false;
+	$scope.autoCompleteHide = true;
 	$scope.data = [];
 	$scope.result = [];
 
@@ -95,9 +96,9 @@ const controller = function ($scope, $timeout, sideMenuService) {
 
 	$scope.blurInput = () => {
 		$scope.autoCompleteActive = false;
-		/* Limpa a varíavel depois que faz a animação */
 		$timeout(() => {
 			$scope.searchValue = '';
+			$scope.autoCompleteHide = true;
 		}, 500);
 	};
 
@@ -106,11 +107,15 @@ const controller = function ($scope, $timeout, sideMenuService) {
 		const inputText = text.trim();
 
 		if (inputText.length > 0) {
-			$scope.autoCompleteActive = true;
+			$scope.autoCompleteHide = false;
+			$timeout(() => {
+				$scope.autoCompleteActive = true;
+			}, 50);
 			search(text, $scope.data, $scope.indexFields);
 			$scope.searchValue = text;
 		} else {
 			$scope.autoCompleteActive = false;
+			$scope.autoCompleteHide = true;
 		}
 	};
 

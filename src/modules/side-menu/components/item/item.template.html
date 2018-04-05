@@ -24,13 +24,14 @@
 
 </mbg-base-side-menu-sub-category>
 
-<mbg-base-side-menu-btn 
+<mbg-base-side-menu-btn
 	ng-if="$ctrl.config.type === 'btn'" 
 	icon-src="{{$ctrl.config.iconSrc}}"
 	icon="{{$ctrl.config.icon}}"
 	icon-size="{{$ctrl.config.iconSize}}"
 	label="{{$ctrl.config.label}}"
-	link="{{$ctrl.config.link}}"
+	action="$ctrl.config.action"
+	action-type="$ctrl.config.actionType"
 	hotkey="{{$ctrl.config.hotkey}}"
 	first-child="$ctrl.firstChild"
 	last-child="$ctrl.lastChild">

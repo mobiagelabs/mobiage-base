@@ -14,6 +14,7 @@ import service from './services/sideMenu';
 
 /* Componentes */
 import quickMenu from './components/quickMenu';
+import link from './components/link';
 import btn from './components/btn';
 import category from './components/category';
 import subCategory from './components/subCategory';
@@ -33,6 +34,7 @@ angular.module('mbgBaseSideMenu', ['cfp.hotkeys', 'ngSanitize'])
 	.component('mbgBaseSideMenuItem', item)
 	.component('mbgBaseSideMenuCategory', category)
 	.component('mbgBaseSideMenuSubCategory', subCategory)
+	.component('mbgBaseSideMenuLink', link)
 	.component('mbgBaseSideMenuBtn', btn)
 	.component('mbgBaseSideMenuHtml', html)
 	.component('mbgBaseSideMenu', component)

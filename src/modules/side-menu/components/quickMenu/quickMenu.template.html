@@ -12,7 +12,7 @@
 		<div class="mbg-base-side-menu-quick-menu" ng-style="{'height': (5 + ($ctrl.config.links.length * 33)) + 'px'}">
 			<div class="mbg-base-side-menu-quick-menu-content-container">
 				<mbg-base-side-menu-btn ng-repeat="link in $ctrl.config.links" icon-src="{{link.iconSrc}}" icon="{{link.icon}}" icon-size="{{link.iconSize}}"
-				 label="{{link.label}}" link="{{link.link}}" icon-side="right" hotkey="{{link.hotkey}}" first-child="$first" last-child="$last">
+				 label="{{link.label}}" action="link.action" action-type="link.actionType" icon-side="right" hotkey="{{link.hotkey}}" first-child="$first" last-child="$last">
 				</mbg-base-side-menu-btn>
 			</div>
 		</div>

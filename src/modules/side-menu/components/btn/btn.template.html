@@ -1,6 +1,5 @@
-<a href="{{$ctrl.link}}">
-	<div class="mbg-base-side-menu-btn" ng-class="{'lastChild' : $ctrl.lastChild, 'firstChild' : $ctrl.firstChild}" >
-
+<mbg-base-side-menu-link action="$ctrl.action" action-type="$ctrl.actionType">
+	<div class="mbg-base-side-menu-btn" ng-class="{'lastChild' : $ctrl.lastChild, 'firstChild' : $ctrl.firstChild}">
 		<div class="mbg-base-side-menu-text" ng-if="$ctrl.iconSide === 'right'">
 			{{ $ctrl.label }}
 		</div>
@@ -19,6 +18,5 @@
 		<div class="mbg-base-side-menu-text" ng-if="$ctrl.iconSide !== 'right'">
 			{{ $ctrl.label }}
 		</div>
-
 	</div>
-</a>
+</mbg-base-side-menu-link>
