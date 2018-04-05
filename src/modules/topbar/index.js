@@ -1,6 +1,7 @@
 import controller from './controllers/topbar';
 import template from './views/topbar.html';
 import './css/style.desktop.css';
+import './css/style.mobile.css';
 
 import user from './components/user';
 import notifications from './components/notifications';

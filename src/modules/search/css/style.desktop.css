@@ -1,10 +1,12 @@
 .mbg-base-search-content-container {
 	position: relative;
+	width: calc(40% + 150px);
+	padding-top: 30px;
 }
 
 .mbg-base-search-autocomplete-container {
 	position: absolute;
-	top: 20px;
+	top: 50px;
 	width: 100%;
 	height: auto;
 	background-color: #F2F2F2;

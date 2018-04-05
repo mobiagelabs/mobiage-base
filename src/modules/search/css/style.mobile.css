@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+	.mbg-base-search-content-container {
+		width: calc(95%);
+	}
+}

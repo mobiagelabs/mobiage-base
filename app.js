@@ -1,12 +1,78 @@
 angular.module('app', ['mbgBase'])
 	.controller('appController', $scope => {
+		$scope.configTopbar = {
+			theme: 'theme1',
+			logo: 'assets/img/logo.png',
+			user: {
+				name: 'Amália Fernandes',
+				avatar: 'assets/img/perfil.png',
+				myProfileActionType: 'link',
+				myProfileAction: '#profile',
+				logoutActionType: 'function',
+				logoutAction: () => {
+					console.log('logout');
+				},
+				actualOrganization: {
+					name: 'Spotify',
+					subTitle: 'Spotify Limitada ME.',
+					avatar: 'assets/img/logo_company.png',
+					info: [
+						{ title: 'Razão Social', text: 'Spotify Stream Digital World' },
+						{ title: 'Nome Fantasia', text: 'Spotify Brasil' },
+						{ title: 'CNPJ', text: '910293.28201.1234' },
+						{ title: 'Inscrição Social', text: '910293.29201.1234' }
+					]
+				},
+				otherOrganizations: [{
+					name: 'Apple Inc',
+					logo: 'https://hcil.umd.edu/wp-content/uploads/2015/12/Apple-logo.png'
+				}, {
+					name: 'Dell',
+					logo: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg'
+				}],
+				changeOrganizationAction: organizationSelected => {
+					console.log(organizationSelected);
+				}
+			},
+			search: {
+				active: true,
+				indexFields: [{ name: 'name' }],
+				data: [
+					{
+						type: 'static',
+						data: [
+							{
+								type: 'Clientes',
+								name: 'Alfredo Peres',
+								empresa: 'Mobiage',
+								cpf: '029.202.594-54',
+								action: '#clientes/029.202.594-54',
+								actionType: 'link'
+							},
+							{
+								type: 'Clientes',
+								name: 'Thiago Martins',
+								cpf: '208.290.390-45',
+								action: () => {
+									console.log('Thiago Martins');
+								},
+								actionType: 'function'
+							}
+						]
+					},
+					{
+						type: 'static',
+						data: 'sideMenuLinks'
+					}
+				]
+			}
+		};
+
 		$scope.configMenu = {
 			theme: 'theme1',
-			standalone: true,
 			quickMenu: {
 				enabled: true,
 				buttonText: 'Cadastro',
-				hotkey: 'c',
 				links: [{
 					label: 'Clientes',
 					iconSrc: 'fontawesome',
@@ -18,8 +84,7 @@ angular.module('app', ['mbgBase'])
 					iconSrc: 'fontawesome',
 					icon: 'far fa-sticky-note',
 					action: '#produtos',
-					actionType: 'link',
-					hotkey: 'p'
+					actionType: 'link'
 				}]
 			},
 			structure: [
@@ -122,8 +187,7 @@ angular.module('app', ['mbgBase'])
 				// 					type: 'btn',
 				// 					label: 'Item comum',
 				// 					action: 'http://www.google.com',
-				// 					actionType: 'link',
-				// 					hotkey: 'i'
+				// 					actionType: 'link'
 				// 				},
 				// 				{
 				// 					type: 'btn',
@@ -184,62 +248,5 @@ angular.module('app', ['mbgBase'])
 				// 	]
 				// }
 			]
-		};
-
-		$scope.configTopbar = {
-			theme: 'theme1',
-			logo: 'assets/img/logo.png',
-			user: {
-				userAvatar: 'assets/img/perfil.png',
-				companyAvatar: 'assets/img/logo_company.png',
-				myProfileAction: '#profile',
-				myProfileActionType: 'link',
-				logout: () => { console.log('fazendo logout'); },
-				organization: [
-					{ title: 'Razão Social', text: 'Spotify Stream Digital World' },
-					{ title: 'Nome Fantasia', text: 'Spotify Brasil' },
-					{ title: 'CNPJ', text: '910293.28201.1234' },
-					{ title: 'Inscrição Social', text: '910293.29201.1234' }
-				],
-				organizations: [{
-					name: 'Apple Inc',
-					logo: 'https://hcil.umd.edu/wp-content/uploads/2015/12/Apple-logo.png'
-				}, {
-					name: 'Dell',
-					logo: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg'
-				}]
-			},
-			search: {
-				active: true,
-				indexFields: [{ name: 'name' }],
-				data: [
-					{
-						type: 'static',
-						data: [
-							{
-								type: 'Clientes',
-								name: 'Alfredo Peres',
-								empresa: 'Mobiage',
-								cpf: '029.202.594-54',
-								action: '#clientes/029.202.594-54',
-								actionType: 'link'
-							},
-							{
-								type: 'Clientes',
-								name: 'Thiago Martins',
-								cpf: '208.290.390-45',
-								action: () => {
-									console.log('Thiago Martins');
-								},
-								actionType: 'function'
-							}
-						]
-					},
-					{
-						type: 'static',
-						data: 'sideMenuLinks'
-					}
-				]
-			}
 		};
 	});

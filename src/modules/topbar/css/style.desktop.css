@@ -53,9 +53,5 @@
 .mbg-base-topbar-search-container {
 	height: 100%;
 	flex-grow: 1;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
 	padding-left: 25px;
 }

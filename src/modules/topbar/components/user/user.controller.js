@@ -1,8 +1,20 @@
-const controller = ($scope, $timeout) => {
+const controller = function ($scope, $timeout) {
 	$scope.changeZIndex = false;
 	$scope.focus = '';
 	$scope.menuOpen = false;
 	$scope.animationInProgress = false;
+	$scope.user = {};
+
+	$scope.getGreetings = () => {
+		const date = new Date();
+		const hora = date.getHours();
+		if (hora >= 4 && hora < 12) {
+			return 'Bom Dia,';
+		} else if (hora >= 12 && hora <= 18) {
+			return 'Boa Tarde,';
+		}
+		return 'Boa Noite,';
+	};
 
 	const toggleAnimationInProgress = delay => {
 		$scope.animationInProgress = true;
@@ -51,6 +63,10 @@ const controller = ($scope, $timeout) => {
 				toggleAnimationInProgress(500);
 			}
 		}
+	};
+
+	this.$onInit = () => {
+		$scope.user = this.config;
 	};
 };
 

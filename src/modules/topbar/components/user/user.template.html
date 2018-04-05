@@ -2,28 +2,29 @@
 	<div class="mbg-base-topbar-names-container" ng-click="toggleMenu()">
 		<div class="mbg-base-topbar-names user" ng-class="{'focus-company' : focus === 'company'}">
 			<div class="mbg-base-topbar-greetings-small">
-				Bom Dia,
+				{{ getGreetings() }}
 			</div>
 			<div class="mbg-base-topbar-greetings-name">
-				Amália Fernandes
+				{{ user.name || '' }}
 			</div>
 		</div>
 		<div class="mbg-base-topbar-names company" ng-class="{'focus-company' : focus === 'company'}">
 			<div class="mbg-base-topbar-greetings-small">
-				Spotify Limitada ME.
+					{{ user.actualOrganization.subTitle || 'Organização' }}
 			</div>
 			<div class="mbg-base-topbar-greetings-name">
-				Spotify
+				{{ user.actualOrganization.name }}
 			</div>
 		</div>
 	</div>
-	<div class="mbg-base-topbar-arrow-container">
+	<div class="mbg-base-topbar-arrow-container" ng-click="toggleMenu()">
 		<i class="fas fa-caret-down mbg-base-topbar-arrow" ng-class="{'active':menuOpen}"></i>
 	</div>
 	<div class="mbg-base-topbar-avatar-container" ng-class="{'focus-company': focus === 'company', 'changeZIndex': changeZIndex === true, 'focus-user': focus === 'user'}">
-		<div class="mbg-topbar-user-avatar" ng-style="{'background-image': 'url(' + $ctrl.config.userAvatar + ')'}" ng-click="focusUser()">
+		<div class="mbg-topbar-user-avatar" ng-style="{'background-image': 'url(' + user.avatar + ')'}" ng-click="focusUser()">
 		</div>
-		<div class="mbg-topbar-company-avatar" ng-style="{'background-image': 'url(' + $ctrl.config.companyAvatar + ')'}" ng-click="focusCompany()">
+		<div class="mbg-topbar-company-avatar" ng-style="{'background-image': 'url(' + user.actualOrganization.avatar + ')'}" ng-click="focusCompany()">
+			
 		</div>
 	</div>
 </div>
@@ -31,7 +32,7 @@
 	<div ng-if="focus === 'user' || focus === ''" class="mbg-base-topbar-user-menu-content">
 		<div class="mbg-base-topbar-change-divisor">
 			<div class="mbg-base-topbar-user-title">
-
+				asdasdas
 			</div>
 			conteudo usuario
 			<svg class="mbg-base-topbar-change-divisor-detail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78.56 7.99">
