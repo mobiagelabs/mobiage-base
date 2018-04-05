@@ -1,22 +1,19 @@
 const controller = ($scope, $timeout) => {
 	$scope.changeZIndex = false;
-
-	$scope.state = {
-		focus: '',
-		menuOpen: false,
-		animationInProgress: false
-	};
+	$scope.focus = '';
+	$scope.menuOpen = false;
+	$scope.animationInProgress = false;
 
 	const toggleAnimationInProgress = delay => {
-		$scope.state.animationInProgress = true;
+		$scope.animationInProgress = true;
 		$timeout(() => {
-			$scope.state.animationInProgress = false;
+			$scope.animationInProgress = false;
 		}, delay);
 	};
 
 	$scope.focusCompany = () => {
-		if ($scope.state.animationInProgress === false) {
-			$scope.state.focus = 'company';
+		if ($scope.animationInProgress === false) {
+			$scope.focus = 'company';
 			$timeout(() => {
 				$scope.changeZIndex = true;
 			}, 333);
@@ -25,9 +22,9 @@ const controller = ($scope, $timeout) => {
 	};
 
 	$scope.focusUser = () => {
-		if ($scope.state.animationInProgress === false) {
-			if ($scope.state.focus === 'company') {
-				$scope.state.focus = 'user';
+		if ($scope.animationInProgress === false) {
+			if ($scope.focus === 'company') {
+				$scope.focus = 'user';
 				$timeout(() => {
 					$scope.changeZIndex = false;
 				}, 333);
@@ -43,13 +40,13 @@ const controller = ($scope, $timeout) => {
 	};
 
 	$scope.toggleMenu = () => {
-		if ($scope.state.animationInProgress === false) {
-			if ($scope.state.menuOpen === false) {
-				$scope.state.menuOpen = true;
+		if ($scope.animationInProgress === false) {
+			if ($scope.menuOpen === false) {
+				$scope.menuOpen = true;
 				document.addEventListener('click', onClickOutside);
 				toggleAnimationInProgress(500);
 			} else {
-				$scope.state.menuOpen = false;
+				$scope.menuOpen = false;
 				document.removeEventListener('click', onClickOutside);
 				toggleAnimationInProgress(500);
 			}

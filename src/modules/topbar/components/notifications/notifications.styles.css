@@ -1,0 +1,33 @@
+.mbg-base-topbar-notifications-icon-container {
+	height: 100%;
+	width: 100px;
+	position: relative;
+}
+
+.mbg-base-topbar-notifications-icon {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	line-height: 50px;
+	font-size: 22px;
+	color: #8034ad;
+	cursor: pointer;
+}
+
+.mbg-base-topbar-notifications-number {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	line-height: 20px;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: #ff1057;
+	font-size: 12px;
+	font-weight: 700;
+	color: white;
+}
