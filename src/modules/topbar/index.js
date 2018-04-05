@@ -3,7 +3,7 @@ import template from './views/topbar.html';
 import './css/style.desktop.css';
 
 import user from './components/user';
-import changeSoftware from './components/changeSoftware';
+import notifications from './components/notifications';
 
 import '../search/';
 
@@ -18,4 +18,4 @@ const component = {
 angular.module('mbgBaseTopbar', ['mbgBaseTopbarSearch'])
 	.component('mbgBaseTopbar', component)
 	.component('mbgBaseTopbarUser', user)
-	.component('mbgBaseTopbarChangeSoftware', changeSoftware);
+	.component('mbgBaseTopbarNotifications', notifications);

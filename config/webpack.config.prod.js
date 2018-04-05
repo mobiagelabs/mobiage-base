@@ -5,7 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const exportName = 'mobiage-login.min';
+const exportName = 'mobiage-base.min';
 
 module.exports = merge(
 	commom,

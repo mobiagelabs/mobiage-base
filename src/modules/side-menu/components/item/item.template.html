@@ -35,3 +35,8 @@
 	first-child="$ctrl.firstChild"
 	last-child="$ctrl.lastChild">
 </mbg-base-side-menu-btn>
+
+<mbg-base-side-menu-html
+	ng-if="$ctrl.config.type === 'html'"
+	html="$ctrl.config.html">
+</mbg-base-side-menu-html>

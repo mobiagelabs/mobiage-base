@@ -1,8 +1,12 @@
 {
   "name": "mobiage-base",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Base para os sistemas da mobiage",
+  "repository": {
+    "type": "private",
+    "url": "https://github.com/mobiagelabs/mobiage-base"
+  },
+  "main": "i./src/index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./config/webpack.config.dev.js",
     "build": "webpack --config ./config/webpack.config.prod.js",
@@ -39,6 +43,7 @@
   "dependencies": {
     "angular": "^1.6.9",
     "angular-hotkeys": "^1.7.0",
+    "angular-sanitize": "^1.6.9",
     "sanitize.css": "^5.0.0",
     "simplebar": "^2.5.1"
   },

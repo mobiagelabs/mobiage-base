@@ -59,7 +59,6 @@ const controller = function ($scope) {
 
 	this.$onInit = () => {
 		highLightMatches(this.line);
-		console.log(this.line);
 	};
 };
 

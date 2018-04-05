@@ -1,6 +1,6 @@
 .mbg-base-topbar-user-container {
 	height: 100%;
-	/* padding-right: 10px; */
+	padding-right: 15px;
 	position: relative;
 	background-color: white;
 	z-index: 550;
@@ -14,7 +14,7 @@
 	background-color: #ffffff;
 	position: absolute;
 	height: 200px;
-	border-top: 5px #8034ad solid;
+	/* border-top: 5px #8034ad solid; */
 	box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
 	z-index: 600;
 	transform-origin: top center;
@@ -137,8 +137,6 @@
 	user-select: none;
 }
 
-
-
 .mbg-base-topbar-avatar-container {
 	width: 60px;
 	height: 60px;
@@ -235,4 +233,10 @@
 
 .mbg-base-topbar-avatar-container.changeZIndex .mbg-topbar-company-avatar {
 	z-index: 0;
+}
+
+.mbg-base-topbar-user-title {
+	background-color: pink;
+	width: 100%;
+	height: 50px;
 }

@@ -76,16 +76,6 @@
 	position: relative;
 }
 
-.mbg-base-topbar-change-icon {
-	height: 50px;
-	width: 50px;
-	font-size: 25px;
-	text-align: center;
-	line-height: 50px;
-	color: #8034ad;
-	cursor: pointer;
-}
-
 .mbg-base-topbar-notifications-icon {
 	height: 50px;
 	width: 50px;
