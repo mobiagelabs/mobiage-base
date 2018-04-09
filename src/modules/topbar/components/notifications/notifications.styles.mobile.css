@@ -1,0 +1,8 @@
+@media(max-width: 768px){
+	.mbg-base-topbar-notifications-icon-container {
+		width: 80px;
+	}
+	.mbg-base-topbar-notifications-icon {
+		font-size: 30px;
+	}
+}

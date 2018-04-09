@@ -1,5 +1,5 @@
-<div class="mbg-base-side-menu-quick-container">
-	<div class="mbg-base-side-menu-quick-menu-container" ng-if="$ctrl.config.enabled" ng-class="{'active' : state.quickMenuOpen}">
+<div ng-if="$ctrl.config.enabled" class="mbg-base-side-menu-quick-container">
+	<div class="mbg-base-side-menu-quick-menu-container" ng-class="{'active' : state.quickMenuOpen}">
 		<div class="mbg-base-side-menu-quick-menu-button" title="{{$ctrl.config.buttonText + ' (c)'}}" ng-click="toggleQuickMenu()">
 			<div class="mbg-base-side-menu-quick-button-text">
 				{{ $ctrl.config.buttonText }}

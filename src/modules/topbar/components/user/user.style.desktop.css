@@ -1,0 +1,242 @@
+.mbg-base-topbar-user-container {
+  height: 100%;
+  width: 300px;
+  padding-right: 15px;
+  position: relative;
+  z-index: 550;
+  font-size: 16px;
+}
+
+.mbg-base-topbar-user-menu {
+  top: calc(100% - 30px);
+  left: 0px;
+  right: 30px;
+  bottom: 0px;
+  background-color: #ffffff;
+  position: absolute;
+  height: 200px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  z-index: 600;
+  transform-origin: top center;
+  transition: transform 500ms ease, opacity 200ms linear;
+  transform: translate3d(0%, 0px, 0px) scaleY(0);
+  opacity: 0;
+}
+
+.mbg-base-topbar-user-menu-bottom {
+  height: 30px;
+  position: absolute;
+  top: calc(100% - 30px);
+  left: 0px;
+  right: 30px;
+  transform: translate3d(0px, -15px, 0px);
+  transition: transform 500ms ease, opacity 200ms linear;
+  border-radius: 15px;
+  background-color: #ffffff;
+  z-index: 650;
+  opacity: 0;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.01);
+}
+
+.mbg-base-topbar-user-menu-bottom.active {
+  opacity: 1;
+  transform: translate3d(0px, 185px, 0px);
+}
+
+.mbg-base-topbar-user-menu.active {
+  transform: translate3d(0%, 0px, 0px) scaleY(1);
+  opacity: 1;
+}
+
+.mbg-base-topbar-user-menu-content {
+  opacity: 0;
+  padding-top: 30px;
+  transition: opacity 250ms 500ms linear;
+}
+
+.mbg-base-topbar-user-menu.active .mbg-base-topbar-user-menu-content {
+  opacity: 1;
+}
+
+.mbg-base-topbar-user-company {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-left: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 700;
+}
+
+.mbg-base-topbar-greetings-small {
+  text-align: right;
+  color: #d4d4d4;
+  font-size: 12px;
+  font-weight: 700;
+  user-select: none;
+}
+
+.mbg-base-topbar-names-container {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.mbg-base-topbar-names {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  color: #cdcdcd;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  transition: transform 1000ms ease;
+}
+
+.mbg-base-topbar-names.user.focus-company {
+  transform: translate3d(0%, -100%, 0px);
+}
+
+.mbg-base-topbar-names.company.focus-company {
+  transform: translate3d(0%, -100%, 0px);
+}
+
+.mbg-base-topbar-arrow-container {
+  width: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.mbg-base-topbar-arrow {
+  color: #8034ad;
+  font-size: 19px;
+  transform: rotateZ(0deg);
+  transition: transform 0.5s ease;
+}
+
+.mbg-base-topbar-arrow.active {
+  transform: rotateZ(180deg);
+}
+
+.mbg-base-topbar-greetings-name {
+  text-align: right;
+  color: #8034ad;
+  font-weight: 700;
+  user-select: none;
+}
+
+.mbg-base-topbar-avatar-container {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.mbg-topbar-user-avatar {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 5px;
+  text-align: center;
+  /* background-image: url('img/perfil.png'); */
+  background-position: center center;
+  background-size: contain;
+  background-color: white;
+  will-change: transform, z-index;
+  transform: rotate3d(0px, 0px, 0px) scale(1);
+  cursor: pointer;
+}
+
+.mbg-topbar-company-avatar {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: auto;
+  top: auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  /* background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg'); */
+  background-position: center center;
+  background-size: contain;
+  background-color: white;
+  transform: translate3d(-50%, 25%, 0px) scale(0.5);
+  will-change: transform, z-index;
+  cursor: pointer;
+}
+
+@keyframes animFocusIn {
+  0% {
+    transform: translate3d(0%, 0%, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(5%, -5%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-50%, 25%, 0) scale(0.5);
+  }
+}
+
+@keyframes animFocusOut {
+  0% {
+    transform: translate3d(-50%, 25%, 0px) scale(0.5);
+  }
+  33% {
+    transform: translate3d(-55%, 30%, 0px) scale(0.4);
+  }
+  100% {
+    transform: translate3d(0%, 0%, 0px) scale(1);
+  }
+}
+
+.mbg-base-topbar-avatar-container.focus-company .mbg-topbar-user-avatar {
+  animation: animFocusIn 1000ms ease;
+  transform: translate3d(-50%, 25%, 0) scale(0.5);
+}
+
+.mbg-base-topbar-avatar-container.focus-company .mbg-topbar-company-avatar {
+  animation: animFocusOut 1000ms ease;
+  transform: translate3d(0%, 0%, 0px) scale(1);
+}
+
+.mbg-base-topbar-avatar-container.focus-user .mbg-topbar-user-avatar {
+  animation: animFocusOut 1000ms ease;
+}
+
+.mbg-base-topbar-avatar-container.focus-user .mbg-topbar-company-avatar {
+  animation: animFocusIn 1000ms ease;
+  transform: translate3d(-50%, 25%, 0px) scale(0.5);
+}
+
+.mbg-base-topbar-avatar-container.changeZIndex .mbg-topbar-user-avatar {
+  z-index: 1;
+}
+
+.mbg-base-topbar-avatar-container.changeZIndex .mbg-topbar-company-avatar {
+  z-index: 0;
+}
+
+.mbg-base-topbar-user-title {
+  background-color: pink;
+  width: 100%;
+  height: 50px;
+}

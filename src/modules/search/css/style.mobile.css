@@ -1,5 +1,6 @@
 @media (max-width: 768px) {
-	.mbg-base-search-content-container {
-		width: calc(95%);
-	}
+  .mbg-base-search-content-container {
+    padding-top: 20px;
+    padding-right: 0px;
+  }
 }

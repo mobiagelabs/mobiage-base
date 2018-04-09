@@ -52,7 +52,6 @@ const controller = function ($scope, $timeout, sideMenuService) {
 		sideMenuService.setMenuConfig(this.config);
 		$scope.structure = this.config.structure;
 		$scope.quickMenu = this.config.quickMenu;
-		$scope.marginTop = this.config.marginTop;
 		document.addEventListener('touchstart', handleTouchStart);
 		document.addEventListener('touchend', handleTouchEnd);
 	};

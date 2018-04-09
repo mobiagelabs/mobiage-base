@@ -6,4 +6,13 @@ const component = {
 	transclude: true
 };
 
+const APILocation = 'teste';
+
+let teste = function () {
+};
+
+teste = 0;
+
+teste = APILocation.apiLocation;
+
 export default component;

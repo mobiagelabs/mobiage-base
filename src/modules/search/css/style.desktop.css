@@ -1,6 +1,8 @@
 .mbg-base-search-content-container {
 	position: relative;
-	width: calc(40% + 150px);
+	width: 100%;
+	max-width: 600px;
+	padding-right: 20px;
 	padding-top: 30px;
 }
 

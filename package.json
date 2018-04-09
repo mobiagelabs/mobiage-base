@@ -1,15 +1,17 @@
 {
-  "name": "mobiage-base",
-  "version": "1.0.0",
+  "name": "@mobiage/base",
+  "version": "1.0.4",
   "description": "Base para os sistemas da mobiage",
   "repository": {
     "type": "private",
     "url": "https://github.com/mobiagelabs/mobiage-base"
   },
-  "main": "i./src/index.js",
+  "main": "./src/index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./config/webpack.config.dev.js",
+    "dev": "npm run start",
     "build": "webpack --config ./config/webpack.config.prod.js",
+    "prod": "npm run build",
     "lint:js": "eslint index.js ./src/**/*.js"
   },
   "author": {

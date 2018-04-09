@@ -3,6 +3,14 @@
 	width: calc(100% - 255px);
 	display: inline-block;
 	font-family: 'MontSerrat', sans-serif;
+	/* 100px da barra do topo */
+	padding: 15px 15px 115px 15px;
+	overflow-y: auto;
+}
+
+.mbg-base-content {
+	height: auto;
+	width: 100%;
 }
 
 @media (max-width: 768px) {

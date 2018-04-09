@@ -25,6 +25,10 @@
 	align-items: center;
 }
 
+.mbg-base-topbar-buguer-btn-container {
+	display: none;
+}
+
 .mbg-base-topbar-logo-container {
 	min-width: 250px;
 	height: 100%;
@@ -35,9 +39,9 @@
 }
 
 .mbg-base-topbar-inside-content-container{
-	width: calc(100% - 250px);
 	height: 100%;
 	display: flex;
+	flex-grow: 1;
 	flex-direction: row;
 	justify-content: left;
 	align-items: center;
