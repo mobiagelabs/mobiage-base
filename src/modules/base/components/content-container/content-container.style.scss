@@ -1,11 +1,9 @@
 .mb[content-container] {
-	height: 100%;
+	height: calc(100% - 100px);
 	width: calc(100% - 255px);
 	display: inline-block;
 	font-family: 'MontSerrat', sans-serif;
-
-	/* 100px da barra do topo */
-	padding: 15px 15px 115px 15px;
+	padding: 5px;
 	overflow-y: auto;
 
 	> .mb-cc-contentt {

@@ -63,7 +63,6 @@ angular.module('app', ['mbgBase'])
 				}
 			},
 			search: {
-				active: true,
 				indexFields: [{ name: 'name' }],
 				data: [
 					{
@@ -99,7 +98,7 @@ angular.module('app', ['mbgBase'])
 		$scope.configMenu = {
 			theme: 'theme1',
 			quickMenu: {
-				enabled: true,
+				enabled: false,
 				buttonText: 'Cadastro',
 				links: [{
 					label: 'Clientes',

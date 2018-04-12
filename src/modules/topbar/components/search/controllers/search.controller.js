@@ -29,7 +29,8 @@ const controller = function ($scope, $timeout, sideMenuService) {
 					elements.push(transformElement(element));
 				}
 			});
-			return elements;
+			// TO-DO (Limitar resultados parando o algoritmo ao chegar no limite de resultados)
+			return elements.slice(0, 5);
 		};
 
 		/* Para cada tipo, faz um elemento no array */
@@ -95,11 +96,11 @@ const controller = function ($scope, $timeout, sideMenuService) {
 	};
 
 	$scope.blurInput = () => {
-		// $scope.autoCompleteActive = false;
-		// $timeout(() => {
-		// 	$scope.searchValue = '';
-		// 	$scope.autoCompleteHide = true;
-		// }, 500);
+		$scope.autoCompleteActive = false;
+		$timeout(() => {
+			$scope.searchValue = '';
+			$scope.autoCompleteHide = true;
+		}, 500);
 	};
 
 	$scope.onChangeSearch = text => {

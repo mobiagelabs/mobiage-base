@@ -1,4 +1,4 @@
-import controller from './controllers/search';
+import controller from './controllers/search.controller';
 import template from './templates/search.template.html';
 import './styles/style.search.scss';
 
