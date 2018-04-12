@@ -1,10 +1,16 @@
+import 'angular-hotkeys/build/hotkeys.min';
+import 'simplebar/dist/simplebar.css';
+import 'simplebar/dist/simplebar';
+
+import 'angular-sanitize';
+
 import '../side-menu';
 import '../topbar';
-import template from './views/base.html';
-import './css/style.desktop.css';
+import template from './templates/base.template.html';
+import './styles/style.base.scss';
 
 import container from './components/container';
-import contentContainer from './components/contentContainer';
+import contentContainer from './components/content-container';
 
 const component = {
 	template,

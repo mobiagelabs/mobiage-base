@@ -1,0 +1,11 @@
+<div class="mb" autocomplete-line>
+	<a class="mb-tsal-link" ng-if="$ctrl.line.actionType === 'state'" ui-sref="{{$ctrl.line.action}}">
+		<span ng-repeat="text in maintext" class="mb-tsal-link-text" ng-class="{'mb-tsal-highlight':text.highLight}">{{text.text}}</span>
+	</a>
+	<a class="mb-tsal-link" ng-if="$ctrl.line.actionType === 'link'" href="{{$ctrl.line.action}}">
+		<span ng-repeat="text in maintext" class="mb-tsal-link-text" ng-class="{'mb-tsal-highlight':text.highLight}">{{text.text}}</span>
+	</a>
+	<a class="mb-tsal-link" ng-if="$ctrl.line.actionType === 'function'" ng-click="$ctrl.line.action()">
+		<span ng-repeat="text in maintext" class="mb-tsal-link-text" ng-class="{'mb-tsal-highlight':text.highLight}">{{text.text}}</span>
+	</a>
+</div>

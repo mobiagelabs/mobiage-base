@@ -1,0 +1,230 @@
+@import "./user.animations.scss";
+
+.mb[topbar-user] {
+	height: 100%;
+
+	> .mb-tu-button {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		padding-left: 10px;
+		flex-direction: row;
+		justify-content: flex-end;
+		padding-right: 15px;
+		align-items: center;
+		background-color: #ffffff;
+		position: relative;
+		z-index: 700;
+
+		> .mb-tu-button-names-container {
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+
+			.mb-tu-button-names {
+				top: 0px;
+				right: 0px;
+				bottom: 0px;
+				left: 0px;
+				color: #cdcdcd;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-end;
+				transition: transform 1000ms ease;
+
+				&.mb-tu-user {
+					&.mb-tu-focus-company {
+						transform: translate3d(0%, -100%, 0px);
+					}
+				}
+
+				&.mb-tu-company {
+					&.mb-tu-focus-company {
+						transform: translate3d(0%, -100%, 0px);
+					}
+				}
+
+				> .mb-tu-button-subtitle {
+					text-align: right;
+					color: #d4d4d4;
+					font-size: 12px;
+					font-weight: 700;
+					user-select: none;
+				}
+
+				> .mb-tu-button-title {
+					text-align: right;
+					color: #8034ad;
+					font-weight: 700;
+					user-select: none;
+				}
+			}
+		}
+
+		> .mb-tu-button-arrow-container {
+			width: 30px;
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			margin-right: 15px;
+			cursor: pointer;
+
+			> .mb-tu-button-arrow {
+				color: #8034ad;
+				font-size: 19px;
+				transform: rotateZ(0deg);
+				transition: transform 0.5s ease;
+
+				&.mb-tu-button-active {
+					transform: rotateZ(180deg);
+				}
+			}
+		}
+
+		> .mb-tu-avatar-container {
+			width: 60px;
+			height: 60px;
+			position: relative;
+
+			.mb-tu-avatar {
+				user-select: none;
+				position: absolute;
+				left: 0px;
+				bottom: 0px;
+				width: 60px;
+				height: 60px;
+				border-radius: 30px;
+				font-size: 30px;
+				line-height: 60px;
+				color: white;
+				font-weight: 700;
+				text-align: center;
+				background-position: center center;
+				background-size: contain;
+				background-color: white;
+				will-change: transform, z-index;
+				cursor: pointer;
+
+				&.mb-tua-user {
+					top: 0px;
+					right: 0px;
+					transform: rotate3d(0px, 0px, 0px) scale(1);
+
+					&.mb-tua-focus-company {
+						animation: mb-tu-anim-focus-In 1000ms ease;
+						transform: translate3d(-50%, 25%, 0) scale(0.5);
+					}
+
+					&.mb-tua-focus-user {
+						animation: mb-tu-anim-focus-out 1000ms ease;
+					}
+
+					&.mb-tua-focus-z-index {
+						z-index: 1;
+					}
+				}
+
+				&.mb-tua-company {
+					top: auto;
+					right: auto;
+					transform: translate3d(-50%, 25%, 0px) scale(0.5);
+
+					&.mb-tua-focus-company {
+						animation: mb-tu-anim-focus-out 1000ms ease;
+						transform: translate3d(0%, 0%, 0px) scale(1);
+					}
+
+					&.mb-tua-focus-user {
+						animation: mb-tu-anim-focus-In 1000ms ease;
+						transform: translate3d(-50%, 25%, 0px) scale(0.5);
+					}
+
+					&.mb-tua-focus-z-index {
+						z-index: 0;
+					}
+				}
+			}
+		}
+	}
+
+	> .mb-tu-menu {
+		top: calc(100% - 30px);
+		left: 0px;
+		right: 15px;
+		bottom: 0px;
+		background-color: #ffffff;
+		position: absolute;
+		height: 200px;
+		padding-top: 27px;
+		border-top: 3px red solid;
+		z-index: 600;
+		transform-origin: top center;
+		transition: transform 500ms ease, opacity 200ms linear;
+		transform: translate3d(0%, 0px, 0px) scaleY(0);
+
+		.mb-tu-menu-content {
+			opacity: 0;
+			border-top: 5px solid #8034ad;
+			transition: opacity 250ms 500ms linear;
+			position: relative;
+			z-index: 700;
+
+			> .mb-tu-menu-company-content {
+				width: 100%;
+				height: 300px;
+				padding: 15px;
+
+				> .mb-tu-menu-company-info-container {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+
+					.mb-tu-menu-company-info {
+						margin-top: 5px;
+						margin-bottom: 5px;
+						width: 100%;
+						text-align: left;
+
+						.mb-tu-menu-company-info-title {
+							color: rgb(125, 125, 125);
+							font-weight: 700;
+							font-size: 15px;
+						}
+
+						.mb-tu-menu-company-info-text {
+							color: rgb(125, 125, 125);
+							font-weight: 400;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+
+		&.active {
+			transform: translate3d(0%, 0px, 0px) scaleY(1);
+
+			.mb-tu-menu-content {
+				opacity: 1;
+			}
+		}
+	}
+
+	> .mb-tu-menu-bottom {
+		height: 30px;
+		position: absolute;
+		top: calc(100% - 30px);
+		left: 0px;
+		right: 15px;
+		transition: transform 500ms ease, opacity 200ms linear;
+		border-radius: 15px;
+		background-color: #fff;
+		z-index: 590;
+		box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.01);
+	}
+}

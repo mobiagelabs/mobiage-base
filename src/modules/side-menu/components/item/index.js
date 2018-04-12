@@ -6,11 +6,6 @@ const item = {
 		firstChild: '<',
 		lastChild: '<'
 	},
-	controller: function () {
-		this.$onInit = () => {
-			// console.log(this)
-		}
-	},
 	template
 };
 

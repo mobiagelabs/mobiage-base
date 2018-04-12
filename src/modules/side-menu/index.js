@@ -1,23 +1,14 @@
-import 'angular-hotkeys/build/hotkeys.min';
-
-import 'simplebar/dist/simplebar.css';
-import 'simplebar/dist/simplebar';
-
-import 'angular-sanitize';
-
-import './css/style.desktop.css';
-import './css/style.mobile.css';
-
-import template from './views/sideMenu.html';
+import template from './templates/side-menu.template.html';
 import controller from './controllers/sideMenu';
 import service from './services/sideMenu';
+import './styles/side-menu.style.scss';
 
 /* Componentes */
-import quickMenu from './components/quickMenu';
+import quickMenu from './components/quick-menu';
 import link from './components/link';
 import btn from './components/btn';
 import category from './components/category';
-import subCategory from './components/subCategory';
+import subCategory from './components/sub-category';
 import item from './components/item';
 import html from './components/html';
 

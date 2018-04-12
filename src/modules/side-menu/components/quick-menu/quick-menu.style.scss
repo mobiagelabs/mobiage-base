@@ -1,0 +1,137 @@
+/* Quick Menu */
+.mb[sm-quick-menu] {
+	width: 100%;
+	height: 40px;
+	position: relative;
+
+	> .mb-smqm-button {
+		background-color: #ff0758;
+		width: 100%;
+		height: 40px;
+		border-radius: 20px;
+		text-align: center;
+		transform: translate3d(0px, 0px, 0px);
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 603;
+		cursor: pointer;
+		box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1);
+		user-select: none;
+
+		> .mb-smqm-button-text {
+			margin-left: 15px;
+			margin-right: 10px;
+			font-size: 12px;
+			color: #ffffff;
+			font-weight: 700;
+		}
+
+		> .mb-smqm-button-arrow-container {
+			width: 30px;
+			height: 30px;
+			background-color: white;
+			vertical-align: middle;
+			transform: rotateZ(0deg);
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: 5px;
+			transition: transform 500ms cubic-bezier(0.475, 0.01, 0.195, 1.035);
+
+			> .mb-smqm-button-arrow {
+				color: #ff0758;
+				transform: translate(0px, 1px);
+				user-select: none;
+				font-size: 17px;
+			}
+
+			&.mb-smqm-active {
+				transform: rotateZ(180deg);
+			}
+		}
+	}
+
+	> .mb-smqm-menu {
+		width: 100%;
+		height: 120px;
+		background-color: #de0440;
+		position: absolute;
+		top: 20px;
+		transform: scaleY(0);
+		transform-origin: 50% 0%;
+		transition: transform 500ms cubic-bezier(0.475, 0.01, 0.195, 1.035);
+		padding: 20px 15px 0px 15px;
+		z-index: 602;
+
+		&.mb-smqm-active {
+			transform: scaleY(1);
+		}
+
+		> .mb-smqm-content {
+			width: 100%;
+			position: relative;
+			transition: opacity 500ms linear;
+			opacity: 0;
+
+			&.mb-smqm-active {
+				transition: opacity 500ms 100ms linear;
+				opacity: 1;
+			}
+
+			.mb[side-menu-btn] {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				height: auto;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+				transform: none;
+				position: relative;
+
+				> .mb-smb-text {
+					color: white;
+					transition: 100ms opacity linear;
+					opacity: 0.7;
+				}
+
+				> .mb-smb-icon {
+					color: white;
+					transition: 100ms opacity linear;
+					opacity: 0.7;
+				}
+
+				&:hover {
+					> .mb-smb-text {
+						opacity: 1;
+					}
+
+					> .mb-smb-icon {
+						opacity: 1;
+					}
+				}
+
+				&.lastChild {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	> .mb-smqm-menu-bottom {
+		position: absolute;
+		top: 0px;
+		width: 100%;
+		height: 40px;
+		transform: translate3d(0px, 0px, 0px);
+		transition: transform 500ms cubic-bezier(0.475, 0.01, 0.195, 1.035);
+		background-color: #de0440;
+		border-radius: 20px;
+		z-index: 600;
+		box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+	}
+}

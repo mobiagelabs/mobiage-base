@@ -1,0 +1,58 @@
+.mb[search-input] {
+	height: 40px;
+	background-color: #ffffff;
+	border: 1px solid #dfdfdf;
+	border-radius: 5px;
+	overflow: hidden;
+	padding-right: 15px;
+	position: relative;
+	z-index: 510;
+
+	&.mb-tsi-active {
+		border-color: #00bbbd;
+	}
+
+	> .mb-tsi-icon-container {
+		display: inline-block;
+		line-height: 40px;
+		width: 40px;
+		text-align: center;
+		color: #b8b8b8;
+		font-size: 16px;
+
+		&.mb-tsi-active {
+			color: #00bbbd;
+		}
+	}
+
+	> .mb-tsi-input-container {
+		height: 100%;
+
+		/* 100% menos o tamanho do container do ícone menos 5px */
+		width: calc(100% - 40px - 5px);
+		display: inline-block;
+
+		> .mb-tsi-input {
+			display: inline-block;
+			height: 40px;
+			width: 100%;
+			border: none;
+			background-color: transparent;
+			color: #acacac;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 14px;
+
+			&.mb-tsi-active {
+				color: #00bbbd;
+			}
+
+			&::placeholder {
+				color: #c9c9c9;
+			}
+
+			&:active, &:focus {
+				outline: none;
+			}
+		}
+	}
+}

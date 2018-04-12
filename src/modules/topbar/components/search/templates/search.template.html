@@ -1,0 +1,26 @@
+<div class="mb" search>
+	<mbg-base-topbar-input on-blur="blurInput()" on-change-value="onChangeSearch(text)" placeholder="O que você está procurando?"
+	 type="text" name="search" icon="fa-search"></mbg-base-topbar-input>
+
+	<div class="mb-ts-autocomplete" ng-class="{'mb-tsa-active':autoCompleteActive}" ng-if="!autoCompleteHide">
+
+		<div ng-repeat="result in result | orderBy:'-matchesCount'">
+			<div class="mb-ts-autocomplete-title">
+				<div class="mb-ts-autocomplete-title-text">
+					{{ result.type }}
+				</div>
+				<div class="mb-ts-autocomplete-title-line"></div>
+			</div>
+			<mbg-base-topbar-result-line ng-repeat="line in result.children | orderBy:'-matchesCount'" line="line"></mbg-base-topbar-result-line>
+		</div>
+
+		<div ng-if="result.length === 0" class="mb-ts-autocomplete-notfound">
+			Nenhum resultado encontrado para:
+			<div class="mb-ts-autocomplete-notfound-search">
+				{{ '"' + searchValue + '"' }}
+			</div>
+		</div>
+
+	</div>
+
+</div>

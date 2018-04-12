@@ -1,0 +1,23 @@
+.mb[topbar-user-btn] {
+	color: #8b8b8b;
+	font-size: 14px;
+	font-weight: 700;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	user-select: none;
+	transition: transform 250ms ease, color 100ms linear;
+	cursor: pointer;
+	padding: 15px 15px 15px 15px;
+
+	&:hover {
+		color: #9136ca;
+		transform: translate3d(1%, 0, 0);
+	}
+
+	.mb-tub-icon {
+		margin-left: 15px;
+	}
+}

@@ -1,0 +1,54 @@
+.mb[side-menu-btn] {
+	color: #8b8b8b;
+	font-size: 12px;
+	font-weight: 400;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	user-select: none;
+	transition: transform 250ms ease;
+	cursor: pointer;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	> .mb-smb-icon {
+		font-size: 14px;
+		margin-right: 5px;
+		width: 22px;
+		height: 22px;
+		line-height: 22px;
+		user-select: none;
+		text-align: center;
+		transition: color 200ms linear;
+
+		> .mb-smb-custom-icon {
+			width: auto;
+			height: 100%;
+		}
+
+		.material-icons {
+			font-size: 16px;
+			line-height: 22px;
+		}
+	}
+
+	> .mb-smb-text {
+		display: inline-block;
+		vertical-align: middle;
+		transition: color 200ms linear;
+	}
+
+	&:hover {
+		transform: translate3d(1%, 0, 0);
+
+		> .mb-smb-text {
+			color: #9136ca;
+		}
+
+		> .mb-smb-icon {
+			color: #9136ca;
+		}
+	}
+}

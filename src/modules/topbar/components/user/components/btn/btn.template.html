@@ -1,0 +1,23 @@
+<mbg-base-user-link action-type="$ctrl.config.actionType" action="$ctrl.config.action">
+	<div class="mb" topbar-user-btn>
+		<div>
+			{{ $ctrl.config.label }}
+		</div>
+		<div>
+
+			<div class="mb-tub-icon" ng-if="$ctrl.config.iconSrc === 'fontawesome'" ng-style="{'font-size': $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'line-height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'width' : $ctrl.config.iconSize ? 'auto' : undefined }">
+				<i class="{{$ctrl.config.icon}}"></i>
+			</div>
+
+			<div class="mb-tub-icon" ng-if="$ctrl.config.iconSrc === 'material'" ng-style="{ 'height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'width' : $ctrl.config.iconSize ? 'auto' : undefined }">
+				<i class="material-icons" ng-style="{'font-size': $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'line-height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined }">{{ $ctrl.config.icon }}</i>
+			</div>
+
+			<div class="mb-tub-icon" ng-if="$ctrl.config.iconSrc !== 'material' && $ctrl.config.iconSrc !== 'fontawesome' && $ctrl.config.iconSrc !== undefined && $ctrl.config.iconSrc.length > 0"
+			 ng-style="{ 'height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'width' : $ctrl.config.iconSize ? 'auto' : undefined }">
+				<img ng-src="{{ $ctrl.config.iconSrc }}" alt="">
+			</div>
+
+		</div>
+	</div>
+</mbg-base-user-link>

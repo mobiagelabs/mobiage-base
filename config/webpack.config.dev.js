@@ -34,6 +34,15 @@ module.exports = merge(
 						{ loader: 'css-loader', options: { importLoaders: 1 } },
 						{ loader: 'postcss-loader', options: { config: { path: path.resolve(__dirname, '../config/postcss.config.js') } } }
 					]
+				},
+				{
+					test: /\.scss$/,
+					use: [
+						{ loader: 'style-loader' },
+						{ loader: 'css-loader', options: { importLoaders: 1 } },
+						{ loader: 'postcss-loader', options: { config: { path: path.resolve(__dirname, '../config/postcss.config.js') } } },
+						{ loader: 'sass-loader' }
+					]
 				}
 			]
 		}

@@ -1,0 +1,44 @@
+.mb[sm-category] {
+	user-select: none;
+	padding-bottom: 5px;
+
+	> .mb-smc-title {
+		font-weight: 700;
+		vertical-align: middle;
+		padding-top: 7.5px;
+		padding-bottom: 7.5px;
+		display: inline-block;
+
+		> .mb-smc-dot {
+			height: 7px;
+			width: 7px;
+			border-radius: 3.5px;
+			display: inline-block;
+			vertical-align: middle;
+			background-color: #00bdc1;
+		}
+
+		> .mb-smc-title-text {
+			font-size: 12px;
+			font-weight: 700;
+			color: #00bdc1;
+			display: inline-block;
+		}
+	}
+
+	> .mb-smc-detail-container {
+		width: 100%;
+		margin-top: 10px;
+
+		> .mbg-smc-detail {
+			width: 50px;
+
+			> .mbg-smc-detail-path {
+				fill: #d8d8d8;
+				stroke: #d8d8d8;
+				stroke-miterlimit: 10;
+				stroke-width: 2px;
+			}
+		}
+	}
+}

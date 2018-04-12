@@ -1,6 +1,6 @@
-<a ng-transclude ng-if="$ctrl.actionType === 'state'" ui-sref="{{$ctrl.action}}">
+<a class="mb" smb-link ng-transclude ng-if="$ctrl.actionType === 'state'" ui-sref="{{$ctrl.action}}">
 </a>
-<a ng-transclude ng-if="$ctrl.actionType === 'link'" ng-href="{{$ctrl.action}}">
+<a class="mb" smb-link ng-transclude ng-if="$ctrl.actionType === 'link'" ng-href="{{$ctrl.action}}">
 </a>
-<a ng-transclude ng-if="$ctrl.actionType === 'function'" ng-click="$ctrl.action()">
+<a class="mb" smb-link ng-transclude ng-if="$ctrl.actionType === 'function'" ng-click="$ctrl.action()">
 </a>

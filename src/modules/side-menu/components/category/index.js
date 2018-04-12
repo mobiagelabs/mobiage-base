@@ -1,13 +1,11 @@
 import template from './category.template.html';
-import './category.style.css';
-import controller from './category.controller';
+import './category.style.scss';
 
 const category = {
 	bindings: {
 		label: '@'
 	},
 	template,
-	controller: [controller],
 	transclude: true
 };
 

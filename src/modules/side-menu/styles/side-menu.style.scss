@@ -1,0 +1,47 @@
+.mb[side-menu] {
+	font-family: 'MontSerrat', sans-serif;
+	height: calc(100% - 60px);
+	width: 250px;
+	position: relative;
+	z-index: 601;
+	will-change: transform;
+	vertical-align: top;
+	transition: transform 750ms cubic-bezier(0.96, 0.015, 0.45, 1);
+	display: inline-block;
+	user-select: none;
+
+	@media screen and (max-width: 768px) {
+		position: fixed;
+		background-color: #ffffff;
+		left: 0px;
+		top: 0px;
+		bottom: 0px;
+		right: auto;
+		transform: translate3d(-100%, 0, 0);
+		height: 100%;
+
+		&.active {
+			transform: translate3d(0%, 0, 0);
+		}
+	}
+
+	> .mb-sm-quick-container {
+		padding: 20px 20px 15px 20px;
+	}
+
+	> .mb-sm-content-container {
+		width: 100%;
+	}
+
+	.mb-sm-content {
+		padding: 10px 20px 20px 20px;
+	}
+
+	.simplebar-scrollbar {
+		width: 3px;
+	}
+
+	.simplebar-track .simplebar-scrollbar.visible {
+		opacity: 0.1;
+	}
+}

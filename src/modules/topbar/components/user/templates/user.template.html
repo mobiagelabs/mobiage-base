@@ -1,0 +1,58 @@
+<div class="mb" topbar-user>
+	<div class="mb-tu-button">
+		<div class="mb-tu-button-names-container" ng-click="toggleMenu()">
+			<div class="mb-tu-button-names mb-tu-user" ng-class="{'mb-tu-focus-company' : focus === 'company'}">
+				<div class="mb-tu-button-subtitle">
+					{{ getGreetings() }}
+				</div>
+				<div class="mb-tu-button-title">
+					{{ user.name || '' }}
+				</div>
+			</div>
+			<div class="mb-tu-button-names mb-tu-company" ng-class="{'mb-tu-focus-company' : focus === 'company'}">
+				<div class="mb-tu-button-subtitle">
+					{{ user.actualOrganization.subTitle || 'Organização' }}
+				</div>
+				<div class="mb-tu-button-title">
+					{{ user.actualOrganization.name }}
+				</div>
+			</div>
+		</div>
+		<div class="mb-tu-button-arrow-container" ng-click="toggleMenu()">
+			<div class="mb-tu-button-arrow" ng-class="{'mb-tu-button-active':menuOpen}">
+				<i class="fas fa-caret-down"></i>
+			</div>
+		</div>
+		<div class="mb-tu-avatar-container">
+			<div ng-click="focusUser()" ng-class="{'mb-tua-focus-company': focus === 'company', 'mb-tua-focus-user': focus === 'user', 'mb-tua-focus-z-index': changeZIndex === true}"
+			 class="mb-tu-avatar mb-tua-user" ng-style="{'background-image': user.avatar !== undefined ? 'url(' + user.avatar + ')' : 'none', 'background-color':'#bbb' }">
+				{{ user.avatar !== undefined ? '': user.name.substring(0, 1) }}
+			</div>
+			<div ng-click="focusCompany()" ng-class="{'mb-tua-focus-company': focus === 'company', 'mb-tua-focus-user': focus === 'user', 'mb-tua-focus-z-index': changeZIndex === true}"
+			 class="mb-tu-avatar mb-tua-company" ng-style="{'background-image': user.actualOrganization.avatar !== undefined ? 'url(' + user.actualOrganization.avatar + ')' : 'none', 'background-color':'#ccc' }">
+				{{ user.actualOrganization.avatar !== undefined ? '': user.actualOrganization.name.substring(0, 1) }}
+			</div>
+		</div>
+	</div>
+	<div class="mb-tu-menu-bottom" ng-style="{'transform': menuOpen === true ? 'translate3d(0,' + ((user.links.length * 52) + 12) + 'px,0)' : 'translate3d(0,' + (-30) + 'px,0)'}">
+	</div>
+	<div class="mb-tu-menu" ng-class="{'active':menuOpen}" ng-style="{'height': user.links.length * 52 + 25 +'px'}">
+		<div ng-if="focus === 'user' || focus === ''" class="mb-tu-menu-content">
+			<mbg-base-user-btn config="link" ng-repeat="link in user.links"></mbg-base-user-btn>
+		</div>
+		<div ng-if="focus === 'company'" class="mb-tu-menu-content">
+			<div class="mb-tu-menu-company-content">
+				<div class="mb-tu-menu-company-info-container">
+					<div ng-repeat="info in user.actualOrganization.info" class="mb-tu-menu-company-info">
+						<div class="mb-tu-menu-company-info-title">
+							{{ info.title }}
+						</div>
+						<div class="mb-tu-menu-company-info-text">
+							{{ info.text }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

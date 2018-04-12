@@ -1,5 +1,5 @@
 import template from './btn.template.html';
-import './btn.style.css';
+import './btn.style.scss';
 import controller from './btn.controller';
 
 const btn = {

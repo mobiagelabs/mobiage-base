@@ -1,0 +1,97 @@
+.mb[topbar] {
+	width: 100%;
+	height: 100px;
+	background-color: #ffffff;
+	border-bottom: solid 1px #f4f4f4;
+	text-align: center;
+	font-family: 'MontSerrat', sans-serif;
+	position: relative;
+	z-index: 500;
+
+	@media screen and (max-width: 768px) {
+		height: 80px;
+	}
+
+	> .mb-t-content {
+		width: 100%;
+		height: 100%;
+		max-width: 1920px;
+		display: inline-block;
+
+		> .mb-t-container {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: left;
+			align-items: center;
+
+			> .mb-t-logo-container {
+				min-width: 250px;
+				height: 100%;
+				border-bottom: 3px solid #D6DD48;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				@media screen and (max-width: 768px) {
+					display: none;
+				}
+
+				> .mb-t-logo {
+					height: 85%;
+					width: 90%;
+					background-size: contain;
+					background-position: center center;
+				}
+			}
+
+			> .mb-t-buguer-btn-container {
+				height: 100%;
+				width: 10%;
+				font-size: 35px;
+				line-height: 80px;
+				color: #8034ad;
+				display: none;
+
+				@media screen and (max-width: 768px) {
+					display: block;
+				}
+			}
+
+			> .mb-t-inside-content {
+				height: 100%;
+				display: flex;
+				flex-grow: 1;
+				flex-direction: row;
+				justify-content: left;
+				align-items: center;
+
+				> .mb-t-search-container {
+					height: 100%;
+					flex-grow: 1;
+					padding-left: 25px;
+
+					@media screen and (max-width: 768px) {
+						padding-left: 0px;
+					}
+				}
+
+				> .mb-t-notifications-container {
+					height: 100%;
+					width: 100px;
+					position: relative;
+				}
+
+				> .mb-t-user-container {
+					height: 100%;
+					width: 300px;
+					position: relative;
+					z-index: 550;
+					font-size: 16px;
+				}
+			}
+		} // mb-t-container
+
+	} // mb-t-content
+} // mb[topbar]
