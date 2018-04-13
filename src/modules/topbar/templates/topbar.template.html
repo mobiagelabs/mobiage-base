@@ -1,9 +1,24 @@
 <header class="mb" topbar>
 	<div class="mb-t-content">
 		<div class="mb-t-container">
-			<div class="mb-t-logo-container">
-				<div class="mb-t-logo" ng-style="{'background-image': 'url(' + $ctrl.config.logo + ')'}"></div>
-			</div>
+
+			<a ng-if="$ctrl.config.logoActionType === 'state'" ui-sref="{{$ctrl.config.logoAction}}">
+				<div class="mb-t-logo-container">
+					<div class="mb-t-logo" ng-style="{'background-image': 'url(' + $ctrl.config.logo + ')'}"></div>
+				</div>
+			</a>
+			<a ng-if="$ctrl.config.logoActionType === 'link'" ng-href="{{$ctrl.config.logoAction}}">
+				<div class="mb-t-logo-container">
+					<div class="mb-t-logo" ng-style="{'background-image': 'url(' + $ctrl.config.logo + ')'}"></div>
+				</div>
+			</a>
+			<a ng-if="$ctrl.config.logoActionType === 'function'" ng-click="$ctrl.action()">
+				<div class="mb-t-logo-container">
+					<div class="mb-t-logo" ng-style="{'background-image': 'url(' + $ctrl.config.logo + ')'}"></div>
+				</div>
+			</a>
+
+
 			<div class="mb-t-buguer-btn-container">
 				<i class="fas fa-bars"></i>
 			</div>

@@ -3,6 +3,8 @@ angular.module('app', ['mbgBase'])
 		$scope.configTopbar = {
 			theme: 'theme1',
 			logo: 'assets/img/logo.png',
+			logoActionType: 'link',
+			logoAction: 'http://www.google.com.br',
 			user: {
 				name: 'Amália Fernandes',
 				avatar: 'assets/img/perfil.png',
@@ -10,7 +12,7 @@ angular.module('app', ['mbgBase'])
 					{
 						label: 'Meu Perfil',
 						iconSrc: 'fontawesome',
-						icon: 'far fa-user',
+						icon: 'far fa-arrow-circle-down',
 						iconSize: '22',
 						actionType: 'link',
 						action: '#perfil'

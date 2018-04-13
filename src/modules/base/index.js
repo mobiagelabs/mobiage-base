@@ -1,6 +1,6 @@
 import 'angular-hotkeys/build/hotkeys.min';
-import 'simplebar/dist/simplebar.css';
-import 'simplebar/dist/simplebar';
+import 'overlayscrollbars/js/OverlayScrollbars';
+import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 import 'angular-sanitize';
 

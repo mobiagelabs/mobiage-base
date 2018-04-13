@@ -5,9 +5,10 @@
 				<div class="mb-tu-button-subtitle">
 					{{ getGreetings() }}
 				</div>
-				<div class="mb-tu-button-title">
+				<div ng-if="loading === false" class="mb-tu-button-title">
 					{{ user.name || '' }}
 				</div>
+				<mbg-base-user-loading height="40" width="100" ng-if="loading === true"></mbg-user-loading>
 			</div>
 			<div class="mb-tu-button-names mb-tu-company" ng-class="{'mb-tu-focus-company' : focus === 'company'}">
 				<div class="mb-tu-button-subtitle">

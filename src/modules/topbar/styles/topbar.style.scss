@@ -26,23 +26,26 @@
 			justify-content: left;
 			align-items: center;
 
-			> .mb-t-logo-container {
-				min-width: 250px;
+			a {
 				height: 100%;
-				border-bottom: 3px solid #D6DD48;
-				display: flex;
-				justify-content: center;
-				align-items: center;
+				> .mb-t-logo-container {
+					min-width: 250px;
+					height: 100%;
+					border-bottom: 3px solid #D6DD48;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 
-				@media screen and (max-width: 768px) {
-					display: none;
-				}
+					@media screen and (max-width: 768px) {
+						display: none;
+					}
 
-				> .mb-t-logo {
-					height: 85%;
-					width: 90%;
-					background-size: contain;
-					background-position: center center;
+					> .mb-t-logo {
+						height: 85%;
+						width: 90%;
+						background-size: contain;
+						background-position: center center;
+					}
 				}
 			}
 

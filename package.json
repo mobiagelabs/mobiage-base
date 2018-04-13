@@ -48,8 +48,8 @@
     "angular": "^1.6.9",
     "angular-hotkeys": "^1.7.0",
     "angular-sanitize": "^1.6.9",
-    "sanitize.css": "^5.0.0",
-    "simplebar": "^2.5.1"
+    "overlayscrollbars": "^1.4.1",
+    "sanitize.css": "^5.0.0"
   },
   "browserslist": [
     "last 3 versions"

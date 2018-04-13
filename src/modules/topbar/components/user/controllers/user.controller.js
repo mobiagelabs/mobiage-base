@@ -4,6 +4,7 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 	$scope.menuOpen = false;
 	$scope.animationInProgress = false;
 	$scope.user = {};
+	$scope.loading = true;
 
 	$scope.getGreetings = () => {
 		const date = new Date();

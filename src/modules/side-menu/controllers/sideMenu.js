@@ -54,6 +54,16 @@ const controller = function ($scope, $timeout, sideMenuService) {
 		$scope.quickMenu = this.config.quickMenu;
 		document.addEventListener('touchstart', handleTouchStart);
 		document.addEventListener('touchend', handleTouchEnd);
+
+		const element = document.getElementById('mb-sm-cc');
+		$timeout(() => {
+			window.OverlayScrollbars(element, {
+				className: 'os-theme-thin-dark',
+				scrollbars: {
+					autoHide: 'scroll'
+				}
+			});
+		}, 50);
 	};
 
 	this.$onDestroy = () => {
