@@ -1,0 +1,50 @@
+/*
+	Temas:
+*/
+$themes: (
+	theme1: (color1: #0747a6, color2: #eaf2f6, color3: #063c8e, color4: #ff991f), 
+	theme2: (color1: #e8c553, color2: #fff7e1, color3: #fff7e1, color4: #292929), 
+	theme3: (color1: #02ce69, color2: #e7f3f0, color3: #03914b, color4: #0e414c), 
+	theme4: (color1: #c73444, color2: #fff4f5, color3: #972733, color4: #6900c3), 
+	theme5: (color1: #540095, color2: #f8f4fb, color3: #37085c, color4: #22c5f8), 
+	theme6: (color1: #de6d28, color2: #fff9f6, color3: #a04e1d, color4: #5e39aa), 
+	theme7: (color1: #ea4c89, color2: #fff3f8, color3: #a24267, color4: #3e39aa), 
+	theme8: (color1: #000000, color2: #F5f5f5, color3: #3f3f3f, color4: #9d835e), 
+	theme9: (color1: #f1fdfd, color2: #3acbc7, color3: #25a5a1, color4: #8d724b), 
+	theme10: (color1: #635596, color2: #F0EFF5, color3: #493E6E, color4: #A4CD39)
+);
+
+/* 
+	Cores padrão:
+*/
+$semantic: (
+	error: #E81756,
+	attention: #eec446,
+	sucess: #d6df24,
+	info: #76b0ea
+);
+
+$neutral: (
+	color1: #292929,
+	color2: #7b7b7b,
+	color3: #bcbcbc
+);
+
+@function getColor($theme, $color) {
+  @return map-get(map-get($themes, $theme), $color);
+}
+
+/* 
+  Função para aplicar os temas pré-definidos acima
+*/
+
+@mixin themify($propriedade, $cor){
+  @each $theme in map-keys($themes) {
+    @each $selector in & {
+      @at-root .#{$theme} #{$selector} {
+        @content;
+        #{$propriedade}: getColor($theme, $cor);
+      }
+    }
+  }
+}

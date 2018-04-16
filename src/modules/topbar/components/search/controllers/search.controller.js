@@ -5,6 +5,20 @@ const controller = function ($scope, $timeout, sideMenuService) {
 	$scope.data = [];
 	$scope.result = [];
 
+	// Essa função foca o input ao clicar no search
+	$scope.focusInput = () => {
+		const element = document.getElementById('mb-tsi-input');
+		element.focus();
+	};
+
+	$scope.blurInput = () => {
+		$scope.autoCompleteActive = false;
+		$timeout(() => {
+			$scope.searchValue = '';
+			$scope.autoCompleteHide = true;
+		}, 500);
+	};
+
 	const makeAutocompleteObject = array => {
 		const types = [];
 		const autocomplete = [];
@@ -63,25 +77,22 @@ const controller = function ($scope, $timeout, sideMenuService) {
 
 		/* Caso a search string seja maior que zero */
 		if (searchString.length > 0) {
-			/* Inicia a variavel de resultados */
 			const result = [];
-			/* O Algoritmo precisa fazer uma busca em
-				cada endpoint fornecido, e no conteúdo estático:
-			*/
 			/* Para cada item do conteudo */
 			$scope.data.forEach(element => {
-				const elementTmp = Object.assign({}, element);
+				const elementTmp = element;
 				elementTmp.matches = [];
 				elementTmp.matchesCount = 0;
 				/* Busca por cada tipo de dado indexável */
 				indexes.forEach(index => {
 					/* Caso tenha o dado indexável */
 					if (index.name in element) {
-						const string = element[index.name];
+						const string = element[index.name].toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+						const tmpSearchString = searchString.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 						/* Procura pela string digitada */
-						const searchAux = string.toLowerCase().search(searchString.toLowerCase());
+						const searchAux = string.search(tmpSearchString);
 						if (searchAux !== -1) {
-							const allOcurrences = allOcurrencesOf(index, element[index.name], searchString);
+							const allOcurrences = allOcurrencesOf(index, string, tmpSearchString);
 							elementTmp.matchesCount += allOcurrences.matches.length;
 							elementTmp.matches.push(allOcurrences);
 						}
@@ -93,14 +104,6 @@ const controller = function ($scope, $timeout, sideMenuService) {
 			});
 			$scope.result = makeAutocompleteObject(result);
 		}
-	};
-
-	$scope.blurInput = () => {
-		$scope.autoCompleteActive = false;
-		$timeout(() => {
-			$scope.searchValue = '';
-			$scope.autoCompleteHide = true;
-		}, 500);
 	};
 
 	$scope.onChangeSearch = text => {

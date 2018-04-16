@@ -12,7 +12,8 @@
     "dev": "npm run start",
     "build": "webpack --config ./config/webpack.config.prod.js",
     "prod": "npm run build",
-    "lint:js": "eslint index.js ./src/**/*.js"
+    "lint:js": "eslint index.js ./src/**/*.js",
+    "lint:css": "stylelint ./src/**/*.scss ./src/**/*.css"
   },
   "author": {
     "name": "Alfredo Peres",
@@ -39,6 +40,7 @@
     "style-loader": "^0.20.2",
     "stylelint": "^8.4.0",
     "stylelint-config-recommended": "^2.0.1",
+    "stylelint-scss": "^3.0.0",
     "uglifyjs-webpack-plugin": "^1.2.0",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1",

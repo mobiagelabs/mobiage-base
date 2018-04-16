@@ -1,3 +1,5 @@
+@import '../../../themes/themes.style.scss';
+
 .mb[notifications] {
 	height: 50px;
 	width: 50px;
@@ -9,6 +11,7 @@
 	line-height: 50px;
 	font-size: 25px;
 	color: #8034ad;
+	@include themify(color, color1);
 	cursor: pointer;
 
 	> .mb-tn-number {
@@ -19,7 +22,7 @@
 		width: 23px;
 		height: 23px;
 		border-radius: 11.5px;
-		background-color: #ff1057;
+		background-color: map-get($semantic, error);
 		font-size: 12px;
 		font-weight: 700;
 		color: white;

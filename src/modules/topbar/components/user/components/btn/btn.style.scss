@@ -1,5 +1,7 @@
+@import '../../../../../themes/themes.style.scss';
+
 .mb[topbar-user-btn] {
-	color: #8b8b8b;
+	color: map-get($map: $neutral, $key: color2);
 	font-size: 14px;
 	font-weight: 700;
 	width: 100%;
@@ -14,6 +16,7 @@
 
 	&:hover {
 		color: #9136ca;
+		@include themify(color, color1);
 		transform: translate3d(1%, 0, 0);
 	}
 

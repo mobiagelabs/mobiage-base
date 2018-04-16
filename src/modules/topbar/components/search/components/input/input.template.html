@@ -3,6 +3,6 @@
 		<i class="fas" ng-class="$ctrl.icon"></i>
 	</div>
 	<div class="mb-tsi-input-container">
-		<input ng-change="$ctrl.onChangeValue({text: $ctrl.value})" ng-model="$ctrl.value" ng-focus="$ctrl.focusInputInside()" ng-blur="$ctrl.blurInputInside()" placeholder="{{$ctrl.placeholder}}" class="mb-tsi-input" ng-class="{'mb-tsi-active' : $ctrl.focus}" type="{{$ctrl.type}}" name="{{$ctrl.name}}">
+		<input id="mb-tsi-input" ng-change="$ctrl.onChangeValue({text: $ctrl.value})" ng-model="$ctrl.value" ng-focus="$ctrl.focusInputInside()" ng-blur="$ctrl.blurInputInside()" placeholder="{{$ctrl.placeholder}}" class="mb-tsi-input" ng-class="{'mb-tsi-active' : $ctrl.focus}" type="{{$ctrl.type}}" name="{{$ctrl.name}}">
 	</div>
 </div>

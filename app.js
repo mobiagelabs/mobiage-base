@@ -1,7 +1,11 @@
 angular.module('app', ['mbgBase'])
 	.controller('appController', $scope => {
+
+		$scope.configBase = {
+			theme: 'theme1'
+		};
+
 		$scope.configTopbar = {
-			theme: 'theme1',
 			logo: 'assets/img/logo.png',
 			logoActionType: 'link',
 			logoAction: 'http://www.google.com.br',
@@ -9,14 +13,6 @@ angular.module('app', ['mbgBase'])
 				name: 'Amália Fernandes',
 				avatar: 'assets/img/perfil.png',
 				links: [
-					{
-						label: 'Meu Perfil',
-						iconSrc: 'fontawesome',
-						icon: 'far fa-arrow-circle-down',
-						iconSize: '22',
-						actionType: 'link',
-						action: '#perfil'
-					},
 					{
 						label: 'Trocar de Conta',
 						iconSrc: 'fontawesome',
@@ -98,9 +94,8 @@ angular.module('app', ['mbgBase'])
 		};
 
 		$scope.configMenu = {
-			theme: 'theme1',
 			quickMenu: {
-				enabled: false,
+				enabled: true,
 				buttonText: 'Cadastro',
 				links: [{
 					label: 'Clientes',

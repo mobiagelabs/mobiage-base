@@ -5,6 +5,8 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 	$scope.animationInProgress = false;
 	$scope.user = {};
 	$scope.loading = true;
+	$scope.hideUserContent = true;
+	$scope.hideCompanyContent = true;
 
 	$scope.getGreetings = () => {
 		const date = new Date();
@@ -70,22 +72,52 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 		});
 	};
 
+	$scope.maxSize = (info, maxSize, end) => {
+		if (info !== undefined && info !== null) {
+			if (info.length > maxSize) {
+				if (end === true) {
+					return info.substr(0, maxSize - 3).concat('...');
+				}
+				return info.substr(0, (maxSize / 2) - 3).concat('...').concat(info.substr(-(maxSize / 2)));
+			}
+		}
+		return info;
+	};
+
 	$scope.toggleMenu = () => {
 		if ($scope.animationInProgress === false) {
 			if ($scope.menuOpen === false) {
-				$scope.menuOpen = true;
-				document.addEventListener('click', onClickOutside);
-				toggleAnimationInProgress(500);
+				if ($scope.focus === 'company') {
+					$scope.hideCompanyContent = false;
+				} else {
+					$scope.hideUserContent = false;
+				}
+				$timeout(() => {
+					$scope.menuOpen = true;
+					document.addEventListener('click', onClickOutside);
+					toggleAnimationInProgress(500);
+				}, 50);
 			} else {
 				$scope.menuOpen = false;
 				document.removeEventListener('click', onClickOutside);
 				toggleAnimationInProgress(500);
+				if ($scope.focus === 'company') {
+					$timeout(() => {
+						$scope.hideCompanyContent = true;
+					}, 500);
+				} else {
+					$timeout(() => {
+						$scope.hideUserContent = true;
+					}, 500);
+				}
 			}
 		}
 	};
 
 	this.$onInit = () => {
-		mbgBaseUserService.setComponentCallback(user => { $scope.user = user; });
+		mbgBaseUserService.setComponentCallback(user => {
+			$scope.user = user;
+		});
 		mbgBaseUserService.setUser(this.config);
 		$scope.user = mbgBaseUserService.getUser();
 	};

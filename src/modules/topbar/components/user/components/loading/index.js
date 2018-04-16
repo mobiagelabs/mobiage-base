@@ -4,7 +4,8 @@ import './loading.style.scss';
 const component = {
 	bindings: {
 		width: '<',
-		height: '<'
+		height: '<',
+		margin: '<'
 	},
 	template
 };

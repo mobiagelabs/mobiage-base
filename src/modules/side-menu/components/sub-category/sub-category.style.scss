@@ -1,3 +1,5 @@
+@import '../../../themes/themes.style.scss';
+
 .mb[sm-sub-category] {
 	padding-left: 5px;
 	padding-bottom: 15px;
@@ -6,6 +8,7 @@
 		padding-bottom: 5px;
 		> .mbg-smsc-text {
 			color: #9136ca;
+			@include themify(color, color1);
 			font-size: 15px;
 			font-weight: 700;
 		}

@@ -1,7 +1,9 @@
+@import '../../../../../themes/themes.style.scss';
+
 .mb[search-input] {
 	height: 40px;
 	background-color: #ffffff;
-	border: 1px solid #dfdfdf;
+	border: 1px solid map-get($neutral, color3);
 	border-radius: 5px;
 	overflow: hidden;
 	padding-right: 15px;
@@ -10,6 +12,7 @@
 
 	&.mb-tsi-active {
 		border-color: #00bbbd;
+		@include themify(border-color, color1);
 	}
 
 	> .mb-tsi-icon-container {
@@ -17,11 +20,12 @@
 		line-height: 40px;
 		width: 40px;
 		text-align: center;
-		color: #b8b8b8;
+		color: map-get($neutral, color3);
 		font-size: 16px;
 
 		&.mb-tsi-active {
 			color: #00bbbd;
+			@include themify(color, color1);
 		}
 	}
 
@@ -38,16 +42,17 @@
 			width: 100%;
 			border: none;
 			background-color: transparent;
-			color: #acacac;
+			color: map-get($neutral, color3);
 			font-family: 'Montserrat', sans-serif;
 			font-size: 14px;
 
 			&.mb-tsi-active {
 				color: #00bbbd;
+				@include themify(color, color1);
 			}
 
 			&::placeholder {
-				color: #c9c9c9;
+				color: map-get($neutral, color3);
 			}
 
 			&:active, &:focus {

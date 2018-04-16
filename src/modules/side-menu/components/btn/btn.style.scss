@@ -1,5 +1,7 @@
+@import "../../../themes/themes.style.scss";
+
 .mb[side-menu-btn] {
-	color: #8b8b8b;
+	color: map-get($neutral, color2);
 	font-size: 12px;
 	font-weight: 400;
 	width: 100%;
@@ -45,10 +47,14 @@
 
 		> .mb-smb-text {
 			color: #9136ca;
+
+			@include themify(color, color1);
 		}
 
 		> .mb-smb-icon {
 			color: #9136ca;
+
+			@include themify(color, color1);
 		}
 	}
 }

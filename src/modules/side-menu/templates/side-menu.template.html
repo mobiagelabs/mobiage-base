@@ -1,8 +1,8 @@
-<div class="mb" side-menu ng-class="{'active':state.menuOpen}">
+<div class="mb" side-menu ng-class="{'active':state.menuOpen}" ng-class="$ctrl.config.theme">
 	<div ng-if="$ctrl.config.quickMenu.enabled === true" class="mb-sm-quick-container">
 		<mbg-base-side-menu-quick-menu config="quickMenu"></mbg-base-side-menu-quick-menu>
 	</div>
-	<div id="mb-sm-cc" class="mb-sm-content-container" ng-style="{'height':$ctrl.config.quickMenu.enabled === true ? 'calc(100% - 120px)' : 'calc(100%)'}">
+	<div id="mb-sm-cc" class="mb-sm-content-container" ng-style="{'height':$ctrl.config.quickMenu.enabled === true ? 'calc(100% - 75px)' : 'calc(100%)'}">
 		<div class="mb-sm-content">
 			<mbg-base-side-menu-item ng-repeat="item in structure" config="item">
 			</mbg-base-side-menu-item>

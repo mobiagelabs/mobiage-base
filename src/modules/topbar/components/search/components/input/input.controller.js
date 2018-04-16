@@ -1,4 +1,4 @@
-const controller = function ($timeout) {
+const controller = function () {
 	this.focus = false;
 
 	this.focusInputInside = () => {

@@ -1,22 +1,24 @@
 <div class="mb" topbar-user>
-	<div class="mb-tu-button">
-		<div class="mb-tu-button-names-container" ng-click="toggleMenu()">
+	<div class="mb-tu-button" ng-class="{'mb-tu-button-active':menuOpen}">
+		<div class="mb-tu-button-names-container" ng-class="{'mb-tu-button-active':menuOpen}" ng-click="toggleMenu()">
 			<div class="mb-tu-button-names mb-tu-user" ng-class="{'mb-tu-focus-company' : focus === 'company'}">
 				<div class="mb-tu-button-subtitle">
 					{{ getGreetings() }}
 				</div>
-				<div ng-if="loading === false" class="mb-tu-button-title">
-					{{ user.name || '' }}
+				<div class="mb-tu-button-title">
+					{{ maxSize(user.name, 17, true) }}
 				</div>
-				<mbg-base-user-loading height="40" width="100" ng-if="loading === true"></mbg-user-loading>
+				<mbg-base-user-loading margin="'5px 0px 5px 5px'" height="20" width="120" ng-if="user.name === undefined"></mbg-base-user-loading>
 			</div>
 			<div class="mb-tu-button-names mb-tu-company" ng-class="{'mb-tu-focus-company' : focus === 'company'}">
 				<div class="mb-tu-button-subtitle">
-					{{ user.actualOrganization.subTitle || 'Organização' }}
+					{{ maxSize(user.actualOrganization.subTitle, 25, false) || 'Organização' }}
 				</div>
+				<mbg-base-user-loading margin="'5px 0px 5px 5px'" height="20" width="100" ng-if="user.actualOrganization.subTitle === undefined"></mbg-base-user-loading>
 				<div class="mb-tu-button-title">
-					{{ user.actualOrganization.name }}
+					{{ maxSize(user.actualOrganization.name, 17, true) }}
 				</div>
+				<mbg-base-user-loading margin="'5px 0px 5px 5px'" height="20" width="200" ng-if="user.actualOrganization.name === undefined"></mbg-base-user-loading>
 			</div>
 		</div>
 		<div class="mb-tu-button-arrow-container" ng-click="toggleMenu()">
@@ -28,20 +30,22 @@
 			<div ng-click="focusUser()" ng-class="{'mb-tua-focus-company': focus === 'company', 'mb-tua-focus-user': focus === 'user', 'mb-tua-focus-z-index': changeZIndex === true}"
 			 class="mb-tu-avatar mb-tua-user" ng-style="{'background-image': user.avatar !== undefined ? 'url(' + user.avatar + ')' : 'none', 'background-color':'#bbb' }">
 				{{ user.avatar !== undefined ? '': user.name.substring(0, 1) }}
+				<mbg-base-user-loading margin="'0px'" height="60" width="60" ng-if="user.avatar === undefined"></mbg-base-user-loading>
 			</div>
 			<div ng-click="focusCompany()" ng-class="{'mb-tua-focus-company': focus === 'company', 'mb-tua-focus-user': focus === 'user', 'mb-tua-focus-z-index': changeZIndex === true}"
 			 class="mb-tu-avatar mb-tua-company" ng-style="{'background-image': user.actualOrganization.avatar !== undefined ? 'url(' + user.actualOrganization.avatar + ')' : 'none', 'background-color':'#ccc' }">
 				{{ user.actualOrganization.avatar !== undefined ? '': user.actualOrganization.name.substring(0, 1) }}
+				<mbg-base-user-loading margin="'0px'" height="60" width="60" ng-if="user.actualOrganization !== undefined && user.actualOrganization.avatar === undefined"></mbg-base-user-loading>
 			</div>
 		</div>
 	</div>
-	<div class="mb-tu-menu-bottom" ng-style="{'transform': menuOpen === true ? 'translate3d(0,' + ((user.links.length * 52) + 12) + 'px,0)' : 'translate3d(0,' + (-30) + 'px,0)'}">
-	</div>
-	<div class="mb-tu-menu" ng-class="{'active':menuOpen}" ng-style="{'height': user.links.length * 52 + 25 +'px'}">
-		<div ng-if="focus === 'user' || focus === ''" class="mb-tu-menu-content">
+	<div class="mb-tu-menu" ng-class="{'mb-tu-menu-active':menuOpen && (focus === 'user' || focus === ''), 'mb-tu-menu-hide': hideUserContent}">
+		<div class="mb-tu-menu-content">
 			<mbg-base-user-btn config="link" ng-repeat="link in user.links"></mbg-base-user-btn>
 		</div>
-		<div ng-if="focus === 'company'" class="mb-tu-menu-content">
+	</div>
+	<div class="mb-tu-menu" ng-class="{'mb-tu-menu-active':menuOpen && focus === 'company', 'mb-tu-menu-hide': hideCompanyContent}">
+		<div class="mb-tu-menu-content">
 			<div class="mb-tu-menu-company-content">
 				<div class="mb-tu-menu-company-info-container">
 					<div ng-repeat="info in user.actualOrganization.info" class="mb-tu-menu-company-info">

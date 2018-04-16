@@ -1,12 +1,13 @@
+@import "../../../../themes/themes.style.scss";
+
 .mb[search] {
 	position: relative;
 	width: 100%;
 	max-width: 600px;
-	padding-top: 30px;
 
 	> .mb-ts-autocomplete {
 		position: absolute;
-		top: 50px;
+		top: 20px;
 		width: 100%;
 		height: auto;
 		background-color: #F2F2F2;
@@ -19,6 +20,7 @@
 		opacity: 0;
 		transition: transform 500ms ease, opacity 200ms linear;
 		padding: 30px 0px 10px 0px;
+		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1), 0px 0px 70px rgba(0, 0, 0, 0.25);
 
 		&.mb-tsa-active {
 			transform: translate3d(0%, 0%, 0%);
@@ -36,7 +38,10 @@
 			> .mb-ts-autocomplete-title-text {
 				height: 40px;
 				line-height: 40px;
-				color: #8228A2;
+				color: #333;
+
+				@include themify(color, color1);
+
 				background-color: #F2F2F2;
 				display: inline-block;
 				padding-right: 20px;
@@ -51,7 +56,10 @@
 			> .mb-ts-autocomplete-title-line {
 				width: calc(100% - 45px);
 				height: 1px;
-				background-color: #8228A2;
+				background-color: #333;
+
+				@include themify(background-color, color1);
+
 				position: absolute;
 				top: 50%;
 				left: 15px;
@@ -67,12 +75,14 @@
 			padding: 15px;
 			font-weight: 400;
 			font-size: 14px;
-			color: #727272;
+			color: map-get($neutral, color2);
 
 			> .mb-ts-autocomplete-notfound-search {
 				font-weight: 700;
 				word-wrap: break-word;
-				color: #8228A2;
+				color: #333;
+
+				@include themify(color, color1);
 			}
 		}
 	}

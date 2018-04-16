@@ -1,6 +1,6 @@
 import controller from './controllers/search.controller';
 import template from './templates/search.template.html';
-import './styles/style.search.scss';
+import './styles/search.style.scss';
 
 import input from './components/input';
 import line from './components/result-line';

@@ -13,6 +13,9 @@ import container from './components/container';
 import contentContainer from './components/content-container';
 
 const component = {
+	bindings: {
+		config: '='
+	},
 	template,
 	transclude: true
 };
