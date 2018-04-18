@@ -12,7 +12,7 @@
 			</div>
 			<div class="mb-tu-button-names mb-tu-company" ng-class="{'mb-tu-focus-company' : focus === 'company'}">
 				<div class="mb-tu-button-subtitle">
-					{{ maxSize(user.actualOrganization.subTitle, 25, false) || 'Organização' }}
+					{{ maxSize(user.actualOrganization.subTitle, 25, false) }}
 				</div>
 				<mbg-base-user-loading margin="'5px 0px 5px 5px'" height="20" width="100" ng-if="user.actualOrganization.subTitle === undefined"></mbg-base-user-loading>
 				<div class="mb-tu-button-title">
@@ -56,6 +56,10 @@
 							{{ info.text }}
 						</div>
 					</div>
+				</div>
+				<div class="mb-tu-menu-company-change-acc">
+					Trocar de Conta
+					<i class="fas fa-exchange-alt"></i>
 				</div>
 			</div>
 		</div>

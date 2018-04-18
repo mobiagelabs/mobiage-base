@@ -1,7 +1,8 @@
 @import '../../../../../themes/themes.style.scss';
 
 .mb[topbar-user-btn] {
-	color: map-get($map: $neutral, $key: color2);
+	color: #ccc;
+	@include themify(color, neutral2);
 	font-size: 14px;
 	font-weight: 700;
 	width: 100%;

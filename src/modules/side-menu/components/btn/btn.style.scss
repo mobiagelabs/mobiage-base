@@ -1,7 +1,8 @@
 @import "../../../themes/themes.style.scss";
 
 .mb[side-menu-btn] {
-	color: map-get($neutral, color2);
+	color: #ccc;
+	@include themify(color, neutral1);
 	font-size: 12px;
 	font-weight: 400;
 	width: 100%;

@@ -4,7 +4,8 @@
 	width: 100%;
 	text-align: left;
 	align-items: flex-start;
-	color: map-get($neutral, color2);
+	color: #ccc;
+	@include themify(color, neutral2);
 	background-color: #F2F2F2;
 	transition: background-color 100ms linear;
 	font-weight: 700;

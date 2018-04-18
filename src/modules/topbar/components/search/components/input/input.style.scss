@@ -3,7 +3,8 @@
 .mb[search-input] {
 	height: 40px;
 	background-color: #ffffff;
-	border: 1px solid map-get($neutral, color3);
+	border: 1px solid #ccc;
+	@include themify(border-color, neutral3);
 	border-radius: 5px;
 	overflow: hidden;
 	padding-right: 15px;
@@ -20,7 +21,8 @@
 		line-height: 40px;
 		width: 40px;
 		text-align: center;
-		color: map-get($neutral, color3);
+		color: #ccc;
+		@include themify(color, neutral3);
 		font-size: 16px;
 
 		&.mb-tsi-active {
@@ -42,7 +44,8 @@
 			width: 100%;
 			border: none;
 			background-color: transparent;
-			color: map-get($neutral, color3);
+			color: #ccc;
+			@include themify(color, neutral3);
 			font-family: 'Montserrat', sans-serif;
 			font-size: 14px;
 
@@ -52,7 +55,8 @@
 			}
 
 			&::placeholder {
-				color: map-get($neutral, color3);
+				color: #ccc;
+				@include themify(color, neutral3);
 			}
 
 			&:active, &:focus {

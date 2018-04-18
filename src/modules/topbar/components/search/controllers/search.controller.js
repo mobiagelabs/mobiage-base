@@ -1,7 +1,5 @@
 const controller = function ($scope, $timeout, sideMenuService) {
 	$scope.searchValue = '';
-	$scope.autoCompleteActive = false;
-	$scope.autoCompleteHide = true;
 	$scope.data = [];
 	$scope.result = [];
 

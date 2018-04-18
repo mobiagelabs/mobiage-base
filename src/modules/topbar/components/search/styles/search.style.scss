@@ -75,7 +75,8 @@
 			padding: 15px;
 			font-weight: 400;
 			font-size: 14px;
-			color: map-get($neutral, color2);
+			color: #ccc;
+			@include themify(color, neutral2);
 
 			> .mb-ts-autocomplete-notfound-search {
 				font-weight: 700;

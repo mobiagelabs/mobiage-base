@@ -1,17 +1,147 @@
+$neutral: (
+	color1: (light: #292929, dark: #fff),
+	color2: (light: #7b7b7b, dark: #d0d0d0),
+	color3: (light: #bcbcbc, dark: #acacac)
+);
+
 /*
 	Temas:
 */
 $themes: (
-	theme1: (color1: #0747a6, color2: #eaf2f6, color3: #063c8e, color4: #ff991f), 
-	theme2: (color1: #e8c553, color2: #fff7e1, color3: #fff7e1, color4: #292929), 
-	theme3: (color1: #02ce69, color2: #e7f3f0, color3: #03914b, color4: #0e414c), 
-	theme4: (color1: #c73444, color2: #fff4f5, color3: #972733, color4: #6900c3), 
-	theme5: (color1: #540095, color2: #f8f4fb, color3: #37085c, color4: #22c5f8), 
-	theme6: (color1: #de6d28, color2: #fff9f6, color3: #a04e1d, color4: #5e39aa), 
-	theme7: (color1: #ea4c89, color2: #fff3f8, color3: #a24267, color4: #3e39aa), 
-	theme8: (color1: #000000, color2: #F5f5f5, color3: #3f3f3f, color4: #9d835e), 
-	theme9: (color1: #f1fdfd, color2: #3acbc7, color3: #25a5a1, color4: #8d724b), 
-	theme10: (color1: #635596, color2: #F0EFF5, color3: #493E6E, color4: #A4CD39)
+	theme1: (
+		color1: #0747a6,
+		color2: #eaf2f6,
+		color3: #063c8e,
+		color4: #ff991f,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #0747a6,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+	), 
+	theme2: (
+		color1: #e8c553,
+		color2: #fff7e1,
+		color3: #fff7e1,
+		color4: #292929,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #e8c553,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+	), 
+	theme3: (
+		color1: #02ce69,
+		color2: #e7f3f0,
+		color3: #03914b,
+		color4: #0e414c,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #02ce69,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+	), 
+	theme4: (
+		color1: #c73444,
+		color2: #fff4f5,
+		color3: #972733,
+		color4: #6900c3,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #c73444,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+	), 
+	theme5: (
+		color1: #540095,
+		color2: #f8f4fb,
+		color3: #37085c,
+		color4: #22c5f8,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #540095,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+	), 
+	theme6: (
+		color1: #de6d28,
+		color2: #fff9f6,
+		color3: #a04e1d,
+		color4: #5e39aa,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #de6d28,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+	), 
+	theme7: (
+		color1: #ea4c89,
+		color2: #fff3f8,
+		color3: #a24267,
+		color4: #3e39aa,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #ea4c89,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+	), 
+	theme8: (
+		color1: #000000,
+		color2: #F5f5f5,
+		color3: #3f3f3f,
+		color4: #9d835e,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #000000,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+		), 
+	theme9: (
+		color1: #f1fdfd,
+		color2: #3acbc7,
+		color3: #25a5a1,
+		color4: #8d724b,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #f1fdfd,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+	), 
+	/* Tema da Mobiage */
+	theme10: (
+		color1: #635596,
+		color2: #F0EFF5,
+		color3: #493E6E,
+		color4: #A4CD39,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #635596,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
+	),
+	/* Tema do Finance */
+	theme11: (
+		color1: #00c74d,
+		color2: #F0EFF5,
+		color3: #007F32,
+		color4: #A4CD39,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: dark),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #003350,
+		backgroundSideMenu: #003350,
+		backgroundTopBar: #f6f6f6
+	)
 );
 
 /* 
@@ -24,12 +154,6 @@ $semantic: (
 	info: #76b0ea
 );
 
-$neutral: (
-	color1: #292929,
-	color2: #7b7b7b,
-	color3: #bcbcbc
-);
-
 @function getColor($theme, $color) {
   @return map-get(map-get($themes, $theme), $color);
 }
@@ -37,7 +161,6 @@ $neutral: (
 /* 
   Função para aplicar os temas pré-definidos acima
 */
-
 @mixin themify($propriedade, $cor){
   @each $theme in map-keys($themes) {
     @each $selector in & {

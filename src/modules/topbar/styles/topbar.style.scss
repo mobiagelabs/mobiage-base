@@ -4,6 +4,7 @@
 	width: 100%;
 	height: 100px;
 	background-color: #ffffff;
+	@include themify(background-color, backgroundTopBar);
 	border-bottom: solid 1px #f4f4f4;
 	text-align: center;
 	font-family: 'MontSerrat', sans-serif;
@@ -36,7 +37,7 @@
 					height: 100%;
 					border-bottom: 3px solid #ccc;
 
-					@include themify(border-color, color1);
+					@include themify(border-color, logoDetail);
 
 					display: flex;
 					justify-content: center;
@@ -51,6 +52,7 @@
 						width: 90%;
 						background-size: contain;
 						background-position: center center;
+						background-repeat: no-repeat;
 					}
 				}
 			}
