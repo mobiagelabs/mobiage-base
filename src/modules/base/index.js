@@ -7,6 +7,7 @@ import 'angular-sanitize';
 import '../side-menu';
 import '../topbar';
 import template from './templates/base.template.html';
+import controller from './controllers/base.controller';
 import './styles/style.base.scss';
 
 import container from './components/container';
@@ -16,6 +17,7 @@ const component = {
 	bindings: {
 		config: '='
 	},
+	controller,
 	template,
 	transclude: true
 };

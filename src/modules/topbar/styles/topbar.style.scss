@@ -29,8 +29,13 @@
 			justify-content: left;
 			align-items: center;
 
-			a {
+			.mb-t-logo-link {
 				height: 100%;
+
+				&:active, &:focus {
+					outline: none;
+					box-shadow: none;
+				}
 
 				> .mb-t-logo-container {
 					min-width: 250px;
