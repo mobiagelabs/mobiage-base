@@ -115,9 +115,7 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 	};
 
 	this.$onInit = () => {
-		mbgBaseUserService.setComponentCallback(user => {
-			$scope.user = user;
-		});
+		mbgBaseUserService.setComponentCallback(user => { $scope.user = user; });
 		mbgBaseUserService.setUser(this.config);
 		$scope.user = mbgBaseUserService.getUser();
 	};

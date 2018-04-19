@@ -105,8 +105,8 @@ $themes: (
 		backgroundTopBar: #fff
 		), 
 	theme9: (
-		color1: #f1fdfd,
-		color2: #3acbc7,
+		color1: #3acbc7,
+		color2: #f1fdfd,
 		color3: #25a5a1,
 		color4: #8d724b,
 		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
@@ -132,14 +132,14 @@ $themes: (
 	/* Tema do Finance */
 	theme11: (
 		color1: #00c74d,
-		color2: #F0EFF5,
-		color3: #007F32,
-		color4: #A4CD39,
-		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: dark),
+		color2: #eff5f1,
+		color3: #009338,
+		color4: #223E6A,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
-		logoDetail: #003350,
-		backgroundSideMenu: #003350,
+		logoDetail: #00c74d,
+		backgroundSideMenu: #f6f6f6,
 		backgroundTopBar: #f6f6f6
 	)
 );

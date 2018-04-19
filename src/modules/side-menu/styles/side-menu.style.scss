@@ -1,4 +1,4 @@
-@import '../../themes/themes.style.scss';
+@import "../../themes/themes.style.scss";
 
 .mb[side-menu] {
 	font-family: 'MontSerrat', sans-serif;
@@ -12,7 +12,7 @@
 	display: inline-block;
 	user-select: none;
 	padding-left: 10px;
-	padding-right: 5px;
+	padding-right: 10px;
 
 	@media screen and (max-width: 768px) {
 		position: fixed;
@@ -30,20 +30,22 @@
 	}
 
 	> .mb-sm-quick-container {
-		padding: 15px 5px 15px 5px;
+		padding: 15px 0px 15px 0px;
 	}
 
 	> .mb-sm-content-container {
 		width: 100%;
 		background-color: #fff;
+
 		@include themify(background-color, backgroundSideMenu);
+
 		height: 500px;
 		border-radius: 15px;
 		padding-top: 10px;
 	}
 
 	.mb-sm-content {
-		padding: 0px 20px 20px 20px;
+		padding: 0px 10px 10px 10px;
 	}
 
 	.simplebar-scrollbar {

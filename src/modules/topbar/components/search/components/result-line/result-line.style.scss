@@ -1,12 +1,14 @@
 @import '../../../../../themes/themes.style.scss';
 
+$background: #f2f2f2;
+
 .mb[autocomplete-line] {
 	width: 100%;
 	text-align: left;
 	align-items: flex-start;
 	color: #ccc;
 	@include themify(color, neutral2);
-	background-color: #F2F2F2;
+	background-color: $background;
 	transition: background-color 100ms linear;
 	font-weight: 700;
 	font-size: 14px;

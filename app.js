@@ -1,12 +1,11 @@
 angular.module('app', ['mbgBase'])
 	.controller('appController', $scope => {
-
 		$scope.configBase = {
-			theme: 'theme1'
+			theme: 'theme11'
 		};
 
 		$scope.configTopbar = {
-			logo: 'assets/img/logo.png',
+			logo: 'assets/img/logo-finance.png',
 			logoActionType: 'link',
 			logoAction: 'http://www.google.com.br',
 			user: {

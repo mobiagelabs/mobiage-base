@@ -1,5 +1,7 @@
 @import "../../../../themes/themes.style.scss";
 
+$background: #f2f2f2;
+
 .mb[search] {
 	position: relative;
 	width: 100%;
@@ -10,7 +12,7 @@
 		top: 20px;
 		width: 100%;
 		height: auto;
-		background-color: #F2F2F2;
+		background-color: $background;
 		z-index: 500;
 		border-bottom-right-radius: 10px;
 		border-bottom-left-radius: 10px;
@@ -42,7 +44,7 @@
 
 				@include themify(color, color1);
 
-				background-color: #F2F2F2;
+				background-color: $background;
 				display: inline-block;
 				padding-right: 20px;
 				padding-left: 10px;

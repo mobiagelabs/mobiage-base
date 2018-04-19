@@ -243,6 +243,7 @@
 				}
 
 				> .mb-tu-menu-company-change-acc {
+					margin-top: 15px;
 					background-color: #ccc;
 					@include themify(background-color, neutral2);
 					border-bottom-left-radius: 15px;
@@ -260,7 +261,7 @@
 					color: #fff;
 					cursor: pointer;
 
-					.fas {
+					> .fas {
 						font-size: 20px;
 					}
 				}
