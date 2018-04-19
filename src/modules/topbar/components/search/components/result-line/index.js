@@ -4,7 +4,10 @@ import './result-line.style.scss';
 
 const component = {
 	bindings: {
-		line: '='
+		line: '<',
+		index: '<',
+		selected: '<',
+		onSelect: '&'
 	},
 	template,
 	controller

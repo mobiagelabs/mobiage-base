@@ -1,4 +1,4 @@
-@import '../../../../../themes/themes.style.scss';
+@import "../../../../../themes/themes.style.scss";
 
 $background: #f2f2f2;
 
@@ -7,7 +7,9 @@ $background: #f2f2f2;
 	text-align: left;
 	align-items: flex-start;
 	color: #ccc;
+
 	@include themify(color, neutral2);
+
 	background-color: $background;
 	transition: background-color 100ms linear;
 	font-weight: 700;
@@ -22,12 +24,6 @@ $background: #f2f2f2;
 		text-decoration: none;
 		display: block;
 
-		&:hover {
-			background-color: #fff;
-			color: #8228A2;
-			@include themify(color, color1);
-		}
-
 		> .mb-tsal-link-text {
 			display: inline-block;
 			margin: 0px;
@@ -41,6 +37,15 @@ $background: #f2f2f2;
 				background-color: rgb(255, 246, 192);
 				outline: rgb(230, 214, 152) solid 1px;
 			}
+		}
+	}
+
+	&.mb-tsal-link-active {
+		> .mb-tsal-link {
+			background-color: #fff;
+			color: #8228A2;
+
+			@include themify(color, color1);
 		}
 	}
 }

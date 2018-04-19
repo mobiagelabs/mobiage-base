@@ -26,7 +26,7 @@
 		],
 		"arrow-parens": [
 			1,
-			"as-needed"
+			"always"
 		],
 		"class-methods-use-this": 1,
 		"comma-dangle": [
@@ -81,6 +81,7 @@
 		"semi": [
 			1,
 			"always"
-		]
+		],
+		"prefer-destructuring": ["off"]
 	}
 }

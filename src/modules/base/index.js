@@ -20,7 +20,7 @@ const component = {
 	transclude: true
 };
 
-angular.module('mbgBase', ['mbgBaseSideMenu', 'mbgBaseTopbar'])
+angular.module('mbgBase', ['mbgBaseSideMenu', 'mbgBaseTopbar', 'cfp.hotkeys'])
 	.component('mbgBase', component)
 	.component('mbgBaseContainer', container)
 	.component('mbgBaseContentContainer', contentContainer);

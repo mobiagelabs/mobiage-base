@@ -1,5 +1,5 @@
 angular.module('app', ['mbgBase'])
-	.controller('appController', $scope => {
+	.controller('appController', ($scope) => {
 		$scope.configBase = {
 			theme: 'theme11'
 		};
@@ -17,8 +17,8 @@ angular.module('app', ['mbgBase'])
 						iconSrc: 'fontawesome',
 						icon: 'fas fa-exchange-alt',
 						iconSize: '22',
-						actionType: 'link',
-						action: '#trocarconta'
+						actionType: 'internal',
+						action: 'changeAccount'
 					},
 					{
 						label: 'Ir para o Finance',
@@ -55,7 +55,7 @@ angular.module('app', ['mbgBase'])
 					name: 'Dell',
 					logo: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg'
 				}],
-				changeOrganizationAction: organizationSelected => {
+				changeOrganizationAction: (organizationSelected) => {
 					console.log(organizationSelected);
 				}
 			},
@@ -120,31 +120,31 @@ angular.module('app', ['mbgBase'])
 							label: 'Estoque',
 							children: [
 								{
-									type: 'btn', label: 'Movimentação', actionType: 'link', action: '#'
+									type: 'btn', label: 'Movimentação', actionType: 'link', action: '#1'
 								},
 								{
-									type: 'btn', label: 'Inventário', actionType: 'link', action: '#'
+									type: 'btn', label: 'Inventário', actionType: 'link', action: '#2'
 								},
 								{
-									type: 'btn', label: 'Comercial', actionType: 'link', action: '#'
+									type: 'btn', label: 'Comercial', actionType: 'link', action: '#3'
 								},
 								{
-									type: 'btn', label: 'Venda rápida', actionType: 'link', action: '#'
+									type: 'btn', label: 'Venda rápida', actionType: 'link', action: '#4'
 								},
 								{
-									type: 'btn', label: 'Promoções', actionType: 'link', action: '#'
+									type: 'btn', label: 'Promoções', actionType: 'link', action: '#5'
 								},
 								{
-									type: 'btn', label: 'Troca', actionType: 'link', action: '#'
+									type: 'btn', label: 'Troca', actionType: 'link', action: '#6'
 								},
 								{
-									type: 'btn', label: 'Consignado', actionType: 'link', action: '#'
+									type: 'btn', label: 'Consignado', actionType: 'link', action: '#7'
 								},
 								{
-									type: 'btn', label: 'Catálogo', actionType: 'link', action: '#'
+									type: 'btn', label: 'Catálogo', actionType: 'link', action: '#8'
 								},
 								{
-									type: 'btn', label: 'Consulta', actionType: 'link', action: '#'
+									type: 'btn', label: 'Consulta', actionType: 'link', action: '#9'
 								}
 							]
 						},
@@ -153,19 +153,19 @@ angular.module('app', ['mbgBase'])
 							label: 'Financeiro',
 							children: [
 								{
-									type: 'btn', label: 'Conta caixa', actionType: 'link', action: '#'
+									type: 'btn', label: 'Conta caixa', actionType: 'link', action: '#10'
 								},
 								{
-									type: 'btn', label: 'Abertura PDV', actionType: 'link', action: '#'
+									type: 'btn', label: 'Abertura PDV', actionType: 'link', action: '#11'
 								},
 								{
-									type: 'btn', label: 'Fechamento', actionType: 'link', action: '#'
+									type: 'btn', label: 'Fechamento', actionType: 'link', action: '#12'
 								},
 								{
-									type: 'btn', label: 'Pagar', actionType: 'link', action: '#'
+									type: 'btn', label: 'Pagar', actionType: 'link', action: '#13'
 								},
 								{
-									type: 'btn', label: 'Receber', actionType: 'link', action: '#'
+									type: 'btn', label: 'Receber', actionType: 'link', action: '#14'
 								}
 							]
 						},
@@ -174,10 +174,10 @@ angular.module('app', ['mbgBase'])
 							label: 'Fiscal',
 							children: [
 								{
-									type: 'btn', label: 'Tributação', actionType: 'link', action: '#'
+									type: 'btn', label: 'Tributação', actionType: 'link', action: '#15'
 								},
 								{
-									type: 'btn', label: 'Notas', actionType: 'link', action: '#'
+									type: 'btn', label: 'Notas', actionType: 'link', action: '#16'
 								}
 							]
 						}

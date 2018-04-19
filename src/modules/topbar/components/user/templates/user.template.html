@@ -41,7 +41,7 @@
 	</div>
 	<div class="mb-tu-menu" ng-class="{'mb-tu-menu-active':menuOpen && (focus === 'user' || focus === ''), 'mb-tu-menu-hide': hideUserContent}">
 		<div class="mb-tu-menu-content">
-			<mbg-base-user-btn config="link" ng-repeat="link in user.links"></mbg-base-user-btn>
+			<mbg-base-user-btn config="link" internal-callback="internalCallback(action)" ng-repeat="link in user.links"></mbg-base-user-btn>
 		</div>
 	</div>
 	<div class="mb-tu-menu" ng-class="{'mb-tu-menu-active':menuOpen && focus === 'company', 'mb-tu-menu-hide': hideCompanyContent}">

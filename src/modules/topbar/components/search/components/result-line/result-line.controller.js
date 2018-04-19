@@ -1,10 +1,10 @@
 const controller = function ($scope) {
 	$scope.maintext = '';
 
-	const highLightMatches = line => {
+	const highLightMatches = (line) => {
 		const hightLighted = [];
 		const name = line.name.trim();
-		line.matches.forEach(match => {
+		line.matches.forEach((match) => {
 			if (match.index.name === 'name') {
 				for (let i = 0; i < match.matches.length; i += 1) {
 					const indiceInicial = match.matches[i][0];

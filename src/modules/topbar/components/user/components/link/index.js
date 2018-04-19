@@ -5,7 +5,8 @@ import './link.style.scss';
 const component = {
 	bindings: {
 		actionType: '=',
-		action: '='
+		action: '=',
+		internalCallback: '&?'
 	},
 	template,
 	controller,

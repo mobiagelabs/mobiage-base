@@ -4,14 +4,14 @@
 
 	<div class="mb-ts-autocomplete" ng-class="{'mb-tsa-active':autoCompleteActive}" ng-if="!autoCompleteHide">
 
-		<div ng-repeat="result in result | orderBy:'-matchesCount'">
+		<div ng-repeat="result in result">
 			<div class="mb-ts-autocomplete-title">
 				<div class="mb-ts-autocomplete-title-text">
 					{{ result.type }}
 				</div>
 				<div class="mb-ts-autocomplete-title-line"></div>
 			</div>
-			<mbg-base-topbar-result-line ng-repeat="line in result.children | orderBy:'-matchesCount'" line="line"></mbg-base-topbar-result-line>
+			<mbg-base-topbar-result-line ng-repeat="line in result.children" index="[$parent.$index, $index]" selected="selected" on-select="onSelect(index)" line="line"></mbg-base-topbar-result-line>
 		</div>
 
 		<div ng-if="result.length === 0" class="mb-ts-autocomplete-notfound">

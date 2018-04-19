@@ -2,11 +2,27 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 	$scope.changeZIndex = false;
 	$scope.focus = '';
 	$scope.menuOpen = false;
-	$scope.animationInProgress = false;
-	$scope.user = {};
-	$scope.loading = true;
 	$scope.hideUserContent = true;
 	$scope.hideCompanyContent = true;
+	$scope.animationInProgress = false;
+	$scope.user = {};
+
+	/* Função para limitar o tamanho de informações */
+	$scope.maxSize = (info, maxSize, end) => {
+		if (info !== undefined && info !== null) {
+			if (info.length > maxSize) {
+				/*
+					End é uma opção para que seja possível escolher entre
+					colocar as reticências no fim ou no meio da palavra.
+				*/
+				if (end === true) {
+					return info.substr(0, maxSize - 3).concat('...');
+				}
+				return info.substr(0, (maxSize / 2) - 3).concat('...').concat(info.substr(-(maxSize / 2)));
+			}
+		}
+		return info;
+	};
 
 	$scope.getGreetings = () => {
 		const date = new Date();
@@ -19,7 +35,7 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 		return 'Boa Noite,';
 	};
 
-	const toggleAnimationInProgress = delay => {
+	const toggleAnimationInProgress = (delay) => {
 		$scope.animationInProgress = true;
 		$timeout(() => {
 			$scope.animationInProgress = false;
@@ -66,22 +82,12 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 		}
 	};
 
-	const onClickOutside = () => {
-		$timeout(() => {
-			$scope.toggleMenu();
-		});
-	};
-
-	$scope.maxSize = (info, maxSize, end) => {
-		if (info !== undefined && info !== null) {
-			if (info.length > maxSize) {
-				if (end === true) {
-					return info.substr(0, maxSize - 3).concat('...');
-				}
-				return info.substr(0, (maxSize / 2) - 3).concat('...').concat(info.substr(-(maxSize / 2)));
-			}
+	const onClickOutside = (evt) => {
+		if (evt.toElement.classList[0] !== 'mb-tu-menu-company-change-acc') {
+			$timeout(() => {
+				$scope.toggleMenu();
+			});
 		}
-		return info;
 	};
 
 	$scope.toggleMenu = () => {
@@ -114,8 +120,15 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 		}
 	};
 
+	$scope.internalCallback = (action) => {
+		console.log(`Realizando ação:`);
+		if (action === 'changeAccount') {
+			window.alert('PAN');
+		}
+	};
+
 	this.$onInit = () => {
-		mbgBaseUserService.setComponentCallback(user => { $scope.user = user; });
+		mbgBaseUserService.setComponentCallback((user) => { $scope.user = user; });
 		mbgBaseUserService.setUser(this.config);
 		$scope.user = mbgBaseUserService.getUser();
 	};

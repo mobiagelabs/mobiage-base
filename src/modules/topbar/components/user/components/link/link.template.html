@@ -4,5 +4,5 @@
 </a>
 <a class="mb" topbar-user-link ng-transclude ng-if="$ctrl.actionType === 'function'" ng-click="$ctrl.action()">
 </a>
-<a class="mb" topbar-user-link ng-transclude ng-if="$ctrl.actionType === 'internal'" ng-click="findAction()">
+<a class="mb" topbar-user-link ng-transclude ng-if="$ctrl.actionType === 'internal'" ng-click="$ctrl.internalCallback({ action: $ctrl.action })">
 </a>

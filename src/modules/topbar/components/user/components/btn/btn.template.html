@@ -1,4 +1,4 @@
-<mbg-base-user-link action-type="$ctrl.config.actionType" action="$ctrl.config.action">
+<mbg-base-user-link action-type="$ctrl.config.actionType" action="$ctrl.config.action" internal-callback="$ctrl.internalCallback({ action: action })">
 	<div class="mb" topbar-user-btn>
 		<div>
 			{{ $ctrl.config.label }}

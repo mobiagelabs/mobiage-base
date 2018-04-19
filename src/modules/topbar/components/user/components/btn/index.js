@@ -4,7 +4,8 @@ import './btn.style.scss';
 
 const component = {
 	bindings: {
-		config: '='
+		config: '=',
+		internalCallback: '&?'
 	},
 	template,
 	controller
