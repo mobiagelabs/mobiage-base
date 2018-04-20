@@ -1,11 +1,14 @@
 const controller = function ($scope, $timeout, mbgBaseUserService) {
 	$scope.changeZIndex = false;
 	$scope.focus = '';
+	$scope.menuPage = 'user';
 	$scope.menuOpen = false;
 	$scope.hideUserContent = true;
 	$scope.hideCompanyContent = true;
+	$scope.hideChangeAccountContent = true;
 	$scope.animationInProgress = false;
 	$scope.user = {};
+	$scope.organizationSelected = undefined;
 
 	/* Função para limitar o tamanho de informações */
 	$scope.maxSize = (info, maxSize, end) => {
@@ -46,9 +49,9 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 		if ($scope.animationInProgress === false) {
 			if ($scope.focus === 'user' || $scope.focus === '') {
 				if ($scope.menuOpen === true) {
-					$scope.toggleMenu();
+					$scope.closeMenu();
 					$timeout(() => {
-						$scope.toggleMenu();
+						$scope.openMenu('company');
 					}, 500);
 				}
 				$scope.focus = 'company';
@@ -66,9 +69,9 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 		if ($scope.animationInProgress === false) {
 			if ($scope.focus === 'company') {
 				if ($scope.menuOpen === true) {
-					$scope.toggleMenu();
+					$scope.closeMenu();
 					$timeout(() => {
-						$scope.toggleMenu();
+						$scope.openMenu('user');
 					}, 500);
 				}
 				$scope.focus = 'user';
@@ -82,48 +85,98 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 		}
 	};
 
-	const onClickOutside = (evt) => {
-		if (evt.toElement.classList[0] !== 'mb-tu-menu-company-change-acc') {
-			$timeout(() => {
-				$scope.toggleMenu();
-			});
-		}
+	const onClickOutside = () => {
+		$timeout(() => {
+			$scope.toggleMenu();
+		});
 	};
 
 	$scope.toggleMenu = () => {
 		if ($scope.animationInProgress === false) {
 			if ($scope.menuOpen === false) {
 				if ($scope.focus === 'company') {
-					$scope.hideCompanyContent = false;
+					$scope.openMenu('company');
 				} else {
-					$scope.hideUserContent = false;
+					$scope.openMenu('user');
 				}
-				$timeout(() => {
-					$scope.menuOpen = true;
-					document.addEventListener('click', onClickOutside);
-					toggleAnimationInProgress(500);
-				}, 50);
 			} else {
-				$scope.menuOpen = false;
-				document.removeEventListener('click', onClickOutside);
-				toggleAnimationInProgress(500);
-				if ($scope.focus === 'company') {
-					$timeout(() => {
-						$scope.hideCompanyContent = true;
-					}, 500);
-				} else {
-					$timeout(() => {
-						$scope.hideUserContent = true;
-					}, 500);
-				}
+				$scope.closeMenu();
 			}
 		}
 	};
 
+	$scope.openMenu = (page) => {
+		if (page === 'user') {
+			$scope.menuPage = 'user';
+			$scope.hideUserContent = false;
+			$timeout(() => {
+				$scope.menuOpen = true;
+				document.addEventListener('click', onClickOutside);
+				toggleAnimationInProgress(500);
+			}, 50);
+		} else if (page === 'company') {
+			$scope.menuPage = 'company';
+			$scope.hideCompanyContent = false;
+			$timeout(() => {
+				$scope.menuOpen = true;
+				document.addEventListener('click', onClickOutside);
+				toggleAnimationInProgress(500);
+			}, 50);
+		} else if (page === 'changeAccount') {
+			$scope.menuPage = 'changeAccount';
+			$scope.hideChangeAccountContent = false;
+			$timeout(() => {
+				$scope.menuOpen = true;
+				document.addEventListener('click', onClickOutside);
+				toggleAnimationInProgress(500);
+			}, 50);
+		}
+	};
+
+	$scope.closeMenu = () => {
+		document.removeEventListener('click', onClickOutside);
+		$scope.organizationSelected = undefined;
+		$scope.menuOpen = false;
+		$scope.menuPage = 'user';
+		$timeout(() => {
+			$scope.hideUserContent = true;
+			$scope.hideCompanyContent = true;
+			$scope.hideChangeAccountContent = true;
+		}, 500);
+	};
+
+	$scope.openChangeAccount = () => {
+		$scope.focusCompany();
+		$scope.closeMenu();
+		$timeout(() => {
+			$scope.openMenu('changeAccount');
+		}, 500);
+	};
+
+	$scope.backChangeAccount = () => {
+		$scope.closeMenu();
+		$timeout(() => {
+			$scope.openMenu('company');
+		}, 500);
+	};
+
 	$scope.internalCallback = (action) => {
-		console.log(`Realizando ação:`);
 		if (action === 'changeAccount') {
-			window.alert('PAN');
+			$scope.openChangeAccount();
+		}
+	};
+
+	$scope.stopPropagation = (evt) => {
+		evt.stopPropagation();
+	};
+
+	$scope.selectOrganization = (index) => {
+		$scope.organizationSelected = index;
+	};
+
+	$scope.changeOrganization = () => {
+		if ($scope.organizationSelected !== undefined) {
+			$scope.user.changeOrganizationAction($scope.user.otherOrganizations[$scope.organizationSelected]);
 		}
 	};
 

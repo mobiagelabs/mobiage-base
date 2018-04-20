@@ -12,8 +12,8 @@
 
 	&.mobiage-base-topage-enter {
 		animation: 
-			topAgeEnterEnterInvert 500ms linear infinite,
-			topAgeEnterEnterRotation 3s linear infinite
+			topAgeEnterEnterInvert 750ms linear infinite,
+			topAgeWobble 1s linear infinite
 	}
 }
 

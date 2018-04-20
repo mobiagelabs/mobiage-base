@@ -16,7 +16,9 @@
 		padding-left: 20px;
 		z-index: 700;
 		background-color: #ffffff;
+
 		@include themify(background-color, backgroundTopBar);
+
 		transition: width 500ms ease;
 		will-change: width;
 
@@ -73,7 +75,9 @@
 				> .mb-tu-button-subtitle {
 					text-align: right;
 					color: #ccc;
+
 					@include themify(color, neutral3);
+
 					font-size: 12px;
 					font-weight: 700;
 					user-select: none;
@@ -219,23 +223,26 @@
 					justify-content: flex-start;
 
 					.mb-tu-menu-company-info {
-						margin-top: 5px;
-						margin-bottom: 5px;
 						padding-left: 15px;
 						padding-right: 15px;
+						padding-bottom: 15px;
 						width: 100%;
 						text-align: left;
 
 						.mb-tu-menu-company-info-title {
 							color: #ccc;
+
 							@include themify(color, neutral2);
+
 							font-weight: 700;
 							font-size: 15px;
 						}
 
 						.mb-tu-menu-company-info-text {
 							color: #ccc;
+
 							@include themify(color, neutral2);
+
 							font-weight: 400;
 							font-size: 14px;
 						}
@@ -243,9 +250,11 @@
 				}
 
 				> .mb-tu-menu-company-change-acc {
-					margin-top: 15px;
 					background-color: #ccc;
+					user-select: none;
+
 					@include themify(background-color, neutral2);
+
 					border-bottom-left-radius: 15px;
 					border-bottom-right-radius: 15px;
 					width: 100%;
@@ -260,6 +269,167 @@
 					flex-direction: row;
 					color: #fff;
 					cursor: pointer;
+
+					> .fas {
+						font-size: 20px;
+					}
+				}
+			}
+
+			> .mb-tu-menu-change-account {
+				width: 100%;
+				height: auto;
+
+				> .mb-tu-m-ca-title {
+					width: 100%;
+					height: 80px;
+					text-align: left;
+					position: relative;
+					overflow: hidden;
+					padding: 15px 25px 15px 25px;
+					user-select: none;
+
+					> .mb-tu-m-ca-t-back {
+						display: inline-block;
+						color: #ccc;
+						font-size: 14px;
+
+						@include themify(color, color1);
+
+						cursor: pointer;
+					}
+
+					> .mb-tu-m-ca-t-text {
+						color: #ccc;
+
+						@include themify(color, neutral2);
+
+						font-weight: 700;
+						font-size: 16px;
+					}
+
+					> .mb-tu-m-ca-t-detail-container {
+						position: absolute;
+						top: 60px;
+						left: -20px;
+
+						> .mb-tu-m-ca-t-detail {
+							width: 80px;
+
+							> .mb-tu-m-ca-t-d-path {
+								fill: #ccc;
+
+								@include themify(fill, neutral3);
+
+								stroke: #ccc;
+
+								@include themify(stroke, neutral3);
+
+								stroke-miterlimit: 10;
+								stroke-width: 2px;
+							}
+						}
+					}
+				}
+
+				> .mb-tu-m-ca-company {
+					width: 100%;
+					display: flex;
+					justify-content: flex-start;
+					font-size: 14px;
+					padding: 10px 15px 10px 25px;
+					align-items: center;
+					flex-direction: row;
+					font-weight: 700;
+					transition: transform 250ms ease;
+					transform: translateX(0%);
+					cursor: pointer;
+					position: relative;
+
+					> .mb-tu-m-ca-company-avatar {
+						min-height: 40px;
+						min-width: 40px;
+						background-color: #ccc;
+
+						@include themify(background-color, neutral3);
+
+						border-radius: 20px;
+						line-height: 40px;
+						text-align: center;
+						color: white;
+						font-size: 18px;
+						background-size: contain;
+						background-position: center center;
+						box-shadow: 0px 2px 10px #d7d7d7;
+					}
+
+					> .mb-tu-m-ca-company-name {
+						margin-left: 10px;
+						color: #ccc;
+						transition: 200ms linear;
+						text-align: left;
+
+						@include themify(color, neutral2);
+					}
+
+					> .mb-tu-m-ca-company-confirm {
+						position: absolute;
+						right: 25px;
+						color: map-get($semantic, sucess);
+						transition: transform 500ms ease, opacity 100ms linear;
+						transform: translateY(20%);
+						opacity: 0;
+
+						&.mb-tu-m-ca-selected {
+							transform: translateY(0%);
+							opacity: 1;
+						}
+
+						> .far {
+							font-size: 20px;
+						}
+					}
+
+					// &:hover {
+					// 	transform: translateX(0.5%);
+
+					// 	> .mb-tu-m-ca-company-name {
+					// 		color: #ccc;
+
+					// 		@include themify(color, color1);
+					// 	}
+					// }
+				}
+
+				> .mb-tu-m-ca-btn {
+					margin-top: 5px;
+					background-color: #ccc;
+					user-select: none;
+
+					@include themify(background-color, neutral3);
+
+					border-bottom-left-radius: 15px;
+					border-bottom-right-radius: 15px;
+					width: 100%;
+					height: 60px;
+					font-weight: 700;
+					padding-left: 20px;
+					padding-right: 25px;
+					font-size: 14px;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					flex-direction: row;
+					color: #fff;
+					cursor: default;
+					transition: background-color 250ms linear;
+
+					&.mb-tu-m-ca-btn-active {
+						background-color: #ccc;
+						cursor: pointer;
+
+						@include themify(background-color, color1);
+					}
 
 					> .fas {
 						font-size: 20px;

@@ -2,7 +2,7 @@
 
 .mb[topbar] {
 	width: 100%;
-	height: 100px;
+	height: $topbarHeight;
 	background-color: #ffffff;
 	@include themify(background-color, backgroundTopBar);
 	border-bottom: solid 1px #f4f4f4;
@@ -90,7 +90,7 @@
 					height: 100%;
 					flex-grow: 1;
 					padding-left: 25px;
-					padding-top: 30px;
+					padding-top: calc((#{$topbarHeight} / 2) - 40px / 2);
 					padding-right: 15px;
 
 					@media screen and (max-width: 768px) {

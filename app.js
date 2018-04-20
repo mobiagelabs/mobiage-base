@@ -48,13 +48,15 @@ angular.module('app', ['mbgBase'])
 						{ title: 'Inscrição Social', text: '910293.29201.1234' }
 					]
 				},
-				otherOrganizations: [{
-					name: 'Apple Inc',
-					logo: 'https://hcil.umd.edu/wp-content/uploads/2015/12/Apple-logo.png'
-				}, {
-					name: 'Dell',
-					logo: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg'
-				}],
+				otherOrganizations: [
+					{
+						name: 'Apple Inc',
+						logo: 'https://hcil.umd.edu/wp-content/uploads/2015/12/Apple-logo.png'
+					}, {
+						name: 'Dell',
+						logo: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg'
+					}
+				],
 				changeOrganizationAction: (organizationSelected) => {
 					console.log(organizationSelected);
 				}

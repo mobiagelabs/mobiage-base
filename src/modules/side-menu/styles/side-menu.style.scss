@@ -2,7 +2,7 @@
 
 .mb[side-menu] {
 	font-family: 'MontSerrat', sans-serif;
-	height: calc(100% - 100px);
+	height: calc(100% - #{$topbarHeight});
 	width: 250px;
 	position: relative;
 	z-index: 601;

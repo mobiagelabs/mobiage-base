@@ -1,14 +1,13 @@
 import template from './btn.template.html';
-import controller from './btn.controller';
 import './btn.style.scss';
 
 const component = {
 	bindings: {
 		config: '=',
-		internalCallback: '&?'
+		internalCallback: '&?',
+		otherOrganizations: '='
 	},
-	template,
-	controller
+	template
 };
 
 export default component;
