@@ -83,7 +83,7 @@
 					</div>
 				</div>
 				<div class="mb-tu-m-ca-company" ng-click="selectOrganization($index)" ng-repeat="organization in user.otherOrganizations">
-					<div class="mb-tu-m-ca-company-avatar" ng-style="{'background-image': 'url(' + organization.logo + ')', 'background-color': '#fff'}">
+					<div class="mb-tu-m-ca-company-avatar" ng-style="{'background-image': organization.logo === undefined ? 'none' : 'url(' + organization.logo + ')', 'background-color': organization.logo === undefined ? '#ccc' : '#fff'}">
 						{{ organization.logo === undefined ? organization.name.slice(0, 1) : '' }}
 					</div>
 					<div class="mb-tu-m-ca-company-name">

@@ -20,6 +20,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #0747a6,
+		quickMenuBtnBackground: #0747a6,
+		quickMenuBackground: #063c8e,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 	), 
@@ -32,6 +34,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #e8c553,
+		quickMenuBtnBackground: #e8c553,
+		quickMenuBackground: #fff7e1,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 	), 
@@ -44,6 +48,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #02ce69,
+		quickMenuBtnBackground: #02ce69,
+		quickMenuBackground: #03914b,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 	), 
@@ -56,6 +62,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #c73444,
+		quickMenuBtnBackground: #c73444,
+		quickMenuBackground: #972733,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 	), 
@@ -68,6 +76,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #540095,
+		quickMenuBtnBackground: #540095,
+		quickMenuBackground: #37085c,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 	), 
@@ -80,6 +90,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #de6d28,
+		quickMenuBtnBackground: #de6d28,
+		quickMenuBackground: #a04e1d,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 	), 
@@ -92,6 +104,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #ea4c89,
+		quickMenuBtnBackground: #ea4c89,
+		quickMenuBackground: #a24267,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 	), 
@@ -104,6 +118,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #000000,
+		quickMenuBtnBackground: #000000,
+		quickMenuBackground: #3f3f3f,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 		), 
@@ -116,6 +132,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #f1fdfd,
+		quickMenuBtnBackground: #3acbc7,
+		quickMenuBackground: #25a5a1,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 	), 
@@ -129,6 +147,8 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #635596,
+		quickMenuBtnBackground: #635596,
+		quickMenuBackground: #493E6E,
 		backgroundSideMenu: #fcfcfc,
 		backgroundTopBar: #fff
 	),
@@ -142,8 +162,25 @@ $themes: (
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
 		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
 		logoDetail: #00c74d,
+		quickMenuBtnBackground: #00c74d,
+		quickMenuBackground: #009338,
 		backgroundSideMenu: #f6f6f6,
 		backgroundTopBar: #f6f6f6
+	),
+	/* Tema Kigi */
+	theme12: (
+		color1: #6e2bbb,
+		color2: #eff5f1,
+		color3: #582098,
+		color4: #00bbbd,
+		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
+		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
+		neutral3: map-get($map: map-get($map: $neutral, $key: color3), $key: light),
+		logoDetail: #D6df24,
+		quickMenuBtnBackground: #E81756,
+		quickMenuBackground: #ba1546,
+		backgroundSideMenu: #fcfcfc,
+		backgroundTopBar: #fff
 	)
 );
 
