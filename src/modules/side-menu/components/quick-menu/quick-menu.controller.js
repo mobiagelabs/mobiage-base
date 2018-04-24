@@ -12,7 +12,7 @@ const controller = function ($scope, $timeout) {
 		}, 475);
 	};
 
-	const toggleMenuBottom = state => {
+	const toggleMenuBottom = (state) => {
 		if (state === true) {
 			$scope.state.menuBottomY = (this.config.links.length * 33) + 5;
 		} else {

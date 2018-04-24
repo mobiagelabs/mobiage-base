@@ -1,8 +1,5 @@
-const controller = function ($scope) {
-	$scope.findAction = () => {
-		const action = this.action;
-		console.log(action);
-	};
+const controller = function () {
+
 };
 
 export default controller;

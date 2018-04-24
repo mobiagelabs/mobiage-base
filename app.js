@@ -56,10 +56,10 @@ angular.module('app', ['mbgBase'])
 						name: 'Dell',
 						logo: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg'
 					}
-				],
-				changeOrganizationAction: (organizationSelected) => {
-					console.log(organizationSelected);
-				}
+				]
+				// changeOrganizationAction: (organizationSelected) => {
+				// 	console.log(organizationSelected);
+				// }
 			},
 			search: {
 				indexFields: [{ name: 'name' }],
@@ -80,7 +80,7 @@ angular.module('app', ['mbgBase'])
 								name: 'Thiago Martins',
 								cpf: '208.290.390-45',
 								action: () => {
-									console.log('Thiago Martins');
+									// console.log('Thiago Martins');
 								},
 								actionType: 'function'
 							}

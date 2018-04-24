@@ -8,7 +8,7 @@ const controller = function ($scope, $timeout, sideMenuService) {
 	let finalX = 0;
 	let finalY = 0;
 
-	const handleTouchStart = evt => {
+	const handleTouchStart = (evt) => {
 		initialX = evt.changedTouches[0].screenX;
 		initialY = evt.changedTouches[0].screenY;
 	};
@@ -25,7 +25,7 @@ const controller = function ($scope, $timeout, sideMenuService) {
 		});
 	};
 
-	const handleTouchEnd = evt => {
+	const handleTouchEnd = (evt) => {
 		finalX = evt.changedTouches[0].screenX;
 		finalY = evt.changedTouches[0].screenY;
 		if (Math.abs(finalX - initialX) > Math.abs(finalY - initialY)) {
