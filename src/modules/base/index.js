@@ -8,7 +8,7 @@ import '../side-menu';
 import '../topbar';
 import template from './templates/base.template.html';
 import controller from './controllers/base.controller';
-import './styles/style.base.scss';
+import './styles/base.style.scss';
 
 import container from './components/container';
 import contentContainer from './components/content-container';

@@ -6,6 +6,7 @@ $background: #f2f2f2;
 	position: relative;
 	width: 100%;
 	max-width: 600px;
+	z-index: 900;
 
 	> .mb-ts-autocomplete {
 		position: absolute;

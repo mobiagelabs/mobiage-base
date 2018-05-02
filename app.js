@@ -1,7 +1,7 @@
 angular.module('app', ['mbgBase'])
 	.controller('appController', ($scope) => {
 		$scope.configBase = {
-			theme: 'theme11'
+			theme: 'theme10'
 		};
 
 		$scope.configTopbar = {

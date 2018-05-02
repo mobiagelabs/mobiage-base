@@ -50,6 +50,8 @@ const controller = function ($scope, $timeout, sideMenuService) {
 
 	this.$onInit = () => {
 		sideMenuService.setMenuConfig(this.config);
+		sideMenuService.registerMenuCallback(openMenu, closeMenu);
+
 		$scope.structure = this.config.structure;
 		$scope.quickMenu = this.config.quickMenu;
 		document.addEventListener('touchstart', handleTouchStart);

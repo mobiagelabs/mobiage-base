@@ -70,6 +70,15 @@ const controller = function ($scope, $timeout, sideMenuService, hotkeys) {
 			},
 			allowIn: ['INPUT']
 		});
+		hotkeys.bindTo($scope).add({
+			combo: 'esc',
+			callback(event) {
+				event.preventDefault();
+				const inputElement = document.getElementById('mb-tsi-input');
+				$timeout(() => { inputElement.blur(); });
+			},
+			allowIn: ['INPUT']
+		});
 	};
 
 	const removeHotkeys = () => {
@@ -182,6 +191,7 @@ const controller = function ($scope, $timeout, sideMenuService, hotkeys) {
 				}
 			});
 			$scope.result = makeAutocompleteObject(result);
+			$scope.selected = [0, 0];
 		}
 	};
 
