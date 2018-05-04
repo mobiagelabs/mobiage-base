@@ -62,10 +62,10 @@ const controller = function ($scope, $timeout, sideMenuService) {
 			window.OverlayScrollbars(element, {
 				className: 'os-theme-thin-dark',
 				scrollbars: {
-					autoHide: 'scroll'
+					autoHide: 'leave'
 				}
 			});
-		}, 50);
+		}, 500);
 	};
 
 	this.$onDestroy = () => {
