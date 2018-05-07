@@ -1,8 +1,8 @@
-<a class="mb" topbar-user-link ng-transclude ng-if="$ctrl.actionType === 'state'" ui-sref="{{$ctrl.action}}">
+<a class="mb" topbar-user-link ng-click="vm.click()" ng-transclude ng-if="vm.actionType === 'state'" ui-sref="{{vm.action}}">
 </a>
-<a class="mb" topbar-user-link ng-transclude ng-if="$ctrl.actionType === 'link'" ng-href="{{$ctrl.action}}">
+<a class="mb" topbar-user-link ng-click="vm.click()" ng-transclude ng-if="vm.actionType === 'link'" ng-href="{{vm.action}}">
 </a>
-<a class="mb" topbar-user-link ng-transclude ng-if="$ctrl.actionType === 'function'" ng-click="$ctrl.action()">
+<a class="mb" topbar-user-link ng-click="vm.click()" ng-transclude ng-if="vm.actionType === 'function'">
 </a>
-<a class="mb" topbar-user-link ng-transclude ng-if="$ctrl.actionType === 'internal'" ng-click="$ctrl.internalCallback({ action: $ctrl.action })">
+<a class="mb" topbar-user-link ng-click="vm.click()" ng-transclude ng-if="vm.actionType === 'internal'">
 </a>

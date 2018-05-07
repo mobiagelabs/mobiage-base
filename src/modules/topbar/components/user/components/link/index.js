@@ -6,10 +6,12 @@ const component = {
 	bindings: {
 		actionType: '=',
 		action: '=',
+		closeMenu: '&',
 		internalCallback: '&?'
 	},
 	template,
 	controller,
+	controllerAs: 'vm',
 	transclude: true
 };
 

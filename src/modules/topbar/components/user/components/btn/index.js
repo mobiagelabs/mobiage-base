@@ -5,7 +5,8 @@ const component = {
 	bindings: {
 		config: '=',
 		internalCallback: '&?',
-		otherOrganizations: '='
+		otherOrganizations: '=',
+		closeMenu: '&'
 	},
 	template
 };

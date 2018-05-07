@@ -41,7 +41,7 @@
 	</div>
 	<div ng-click="stopPropagation($event)" class="mb-tu-menu" ng-class="{'mb-tu-menu-active':menuOpen && menuPage === 'user', 'mb-tu-menu-hide': hideUserContent}">
 		<div class="mb-tu-menu-content">
-			<mbg-base-user-btn config="link" other-organizations="user.otherOrganizations" internal-callback="internalCallback(action)" ng-repeat="link in user.links"></mbg-base-user-btn>
+			<mbg-base-user-btn config="link" close-menu="closeMenu()" other-organizations="user.otherOrganizations" internal-callback="internalCallback(action)" ng-repeat="link in user.links"></mbg-base-user-btn>
 		</div>
 	</div>
 	<div ng-click="stopPropagation($event)" class="mb-tu-menu" ng-class="{'mb-tu-menu-active':menuOpen && menuPage === 'company', 'mb-tu-menu-hide': hideCompanyContent}">

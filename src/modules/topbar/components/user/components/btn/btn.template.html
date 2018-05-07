@@ -1,5 +1,5 @@
 <mbg-base-user-link ng-if="($ctrl.config.action !== 'changeAccount') || ($ctrl.config.action === 'changeAccount' && $ctrl.otherOrganizations !== undefined && $ctrl.otherOrganizations.length > 0)"
- action-type="$ctrl.config.actionType" action="$ctrl.config.action" internal-callback="$ctrl.internalCallback({ action: action })">
+ action-type="$ctrl.config.actionType" action="$ctrl.config.action" internal-callback="$ctrl.internalCallback({ action: action })" close-menu="$ctrl.closeMenu()">
 	<div class="mb" topbar-user-btn>
 		<div>
 			{{ $ctrl.config.label }}
