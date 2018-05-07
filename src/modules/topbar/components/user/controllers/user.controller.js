@@ -164,6 +164,7 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 		if (action === 'changeAccount') {
 			$scope.openChangeAccount();
 		}
+		$scope.closeMenu();
 	};
 
 	$scope.stopPropagation = (evt) => {
