@@ -4,7 +4,9 @@
 	width: 100%;
 	height: $topbarHeight;
 	background-color: #ffffff;
+
 	@include themify(background-color, backgroundTopBar);
+
 	border-bottom: solid 1px #f4f4f4;
 	text-align: center;
 	font-family: 'MontSerrat', sans-serif;
@@ -32,7 +34,9 @@
 			.mb-t-logo-link {
 				height: 100%;
 
-				&:active, &:focus {
+				&:visited, &:focus, &:active {
+					color: inherit;
+					text-decoration: none;
 					outline: none;
 					box-shadow: none;
 				}

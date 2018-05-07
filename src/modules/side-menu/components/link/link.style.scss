@@ -1,7 +1,9 @@
 .mb[smb-link] {
 	text-decoration: none;
 
-	&:active, &:focus {
+	&:visited, &:focus, &:active {
+		color: inherit;
+		text-decoration: none;
 		outline: none;
 		box-shadow: none;
 	}
