@@ -197,13 +197,13 @@ const controller = function ($scope, $timeout, sideMenuService, hotkeys) {
 
 	$scope.onChangeSearch = (text) => {
 		/* Não considera espaços */
-		const inputText = text.trim();
+		const inputText = text.toString().replace(/\\/g, '').replace(/\//ig, '').trim();
 		$scope.selected = undefined;
 
 		if (inputText.length > 0) {
 			$scope.openAutocomplete();
-			search(text, $scope.data, $scope.indexFields);
-			$scope.searchValue = text;
+			search(inputText, $scope.data, $scope.indexFields);
+			$scope.searchValue = inputText;
 		} else {
 			$scope.autoCompleteActive = false;
 			$scope.autoCompleteHide = true;
