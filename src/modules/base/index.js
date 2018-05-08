@@ -13,6 +13,8 @@ import './styles/base.style.scss';
 import container from './components/container';
 import contentContainer from './components/content-container';
 
+import themeProvider from './providers/theme.provider';
+
 const component = {
 	bindings: {
 		config: '='
@@ -25,4 +27,5 @@ const component = {
 angular.module('mbgBase', ['mbgBaseSideMenu', 'mbgBaseTopbar', 'cfp.hotkeys'])
 	.component('mbgBase', component)
 	.component('mbgBaseContainer', container)
-	.component('mbgBaseContentContainer', contentContainer);
+	.component('mbgBaseContentContainer', contentContainer)
+	.provider('mbgBaseThemeService', themeProvider);

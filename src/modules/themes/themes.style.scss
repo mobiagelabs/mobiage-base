@@ -28,7 +28,7 @@ $themes: (
 	theme2: (
 		color1: #e8c553,
 		color2: #fff7e1,
-		color3: #fff7e1,
+		color3: #7f6c2e,
 		color4: #292929,
 		neutral1: map-get($map: map-get($map: $neutral, $key: color1), $key: light),
 		neutral2: map-get($map: map-get($map: $neutral, $key: color2), $key: light),
