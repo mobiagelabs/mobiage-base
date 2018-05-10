@@ -1,4 +1,4 @@
-@import './base.animations.scss';
+@import "./base.animations.scss";
 
 .mb[base] {
 	width: 100%;
@@ -7,13 +7,12 @@
 	line-height: normal;
 	overflow: hidden;
 	text-align: center;
+	transition: transform 0.5s ease;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
 	&.mobiage-base-topage-enter {
-		animation: 
-			topAgeEnterEnterInvert 750ms linear infinite,
-			topAgeWobble 1s linear infinite
+		animation: topAgeEnterEnterInvert 750ms linear infinite, topAgeWobble 1s linear infinite;
 	}
 }
 
@@ -123,6 +122,6 @@ os-theme-thin-dark
 	transition: width 0.3s, margin-left 0.3s, background 0.2s;
 }
 
-.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden>.os-scrollbar-vertical {
+.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical {
 	right: -3px;
 }

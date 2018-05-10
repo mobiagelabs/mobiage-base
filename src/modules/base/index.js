@@ -6,6 +6,7 @@ import 'angular-sanitize';
 
 import '../side-menu';
 import '../topbar';
+import '../top-notifications';
 import template from './templates/base.template.html';
 import controller from './controllers/base.controller';
 import './styles/base.style.scss';
@@ -20,11 +21,12 @@ const component = {
 		config: '='
 	},
 	controller,
+	controllerAs: 'vm',
 	template,
 	transclude: true
 };
 
-angular.module('mbgBase', ['mbgBaseSideMenu', 'mbgBaseTopbar', 'cfp.hotkeys'])
+angular.module('mbgBase', ['mbgBaseSideMenu', 'mbgBaseTopbar', 'mbgBaseTopNotifications', 'cfp.hotkeys'])
 	.component('mbgBase', component)
 	.component('mbgBaseContainer', container)
 	.component('mbgBaseContentContainer', contentContainer)

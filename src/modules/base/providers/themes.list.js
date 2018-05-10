@@ -66,8 +66,8 @@ const themes = {
 		icon: '#fff'
 	},
 	theme12: {
-		primary: '#6e2bbb',
-		secundary: '#00bbbd',
+		primary: '#00bbbd',
+		secundary: '#009194',
 		iconFocus: '#fff',
 		icon: '#fff'
 	}

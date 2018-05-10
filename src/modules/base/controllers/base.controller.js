@@ -1,18 +1,23 @@
-const controller = function ($scope, hotkeys, $timeout) {
-	$scope.topage = false;
+const controller = function ($scope, hotkeys, $timeout, topNotificationsService) {
+	const vm = this;
+	vm.translateY = '';
+	vm.topage = false;
 
-	this.$onInit = () => {
+	const updateTransform = (translateY) => { vm.translateY = translateY; };
+
+	vm.$onInit = () => {
 		hotkeys.bindTo($scope).add({
 			combo: 't o p a g e enter enter',
 			callback() {
 				$timeout(() => {
-					$scope.topage = true;
+					vm.topage = true;
 					$timeout(() => {
-						$scope.topage = false;
+						vm.topage = false;
 					}, 5000);
 				});
 			}
 		});
+		topNotificationsService.registerContentCallback(updateTransform);
 	};
 };
 

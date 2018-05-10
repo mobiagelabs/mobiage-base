@@ -1,17 +1,65 @@
 angular.module('app', ['mbgBase'])
-	.controller('appController', ($scope) => {
+	.controller('appController', ($scope, topNotificationsService) => {
 		$scope.configBase = {
-			theme: 'theme10'
+			theme: 'theme12'
 		};
 
 		$scope.configTopbar = {
-			logo: 'assets/img/logo-finance.png',
+			logo: 'assets/img/logo.png',
 			logoActionType: 'link',
 			logoAction: 'http://www.google.com.br',
 			user: {
 				name: 'Amália Fernandes',
 				avatar: 'assets/img/perfil.png',
 				links: [
+					{
+						label: 'Meu nome é eneas',
+						iconSrc: 'fontawesome',
+						icon: 'fas fa-exchange-alt',
+						iconSize: '22',
+						actionType: 'function',
+						action: () => {
+							window.servico_de_correios_da_topage = window.servico_de_correios_da_topage || 0;
+							switch (window.servico_de_correios_da_topage) {
+								case 0: {
+									topNotificationsService.openNotification({
+										type: 'info',
+										variation: 'fixed',
+										duration: 20000,
+										text: 'Olá Mundo'
+									});
+									break;
+								}
+								case 1: {
+									topNotificationsService.openNotification({
+										type: 'success',
+										variation: 'toast',
+										message: 'Olá Mundo',
+										duration: 20000
+									});
+									break;
+								}
+								case 2: {
+									topNotificationsService.openNotification({
+										type: 'error',
+										variation: 'float',
+										message: 'Olá Mundo',
+										duration: 10000
+									});
+									break;
+								}
+								default: {
+									topNotificationsService.openNotification({
+										type: 'info',
+										variation: 'float',
+										message: 'Olá Mundo',
+										duration: 4000
+									});
+								}
+							}
+							window.servico_de_correios_da_topage += 1;
+						}
+					},
 					{
 						label: 'Trocar de Conta',
 						iconSrc: 'fontawesome',
