@@ -1,4 +1,4 @@
-const controller = function ($scope, hotkeys, $timeout, topNotificationsService) {
+const controller = function ($scope, hotkeys, $timeout, MbgNotification) {
 	const vm = this;
 	vm.translateY = '';
 	vm.topage = false;
@@ -17,7 +17,7 @@ const controller = function ($scope, hotkeys, $timeout, topNotificationsService)
 				});
 			}
 		});
-		topNotificationsService.registerContentCallback(updateTransform);
+		MbgNotification.registerContentCallback(updateTransform);
 	};
 };
 

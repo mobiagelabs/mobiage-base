@@ -1,4 +1,4 @@
-const controller = function ($timeout, topNotificationsService) {
+const controller = function ($timeout, MbgNotification) {
 	const vm = this;
 	const mouthPop = new Audio('resources/audio/mouth-pop.mp3');
 	let animationDuration = 500;
@@ -16,12 +16,12 @@ const controller = function ($timeout, topNotificationsService) {
 	vm.openNotif = (config) => {
 		const activeFixed = () => {
 			vm.active = true;
-			topNotificationsService.updateContentTransform(`translateY(${notifHeight}px)`);
-			topNotificationsService.registerFixed({ close: vm.closeNotif, config });
+			MbgNotification.updateContentTransform(`translateY(${notifHeight}px)`);
+			MbgNotification.registerFixed({ close: vm.closeNotif, config });
 			/* Tempo de espera da configuração */
 			if (config.duration && config.duration !== 'fixed') {
 				const durationWait = $timeout(() => {
-					topNotificationsService.closeFixedNotif();
+					MbgNotification.closeFixedNotif();
 				}, config.duration - animationDuration);
 				timeouts.push(durationWait);
 			}
@@ -29,10 +29,10 @@ const controller = function ($timeout, topNotificationsService) {
 
 		const activeFloat = () => {
 			vm.active = true;
-			topNotificationsService.registerFloat({ close: vm.closeNotif, config, update: vm.updateFloatNotif });
+			MbgNotification.registerFloat({ close: vm.closeNotif, config, update: vm.updateFloatNotif });
 			/* Tempo de espera da configuração */
 			const durationWait = $timeout(() => {
-				topNotificationsService.closeFloatNotif(config.id);
+				MbgNotification.closeFloatNotif(config.id);
 			}, config.duration - animationDuration);
 
 			const soundWait = $timeout(() => {
@@ -45,11 +45,11 @@ const controller = function ($timeout, topNotificationsService) {
 
 		const activeToast = () => {
 			vm.active = true;
-			topNotificationsService.registerToast({ close: vm.closeNotif, config });
+			MbgNotification.registerToast({ close: vm.closeNotif, config });
 			/* Tempo de espera da configuração */
 			if (config.duration && config.duration !== 'fixed') {
 				const durationWait = $timeout(() => {
-					topNotificationsService.closeToastNotif();
+					MbgNotification.closeToastNotif();
 				}, config.duration - animationDuration);
 				timeouts.push(durationWait);
 			}
@@ -59,9 +59,9 @@ const controller = function ($timeout, topNotificationsService) {
 		const activeWait = $timeout(() => {
 			switch (config.variation) {
 				case 'fixed': {
-					if (topNotificationsService.fixedNotification !== undefined) {
+					if (MbgNotification.fixedNotification !== undefined) {
 						/* Fecha a notificação fixa anterior caso exista */
-						topNotificationsService.closeFixedNotif();
+						MbgNotification.closeFixedNotif();
 						const animationWait = $timeout(() => {
 							activeFixed();
 						}, animationDuration + 50);
@@ -76,9 +76,9 @@ const controller = function ($timeout, topNotificationsService) {
 					break;
 				}
 				default: {
-					if (topNotificationsService.toastNotification !== undefined) {
+					if (MbgNotification.toastNotification !== undefined) {
 						/* Fecha a notificação fixa anterior caso exista */
-						topNotificationsService.closeToastNotif();
+						MbgNotification.closeToastNotif();
 						const animationWait = $timeout(() => {
 							activeToast();
 						}, animationDuration + 50);
@@ -99,7 +99,7 @@ const controller = function ($timeout, topNotificationsService) {
 		});
 		vm.active = false;
 		if (config.variation === 'fixed') {
-			topNotificationsService.updateContentTransform('translateY(0px)');
+			MbgNotification.updateContentTransform('translateY(0px)');
 		}
 		$timeout(() => {
 			vm.closeNotification({ id: config.id, config });
@@ -107,7 +107,7 @@ const controller = function ($timeout, topNotificationsService) {
 	};
 
 	vm.updateFloatNotif = (stackLevel) => {
-		const fixedNotifHeight = topNotificationsService.fixedNotification !== undefined ? 50 : 0;
+		const fixedNotifHeight = MbgNotification.fixedNotification !== undefined ? 50 : 0;
 		const translateY = `translateY(calc(${stackLevel * 100}% + ${fixedNotifHeight}px))`;
 		const translateX = 'translateX(-50%)';
 		vm.containerTransform = `${translateX} ${translateY}`;
@@ -153,8 +153,8 @@ const controller = function ($timeout, topNotificationsService) {
 				animationDuration = 500;
 				vm.classes.notifVariation = 'mb-n-float';
 				notifHeight = 60;
-				notifCount = topNotificationsService.floatNotifications.length;
-				const fixedNotifHeight = topNotificationsService.fixedNotification !== undefined ? 50 : 0;
+				notifCount = MbgNotification.floatNotifications.length;
+				const fixedNotifHeight = MbgNotification.fixedNotification !== undefined ? 50 : 0;
 				translateY = `translateY(calc(${notifCount * 100}% + ${fixedNotifHeight}px))`;
 				translateX = 'translateX(-50%)';
 				break;

@@ -13,6 +13,6 @@ const component = {
 };
 
 angular.module('mbgBaseTopNotifications', [])
-	.service('topNotificationsService', service)
+	.service('MbgNotification', service)
 	.component('mbgBaseNotification', notification)
 	.component('mbgBaseTopNotifications', component);

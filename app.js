@@ -1,5 +1,5 @@
 angular.module('app', ['mbgBase'])
-	.controller('appController', ($scope, topNotificationsService) => {
+	.controller('appController', ($scope, MbgNotification) => {
 		$scope.configBase = {
 			theme: 'theme12'
 		};
@@ -22,34 +22,43 @@ angular.module('app', ['mbgBase'])
 							window.servico_de_correios_da_topage = window.servico_de_correios_da_topage || 0;
 							switch (window.servico_de_correios_da_topage) {
 								case 0: {
-									topNotificationsService.openNotification({
+									MbgNotification.openNotification({
 										type: 'info',
-										variation: 'fixed',
-										duration: 20000,
+										variation: 'float',
+										duration: 6000,
 										text: 'Olá Mundo'
 									});
 									break;
 								}
 								case 1: {
-									topNotificationsService.openNotification({
-										type: 'success',
-										variation: 'toast',
-										message: 'Olá Mundo',
-										duration: 20000
+									MbgNotification.openNotification({
+										type: 'warn',
+										variation: 'float',
+										duration: 6000,
+										text: 'Olá Mundo'
 									});
 									break;
 								}
 								case 2: {
-									topNotificationsService.openNotification({
+									MbgNotification.openNotification({
 										type: 'error',
 										variation: 'float',
-										message: 'Olá Mundo',
-										duration: 10000
+										duration: 6000,
+										text: 'Olá Mundo'
+									});
+									break;
+								}
+								case 3: {
+									MbgNotification.openNotification({
+										type: 'success',
+										variation: 'float',
+										duration: 6000,
+										text: 'Olá Mundo'
 									});
 									break;
 								}
 								default: {
-									topNotificationsService.openNotification({
+									MbgNotification.openNotification({
 										type: 'info',
 										variation: 'float',
 										message: 'Olá Mundo',

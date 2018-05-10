@@ -1,4 +1,4 @@
-const controller = function (topNotificationsService) {
+const controller = function (MbgNotification) {
 	const vm = this;
 	vm.notificationsStack = [];
 
@@ -26,7 +26,7 @@ const controller = function (topNotificationsService) {
 	};
 
 	vm.$onInit = () => {
-		topNotificationsService.registerComponentCallbacks(vm.openNotification);
+		MbgNotification.registerComponentCallbacks(vm.openNotification);
 	};
 };
 
