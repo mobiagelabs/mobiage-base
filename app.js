@@ -24,18 +24,20 @@ angular.module('app', ['mbgBase'])
 								case 0: {
 									MbgNotification.openNotification({
 										type: 'info',
-										variation: 'float',
-										duration: 6000,
-										text: 'Olá Mundo'
+										variation: 'toast',
+										duration: 500000,
+										text: 'Olá Mundo',
+										actionButton: false
 									});
 									break;
 								}
 								case 1: {
 									MbgNotification.openNotification({
 										type: 'warn',
-										variation: 'float',
-										duration: 6000,
-										text: 'Olá Mundo'
+										variation: 'toast',
+										duration: 500000,
+										text: 'Olá Mundo',
+										actionButton: true
 									});
 									break;
 								}

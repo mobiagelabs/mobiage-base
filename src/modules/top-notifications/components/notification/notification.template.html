@@ -1,10 +1,10 @@
 <div class="mb-n-container" ng-class="[vm.classes.notifVariation]" ng-style="{'transform': vm.containerTransform}">
 	<div class="mb" mb-notification ng-class="[vm.classes.notifType, vm.classes.notifVariation, {'mb-n-active': vm.active}]">
 		<div class="mb-n-inside-container">
-			<div class="mb-n-icon-container">
-				<i class="{{ vm.notif.icon }}"></i>
-			</div>
 			<div class="mb-n-text">
+				<div class="mb-n-icon-container">
+					<i class="{{ vm.notif.icon }}"></i>
+				</div>
 				{{ vm.notif.text }}
 			</div>
 			<div ng-if="vm.notif.actionButton === true" class="mb-n-action-container">
