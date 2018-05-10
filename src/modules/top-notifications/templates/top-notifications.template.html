@@ -1,9 +1,6 @@
 <mbg-base-notification 
 	ng-repeat="notification in vm.notificationsStack" 
-	notif="notification" 
-	fixed-count="vm.fixedCount"
-	float-count="vm.floatCount"
-	toast-count="vm.toastCount"
+	notif="notification"
 	close-notification="vm.closeNotification(id, config)"
 	notification-stack="vm.notificationsStack">
 </mbg-base-notification>

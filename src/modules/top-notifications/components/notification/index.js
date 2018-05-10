@@ -6,9 +6,6 @@ import './notification.style.scss';
 const component = {
 	bindings: {
 		notif: '<',
-		fixedCount: '<',
-		floatCount: '<',
-		toastCount: '<',
 		closeNotification: '&',
 		notificationStack: '='
 	},

@@ -25,7 +25,7 @@ angular.module('app', ['mbgBase'])
 									MbgNotification.openNotification({
 										type: 'info',
 										variation: 'toast',
-										duration: 500000,
+										duration: 4000,
 										text: 'Olá Mundo',
 										actionButton: false
 									});
@@ -34,8 +34,8 @@ angular.module('app', ['mbgBase'])
 								case 1: {
 									MbgNotification.openNotification({
 										type: 'warn',
-										variation: 'toast',
-										duration: 500000,
+										variation: 'float',
+										duration: 4000,
 										text: 'Olá Mundo',
 										actionButton: true
 									});
@@ -44,8 +44,8 @@ angular.module('app', ['mbgBase'])
 								case 2: {
 									MbgNotification.openNotification({
 										type: 'error',
-										variation: 'float',
-										duration: 6000,
+										variation: 'fixed',
+										duration: 5000,
 										text: 'Olá Mundo'
 									});
 									break;
