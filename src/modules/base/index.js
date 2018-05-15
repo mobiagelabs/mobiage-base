@@ -39,4 +39,4 @@ angular.module('mbg.base', [
 	.component('mbgBase', component)
 	.component('mbContainer', container)
 	.component('mbContent', contentContainer)
-	.provider('mb.theme', themeProvider);
+	.provider('mbTheme', themeProvider);
