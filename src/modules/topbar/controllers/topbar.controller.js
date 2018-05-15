@@ -1,8 +1,8 @@
-const controller = function (sideMenuService) {
+const controller = function (mbSidemenuService) {
 	const vm = this;
 
 	vm.openMenu = () => {
-		sideMenuService.openMenu();
+		mbSidemenuService.openMenu();
 	};
 };
 

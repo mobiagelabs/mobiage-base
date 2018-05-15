@@ -1,22 +1,36 @@
-<mbg-base-side-menu-link action="$ctrl.action" action-type="$ctrl.actionType">
-	<div side-menu-btn class="mb" ng-class="{'lastChild' : $ctrl.lastChild, 'firstChild' : $ctrl.firstChild}">
-		<div class="mb-smb-text" ng-if="$ctrl.iconSide === 'right'">
-			{{ $ctrl.label }}
+<mb-sm-link action="vm.action"
+            action-type="vm.actionType">
+	<div side-menu-btn
+	     class="mb"
+	     ng-class="{'lastChild' : vm.lastChild, 'firstChild' : vm.firstChild}">
+		<div class="mb-smb-text"
+		     ng-if="vm.iconSide === 'right'">
+			{{ vm.label }}
 		</div>
 
-		<div class="mb-smb-icon" ng-if="$ctrl.iconSrc === 'fontawesome'" ng-style="{'font-size': $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'line-height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'width' : $ctrl.iconSize ? 'auto' : undefined }">
-			<i class="{{$ctrl.icon}}"></i>
+		<div class="mb-smb-icon"
+		     ng-if="vm.iconSrc === 'fontawesome'"
+		     ng-style="{'font-size': vm.iconSize ? vm.iconSize + 'px' : undefined, 'line-height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'width' : vm.iconSize ? 'auto' : undefined }">
+			<i class="{{vm.icon}}"></i>
 		</div>
-		<div class="mb-smb-icon" ng-if="$ctrl.iconSrc === 'material'" ng-style="{ 'height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'width' : $ctrl.iconSize ? 'auto' : undefined }">
-			<i class="material-icons" ng-style="{'font-size': $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'line-height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined }">{{ $ctrl.icon }}</i>
+		<div class="mb-smb-icon"
+		     ng-if="vm.iconSrc === 'material'"
+		     ng-style="{ 'height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'width' : vm.iconSize ? 'auto' : undefined }">
+			<i class="material-icons"
+			   ng-style="{'font-size': vm.iconSize ? vm.iconSize + 'px' : undefined, 'line-height' : vm.iconSize ? vm.iconSize + 'px' : undefined }">{{ vm.icon }}</i>
 		</div>
-		<div class="mb-smb-icon" ng-if="$ctrl.iconSrc !== 'material' && $ctrl.iconSrc !== 'fontawesome' && $ctrl.iconSrc !== undefined && $ctrl.iconSrc.length > 0"
-		 ng-style="{ 'height' : $ctrl.iconSize ? $ctrl.iconSize + 'px' : undefined, 'width' : $ctrl.iconSize ? 'auto' : undefined }">
-			<img class="mb-smb-custom-icon" ng-src="{{ $ctrl.iconSrc }}" alt="">
+		<div class="mb-smb-icon"
+		     ng-if="vm.iconSrc !== 'material' && vm.iconSrc !== 'fontawesome' && vm.iconSrc !== undefined && vm.iconSrc.length > 0"
+	
+		     ng-style="{ 'height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'width' : vm.iconSize ? 'auto' : undefined }">
+			<img class="mb-smb-custom-icon"
+			     ng-src="{{ vm.iconSrc }}"
+			     alt="">
 		</div>
 
-		<div class="mb-smb-text" ng-if="$ctrl.iconSide !== 'right'">
-			{{ $ctrl.label }}
+		<div class="mb-smb-text"
+		     ng-if="vm.iconSide !== 'right'">
+			{{ vm.label }}
 		</div>
 	</div>
-</mbg-base-side-menu-link>
+</mb-sm-link>

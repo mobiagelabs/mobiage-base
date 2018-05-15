@@ -16,7 +16,8 @@ const btn = {
 		hotkey: '@'
 	},
 	template,
-	controller
+	controller,
+	controllerAs: 'vm'
 };
 
 export default btn;

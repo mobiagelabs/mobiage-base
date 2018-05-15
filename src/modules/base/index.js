@@ -7,6 +7,8 @@ import 'angular-sanitize';
 import '../side-menu';
 import '../topbar';
 import '../top-notifications';
+// import '../footer';
+import '../pageloader';
 import template from './templates/base.template.html';
 import controller from './controllers/base.controller';
 import './styles/base.style.scss';
@@ -26,8 +28,15 @@ const component = {
 	transclude: true
 };
 
-angular.module('mbgBase', ['mbgBaseSideMenu', 'mbgBaseTopbar', 'mbgBaseTopNotifications', 'cfp.hotkeys'])
+angular.module('mbg.base', [
+	'mb.sidemenu',
+	'mb.topbar',
+	'mb.notifications',
+	// 'mb.footer',
+	'mb.pageloader',
+	'cfp.hotkeys'
+])
 	.component('mbgBase', component)
-	.component('mbgBaseContainer', container)
-	.component('mbgBaseContentContainer', contentContainer)
-	.provider('mbgBaseThemeService', themeProvider);
+	.component('mbContainer', container)
+	.component('mbContent', contentContainer)
+	.provider('mb.theme', themeProvider);

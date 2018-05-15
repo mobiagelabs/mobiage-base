@@ -21,7 +21,7 @@ const service = function () {
 
 	/* formato: { close: fn(), config } */
 	this.fixedNotification = undefined;
-	this.registerFixed = (notification) => { this.fixedNotification = notification; };
+	this.registerFixed = (notification) => { this.fixedNotification = notification; this.updateFloatNotif(); };
 	this.closeFixedNotif = () => {
 		if (this.fixedNotification !== undefined) {
 			this.fixedNotification.close(this.fixedNotification.config);

@@ -1,21 +1,37 @@
-<div class="mb" sm-quick-menu>
-	<div class="mb-smqm-button" title="{{$ctrl.config.buttonText + ' (c)'}}" ng-click="toggleQuickMenu()">
+<div class="mb"
+     sm-quick-menu>
+	<div class="mb-smqm-button"
+	     title="{{vm.config.buttonText + ' (c)'}}"
+	     ng-click="toggleQuickMenu()">
 		<div class="mb-smqm-button-text">
-			{{ $ctrl.config.buttonText }}
+			{{ vm.config.buttonText }}
 		</div>
-		<div class="mb-smqm-button-arrow-container" ng-class="{'mb-smqm-active' : state.quickMenuOpen}">
+		<div class="mb-smqm-button-arrow-container"
+		     ng-class="{'mb-smqm-active' : state.quickMenuOpen}">
 			<div class="mb-smqm-button-arrow">
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</div>
 	</div>
-	<div class="mb-smqm-menu" ng-style="{'height': (5 + ($ctrl.config.links.length * 33)) + 'px'}" ng-class="{'mb-smqm-active' : state.quickMenuOpen}">
-		<div class="mb-smqm-content" ng-class="{'mb-smqm-active' : state.quickMenuOpen}">
-			<mbg-base-side-menu-btn ng-repeat="link in $ctrl.config.links" icon-src="{{link.iconSrc}}" icon="{{link.icon}}" icon-size="{{link.iconSize}}"
-			 label="{{link.label}}" action="link.action" action-type="link.actionType" icon-side="right" hotkey="{{link.hotkey}}" first-child="$first"
-			 last-child="$last">
-			</mbg-base-side-menu-btn>
+	<div class="mb-smqm-menu"
+	     ng-style="{'height': (5 + (vm.config.links.length * 33)) + 'px'}"
+	     ng-class="{'mb-smqm-active' : state.quickMenuOpen}">
+		<div class="mb-smqm-content"
+		     ng-class="{'mb-smqm-active' : state.quickMenuOpen}">
+			<mb-sm-btn ng-repeat="link in vm.config.links"
+			           icon-src="{{link.iconSrc}}"
+			           icon="{{link.icon}}"
+			           icon-size="{{link.iconSize}}"
+			           label="{{link.label}}"
+			           action="link.action"
+			           action-type="link.actionType"
+			           icon-side="right"
+			           hotkey="{{link.hotkey}}"
+			           first-child="$first"
+			           last-child="$last">
+			</mb-sm-btn>
 		</div>
 	</div>
-	<div class="mb-smqm-menu-bottom" ng-style="{'transform': 'translate3d(0px,' + state.menuBottomY + 'px, 0px)'}"></div>
+	<div class="mb-smqm-menu-bottom"
+	     ng-style="{'transform': 'translate3d(0px,' + state.menuBottomY + 'px, 0px)'}"></div>
 </div>

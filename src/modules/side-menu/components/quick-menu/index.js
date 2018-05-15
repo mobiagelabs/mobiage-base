@@ -7,6 +7,7 @@ const quickMenu = {
 		config: '<'
 	},
 	controller,
+	controllerAs: 'vm',
 	template
 };
 

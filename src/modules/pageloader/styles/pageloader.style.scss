@@ -1,0 +1,59 @@
+@import "../../themes/themes.style.scss";
+
+.mb[mb-pageloader] {
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	background-color: rgba(255, 255, 255, 0.8);
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 900;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #bbb;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	opacity: 0;
+	transition: opacity 0.5s linear;
+	will-change: opacity;
+
+	svg {
+		opacity: 0;
+		margin-bottom: 10px;
+		transition: transform 0.5s ease, opacity 0.5s linear;
+		will-change: transform, opacity;
+		transform: translateY(30%);
+	}
+
+	&.mb-pageloader-active {
+		opacity: 1;
+
+		svg {
+			opacity: 1;
+			transform: translateY(0%);
+		}
+	}
+
+	.mb-pl-color1 {
+		fill: #ddd;
+
+		@include themify(fill, color1);
+	}
+
+	.mb-pl-color2 {
+		fill: #ddd;
+
+		@include themify(fill, color4);
+	}
+
+	.mb-pl-color3 {
+		fill: #ddd;
+
+		@include themify(fill, color1);
+	}
+}

@@ -8,6 +8,7 @@ const component = {
 		action: '<'
 	},
 	controller,
+	controllerAs: 'vm',
 	template,
 	transclude: true
 };

@@ -12,14 +12,15 @@ const component = {
 		config: '='
 	},
 	controller,
+	controllerAs: 'vm',
 	template
 };
 
 export default component;
 
-angular.module('mbgBaseTopbarUser', [])
-	.component('mbgBaseUserLink', link)
-	.component('mbgBaseUserBtn', btn)
-	.component('mbgBaseUserLoading', loading)
-	.service('mbgBaseUserService', service)
-	.component('mbgBaseTopbarUser', component);
+angular.module('mb.topbar.user', [])
+	.component('mbTULink', link)
+	.component('mbTUBtn', btn)
+	.component('mbTULoading', loading)
+	.service('mbUserService', service)
+	.component('mbTUser', component);

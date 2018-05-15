@@ -1,39 +1,54 @@
-<header class="mb" topbar ng-class="$ctrl.config.theme">
+<header class="mb"
+        topbar
+        ng-class="vm.config.theme">
 	<div class="mb-t-content">
 		<div class="mb-t-container">
 
-			<a class="mb-t-logo-link" tabindex="-1" ng-if="$ctrl.config.logoActionType === 'state'" ui-sref="{{$ctrl.config.logoAction}}">
+			<a class="mb-t-logo-link"
+			   tabindex="-1"
+			   ng-if="vm.config.logoActionType === 'state'"
+			   ui-sref="{{vm.config.logoAction}}">
 				<div class="mb-t-logo-container">
-					<div class="mb-t-logo" ng-style="{'background-image': 'url(' + $ctrl.config.logo + ')'}"></div>
+					<div class="mb-t-logo"
+					     ng-style="{'background-image': 'url(' + vm.config.logo + ')'}"></div>
 				</div>
 			</a>
-			<a class="mb-t-logo-link" tabindex="-1" ng-if="$ctrl.config.logoActionType === 'link'" ng-href="{{$ctrl.config.logoAction}}">
+			<a class="mb-t-logo-link"
+			   tabindex="-1"
+			   ng-if="vm.config.logoActionType === 'link'"
+			   ng-href="{{vm.config.logoAction}}">
 				<div class="mb-t-logo-container">
-					<div class="mb-t-logo" ng-style="{'background-image': 'url(' + $ctrl.config.logo + ')'}"></div>
+					<div class="mb-t-logo"
+					     ng-style="{'background-image': 'url(' + vm.config.logo + ')'}"></div>
 				</div>
 			</a>
-			<a class="mb-t-logo-link" tabindex="-1" ng-if="$ctrl.config.logoActionType === 'function'" ng-click="$ctrl.action()">
+			<a class="mb-t-logo-link"
+			   tabindex="-1"
+			   ng-if="vm.config.logoActionType === 'function'"
+			   ng-click="vm.action()">
 				<div class="mb-t-logo-container">
-					<div class="mb-t-logo" ng-style="{'background-image': 'url(' + $ctrl.config.logo + ')'}"></div>
+					<div class="mb-t-logo"
+					     ng-style="{'background-image': 'url(' + vm.config.logo + ')'}"></div>
 				</div>
 			</a>
 
 
-			<div class="mb-t-buguer-btn-container" ng-click="$ctrl.openMenu()">
+			<div class="mb-t-buguer-btn-container"
+			     ng-click="vm.openMenu()">
 				<i class="fas fa-bars"></i>
 			</div>
 			<div class="mb-t-inside-content">
 
 				<div class="mb-t-search-container">
-					<mbg-base-topbar-search config="$ctrl.config.search"></mbg-base-topbar-search>
+					<mb-t-search config="vm.config.search"></mb-t-search>
 				</div>
 
 				<!-- <div class="mb-t-notifications-container">
-					<mbg-base-topbar-notifications></mbg-base-topbar-notifications>
+					<mb-topbar-notifications></mb-topbar-notifications>
 				</div> -->
 
 				<div class="mb-t-user-container">
-					<mbg-base-topbar-user config="$ctrl.config.user"></mbg-base-topbar-user>
+					<mb-t-user config="vm.config.user"></mb-t-user>
 				</div>
 
 			</div>

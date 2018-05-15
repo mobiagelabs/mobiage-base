@@ -11,9 +11,10 @@ const component = {
 		config: '='
 	},
 	template,
-	controller
+	controller,
+	controllerAs: 'vm'
 };
 
-angular.module('mbgBaseTopbar', ['mbgBaseTopbarSearch', 'mbgBaseTopbarUser'])
-	.component('mbgBaseTopbar', component)
-	.component('mbgBaseTopbarNotifications', notifications);
+angular.module('mb.topbar', ['mb.topbar.search', 'mb.topbar.user'])
+	.component('mbTopbar', component)
+	.component('mbTopbarNotifications', notifications);

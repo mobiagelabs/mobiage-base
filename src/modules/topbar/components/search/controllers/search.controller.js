@@ -1,4 +1,4 @@
-const controller = function ($scope, $timeout, sideMenuService, hotkeys) {
+const controller = function ($scope, $timeout, mbSidemenuService, hotkeys) {
 	$scope.searchValue = '';
 	$scope.data = [];
 	$scope.result = [];
@@ -250,7 +250,7 @@ const controller = function ($scope, $timeout, sideMenuService, hotkeys) {
 						let sideMenuConfig;
 						const getConfig = () => {
 							$timeout(() => {
-								sideMenuConfig = sideMenuService.getMenuConfig();
+								sideMenuConfig = mbSidemenuService.getMenuConfig();
 								if (sideMenuConfig === undefined) {
 									getConfig();
 								} else {

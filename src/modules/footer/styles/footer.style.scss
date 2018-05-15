@@ -1,0 +1,25 @@
+@import "../../themes/themes.style.scss";
+
+.mb[mb-footer] {
+	width: 100%;
+	height: 90px;
+	position: fixed;
+	top: auto;
+	bottom: 0px;
+	left: 0px;
+	z-index: 900;
+	padding: 0px 30px 15px 30px;
+	display: flex;
+	justify-content: center;
+
+	.mb-f-container {
+		width: 100%;
+		max-width: 1920px;
+		border-radius: 10px;
+		background-color: #ccc;
+
+		@include themify(background-color, color1);
+
+		height: 100%;
+	}
+}

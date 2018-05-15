@@ -1,4 +1,4 @@
-const controller = function ($scope, $timeout, mbgBaseUserService) {
+const controller = function ($scope, $timeout, mbUserService) {
 	$scope.changeZIndex = false;
 	$scope.focus = '';
 	$scope.menuPage = 'user';
@@ -181,9 +181,9 @@ const controller = function ($scope, $timeout, mbgBaseUserService) {
 	};
 
 	this.$onInit = () => {
-		mbgBaseUserService.setComponentCallback((user) => { $scope.user = user; });
-		mbgBaseUserService.setUser(this.config);
-		$scope.user = mbgBaseUserService.getUser();
+		mbUserService.setComponentCallback((user) => { $scope.user = user; });
+		mbUserService.setUser(this.config);
+		$scope.user = mbUserService.getUser();
 	};
 };
 

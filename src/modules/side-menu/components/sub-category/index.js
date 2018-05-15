@@ -7,6 +7,7 @@ const subCategory = {
 		label: '@'
 	},
 	controller,
+	controllerAs: 'vm',
 	template,
 	transclude: true
 };

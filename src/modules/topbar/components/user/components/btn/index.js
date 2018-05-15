@@ -8,7 +8,8 @@ const component = {
 		otherOrganizations: '=',
 		closeMenu: '&'
 	},
-	template
+	template,
+	controllerAs: 'vm'
 };
 
 export default component;

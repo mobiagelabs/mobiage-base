@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@mobiage/eslint-config@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@mobiage/eslint-config/-/eslint-config-1.0.0.tgz#a40ec2a993511051ca0d7bae0784359ee3f77c1c"
+  dependencies:
+    eslint-config-airbnb-base "^12.1.0"
+    eslint-plugin-angular "^3.2.0"
+    eslint-plugin-import "^2.8.0"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -2121,7 +2129,7 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@^4.18.0:
+eslint@^4.19.1:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   dependencies:

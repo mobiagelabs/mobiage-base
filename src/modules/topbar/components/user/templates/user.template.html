@@ -1,54 +1,92 @@
-<div class="mb" topbar-user>
-	<div class="mb-tu-button" ng-class="{'mb-tu-button-active':menuOpen}">
-		<div class="mb-tu-button-names-container" ng-class="{'mb-tu-button-active':menuOpen}" ng-click="toggleMenu()">
-			<div class="mb-tu-button-names mb-tu-user" ng-class="{'mb-tu-focus-company' : focus === 'company'}">
+<div class="mb"
+     topbar-user>
+	<div class="mb-tu-button"
+	     ng-class="{'mb-tu-button-active':menuOpen}">
+		<div class="mb-tu-button-names-container"
+		     ng-class="{'mb-tu-button-active':menuOpen}"
+		     ng-click="toggleMenu()">
+			<div class="mb-tu-button-names mb-tu-user"
+			     ng-class="{'mb-tu-focus-company' : focus === 'company'}">
 				<div class="mb-tu-button-subtitle">
 					{{ getGreetings() }}
 				</div>
 				<div class="mb-tu-button-title">
 					{{ maxSize(user.name, 17, true) }}
 				</div>
-				<mbg-base-user-loading margin="'5px 0px 5px 5px'" height="20" width="120" ng-if="user.name === undefined"></mbg-base-user-loading>
+				<mb-t-u-loading margin="'5px 0px 5px 5px'"
+				                height="20"
+				                width="120"
+				                ng-if="user.name === undefined"></mb-t-u-loading>
 			</div>
-			<div class="mb-tu-button-names mb-tu-company" ng-class="{'mb-tu-focus-company' : focus === 'company'}">
+			<div class="mb-tu-button-names mb-tu-company"
+			     ng-class="{'mb-tu-focus-company' : focus === 'company'}">
 				<div class="mb-tu-button-subtitle">
 					{{ maxSize(user.actualOrganization.subTitle, 25, false) }}
 				</div>
-				<mbg-base-user-loading margin="'5px 0px 5px 5px'" height="20" width="100" ng-if="user.actualOrganization.subTitle === undefined"></mbg-base-user-loading>
+				<mb-t-u-loading margin="'5px 0px 5px 5px'"
+				                height="20"
+				                width="100"
+				                ng-if="user.actualOrganization.subTitle === undefined"></mb-t-u-loading>
 				<div class="mb-tu-button-title">
 					{{ maxSize(user.actualOrganization.name, 17, true) }}
 				</div>
-				<mbg-base-user-loading margin="'5px 0px 5px 5px'" height="20" width="200" ng-if="user.actualOrganization.name === undefined"></mbg-base-user-loading>
+				<mb-t-u-loading margin="'5px 0px 5px 5px'"
+				                height="20"
+				                width="200"
+				                ng-if="user.actualOrganization.name === undefined"></mb-t-u-loading>
 			</div>
 		</div>
-		<div class="mb-tu-button-arrow-container" ng-click="toggleMenu()">
-			<div class="mb-tu-button-arrow" ng-class="{'mb-tu-button-active':menuOpen}">
+		<div class="mb-tu-button-arrow-container"
+		     ng-click="toggleMenu()">
+			<div class="mb-tu-button-arrow"
+			     ng-class="{'mb-tu-button-active':menuOpen}">
 				<i class="fas fa-caret-down"></i>
 			</div>
 		</div>
 		<div class="mb-tu-avatar-container">
-			<div ng-click="focusUser()" ng-class="{'mb-tua-focus-company': focus === 'company', 'mb-tua-focus-user': focus === 'user', 'mb-tua-focus-z-index': changeZIndex === true}"
-			 class="mb-tu-avatar mb-tua-user" ng-style="{'background-image': user.avatar !== undefined ? 'url(' + user.avatar + ')' : 'none', 'background-color':'#bbb' }">
+			<div ng-click="focusUser()"
+			     ng-class="{'mb-tua-focus-company': focus === 'company', 'mb-tua-focus-user': focus === 'user', 'mb-tua-focus-z-index': changeZIndex === true}"
+		
+			     class="mb-tu-avatar mb-tua-user"
+			     ng-style="{'background-image': user.avatar !== undefined ? 'url(' + user.avatar + ')' : 'none', 'background-color':'#bbb' }">
 				{{ user.avatar !== undefined ? '': user.name.substring(0, 1) }}
-				<mbg-base-user-loading margin="'0px'" height="60" width="60" ng-if="user.avatar === undefined"></mbg-base-user-loading>
+				<mb-t-u-loading margin="'0px'"
+				                height="60"
+				                width="60"
+				                ng-if="user.avatar === undefined"></mb-t-u-loading>
 			</div>
-			<div ng-click="focusCompany()" ng-class="{'mb-tua-focus-company': focus === 'company', 'mb-tua-focus-user': focus === 'user', 'mb-tua-focus-z-index': changeZIndex === true}"
-			 class="mb-tu-avatar mb-tua-company" ng-style="{'background-image': user.actualOrganization.avatar !== undefined ? 'url(' + user.actualOrganization.avatar + ')' : 'none', 'background-color':'#ccc' }">
+			<div ng-click="focusCompany()"
+			     ng-class="{'mb-tua-focus-company': focus === 'company', 'mb-tua-focus-user': focus === 'user', 'mb-tua-focus-z-index': changeZIndex === true}"
+		
+			     class="mb-tu-avatar mb-tua-company"
+			     ng-style="{'background-image': user.actualOrganization.avatar !== undefined ? 'url(' + user.actualOrganization.avatar + ')' : 'none', 'background-color':'#ccc' }">
 				{{ user.actualOrganization.avatar !== undefined ? '': user.actualOrganization.name.substring(0, 1) }}
-				<mbg-base-user-loading margin="'0px'" height="60" width="60" ng-if="user.actualOrganization !== undefined && user.actualOrganization.avatar === undefined"></mbg-base-user-loading>
+				<mb-t-u-loading margin="'0px'"
+				                height="60"
+				                width="60"
+				                ng-if="user.actualOrganization !== undefined && user.actualOrganization.avatar === undefined"></mb-t-u-loading>
 			</div>
 		</div>
 	</div>
-	<div ng-click="stopPropagation($event)" class="mb-tu-menu" ng-class="{'mb-tu-menu-active':menuOpen && menuPage === 'user', 'mb-tu-menu-hide': hideUserContent}">
+	<div ng-click="stopPropagation($event)"
+	     class="mb-tu-menu"
+	     ng-class="{'mb-tu-menu-active':menuOpen && menuPage === 'user', 'mb-tu-menu-hide': hideUserContent}">
 		<div class="mb-tu-menu-content">
-			<mbg-base-user-btn config="link" close-menu="closeMenu()" other-organizations="user.otherOrganizations" internal-callback="internalCallback(action)" ng-repeat="link in user.links"></mbg-base-user-btn>
+			<mb-t-u-btn config="link"
+			            close-menu="closeMenu()"
+			            other-organizations="user.otherOrganizations"
+			            internal-callback="internalCallback(action)"
+			            ng-repeat="link in user.links"></mb-t-u-btn>
 		</div>
 	</div>
-	<div ng-click="stopPropagation($event)" class="mb-tu-menu" ng-class="{'mb-tu-menu-active':menuOpen && menuPage === 'company', 'mb-tu-menu-hide': hideCompanyContent}">
+	<div ng-click="stopPropagation($event)"
+	     class="mb-tu-menu"
+	     ng-class="{'mb-tu-menu-active':menuOpen && menuPage === 'company', 'mb-tu-menu-hide': hideCompanyContent}">
 		<div class="mb-tu-menu-content">
 			<div class="mb-tu-menu-company-content">
 				<div class="mb-tu-menu-company-info-container">
-					<div ng-repeat="info in user.actualOrganization.info" class="mb-tu-menu-company-info">
+					<div ng-repeat="info in user.actualOrganization.info"
+					     class="mb-tu-menu-company-info">
 						<div class="mb-tu-menu-company-info-title">
 							{{ info.title }}
 						</div>
@@ -57,18 +95,24 @@
 						</div>
 					</div>
 				</div>
-				<div ng-if="user.otherOrganizations !== undefined && user.otherOrganizations.length > 0" class="mb-tu-menu-company-change-acc" ng-click="openChangeAccount()">
+				<div ng-if="user.otherOrganizations !== undefined && user.otherOrganizations.length > 0"
+				     class="mb-tu-menu-company-change-acc"
+				     ng-click="openChangeAccount()">
 					Trocar organização
 					<i class="fas fa-exchange-alt"></i>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div ng-if="user.otherOrganizations !== undefined && user.otherOrganizations.length > 0" ng-click="stopPropagation($event)" class="mb-tu-menu" ng-class="{'mb-tu-menu-active':menuOpen && menuPage === 'changeAccount', 'mb-tu-menu-hide': hideChangeAccountContent}">
+	<div ng-if="user.otherOrganizations !== undefined && user.otherOrganizations.length > 0"
+	     ng-click="stopPropagation($event)"
+	     class="mb-tu-menu"
+	     ng-class="{'mb-tu-menu-active':menuOpen && menuPage === 'changeAccount', 'mb-tu-menu-hide': hideChangeAccountContent}">
 		<div class="mb-tu-menu-content">
 			<div class="mb-tu-menu-change-account">
 				<div class="mb-tu-m-ca-title">
-					<div class="mb-tu-m-ca-t-back" ng-click="backChangeAccount()">
+					<div class="mb-tu-m-ca-t-back"
+					     ng-click="backChangeAccount()">
 						<i class="fas fa-angle-left"></i>
 						Voltar
 					</div>
@@ -76,24 +120,34 @@
 						Suas organizações
 					</div>
 					<div class="mb-tu-m-ca-t-detail-container">
-						<svg class="mb-tu-m-ca-t-detail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78.56 7.99">
-							<path class="mb-tu-m-ca-t-d-path" d="M11.82,5A9.21,9.21,0,0,0,23.76,5a7.23,7.23,0,0,1,9.59,0,9.21,9.21,0,0,0,11.9,0,7.24,7.24,0,0,1,9.56,0,9.21,9.21,0,0,0,12,0,7,7,0,0,1,4.78-1.8A6.47,6.47,0,0,1,75.68,4.5c.48-.47.95-1,1.41-1.45a8.6,8.6,0,0,0-5.55-1.88,8.94,8.94,0,0,0-6,2.2,7.24,7.24,0,0,1-9.56,0A9.21,9.21,0,0,0,44,3.37a7.23,7.23,0,0,1-9.55,0,9.21,9.21,0,0,0-11.94,0,7.23,7.23,0,0,1-9.55,0,8.94,8.94,0,0,0-6-2.2A8.58,8.58,0,0,0,1.51,3c.46.49.93,1,1.41,1.45A6.46,6.46,0,0,1,7,3.17,7,7,0,0,1,11.82,5Z"
-							 transform="translate(-0.04 -0.16)" />
+						<svg class="mb-tu-m-ca-t-detail"
+						     xmlns="http://www.w3.org/2000/svg"
+						     viewBox="0 0 78.56 7.99">
+							<path class="mb-tu-m-ca-t-d-path"
+							      d="M11.82,5A9.21,9.21,0,0,0,23.76,5a7.23,7.23,0,0,1,9.59,0,9.21,9.21,0,0,0,11.9,0,7.24,7.24,0,0,1,9.56,0,9.21,9.21,0,0,0,12,0,7,7,0,0,1,4.78-1.8A6.47,6.47,0,0,1,75.68,4.5c.48-.47.95-1,1.41-1.45a8.6,8.6,0,0,0-5.55-1.88,8.94,8.94,0,0,0-6,2.2,7.24,7.24,0,0,1-9.56,0A9.21,9.21,0,0,0,44,3.37a7.23,7.23,0,0,1-9.55,0,9.21,9.21,0,0,0-11.94,0,7.23,7.23,0,0,1-9.55,0,8.94,8.94,0,0,0-6-2.2A8.58,8.58,0,0,0,1.51,3c.46.49.93,1,1.41,1.45A6.46,6.46,0,0,1,7,3.17,7,7,0,0,1,11.82,5Z"
+						
+							      transform="translate(-0.04 -0.16)" />
 						</svg>
 					</div>
 				</div>
-				<div class="mb-tu-m-ca-company" ng-click="selectOrganization($index)" ng-repeat="organization in user.otherOrganizations">
-					<div class="mb-tu-m-ca-company-avatar" ng-style="{'background-image': organization.logo === undefined ? 'none' : 'url(' + organization.logo + ')', 'background-color': organization.logo === undefined ? '#ccc' : '#fff'}">
+				<div class="mb-tu-m-ca-company"
+				     ng-click="selectOrganization($index)"
+				     ng-repeat="organization in user.otherOrganizations">
+					<div class="mb-tu-m-ca-company-avatar"
+					     ng-style="{'background-image': organization.logo === undefined ? 'none' : 'url(' + organization.logo + ')', 'background-color': organization.logo === undefined ? '#ccc' : '#fff'}">
 						{{ organization.logo === undefined ? organization.name.slice(0, 1) : '' }}
 					</div>
 					<div class="mb-tu-m-ca-company-name">
 						{{ organization.name }}
 					</div>
-					<div class="mb-tu-m-ca-company-confirm" ng-class="{'mb-tu-m-ca-selected': organizationSelected === $index}">
+					<div class="mb-tu-m-ca-company-confirm"
+					     ng-class="{'mb-tu-m-ca-selected': organizationSelected === $index}">
 						<i class="far fa-check-circle"></i>
 					</div>
 				</div>
-				<div class="mb-tu-m-ca-btn" ng-click="changeOrganization()" ng-class="{'mb-tu-m-ca-btn-active': organizationSelected !== undefined}">
+				<div class="mb-tu-m-ca-btn"
+				     ng-click="changeOrganization()"
+				     ng-class="{'mb-tu-m-ca-btn-active': organizationSelected !== undefined}">
 					Trocar organização agora
 					<i class="fas fa-exchange-alt"></i>
 				</div>

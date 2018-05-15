@@ -17,16 +17,17 @@ const component = {
 		config: '='
 	},
 	template,
-	controller
+	controller,
+	controllerAs: 'vm'
 };
 
-angular.module('mbgBaseSideMenu', ['cfp.hotkeys', 'ngSanitize'])
-	.component('mbgBaseSideMenuQuickMenu', quickMenu)
-	.component('mbgBaseSideMenuItem', item)
-	.component('mbgBaseSideMenuCategory', category)
-	.component('mbgBaseSideMenuSubCategory', subCategory)
-	.component('mbgBaseSideMenuLink', link)
-	.component('mbgBaseSideMenuBtn', btn)
-	.component('mbgBaseSideMenuHtml', html)
-	.component('mbgBaseSideMenu', component)
-	.service('sideMenuService', service);
+angular.module('mb.sidemenu', ['ngSanitize'])
+	.component('mbSmQuickmenu', quickMenu)
+	.component('mbSmItem', item)
+	.component('mbSmCategory', category)
+	.component('mbSmSubcategory', subCategory)
+	.component('mbSmLink', link)
+	.component('mbSmBtn', btn)
+	.component('mbSmHtml', html)
+	.component('mbSidemenu', component)
+	.service('mbSidemenuService', service);

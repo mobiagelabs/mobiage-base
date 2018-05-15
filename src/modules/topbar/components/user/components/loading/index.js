@@ -7,7 +7,8 @@ const component = {
 		height: '<',
 		margin: '<'
 	},
-	template
+	template,
+	controllerAs: 'vm'
 };
 
 export default component;

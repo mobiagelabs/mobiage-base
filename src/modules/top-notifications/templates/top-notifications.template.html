@@ -1,6 +1,5 @@
-<mbg-base-notification 
-	ng-repeat="notification in vm.notificationsStack" 
-	notif="notification"
-	close-notification="vm.closeNotification(id, config)"
-	notification-stack="vm.notificationsStack">
-</mbg-base-notification>
+<mb-notification ng-repeat="notification in vm.notificationsStack"
+                 notif="notification"
+                 close-notification="vm.closeNotification(id, config)"
+                 notification-stack="vm.notificationsStack">
+</mb-notification>

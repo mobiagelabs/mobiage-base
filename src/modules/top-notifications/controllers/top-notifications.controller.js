@@ -6,11 +6,10 @@ const controller = function (MbgNotification) {
 		type: 'info',
 		variation: 'fixed',
 		text: 'Olá mundo, esta é uma notificação',
-		// closeButton: true,
 		duration: 3000,
 		icon: 'fas fa-exclamation-circle',
 		actionButton: true,
-		action: () => { console.log('clicou!!'); },
+		action: () => { },
 		actionText: 'Clique aqui'
 	};
 

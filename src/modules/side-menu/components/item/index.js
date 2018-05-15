@@ -6,7 +6,8 @@ const item = {
 		firstChild: '<',
 		lastChild: '<'
 	},
-	template
+	template,
+	controllerAs: 'vm'
 };
 
 export default item;

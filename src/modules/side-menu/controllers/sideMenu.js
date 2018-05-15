@@ -1,4 +1,4 @@
-const controller = function ($scope, $timeout, sideMenuService) {
+const controller = function ($scope, $timeout, mbSidemenuService) {
 	$scope.state = {
 		menuOpen: false
 	};
@@ -49,8 +49,8 @@ const controller = function ($scope, $timeout, sideMenuService) {
 	};
 
 	this.$onInit = () => {
-		sideMenuService.setMenuConfig(this.config);
-		sideMenuService.registerMenuCallback(openMenu, closeMenu);
+		mbSidemenuService.setMenuConfig(this.config);
+		mbSidemenuService.registerMenuCallback(openMenu, closeMenu);
 
 		$scope.structure = this.config.structure;
 		$scope.quickMenu = this.config.quickMenu;

@@ -6,7 +6,8 @@ const category = {
 		label: '@'
 	},
 	template,
-	transclude: true
+	transclude: true,
+	controllerAs: 'vm'
 };
 
 export default category;

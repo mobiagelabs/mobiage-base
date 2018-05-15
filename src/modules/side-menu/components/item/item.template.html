@@ -1,43 +1,30 @@
-<mbg-base-side-menu-category 
-	ng-if="$ctrl.config.type === 'category'" 
-	label="{{$ctrl.config.label}}">
-
-	<mbg-base-side-menu-item
-		ng-repeat="item in $ctrl.config.children"
-		first-child="$first"
-		last-child="$last"
-		config="item">
-	</mbg-base-side-menu-item>
-
-</mbg-base-side-menu-category>
-
-<mbg-base-side-menu-sub-category 
-	ng-if="$ctrl.config.type === 'sub-category'" 
-	label="{{$ctrl.config.label}}">
-
-	<mbg-base-side-menu-item
-		ng-repeat="item in $ctrl.config.children"
-		first-child="$first"
-		last-child="$last"
-		config="item">
-	</mbg-base-side-menu-item>
-
-</mbg-base-side-menu-sub-category>
-
-<mbg-base-side-menu-btn
-	ng-if="$ctrl.config.type === 'btn'" 
-	icon-src="{{$ctrl.config.iconSrc}}"
-	icon="{{$ctrl.config.icon}}"
-	icon-size="{{$ctrl.config.iconSize}}"
-	label="{{$ctrl.config.label}}"
-	action="$ctrl.config.action"
-	action-type="$ctrl.config.actionType"
-	hotkey="{{$ctrl.config.hotkey}}"
-	first-child="$ctrl.firstChild"
-	last-child="$ctrl.lastChild">
-</mbg-base-side-menu-btn>
-
-<mbg-base-side-menu-html
-	ng-if="$ctrl.config.type === 'html'"
-	html="$ctrl.config.html">
-</mbg-base-side-menu-html>
+<mb-sm-category ng-if="vm.config.type === 'category'"
+                label="{{vm.config.label}}">
+  <mb-sm-item ng-repeat="item in vm.config.children"
+              first-child="$first"
+              last-child="$last"
+              config="item">
+  </mb-sm-item>
+</mb-sm-category>
+<mb-sm-subcategory ng-if="vm.config.type === 'sub-category'"
+                   label="{{vm.config.label}}">
+  <mb-sm-item ng-repeat="item in vm.config.children"
+              first-child="$first"
+              last-child="$last"
+              config="item">
+  </mb-sm-item>
+</mb-sm-subcategory>
+<mb-sm-btn ng-if="vm.config.type === 'btn'"
+           icon-src="{{vm.config.iconSrc}}"
+           icon="{{vm.config.icon}}"
+           icon-size="{{vm.config.iconSize}}"
+           label="{{vm.config.label}}"
+           action="vm.config.action"
+           action-type="vm.config.actionType"
+           hotkey="{{vm.config.hotkey}}"
+           first-child="vm.firstChild"
+           last-child="vm.lastChild">
+</mb-sm-btn>
+<mb-sm-html ng-if="vm.config.type === 'html'"
+            html="vm.config.html">
+</mb-sm-html>

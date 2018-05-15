@@ -12,7 +12,7 @@ const component = {
 	controllerAs: 'vm'
 };
 
-angular.module('mbgBaseTopNotifications', [])
+angular.module('mb.notifications', [])
 	.service('MbgNotification', service)
-	.component('mbgBaseNotification', notification)
-	.component('mbgBaseTopNotifications', component);
+	.component('mbNotification', notification)
+	.component('mbNotifications', component);

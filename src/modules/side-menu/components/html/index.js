@@ -6,6 +6,7 @@ const component = {
 		html: '<'
 	},
 	controller,
+	controllerAs: 'vm',
 	template,
 	transclude: true
 };

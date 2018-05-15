@@ -1,24 +1,36 @@
-<mbg-base-user-link ng-if="($ctrl.config.action !== 'changeAccount') || ($ctrl.config.action === 'changeAccount' && $ctrl.otherOrganizations !== undefined && $ctrl.otherOrganizations.length > 0)"
- action-type="$ctrl.config.actionType" action="$ctrl.config.action" internal-callback="$ctrl.internalCallback({ action: action })" close-menu="$ctrl.closeMenu()">
-	<div class="mb" topbar-user-btn>
+<mb-t-u-link ng-if="(vm.config.action !== 'changeAccount') || (vm.config.action === 'changeAccount' && vm.otherOrganizations !== undefined && vm.otherOrganizations.length > 0)"
+             action-type="vm.config.actionType"
+             action="vm.config.action"
+             internal-callback="vm.internalCallback({ action: action })"
+             close-menu="vm.closeMenu()">
+	<div class="mb"
+	     topbar-user-btn>
 		<div>
-			{{ $ctrl.config.label }}
+			{{ vm.config.label }}
 		</div>
 		<div>
 
-			<div class="mb-tub-icon" ng-if="$ctrl.config.iconSrc === 'fontawesome'" ng-style="{'font-size': $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'line-height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'width' : $ctrl.config.iconSize ? 'auto' : undefined }">
-				<i class="{{$ctrl.config.icon}}"></i>
+			<div class="mb-tub-icon"
+			     ng-if="vm.config.iconSrc === 'fontawesome'"
+			     ng-style="{'font-size': vm.config.iconSize ? vm.config.iconSize + 'px' : undefined, 'line-height' : vm.config.iconSize ? vm.config.iconSize + 'px' : undefined, 'height' : vm.config.iconSize ? vm.config.iconSize + 'px' : undefined, 'width' : vm.config.iconSize ? 'auto' : undefined }">
+				<i class="{{vm.config.icon}}"></i>
 			</div>
 
-			<div class="mb-tub-icon" ng-if="$ctrl.config.iconSrc === 'material'" ng-style="{ 'height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'width' : $ctrl.config.iconSize ? 'auto' : undefined }">
-				<i class="material-icons" ng-style="{'font-size': $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'line-height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined }">{{ $ctrl.config.icon }}</i>
+			<div class="mb-tub-icon"
+			     ng-if="vm.config.iconSrc === 'material'"
+			     ng-style="{ 'height' : vm.config.iconSize ? vm.config.iconSize + 'px' : undefined, 'width' : vm.config.iconSize ? 'auto' : undefined }">
+				<i class="material-icons"
+				   ng-style="{'font-size': vm.config.iconSize ? vm.config.iconSize + 'px' : undefined, 'line-height' : vm.config.iconSize ? vm.config.iconSize + 'px' : undefined }">{{ vm.config.icon }}</i>
 			</div>
 
-			<div class="mb-tub-icon" ng-if="$ctrl.config.iconSrc !== 'material' && $ctrl.config.iconSrc !== 'fontawesome' && $ctrl.config.iconSrc !== undefined && $ctrl.config.iconSrc.length > 0"
-			 ng-style="{ 'height' : $ctrl.config.iconSize ? $ctrl.config.iconSize + 'px' : undefined, 'width' : $ctrl.config.iconSize ? 'auto' : undefined }">
-				<img ng-src="{{ $ctrl.config.iconSrc }}" alt="">
+			<div class="mb-tub-icon"
+			     ng-if="vm.config.iconSrc !== 'material' && vm.config.iconSrc !== 'fontawesome' && vm.config.iconSrc !== undefined && vm.config.iconSrc.length > 0"
+		
+			     ng-style="{ 'height' : vm.config.iconSize ? vm.config.iconSize + 'px' : undefined, 'width' : vm.config.iconSize ? 'auto' : undefined }">
+				<img ng-src="{{ vm.config.iconSrc }}"
+				     alt="">
 			</div>
 
 		</div>
 	</div>
-</mbg-base-user-link>
+</mb-t-u-link>

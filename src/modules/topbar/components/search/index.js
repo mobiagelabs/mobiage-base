@@ -13,7 +13,7 @@ const component = {
 	controller
 };
 
-angular.module('mbgBaseTopbarSearch', [])
-	.component('mbgBaseTopbarSearch', component)
-	.component('mbgBaseTopbarInput', input)
-	.component('mbgBaseTopbarResultLine', line);
+angular.module('mb.topbar.search', [])
+	.component('mbTSearch', component)
+	.component('mbTSearchInput', input)
+	.component('mbTResultLine', line);

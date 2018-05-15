@@ -1,5 +1,5 @@
-angular.module('app', ['mbgBase'])
-	.controller('appController', ($scope, MbgNotification) => {
+angular.module('app', ['mbg.base'])
+	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout) => {
 		$scope.configBase = {
 			theme: 'theme12'
 		};
@@ -13,7 +13,23 @@ angular.module('app', ['mbgBase'])
 				avatar: 'assets/img/perfil.png',
 				links: [
 					{
-						label: 'Meu nome é eneas',
+						label: 'Testar Loader',
+						iconSrc: 'fontawesome',
+						icon: 'fas fa-exchange-alt',
+						iconSize: '22',
+						actionType: 'function',
+						action: () => {
+							$timeout(() => {
+								MbgPageLoader.open();
+
+								$timeout(() => {
+									MbgPageLoader.close();
+								}, 2000);
+							}, 10);
+						}
+					},
+					{
+						label: 'Testar Notificação',
 						iconSrc: 'fontawesome',
 						icon: 'fas fa-exchange-alt',
 						iconSize: '22',
