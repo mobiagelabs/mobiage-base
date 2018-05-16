@@ -57,9 +57,8 @@ const controller = function ($scope, $timeout, mbSidemenuService) {
 		document.addEventListener('touchstart', handleTouchStart);
 		document.addEventListener('touchend', handleTouchEnd);
 
-		const element = document.getElementById('mb-sm-cc');
 		$timeout(() => {
-			window.OverlayScrollbars(element, {
+			$('#mb-sm-cc').overlayScrollbars({
 				className: 'os-theme-thin-dark',
 				scrollbars: {
 					autoHide: 'leave'

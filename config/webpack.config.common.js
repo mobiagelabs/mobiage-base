@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
 	entry: path.resolve(__dirname, '../src/index.js'),
@@ -39,6 +40,13 @@ module.exports = {
 			}
 		]
 	},
+	plugins: [
+		new webpack.ProvidePlugin({
+			'window.jQuery': 'jquery',
+			$: 'jquery',
+			jQuery: 'jquery'
+		})
+	],
 	externals: {
 		angular: 'angular'
 	}
