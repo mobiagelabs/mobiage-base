@@ -1,11 +1,26 @@
-const controller = function (MbgPageLoader, $timeout, $q) {
+const controller = function (MbgPageLoader, $timeout, $q, hotkeys, $scope) {
 	const vm = this;
 	vm.hide = true;
 	vm.active = false;
 	vm.text = 'Carregando';
 	vm.promise = undefined;
 
+	const setHotkeys = () => {
+		hotkeys.bindTo($scope).add({
+			combo: 'esc',
+			callback(event) {
+				event.preventDefault();
+				vm.close();
+			}
+		});
+	};
+
+	const removeHotkeys = () => {
+		hotkeys.del('esc');
+	};
+
 	vm.open = (promise, title = 'Carregando') => {
+		setHotkeys();
 		vm.hide = false;
 		vm.text = title;
 		$timeout(() => {
@@ -15,10 +30,11 @@ const controller = function (MbgPageLoader, $timeout, $q) {
 	};
 
 	vm.close = () => {
+		removeHotkeys();
 		vm.active = false;
 		$timeout(() => {
 			vm.hide = true;
-			vm.promise = undefined;
+			vm.endPromise();
 		}, 500);
 	};
 

@@ -85,6 +85,7 @@ const controller = function ($scope, $timeout, mbSidemenuService, hotkeys) {
 		hotkeys.del('down');
 		hotkeys.del('up');
 		hotkeys.del('enter');
+		hotkeys.del('esc');
 	};
 
 	$scope.openAutocomplete = () => {

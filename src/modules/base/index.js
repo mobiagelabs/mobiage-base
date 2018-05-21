@@ -1,7 +1,7 @@
+import 'angular-sanitize/angular-sanitize.min';
 import 'overlayscrollbars/js/jquery.overlayScrollbars.min';
 import 'overlayscrollbars/css/OverlayScrollbars.min.css';
 import 'angular-hotkeys/build/hotkeys.min';
-import 'angular-sanitize/angular-sanitize.min';
 
 import '../side-menu';
 import '../topbar';

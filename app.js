@@ -20,11 +20,11 @@ angular.module('app', ['mbg.base'])
 						actionType: 'function',
 						action: () => {
 							$timeout(() => {
-								MbgPageLoader.open();
+								MbgPageLoader.createPromise();
 
 								$timeout(() => {
-									MbgPageLoader.close();
-								}, 2000);
+									MbgPageLoader.endPromise();
+								}, 30000);
 							}, 10);
 						}
 					},
