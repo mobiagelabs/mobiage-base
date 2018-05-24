@@ -1,8 +1,10 @@
-@import '../../../../../themes/themes.style.scss';
+@import "../../../../../themes/themes.style.scss";
 
 .mb[topbar-user-btn] {
 	color: #ccc;
+
 	@include themify(color, neutral2);
+
 	font-size: 14px;
 	font-weight: 700;
 	width: 100%;
@@ -17,7 +19,9 @@
 
 	&:hover {
 		color: #9136ca;
+
 		@include themify(color, color1);
+
 		transform: translate3d(1%, 0, 0);
 	}
 

@@ -95,8 +95,18 @@
 						</div>
 					</div>
 				</div>
+				<div class="mb-tu-menu-company-line"></div>
+				<mb-t-u-link ng-if="user.actualOrganization.editAction !== undefined && user.actualOrganization.editActionType !== undefined"
+				             action-type="user.actualOrganization.editActionType"
+				             action="user.actualOrganization.editAction"
+				             close-menu="closeMenu()">
+					<div class="mb-tu-menu-company-bottom-btn">
+						Editar Organização
+						<i class="fas fa-edit"></i>
+					</div>
+				</mb-t-u-link>
 				<div ng-if="user.otherOrganizations !== undefined && user.otherOrganizations.length > 0"
-				     class="mb-tu-menu-company-change-acc"
+				     class="mb-tu-menu-company-bottom-btn"
 				     ng-click="openChangeAccount()">
 					Trocar organização
 					<i class="fas fa-exchange-alt"></i>

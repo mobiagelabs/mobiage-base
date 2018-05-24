@@ -216,8 +216,11 @@
 			> .mb-tu-menu-company-content {
 				width: 100%;
 				padding-top: 15px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
 
-				> .mb-tu-menu-company-info-container {
+				.mb-tu-menu-company-info-container {
 					display: flex;
 					flex-direction: column;
 					justify-content: flex-start;
@@ -232,7 +235,7 @@
 						.mb-tu-menu-company-info-title {
 							color: #ccc;
 
-							@include themify(color, neutral2);
+							@include themify(color, color1);
 
 							font-weight: 700;
 							font-size: 15px;
@@ -249,16 +252,21 @@
 					}
 				}
 
-				> .mb-tu-menu-company-change-acc {
-					background-color: #ccc;
+				.mb-tu-menu-company-line {
+					width: calc(100% - 30px);
+					height: 1px;
+					background-color: #ddd;
+					align-self: center;
+				}
+
+				.mb-tu-menu-company-bottom-btn {
+					// background-color: #ccc;
 					user-select: none;
 
-					@include themify(background-color, neutral2);
+					// @include themify(background-color, neutral3);
 
-					border-bottom-left-radius: 15px;
-					border-bottom-right-radius: 15px;
 					width: 100%;
-					height: 60px;
+					height: 50px;
 					font-weight: 700;
 					padding-left: 20px;
 					padding-right: 25px;
@@ -268,10 +276,20 @@
 					align-items: center;
 					flex-direction: row;
 					color: #fff;
+
+					@include themify(color, neutral2);
+
 					cursor: pointer;
 
 					> .fas {
 						font-size: 20px;
+					}
+
+					&:last-child {
+						// @include themify(background-color, neutral2);
+
+						border-bottom-left-radius: 15px;
+						border-bottom-right-radius: 15px;
 					}
 				}
 			}
@@ -399,6 +417,7 @@
 					// 		@include themify(color, color1);
 					// 	}
 					// }
+			
 				}
 
 				> .mb-tu-m-ca-btn {

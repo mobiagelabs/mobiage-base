@@ -8,12 +8,6 @@ const controller = function ($scope, $timeout, mbSidemenuService, hotkeys) {
 		$scope.selected = index.slice();
 	};
 
-	// Essa função foca o input ao clicar no search
-	$scope.focusInput = () => {
-		const element = document.getElementById('mb-tsi-input');
-		element.focus();
-	};
-
 	const incrementSelected = () => {
 		if ($scope.selected === undefined) {
 			$scope.selected = [0, 0];
@@ -273,6 +267,14 @@ const controller = function ($scope, $timeout, mbSidemenuService, hotkeys) {
 		});
 		$scope.data = dataTmp;
 	};
+
+	// Essa função foca o input ao clicar no search
+	$scope.focusInput = () => {
+		const element = document.getElementById('mb-tsi-input');
+		element.focus();
+	};
+
+	$scope.onFocusInput = () => { };
 
 	this.$onInit = () => {
 		$scope.indexFields = this.config.indexFields;

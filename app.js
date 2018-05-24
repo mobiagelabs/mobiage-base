@@ -116,6 +116,10 @@ angular.module('app', ['mbg.base'])
 					name: 'Spotify',
 					subTitle: 'Spotify Limitada ME.',
 					avatar: 'assets/img/logo_company.png',
+					editAction: () => {
+						console.log('EDITAR');
+					},
+					editActionType: 'function',
 					info: [
 						{ title: 'Razão Social', text: 'Spotify Stream Digital World' },
 						{ title: 'Nome Fantasia', text: 'Spotify Brasil' },
