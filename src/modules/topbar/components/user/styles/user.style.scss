@@ -79,7 +79,7 @@
 					@include themify(color, neutral3);
 
 					font-size: 12px;
-					font-weight: 700;
+					font-weight: 400;
 					user-select: none;
 				}
 
@@ -91,6 +91,7 @@
 
 					font-weight: 700;
 					user-select: none;
+					font-size: 14px;
 				}
 			}
 		}
@@ -121,8 +122,8 @@
 		}
 
 		> .mb-tu-avatar-container {
-			width: 60px;
-			height: 60px;
+			width: 55px;
+			height: 55px;
 			position: relative;
 
 			.mb-tu-avatar {
@@ -130,11 +131,11 @@
 				position: absolute;
 				left: 0px;
 				bottom: 0px;
-				width: 60px;
-				height: 60px;
+				width: 55px;
+				height: 55px;
 				border-radius: 30px;
 				font-size: 30px;
-				line-height: 60px;
+				line-height: 55px;
 				color: white;
 				font-weight: 700;
 				text-align: center;
@@ -205,7 +206,7 @@
 		border-bottom-right-radius: 15px;
 
 		.mb-tu-menu-content {
-			border-top: 5px solid #8034ad;
+			border-top: 3px solid #8034ad;
 
 			@include themify(border-color, color1);
 
@@ -238,7 +239,7 @@
 							@include themify(color, color1);
 
 							font-weight: 700;
-							font-size: 15px;
+							font-size: 12px;
 						}
 
 						.mb-tu-menu-company-info-text {
@@ -270,7 +271,7 @@
 					font-weight: 700;
 					padding-left: 20px;
 					padding-right: 25px;
-					font-size: 14px;
+					font-size: 12px;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
@@ -282,7 +283,7 @@
 					cursor: pointer;
 
 					> .fas {
-						font-size: 20px;
+						font-size: 16px;
 					}
 
 					&:last-child {

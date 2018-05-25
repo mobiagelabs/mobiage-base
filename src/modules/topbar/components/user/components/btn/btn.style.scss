@@ -5,7 +5,7 @@
 
 	@include themify(color, neutral2);
 
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 700;
 	width: 100%;
 	display: flex;
@@ -15,7 +15,7 @@
 	user-select: none;
 	transition: transform 250ms ease, color 100ms linear;
 	cursor: pointer;
-	padding: 15px 15px 15px 15px;
+	padding: 15px 25px 15px 15px;
 
 	&:hover {
 		color: #9136ca;
@@ -27,5 +27,9 @@
 
 	.mb-tub-icon {
 		margin-left: 15px;
+
+		.fas {
+			font-size: 16px;
+		}
 	}
 }
