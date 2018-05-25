@@ -4,14 +4,26 @@ const service = function () {
 		os componentes do modulo e a criação de novas notificações
 		em qualquer parte do software
 	*/
-	/* Função que abrirá novas notificações */
-	this.openNotification = undefined;
+
+	/*
+		Para não existir mais erros de OpenNotifications undefined,
+		guardo todas as notificações que são requisitadas até a definição
+		da função, e depois executo elas quando o componente é inicializado
+	*/
+	const preRegisterNotificationBuffer = [];
+	this.openNotification = (notif) => {
+		preRegisterNotificationBuffer.push(notif);
+	};
 	/* Função responsável por atualizar o conteúdo do sistema quando uma notificação fixa abrir */
 	this.updateContentTransform = undefined;
 
 	/* Registro da função que abrirá notificações */
 	this.registerComponentCallbacks = (open) => {
 		this.openNotification = open;
+		/* Execução das notificações em buffer */
+		preRegisterNotificationBuffer.forEach((notif) => {
+			this.openNotification(notif);
+		});
 	};
 
 	/* Registro da função que atualizará a posição do conteúdo do sistema */
@@ -19,45 +31,65 @@ const service = function () {
 		this.updateContentTransform = update;
 	};
 
-	/* formato: { close: fn(), config } */
+	/* * Fixed Notification * */
 	this.fixedNotification = undefined;
-	this.registerFixed = (notification) => { this.fixedNotification = notification; this.updateFloatNotif(); };
-	this.closeFixedNotif = () => {
-		if (this.fixedNotification !== undefined) {
-			this.fixedNotification.close(this.fixedNotification.config);
-			this.fixedNotification = undefined;
+	this.fixedNotifBuffer = [];
+	this.registerFixed = (notification) => {
+		/* formato: { close: fn(), config } */
+		this.fixedNotifBuffer.push(notification);
+		this.updateFloatNotif();
+	};
+	this.updateFixedNotif = () => {
+		let stackLevel = 0;
+		this.fixedNotifBuffer.forEach((notif) => {
+			notif.update(stackLevel, notif.config);
+			stackLevel += 1;
+		});
+	};
+	this.closeFixedNotif = (id) => {
+		if (this.fixedNotifBuffer.length > 0) {
+			/* Notificação á ser fechada */
+			const notifToClose = this.fixedNotifBuffer.filter((value) => value.config.id === id);
+			/* Remoção da notificação á ser fechada */
+			this.fixedNotifBuffer = this.fixedNotifBuffer.filter((value) => value.config.id !== id);
+			notifToClose.forEach((notif) => {
+				notif.close(notif.config);
+			});
+			this.updateFloatNotif();
+			this.updateFixedNotif();
+		}
+	};
+
+	/* * Float Notification * */
+	this.floatNotifBuffer = [];
+	this.registerFloat = (notification) => {
+		this.floatNotifBuffer.push(notification);
+	};
+	this.updateFloatNotif = () => {
+		let stackLevel = 0;
+		this.floatNotifBuffer.forEach((notif) => {
+			notif.update(stackLevel, notif.config);
+			stackLevel += 1;
+		});
+	};
+	this.closeFloatNotif = (id) => {
+		if (this.floatNotifBuffer.length > 0) {
+			const floatToClose = this.floatNotifBuffer.filter((value) => value.config.id === id);
+			floatToClose.forEach((float) => {
+				float.close(float.config);
+			});
+			this.floatNotifBuffer = this.floatNotifBuffer.filter((value) => value.config.id !== id);
 			this.updateFloatNotif();
 		}
 	};
 
+	/* * Toast Notification * */
 	this.toastNotification = undefined;
 	this.registerToast = (notification) => { this.toastNotification = notification; };
 	this.closeToastNotif = () => {
 		if (this.toastNotification !== undefined) {
 			this.toastNotification.close(this.toastNotification.config);
 			this.toastNotification = undefined;
-		}
-	};
-
-	this.floatNotifications = [];
-	this.registerFloat = (notification) => {
-		this.floatNotifications.push(notification);
-	};
-	this.updateFloatNotif = () => {
-		let stackLevel = 0;
-		this.floatNotifications.forEach((notif) => {
-			notif.update(stackLevel);
-			stackLevel += 1;
-		});
-	};
-	this.closeFloatNotif = (id) => {
-		if (this.floatNotifications.length > 0) {
-			const floatToClose = this.floatNotifications.filter((value) => value.config.id === id);
-			floatToClose.forEach((float) => {
-				float.close(float.config);
-			});
-			this.floatNotifications = this.floatNotifications.filter((value) => value.config.id !== id);
-			this.updateFloatNotif();
 		}
 	};
 };

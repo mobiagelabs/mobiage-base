@@ -1,6 +1,7 @@
 <div class="mb-n-container"
+     ng-if="vm.classes.notifVariation !== undefined && vm.classes.notifType !== undefined"
      ng-class="[vm.classes.notifVariation]"
-     ng-style="{'transform': vm.containerTransform}">
+     ng-style="{'transform': vm.containerTransform, 'z-index': vm.zIndex !== undefined ? vm.zIndex : undefined}">
 	<div class="mb"
 	     mb-notification
 	     ng-class="[vm.classes.notifType, vm.classes.notifVariation, {'mb-n-active': vm.active}]">
@@ -14,7 +15,7 @@
 			<div ng-if="vm.notif.actionButton === true"
 			     class="mb-n-action-container">
 				<div class="mb-n-action-button"
-				     ng-click="vm.notif.action()">
+				     ng-click="vm.notif.action(vm.notif)">
 					{{ vm.notif.actionText }}
 				</div>
 			</div>

@@ -4,6 +4,16 @@ angular.module('app', ['mbg.base'])
 			theme: 'theme12'
 		};
 
+		$timeout(() => {
+			MbgNotification.openNotification({
+				type: 'info',
+				variation: 'toast',
+				duration: 4000,
+				text: 'Olá Mundo',
+				actionButton: false
+			});
+		}, 500);
+
 		$scope.configTopbar = {
 			logo: 'assets/img/logo.png',
 			logoActionType: 'link',
@@ -26,65 +36,6 @@ angular.module('app', ['mbg.base'])
 									MbgPageLoader.endPromise();
 								}, 30000);
 							}, 10);
-						}
-					},
-					{
-						label: 'Testar Notificação',
-						iconSrc: 'fontawesome',
-						icon: 'fas fa-exchange-alt',
-						iconSize: '22',
-						actionType: 'function',
-						action: () => {
-							window.servico_de_correios_da_topage = window.servico_de_correios_da_topage || 0;
-							switch (window.servico_de_correios_da_topage) {
-								case 0: {
-									MbgNotification.openNotification({
-										type: 'info',
-										variation: 'toast',
-										duration: 4000,
-										text: 'Olá Mundo',
-										actionButton: false
-									});
-									break;
-								}
-								case 1: {
-									MbgNotification.openNotification({
-										type: 'warn',
-										variation: 'float',
-										duration: 4000,
-										text: 'Olá Mundo',
-										actionButton: true
-									});
-									break;
-								}
-								case 2: {
-									MbgNotification.openNotification({
-										type: 'error',
-										variation: 'fixed',
-										duration: 5000,
-										text: 'Olá Mundo'
-									});
-									break;
-								}
-								case 3: {
-									MbgNotification.openNotification({
-										type: 'success',
-										variation: 'float',
-										duration: 6000,
-										text: 'Olá Mundo'
-									});
-									break;
-								}
-								default: {
-									MbgNotification.openNotification({
-										type: 'info',
-										variation: 'float',
-										message: 'Olá Mundo',
-										duration: 4000
-									});
-								}
-							}
-							window.servico_de_correios_da_topage += 1;
 						}
 					},
 					{
@@ -201,10 +152,104 @@ angular.module('app', ['mbg.base'])
 							label: 'Estoque',
 							children: [
 								{
-									type: 'btn', label: 'Movimentação', actionType: 'link', action: '#1'
+									type: 'btn',
+									label: 'Notificação Fixed',
+									actionType: 'function',
+									action: () => {
+										MbgNotification.openNotification({
+											type: 'info',
+											variation: 'fixed',
+											message: 'Olá Mundo',
+											duration: 4000
+										});
+									}
 								},
 								{
-									type: 'btn', label: 'Inventário', actionType: 'link', action: '#2'
+									type: 'btn',
+									label: 'Notificação Float',
+									actionType: 'function',
+									action: () => {
+										MbgNotification.openNotification({
+											type: 'info',
+											variation: 'float',
+											message: 'Olá Mundo',
+											duration: 4000
+										});
+									}
+								},
+								{
+									type: 'btn',
+									label: 'Notificação Toast',
+									actionType: 'function',
+									action: () => {
+										MbgNotification.openNotification({
+											type: 'info',
+											variation: 'toast',
+											message: 'Olá Mundo',
+											duration: 4000
+										});
+									}
+								},
+								{
+									type: 'btn',
+									label: 'Notificação',
+									actionType: 'function',
+									action: () => {
+										window.servico_de_correios_da_topage = window.servico_de_correios_da_topage || 0;
+										switch (window.servico_de_correios_da_topage) {
+											case 0: {
+												MbgNotification.openNotification({
+													type: 'info',
+													variation: 'fixed',
+													duration: 'fixed',
+													text: 'Olá Mundo',
+													actionButton: true,
+													actionText: 'fechar',
+													action: (teste) => {
+														MbgNotification.closeFixedNotif(teste.id);
+													}
+												});
+												break;
+											}
+											case 1: {
+												MbgNotification.openNotification({
+													type: 'warn',
+													variation: 'fixed',
+													duration: 15000,
+													text: 'Olá Mundo',
+													actionButton: true
+												});
+												break;
+											}
+											case 2: {
+												MbgNotification.openNotification({
+													type: 'error',
+													variation: 'fixed',
+													duration: 4000,
+													text: 'Olá Mundo'
+												});
+												break;
+											}
+											case 3: {
+												MbgNotification.openNotification({
+													type: 'success',
+													variation: 'float',
+													duration: 6000,
+													text: 'Olá Mundo'
+												});
+												break;
+											}
+											default: {
+												MbgNotification.openNotification({
+													type: 'info',
+													variation: 'float',
+													message: 'Olá Mundo',
+													duration: 4000
+												});
+											}
+										}
+										window.servico_de_correios_da_topage += 1;
+									}
 								},
 								{
 									type: 'btn', label: 'Comercial', actionType: 'link', action: '#3'
