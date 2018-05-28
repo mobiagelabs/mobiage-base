@@ -18,6 +18,7 @@ const controller = function (MbgNotification) {
 	vm.openNotification = (notif) => {
 		vm.notification = Object.assign({ id: Math.random().toString(36).slice(2) }, vm.defaults, notif);
 		vm.notificationsStack.push(vm.notification);
+		return vm.notification;
 	};
 
 	vm.closeNotification = (id) => {

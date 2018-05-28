@@ -1,4 +1,4 @@
-angular.module('app', ['mbg.base'])
+angular.module('app', ['mbg.base', 'ui.router'])
 	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout) => {
 		$scope.configBase = {
 			theme: 'theme12'
@@ -398,4 +398,32 @@ angular.module('app', ['mbg.base'])
 				}
 			]
 		};
+	})
+	.run(($state) => {
+		$state.go('app');
+	})
+	.config(($stateProvider) => {
+		$stateProvider.state({
+			name: 'app',
+			url: '/',
+			template: `
+					<mbg-base config="configBase">
+					<mb-topbar config="configTopbar"></mb-topbar>
+					<mb-container>
+						<mb-sidemenu config="configMenu"></mb-sidemenu>
+						<mb-content>
+							<div class="conteudoTeste"></div>
+							<div class="conteudoTeste"></div>
+							<div class="conteudoTeste"></div>
+							<div class="conteudoTeste"></div>
+							<div class="conteudoTeste"></div>
+						</mb-content>
+					</mb-container>
+					<mb-footer></mb-footer>
+					<mb-pageloader></mb-pageloader>
+				</mbg-base>
+				<mb-notifications></mb-notifications>
+			`
+			// controller: ''
+		});
 	});

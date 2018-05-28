@@ -136,15 +136,11 @@
 		}
 
 		&.mb-n-fixed {
-			// opacity: 0;
+			transition: transform 450ms ease;
 			transform: translate3d(0, -100%, 0);
-			will-change: opacity, transform;
-			transition: opacity 500ms linear, transform 450ms ease;
-			// border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 
 			&.mb-n-active {
-				// opacity: 1;
 				transform: translate3d(0, 0, 0);
 			}
 		}
@@ -187,8 +183,6 @@
 
 				.mb-n-action-container {
 					width: 300px;
-
-					// background-color: red;
 
 					.mb-n-action-button {
 						border: none;

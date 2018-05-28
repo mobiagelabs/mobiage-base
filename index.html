@@ -69,26 +69,11 @@
 
 <body ng-controller="appController">
 
-
-	<mbg-base config="configBase">
-		<mb-topbar config="configTopbar"></mb-topbar>
-		<mb-container>
-			<mb-sidemenu config="configMenu"></mb-sidemenu>
-			<mb-content>
-				<div class="conteudoTeste"></div>
-				<div class="conteudoTeste"></div>
-				<div class="conteudoTeste"></div>
-				<div class="conteudoTeste"></div>
-				<div class="conteudoTeste"></div>
-			</mb-content>
-		</mb-container>
-		<mb-footer></mb-footer>
-		<mb-pageloader></mb-pageloader>
-	</mbg-base>
-	<mb-notifications></mb-notifications>
+	<ui-view></ui-view>
 
 	<!-- Dependedências do Componente -->
 	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
 
 	<!-- Import do App de Teste -->
 

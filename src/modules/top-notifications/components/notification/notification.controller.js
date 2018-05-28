@@ -50,17 +50,13 @@ const controller = function ($timeout, MbgNotification) {
 				vm.zIndex = 23700 - notifCount;
 				vm.containerTransform = `${translateX} ${translateY}`;
 				MbgNotification.updateContentTransform(`translateY(${(notifCount) * vm.notifHeight.fixed}px)`, `calc(100vh - ${(notifCount) * vm.notifHeight.fixed}px)`);
-				/* Tempo de espera da configuração */
 				if (config.duration && config.duration !== 'fixed') {
 					const durationWait = $timeout(() => {
 						MbgNotification.closeFixedNotif(config.id);
-					}, config.duration - animationDuration);
+					}, config.duration);
 					timeouts.push(durationWait);
 				}
-				const activeWait = $timeout(() => {
-					vm.active = true;
-				}, 50);
-				timeouts.push(activeWait);
+				vm.active = true;
 				break;
 			}
 			case 'float': {
@@ -72,17 +68,15 @@ const controller = function ($timeout, MbgNotification) {
 				const translateY = `translateY(calc(${(notifCount - 1) * 100}% + ${fixedNotifHeight}px))`;
 				const translateX = 'translateX(-50%)';
 				vm.containerTransform = `${translateX} ${translateY}`;
-				/* Tempo de espera da configuração */
 				const durationWait = $timeout(() => {
 					MbgNotification.closeFloatNotif(config.id);
-				}, config.duration - animationDuration);
-
+				}, config.duration);
 				// const soundWait = $timeout(() => {
 				// 	mouthPop.play();
 				// }, 100);
 				// timeouts.push(soundWait);
-				timeouts.push(durationWait);
 				vm.active = true;
+				timeouts.push(durationWait);
 				break;
 			}
 			default: {
@@ -93,16 +87,15 @@ const controller = function ($timeout, MbgNotification) {
 				vm.containerTransform = `${translateX} ${translateY}`;
 				const active = () => {
 					MbgNotification.registerToast({ close: vm.close, config });
-					/* Tempo de espera da configuração */
 					if (config.duration && config.duration !== 'fixed') {
 						const durationWait = $timeout(() => {
 							MbgNotification.closeToastNotif();
-						}, config.duration - animationDuration);
+						}, config.duration);
 						timeouts.push(durationWait);
 					}
 					const activeWait = $timeout(() => {
 						vm.active = true;
-					}, 50);
+					});
 					timeouts.push(activeWait);
 				};
 
@@ -126,9 +119,6 @@ const controller = function ($timeout, MbgNotification) {
 				MbgNotification.updateContentTransform(`translateY(${vm.notifHeight.fixed * MbgNotification.fixedNotifBuffer.length}px)`, `calc(100vh - ${vm.notifHeight.fixed * MbgNotification.fixedNotifBuffer.length}px)`);
 				break;
 			}
-			// case 'float': {
-			// 	break;
-			// }
 			default: {
 				break;
 			}
