@@ -3,6 +3,7 @@ const controller = function ($scope, $timeout, mbSidemenuService, hotkeys) {
 	$scope.data = [];
 	$scope.result = [];
 	$scope.selected = undefined;
+	$scope.autoCompleteHide = true;
 
 	$scope.onSelect = (index) => {
 		$scope.selected = index.slice();
@@ -280,12 +281,14 @@ const controller = function ($scope, $timeout, mbSidemenuService, hotkeys) {
 		$scope.indexFields = this.config.indexFields;
 		prepareData(this.config.data);
 
-		hotkeys.bindTo($scope).add({
-			combo: 'ctrl+b',
-			callback() {
-				$scope.focusInput();
-			}
-		});
+		if (this.config.setHotkeys === true) {
+			hotkeys.bindTo($scope).add({
+				combo: 'ctrl+b',
+				callback() {
+					$scope.focusInput();
+				}
+			});
+		}
 	};
 };
 

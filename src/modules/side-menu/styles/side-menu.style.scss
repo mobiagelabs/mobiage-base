@@ -5,7 +5,7 @@
 	height: calc(100% - #{$topbarHeight});
 	width: 220px;
 	position: relative;
-	z-index: 601;
+	z-index: 0;
 	will-change: transform;
 	vertical-align: top;
 	transition: transform 750ms cubic-bezier(0.96, 0.015, 0.45, 1);

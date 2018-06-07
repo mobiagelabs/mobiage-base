@@ -16,8 +16,8 @@ angular.module('app', ['mbg.base', 'ui.router'])
 
 		$scope.configTopbar = {
 			logo: 'assets/img/logo.png',
-			logoActionType: 'link',
-			logoAction: 'http://www.google.com.br',
+			logoActionType: 'state',
+			logoAction: 'app.home',
 			user: {
 				name: 'Amália Fernandes',
 				avatar: 'assets/img/perfil.png',
@@ -252,10 +252,10 @@ angular.module('app', ['mbg.base', 'ui.router'])
 									}
 								},
 								{
-									type: 'btn', label: 'Comercial', actionType: 'link', action: '#3'
+									type: 'btn', label: 'Teste', actionType: 'state', action: 'app.teste'
 								},
 								{
-									type: 'btn', label: 'Venda rápida', actionType: 'link', action: '#4'
+									type: 'btn', label: 'Footer', actionType: 'state', action: 'app.footer'
 								},
 								{
 									type: 'btn', label: 'Promoções', actionType: 'link', action: '#5'
@@ -400,30 +400,51 @@ angular.module('app', ['mbg.base', 'ui.router'])
 		};
 	})
 	.run(($state) => {
-		$state.go('app');
+		$state.go('app.home');
 	})
 	.config(($stateProvider) => {
 		$stateProvider.state({
 			name: 'app',
-			url: '/',
+			abstract: true,
 			template: `
 					<mbg-base config="configBase">
 					<mb-topbar config="configTopbar"></mb-topbar>
 					<mb-container>
 						<mb-sidemenu config="configMenu"></mb-sidemenu>
 						<mb-content>
-							<div class="conteudoTeste"></div>
-							<div class="conteudoTeste"></div>
-							<div class="conteudoTeste"></div>
-							<div class="conteudoTeste"></div>
-							<div class="conteudoTeste"></div>
+							<ui-view></ui-view>
 						</mb-content>
 					</mb-container>
-					<mb-footer></mb-footer>
 					<mb-pageloader></mb-pageloader>
 				</mbg-base>
 				<mb-notifications></mb-notifications>
+				<mb-footer-portal></mb-footer-portal>
 			`
-			// controller: ''
+		});
+		$stateProvider.state({
+			name: 'app.home',
+			url: '/',
+			template: `
+				<h4>inicio</h4>
+			`
+		});
+		$stateProvider.state({
+			name: 'app.teste',
+			url: '/teste',
+			template: `
+				<div class="conteudoTeste">TESTE</div>
+				<div class="conteudoTeste"></div>
+				<div class="conteudoTeste"></div>
+				<div class="conteudoTeste"></div>
+				<div class="conteudoTeste"></div>
+			`
+		});
+		$stateProvider.state({
+			name: 'app.footer',
+			url: '/footer',
+			template: `
+				<div class="conteudoTeste">Footer</div>
+				<mb-footer></mb-footer>
+			`
 		});
 	});

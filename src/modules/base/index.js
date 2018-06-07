@@ -6,7 +6,7 @@ import 'angular-hotkeys/build/hotkeys.min';
 import '../side-menu';
 import '../topbar';
 import '../top-notifications';
-// import '../footer';
+import '../footer';
 import '../pageloader';
 import template from './templates/base.template.html';
 import controller from './controllers/base.controller';
@@ -31,9 +31,10 @@ angular.module('mbg.base', [
 	'mb.sidemenu',
 	'mb.topbar',
 	'mb.notifications',
-	// 'mb.footer',
+	'mb.footer',
 	'mb.pageloader',
-	'cfp.hotkeys'
+	'cfp.hotkeys',
+	'ngAnimate'
 ])
 	.component('mbgBase', component)
 	.component('mbContainer', container)
