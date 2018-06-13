@@ -84,12 +84,17 @@ const service = function () {
 	};
 
 	/* * Toast Notification * */
-	this.toastNotification = undefined;
-	this.registerToast = (notification) => { this.toastNotification = notification; };
-	this.closeToastNotif = () => {
-		if (this.toastNotification !== undefined) {
-			this.toastNotification.close(this.toastNotification.config);
-			this.toastNotification = undefined;
+	this.toastNotifBuffer = [];
+	this.registerToast = (notification) => {
+		this.toastNotifBuffer.push(notification);
+	};
+	this.closeToastNotif = (id) => {
+		if (this.toastNotifBuffer.length > 0) {
+			const toastToClose = this.toastNotifBuffer.filter((value) => value.config.id === id);
+			toastToClose.forEach((toast) => {
+				toast.close(toast.config);
+			});
+			this.toastNotifBuffer = this.toastNotifBuffer.filter((value) => value.config.id !== id);
 		}
 	};
 };

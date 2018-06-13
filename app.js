@@ -4,16 +4,6 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			theme: 'theme12'
 		};
 
-		$timeout(() => {
-			MbgNotification.openNotification({
-				type: 'info',
-				variation: 'toast',
-				duration: 4000,
-				text: 'Olá Mundo',
-				actionButton: false
-			});
-		}, 500);
-
 		$scope.configTopbar = {
 			logo: 'assets/img/logo.png',
 			logoActionType: 'state',
@@ -418,7 +408,6 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					<mb-pageloader></mb-pageloader>
 				</mbg-base>
 				<mb-notifications></mb-notifications>
-				<mb-footer-portal></mb-footer-portal>
 			`
 		});
 		$stateProvider.state({

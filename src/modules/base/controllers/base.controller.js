@@ -5,8 +5,12 @@ const controller = function ($scope, hotkeys, $timeout, MbgNotification) {
 	vm.topage = false;
 
 	const updateTransform = (translateY, height) => {
+		vm.transition = 'transform 0.5s ease, height 0.5s 0.5s ease';
 		vm.translateY = translateY;
 		vm.height = height;
+		$timeout(() => {
+			vm.transition = 'none';
+		}, 1100);
 	};
 
 	vm.$onInit = () => {

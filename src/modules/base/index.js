@@ -33,8 +33,7 @@ angular.module('mbg.base', [
 	'mb.notifications',
 	'mb.footer',
 	'mb.pageloader',
-	'cfp.hotkeys',
-	'ngAnimate'
+	'cfp.hotkeys'
 ])
 	.component('mbgBase', component)
 	.component('mbContainer', container)

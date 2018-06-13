@@ -1,49 +1,46 @@
-const controller = function ($timeout, MbgNotification) {
+const controller = function ($timeout, MbgNotification, $element) {
 	const vm = this;
 	/* !!!! Definir esse som no componente pai !!!! */
 	// const mouthPop = new Audio('resources/audio/mouth-pop.mp3');
 	let animationDuration;
 	vm.config = undefined;
-	vm.classes = {
-		notifType: undefined,
-		notifVariation: undefined
-	};
 	vm.notifHeight = {
 		fixed: 50,
 		float: 50,
 		toast: 60
 	};
-	vm.active = false;
 	vm.containerTransform = '';
 
 	const timeouts = [];
 
 	vm.open = (config) => {
+		const element = $element;
+		window.coisa = element;
 		/* Configura o estilo */
 		switch (config.type) {
 			case 'warn': {
-				vm.classes.notifType = 'mb-n-warn';
+				element.children('.mb-n-container').children('.mb[mb-notification]').addClass('mb-n-warn');
 				break;
 			}
 			case 'error': {
-				vm.classes.notifType = 'mb-n-err';
+				element.children('.mb-n-container').children('.mb[mb-notification]').addClass('mb-n-err');
 				break;
 			}
 			case 'success': {
-				vm.classes.notifType = 'mb-n-succ';
+				element.children('.mb-n-container').children('.mb[mb-notification]').addClass('mb-n-succ');
 				break;
 			}
 			default: {
-				vm.classes.notifType = 'mb-n-info';
+				element.children('.mb-n-container').children('.mb[mb-notification]').addClass('mb-n-info');
 			}
 		}
 
 		/* Configura o tipo */
 		switch (config.variation) {
 			case 'fixed': {
-				MbgNotification.registerFixed({ close: vm.close, config, update: vm.update });
 				animationDuration = 500;
-				vm.classes.notifVariation = 'mb-n-fixed';
+				element.children('.mb-n-container').addClass('mb-n-fixed').children('.mb[mb-notification]').addClass('mb-n-fixed');
+				MbgNotification.registerFixed({ close: vm.close, config, update: vm.update });
 				const notifCount = MbgNotification.fixedNotifBuffer.length;
 				const translateY = `translateY(${(notifCount - 1) * vm.notifHeight.fixed}px)`;
 				const translateX = 'translateX(0%)';
@@ -56,14 +53,17 @@ const controller = function ($timeout, MbgNotification) {
 					}, config.duration);
 					timeouts.push(durationWait);
 				}
-				vm.active = true;
+				const activeWait = $timeout(() => {
+					element.children('.mb-n-container').children('.mb[mb-notification]').addClass('mb-n-active');
+				});
+				timeouts.push(activeWait);
 				break;
 			}
 			case 'float': {
 				MbgNotification.registerFloat({ close: vm.close, config, update: vm.update });
 				const notifCount = MbgNotification.floatNotifBuffer.length;
 				animationDuration = 500;
-				vm.classes.notifVariation = 'mb-n-float';
+				element.children('.mb-n-container').addClass('mb-n-float').children('.mb[mb-notification]').addClass('mb-n-float');
 				const fixedNotifHeight = MbgNotification.fixedNotifBuffer.length * vm.notifHeight.fixed;
 				const translateY = `translateY(calc(${(notifCount - 1) * 100}% + ${fixedNotifHeight}px))`;
 				const translateX = 'translateX(-50%)';
@@ -75,32 +75,38 @@ const controller = function ($timeout, MbgNotification) {
 				// 	mouthPop.play();
 				// }, 100);
 				// timeouts.push(soundWait);
-				vm.active = true;
+				const activeWait = $timeout(() => {
+					element.children('.mb-n-container').children('.mb[mb-notification]').addClass('mb-n-active');
+				});
+				timeouts.push(activeWait);
 				timeouts.push(durationWait);
 				break;
 			}
 			default: {
 				animationDuration = 250;
-				vm.classes.notifVariation = 'mb-n-toast';
+				element.children('.mb-n-container').addClass('mb-n-toast').children('.mb[mb-notification]').addClass('mb-n-toast');
 				const translateY = 'translateY(0px)';
 				const translateX = 'translateX(-50%)';
 				vm.containerTransform = `${translateX} ${translateY}`;
+
 				const active = () => {
 					MbgNotification.registerToast({ close: vm.close, config });
 					if (config.duration && config.duration !== 'fixed') {
 						const durationWait = $timeout(() => {
-							MbgNotification.closeToastNotif();
+							MbgNotification.closeToastNotif(config.id);
 						}, config.duration);
 						timeouts.push(durationWait);
 					}
 					const activeWait = $timeout(() => {
-						vm.active = true;
+						element.children('.mb-n-container').children('.mb[mb-notification]').addClass('mb-n-active');
 					});
 					timeouts.push(activeWait);
 				};
 
-				if (MbgNotification.toastNotification !== undefined) {
-					MbgNotification.closeToastNotif();
+				if (MbgNotification.toastNotifBuffer.length > 0) {
+					MbgNotification.toastNotifBuffer.forEach((notif) => {
+						MbgNotification.closeToastNotif(notif.config.id);
+					});
 					const animationWait = $timeout(() => {
 						active();
 					}, animationDuration + 50);
@@ -114,6 +120,7 @@ const controller = function ($timeout, MbgNotification) {
 	};
 
 	vm.close = (config) => {
+		const element = $element;
 		switch (config.variation) {
 			case 'fixed': {
 				MbgNotification.updateContentTransform(`translateY(${vm.notifHeight.fixed * MbgNotification.fixedNotifBuffer.length}px)`, `calc(100vh - ${vm.notifHeight.fixed * MbgNotification.fixedNotifBuffer.length}px)`);
@@ -123,7 +130,7 @@ const controller = function ($timeout, MbgNotification) {
 				break;
 			}
 		}
-		vm.active = false;
+		element.children('.mb-n-container').children('.mb[mb-notification]').removeClass('mb-n-active');
 		$timeout(() => {
 			vm.closeNotification({ id: config.id, config });
 		}, animationDuration + 50);
