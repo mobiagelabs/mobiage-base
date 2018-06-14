@@ -11,11 +11,14 @@ const service = function () {
 		da função, e depois executo elas quando o componente é inicializado
 	*/
 	const preRegisterNotificationBuffer = [];
+	let preRegisterNotifFixedUpdate;
 	this.openNotification = (notif) => {
 		preRegisterNotificationBuffer.push(notif);
 	};
 	/* Função responsável por atualizar o conteúdo do sistema quando uma notificação fixa abrir */
-	this.updateContentTransform = undefined;
+	this.updateContentTransform = (update) => {
+		preRegisterNotifFixedUpdate = update;
+	};
 
 	/* Registro da função que abrirá notificações */
 	this.registerComponentCallbacks = (open) => {
@@ -29,6 +32,9 @@ const service = function () {
 	/* Registro da função que atualizará a posição do conteúdo do sistema */
 	this.registerContentCallback = (update) => {
 		this.updateContentTransform = update;
+		if (preRegisterNotifFixedUpdate !== undefined) {
+			this.updateContentTransform(preRegisterNotifFixedUpdate);
+		}
 	};
 
 	/* * Fixed Notification * */
