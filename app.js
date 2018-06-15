@@ -76,10 +76,10 @@ angular.module('app', ['mbg.base', 'ui.router'])
 						name: 'Dell',
 						logo: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg'
 					}
-				]
-				// changeOrganizationAction: (organizationSelected) => {
-				// 	console.log(organizationSelected);
-				// }
+				],
+				changeOrganizationAction: (organizationSelected) => {
+					console.log(organizationSelected);
+				}
 			},
 			search: {
 				indexFields: [{ name: 'name' }],
@@ -397,7 +397,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			name: 'app',
 			abstract: true,
 			template: `
-					<mbg-base config="configBase">
+				<mbg-base config="configBase">
 					<mb-topbar config="configTopbar"></mb-topbar>
 					<mb-container>
 						<mb-sidemenu config="configMenu"></mb-sidemenu>

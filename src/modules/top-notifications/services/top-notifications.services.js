@@ -5,16 +5,12 @@ const service = function () {
 		em qualquer parte do software
 	*/
 
-	/*
-		Para não existir mais erros de OpenNotifications undefined,
-		guardo todas as notificações que são requisitadas até a definição
-		da função, e depois executo elas quando o componente é inicializado
-	*/
 	const preRegisterNotificationBuffer = [];
 	let preRegisterNotifFixedUpdate;
 	this.openNotification = (notif) => {
 		preRegisterNotificationBuffer.push(notif);
 	};
+
 	/* Função responsável por atualizar o conteúdo do sistema quando uma notificação fixa abrir */
 	this.updateContentTransform = (update) => {
 		preRegisterNotifFixedUpdate = update;
