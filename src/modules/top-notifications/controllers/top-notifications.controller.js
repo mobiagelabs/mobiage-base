@@ -4,7 +4,7 @@ const controller = function (MbgNotification) {
 
 	vm.defaults = {
 		type: 'info',
-		variation: 'fixed',
+		variation: 'toast',
 		text: 'Olá mundo, esta é uma notificação',
 		duration: 4000,
 		icon: 'fas fa-exclamation-circle',

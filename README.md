@@ -61,7 +61,7 @@ E depois passamos esse objeto para o base:
 ```
 ## Objeto de configuração do componente base (`<mbg-base>`)
 | Tipo    | Nome    | Descrição   |
-|------   | ------  | ----------  |
+|---------|---------|-------------|
 |`string` |`theme`  | Define o tema que será utilizado, consulte lista de temas disponveis no arquivo `'src/themes/themes.style.scss'`. |
 
 ************
@@ -225,6 +225,10 @@ Apenas dois atributos são necessários. Você pode colocar mais informações n
 
 </div>
 
+Nem sempre é possível ter todos esses dados na configuração inicial do componente, portanto, você pode incluir apenas os dados mais básicos e inicialmente e então atualizar incrementalmente com a service [`mbUserService`](#mbUserService). 
+
+***********
+
 <div id="search">
 
 ### Atributos do objeto de configuração do `search`:
@@ -239,16 +243,26 @@ O search precisa de dois atributos, um com informações á serem buscadas e out
 
 <div id="searchData">
 
-W.I.P BEGINS
-
 ### Atributos dos objetos da array de objetos do `search.data`:
 
 | Tipo    | Nome    | Descrição   |
 |---------|---------|-------------|
-|`string` | `type` | tipo |
-|`string` | `data` | tipo |
+|`string` | `type` | Tipo de dado que será usado para busca. A ideia aqui era ter a possibilidade de indicar que um dado será estático ou dinâmico, porém apenas o tipo estático foi desenvolvido até o momento. Portanto, apenas a opção `'static'` é valida. |
+|`string` ou `array<Object>` | `data` | Array de [Objetos](#searchDataData) com os dados para busca. Para usar os links do menu lateral como entrada de dados, passe a string `'sideMenuLinks'` neste atributo |
 
-W.I.P ENDS
+</div>
+
+<div id="searchDataData">
+
+### Atributos dos objetos da array de objetos do `search.data.data`:
+Abaixo estão os únicos atributos obrigatórios do `search.data.data`, você pode inserir mais dados nos objetos de dados, porém eles não serão usados até você indicar no `search.indexFields` que é necessário buscar por eles.
+
+| Tipo    | Nome    | Descrição   |
+|---------|---------|-------------|
+|`string` | `type` | Tipo do dado (Ex.: Clientes, Empresas, Fornecedores). Este atributo é usado para agrupar os dados do mesmo tipo no autocomplete da busca. |
+|`string` | `name` | String que será exibida no autocomplete |
+|`string`|`actionType`| Define o tipo de ação do botão do autocomplete, pode ser um entre: `'link'`, `'function'` ou `'state'`. |
+|`string` ou `function`|`action`| Define a ação do botão, o conteúdo deste atributo depende do tipo de ação que você escolheu no atributo `actionType`: <br> 1. `'link'`: String com uma url válida; <br> 2. `'state'`: String com o nome de um state (do ui-router) válido para transição; <br> 3. `'function'`: Função que será executada ao clicar no botão; |
 
 </div>
 
@@ -259,6 +273,27 @@ W.I.P ENDS
 | Tipo    | Nome    | Descrição   |
 |---------|---------|-------------|
 |`string` | `name` | Único atributo obrigatório, é o nome que será usado ao procurar o índice nas informações á serem buscadas. |
+
+Você precisa indicar aqui todos os dados que serão usados nas buscas. Por exemplo: Na lista de links do menu lateral, precisamos buscar pelo nome dos links (texto do botão). Ao importar os links do menu lateral com o tipo `'sideMenuLinks'` no atributo `data`, precisamos indicar no `indexFields` que o índice com o nome `'name'` deverá ser considerado, portanto, deve ser adicionado a seguinte configuração:
+```javascript
+indexFields: [
+  {
+    name: 'name'
+  }
+]
+```
+Caso você queira adicionar uma lista estática de clientes, por exemplo, e deseja que o CPF dos clientes seja considerado na busca, você deve adicionar:
+```javascript
+indexFields: [
+  {
+    name: 'name'
+  },
+  {
+    name: 'cpf'
+  }
+]
+```
+Basta o dado ter uma key `cpf` no objeto, que ele será buscado. Porém, deve ser notado que **atualmente apenas o índice `name`, é mostrado no *autocomplete* e usado para *highlight* de digitação.**
 
 </div>
 
@@ -390,7 +425,7 @@ const config = {
 |`string`|`icon`| Caso seja utilizado os valores `'material'` ou `'fontawesome'` no iconSrc, você deve informar neste atributo os seletores de classes do ícone (no caso do fontawesome) ou o nome do ícone (no caso do material design) que você deseja utilizar. <br> **Por exemplo**: Para utilizar o ícone do android usando o *fontawesome*, precisamos passar o valor: `'fab fa-android'`. Para utilizar o mesmo ícone, mas com a fonte do *material design*, precisamos passar o valor: `'android'`. | 
 |`string`|`iconSize`| Define um tamanho personalizado para o ícone. |
 |`string`|`actionType`| Define o tipo de ação do botão, pode ser um entre: `'link'`, `'function'` ou `'state'`. |
-|`string` ou `function`|`action`| Define a ação do botão, o conteúdo deste atributo depende do tipo de ação que você escolheu no atributo `actionType`: <br> 1. `link`: String com uma url válida; <br> 2. `state`: String com o nome de um state válido para transição. <br> 3. `function`: Função que será executada ao clicar no botão; |
+|`string` ou `function`|`action`| Define a ação do botão, o conteúdo deste atributo depende do tipo de ação que você escolheu no atributo `actionType`: <br> 1. `'link'`: String com uma url válida; <br> 2. `'state'`: String com o nome de um state (do ui-router) válido para transição; <br> 3. `'function'`: Função que será executada ao clicar no botão; |
 
 ************
 
@@ -399,7 +434,72 @@ const config = {
 ### Atributos do objeto de configuração do `quickMenu`:
 
 | Tipo    | Nome    | Descrição   |
-|------   | ------  | ----------  |
+|---------|---------|-------------|
 |`boolean`|`enabled`| Ativa ou desativa o menu rápido; |
 |`string`|`buttonText`| Define o texto do botão; |
 |`array <Object>`|`links`| Array de objetos para configurar os links do menu rápido. (**Cada link é configurado por um objeto com os mesmos atributos dos itens do tipo `'btn'` acima**). |
+
+************
+## Services
+
+<div id="mbUserService">
+
+### `mbUserService`
+Service para atualização dos dados de usuário da barra do topo.
+
+#### Métodos:
+| Nome    | Descrição   |
+|---------|-------------|
+| `.getUser()` | Retorna o objeto de usuário sendo usado no momento pela service e pelo componente de usuário da barra do topo. |
+| `.setUser(<Object>)` | Seta o objeto de configuração do usuário. Internamente, este método utiliza o `Object.assign` para substituir as configurações, portanto, a configuração pode ser feita incrementalmente. |
+
+</div>
+
+### `MbgPageLoader`
+Service para abrir ou fechar o MbgPageLoader
+
+#### Métodos:
+| Nome    | Descrição   |
+|---------|-------------|
+| `.open(<Promise>, <String>)` | Este método é útil para exibir o *loader* apenas durante o processo da promise, que pode ser uma chamada no backend, por exemplo. Recebe dois parâmetros, o primeiro deve ser uma promise, o segundo (opcional) é uma string usada como título do loader. Esse método retorna a promise do primeiro parâmetro. |
+| `.createPromise()` | Este método cria uma promise e mantem o loader aberto até que essa promise seja finalizada através de um dos métodos de finalização descritos abaixo. |
+| `.close()` | Fecha o loader e finaliza a promise criada com `createPromise()`, caso exista. |
+| `.endPromise()` | Finaliza a promise criada com `createPromise()` caso exista, e fecha o loader. |
+
+### `MbgNotification`
+Service para abrir e fechar notificações do MbgNotification
+
+#### Métodos:
+| Nome    | Descrição   |
+|---------|-------------|
+| `.openNotification(<Object>)` | Abre uma nova notificação. Recebe um objeto de configuração como parâmetro. [Opções disponíveis](#mbgNotifConfig). Este método retorna o objeto de configuração da notificação com um ID que pode ser usado posteriormente com um dos métodos abaixo. |
+| `.closeFixedNotif(<String>)` | Fecha uma notificação do tipo Fixed, recebe o id da notificação como parâmetro. |
+| `.closeFloatNotif(<String>)` | Fecha uma notificação do tipo Float, recebe o id da notificação como parâmetro. |
+| `.closeToastNotif(<String>)` | Fecha uma notificação do tipo Toast, recebe o id da notificação como parâmetro. |
+
+Existe um método de fechamento para cada tipo de notificação pois cada tipo de notificação tem a sua própria fila.
+
+<div id="mbgNotifConfig">
+
+### Atributos da configuração de notificações:
+| Tipo    | Nome    | Descrição   | Valor padrão |
+|---------|---------|-------------| -------------|
+|`string` | `type`| Estilo da notificação, pode ser um entre `'info'`, `'warn'`, `'error'`, `'success'`. | `'info'` |
+|`string`|`variation`| Variação da notificação, pode ser um entre `'fixed'`, `'float'`, `'toast'`.| `'toast'` |
+|`number` ou `string`| `duration` | Define o tempo (em milisegundos) que a notificação ficará na tela. No caso da *variation* `'fixed'`, você pode usar a duration `'fixed'` para que a notificação permaneça na tela até ela ser fechada. | `4000` |
+|`string`|`text`| String com o texto da notificação. | `'Olá mundo, esta é uma notificação'`|
+|`string`|`icon`| String com os seletores do ícone do fontawesome. |`'fas fa-exclamation-circle'`|
+|`boolean`|`actionButton`| Define se o botão de ação irá ou não aparecer. |`false`|
+|`function`|`action`| Função que será executada ao clicar no botão de ação. |`undefined`|
+|`string`|`actionText`| Texto do botão de ação. | `'Clique aqui'` |
+
+</div>
+
+************
+## Providers
+### `mbTheme`
+Provider para configuração de tema
+#### Métodos:
+| Nome    | Descrição   |
+|---------|-------------|
+| `.get(<String>)`  | Recebe uma string como parâmetro com o nome do tema á ser buscado. Retorna um objeto com as cores do tema selecionado. |
