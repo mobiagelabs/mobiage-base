@@ -1,0 +1,24 @@
+<div class="mb"
+     side-content>
+
+  <div class="mb-sc-content-container"
+       ng-click="vm.stopPropagation($event)"
+       ng-class="{'mb-sc-active':vm.active, 'mb-sc-preview':vm.hoverButton && vm.active !== true}">
+    <div class="mb-sc-anchor">
+
+      <div id="mb-sc-content" class="mb-sc-content">
+        
+      </div>
+
+    </div>
+  </div>
+
+  <mb-sc-btn ng-repeat="content in vm.contentBuffer"
+             content-open="vm.active"
+             active-content="vm.activeContent"
+             toggle-fn="vm.toggle(content)"
+             config="content"></mb-sc-btn>
+
+  <div class="mb-sc-background"
+       ng-class="{'mb-sc-active':vm.active, 'mb-sc-bg-hide':vm.bgHide}"></div>
+</div>

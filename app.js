@@ -389,8 +389,19 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			]
 		};
 	})
-	.run(($state) => {
+	.run(($state, $timeout, MbgSideContent) => {
 		$state.go('app.home');
+		MbgSideContent.add({
+			template: '<h3> Example Template </h3>',
+			iconColor: 'white',
+			btnBgColor: '#d6df24',
+			onOpen: () => {
+				console.log('Abriu');
+			},
+			onClose: () => {
+				console.log('Fechou');
+			}
+		});
 	})
 	.config(($stateProvider) => {
 		$stateProvider.state({
@@ -405,6 +416,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 							<ui-view></ui-view>
 						</mb-content>
 					</mb-container>
+					<mb-side-content></mb-side-content>
 					<mb-pageloader></mb-pageloader>
 				</mbg-base>
 				<mb-notifications></mb-notifications>

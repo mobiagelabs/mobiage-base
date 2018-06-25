@@ -1,0 +1,18 @@
+<div class="mb-sc-button"
+     ng-style="{'transform': 'translateY(' + vm.top + 'px) translateX(' + vm.right + 'px)'}">
+	<div class="mb-sc-b-content-container">
+		<svg class="mb-sc-corner"
+		     xmlns="http://www.w3.org/2000/svg"
+		     viewBox="0 0 231.59 393.64">
+			<path class="cls-1"
+			      d="M231.59,0H212.71c-5.87,14.72-14.91,33.59-28.81,56a122.54,122.54,0,0,1-21.26,26A102.77,102.77,0,0,1,95,107.83h-.4a89.32,89.32,0,0,0-89.3,89.3v.2a89.32,89.32,0,0,0,89.29,89.3v0l.18,0H95a102.77,102.77,0,0,1,67.37,25.55,122.56,122.56,0,0,1,21.53,26.27c13.64,22,22.6,40.59,28.48,55.19h19.21Z"
+			/>
+		</svg>
+		<div ng-click="vm.toggleContent($event)"
+		     class="mb-sc-icon-container"
+		     ng-style="{'background-color': vm.config.btnBgColor }">
+			<i class="{{ vm.config.icon }} mb-sc-icon"
+			   ng-style="{'color': vm.config.iconColor }"></i>
+		</div>
+	</div>
+</div>

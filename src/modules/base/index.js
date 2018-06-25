@@ -8,6 +8,7 @@ import '../topbar';
 import '../top-notifications';
 import '../footer';
 import '../pageloader';
+import '../side-content';
 import template from './templates/base.template.html';
 import controller from './controllers/base.controller';
 import './styles/base.style.scss';
@@ -33,6 +34,7 @@ angular.module('mbg.base', [
 	'mb.notifications',
 	'mb.footer',
 	'mb.pageloader',
+	'mb.sidecontent',
 	'cfp.hotkeys'
 ])
 	.component('mbgBase', component)
