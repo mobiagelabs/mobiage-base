@@ -1,5 +1,5 @@
 angular.module('app', ['mbg.base', 'ui.router'])
-	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout) => {
+	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent) => {
 		$scope.configBase = {
 			theme: 'theme12'
 		};
@@ -395,6 +395,16 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			template: '<h3> Example Template </h3>',
 			iconColor: 'white',
 			btnBgColor: '#d6df24',
+			onOpen: () => {
+				console.log('Abriu');
+			},
+			onClose: () => {
+				console.log('Fechou');
+			}
+		});
+		MbgSideContent.add({
+			template: '<h3> Example Template 2 </h3>',
+			iconColor: 'white',
 			onOpen: () => {
 				console.log('Abriu');
 			},

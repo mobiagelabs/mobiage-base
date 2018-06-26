@@ -20,8 +20,9 @@ const sideContentService = function () {
 		service.updateComponent();
 	};
 
-	service.registerComponent = (update) => {
+	service.registerComponent = (update, close) => {
 		service.updateComponent = update;
+		service.close = close;
 		if (execAfterRegister === true) {
 			service.updateComponent();
 		}
@@ -38,6 +39,8 @@ const sideContentService = function () {
 			btn.update(index, service.btnBuffer.length);
 		});
 	};
+
+	service.close = () => {};
 
 	return service;
 };

@@ -32,7 +32,9 @@ const controller = function ($scope, $timeout, MbgSideContent, $compile) {
 
 	vm.close = () => {
 		if (animationInProgress === false) {
-			vm.activeContent.onClose();
+			if (vm.activeContent !== undefined && vm.activeContent.onClose !== undefined) {
+				vm.activeContent.onClose();
+			}
 			animationInProgress = true;
 			$timeout(() => {
 				vm.active = false;
@@ -76,7 +78,7 @@ const controller = function ($scope, $timeout, MbgSideContent, $compile) {
 	};
 
 	vm.$onInit = () => {
-		MbgSideContent.registerComponent(vm.updateComponent);
+		MbgSideContent.registerComponent(vm.updateComponent, vm.close);
 	};
 
 	vm.$onDestroy = () => {
