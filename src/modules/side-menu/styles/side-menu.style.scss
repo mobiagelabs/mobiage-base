@@ -38,15 +38,12 @@
 	> .mb-sm-content-container {
 		width: 100%;
 		background-color: #fff;
-
 		@include themify(background-color, backgroundSideMenu);
-
-		height: 500px;
-		border-radius: 15px;
-		padding-top: 10px;
 	}
 
 	.mb-sm-content {
-		padding: 0px 10px 10px 10px;
+		padding-top: 20px;
+		padding-left: 10px;
+		padding-bottom: 10px;
 	}
 }

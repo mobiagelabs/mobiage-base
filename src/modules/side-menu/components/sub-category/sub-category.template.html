@@ -1,11 +1,40 @@
 <div class="mb"
      sm-sub-category>
 	<div class="mbg-smsc-title">
+
+		<div class="mb-smsc-icon"
+		     ng-if="vm.iconSrc === 'fontawesome'"
+		     ng-style="{'font-size': vm.iconSize ? vm.iconSize + 'px' : undefined, 'line-height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'width' : vm.iconSize ? 'auto' : undefined }">
+			<i class="{{vm.icon}}"></i>
+		</div>
+		<div class="mb-smsc-icon"
+		     ng-if="vm.iconSrc === 'material'"
+		     ng-style="{ 'height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'width' : vm.iconSize ? 'auto' : undefined }">
+			<i class="material-icons"
+			   ng-style="{'font-size': vm.iconSize ? vm.iconSize + 'px' : undefined, 'line-height' : vm.iconSize ? vm.iconSize + 'px' : undefined }">{{ vm.icon }}</i>
+		</div>
+		<div class="mb-smsc-icon"
+		     ng-if="vm.iconSrc !== 'material' && vm.iconSrc !== 'fontawesome' && vm.iconSrc !== undefined && vm.iconSrc.length > 0"
+	
+		     ng-style="{ 'height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'width' : vm.iconSize ? 'auto' : undefined }">
+			<img class="mb-smb-custom-icon"
+			     ng-src="{{ vm.iconSrc }}"
+			     alt="">
+		</div>
+
 		<div class="mbg-smsc-text">
 			{{ vm.label }}
 		</div>
 	</div>
-	<div ng-transclude>
+	<div class="mg-smsc-container"
+	     ng-style="{
+				'max-height': vm.opened === true ? (vm.btnHeight * vm.qtdSubItens) + 'px' : (vm.btnHeight * vm.showItens) + 'px',
+				'padding-left': vm.icon !== undefined && vm.icon.length > 0 ? '30px' : '0px'	
+			}"
+	     ng-transclude>
 
 	</div>
+	<div ng-if="vm.showItens !== undefined"
+	     class="mg-smsc-seemore"
+	     ng-click="vm.toggle()">{{ vm.opened === true ? 'Menos -' : 'Ver mais +' }}</div>
 </div>

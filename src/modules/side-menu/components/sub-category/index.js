@@ -4,7 +4,12 @@ import controller from './sub-category.controller';
 
 const subCategory = {
 	bindings: {
-		label: '@'
+		label: '@',
+		icon: '@',
+		iconSrc: '@',
+		iconSize: '@',
+		showItens: '<?',
+		qtdSubItens: '<?'
 	},
 	controller,
 	controllerAs: 'vm',

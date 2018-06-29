@@ -6,7 +6,12 @@
               config="item">
   </mb-sm-item>
 </mb-sm-category>
-<mb-sm-subcategory ng-if="vm.config.type === 'sub-category'"
+<mb-sm-subcategory qtd-sub-itens="vm.config.children.length"
+                   show-itens="vm.config.showItens"
+                   icon-src="{{vm.config.iconSrc}}"
+                   icon="{{vm.config.icon}}"
+                   icon-size="{{vm.config.iconSize}}"
+                   ng-if="vm.config.type === 'sub-category'"
                    label="{{vm.config.label}}">
   <mb-sm-item ng-repeat="item in vm.config.children"
               first-child="$first"

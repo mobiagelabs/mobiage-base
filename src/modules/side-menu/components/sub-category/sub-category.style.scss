@@ -1,16 +1,48 @@
-@import '../../../themes/themes.style.scss';
+@import "../../../themes/themes.style.scss";
 
 .mb[sm-sub-category] {
-	padding-left: 5px;
-	padding-bottom: 15px;
+	padding-top: 7.5px;
+	padding-bottom: 7.5px;
 
 	> .mbg-smsc-title {
 		padding-bottom: 5px;
+
+		> .mb-smsc-icon {
+			display: inline-block;
+			color: #9136ca;
+			font-size: 18px;
+			vertical-align: middle;
+
+			@include themify(color, color1);
+			margin-right: 2px;
+		}
+
 		> .mbg-smsc-text {
 			color: #9136ca;
+
 			@include themify(color, color1);
+
+			display: inline-block;
+			vertical-align: middle;
 			font-size: 15px;
 			font-weight: 700;
 		}
+	}
+
+	.mg-smsc-container {
+		// background-color: purple;
+		transition: max-height 0.5s ease;
+		overflow: hidden;
+		// padding-left: 30px;
+	}
+
+	.mg-smsc-seemore {
+		font-size: 12px;
+		text-decoration: underline;
+		color: #ccc;
+		@include themify(color, neutral2);
+		padding-top: 10px;
+		padding-left: 30px;
+		cursor: pointer;
 	}
 }

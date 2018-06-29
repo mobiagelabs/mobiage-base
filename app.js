@@ -116,7 +116,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 
 		$scope.configMenu = {
 			quickMenu: {
-				enabled: true,
+				enabled: false,
 				buttonText: 'Cadastro',
 				links: [{
 					label: 'Clientes',
@@ -134,31 +134,101 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			},
 			structure: [
 				{
-					type: 'category',
-					label: 'Menu',
+					type: 'sub-category',
+					iconSrc: 'fontawesome',
+					icon: 'fas fa-ambulance',
+					label: 'Estoque',
+					showItens: 4,
 					children: [
 						{
-							type: 'sub-category',
-							label: 'Estoque',
-							children: [
-								{
-									type: 'btn',
-									label: 'Notificação Fixed',
-									actionType: 'function',
-									action: () => {
+							type: 'btn',
+							label: 'Notificação Fixed',
+							actionType: 'function',
+							action: () => {
+								MbgNotification.openNotification({
+									type: 'info',
+									variation: 'fixed',
+									message: 'Olá Mundo',
+									duration: 4000
+								});
+							}
+						},
+						{
+							type: 'btn',
+							label: 'Notificação Float',
+							actionType: 'function',
+							action: () => {
+								MbgNotification.openNotification({
+									type: 'info',
+									variation: 'float',
+									message: 'Olá Mundo',
+									duration: 4000
+								});
+							}
+						},
+						{
+							type: 'btn',
+							label: 'Notificação Toast',
+							actionType: 'function',
+							action: () => {
+								MbgNotification.openNotification({
+									type: 'info',
+									variation: 'toast',
+									message: 'Olá Mundo',
+									duration: 4000
+								});
+							}
+						},
+						{
+							type: 'btn',
+							label: 'Notificação',
+							actionType: 'function',
+							action: () => {
+								window.servico_de_correios_da_topage = window.servico_de_correios_da_topage || 0;
+								switch (window.servico_de_correios_da_topage) {
+									case 0: {
 										MbgNotification.openNotification({
 											type: 'info',
 											variation: 'fixed',
-											message: 'Olá Mundo',
-											duration: 4000
+											duration: 'fixed',
+											text: 'Olá Mundo',
+											actionButton: true,
+											actionText: 'fechar',
+											action: (teste) => {
+												MbgNotification.closeFixedNotif(teste.id);
+											}
 										});
+										break;
 									}
-								},
-								{
-									type: 'btn',
-									label: 'Notificação Float',
-									actionType: 'function',
-									action: () => {
+									case 1: {
+										MbgNotification.openNotification({
+											type: 'warn',
+											variation: 'fixed',
+											duration: 15000,
+											text: 'Olá Mundo',
+											actionButton: true
+										});
+										break;
+									}
+									case 2: {
+										MbgNotification.openNotification({
+											type: 'error',
+											variation: 'fixed',
+											duration: 4000,
+											text: 'Olá Mundo'
+										});
+										break;
+									}
+									case 3: {
+										MbgNotification.openNotification({
+											type: 'success',
+											variation: 'float',
+											duration: 6000,
+											text: 'Olá Mundo'
+										});
+										break;
+									}
+									default: {
 										MbgNotification.openNotification({
 											type: 'info',
 											variation: 'float',
@@ -166,104 +236,37 @@ angular.module('app', ['mbg.base', 'ui.router'])
 											duration: 4000
 										});
 									}
-								},
-								{
-									type: 'btn',
-									label: 'Notificação Toast',
-									actionType: 'function',
-									action: () => {
-										MbgNotification.openNotification({
-											type: 'info',
-											variation: 'toast',
-											message: 'Olá Mundo',
-											duration: 4000
-										});
-									}
-								},
-								{
-									type: 'btn',
-									label: 'Notificação',
-									actionType: 'function',
-									action: () => {
-										window.servico_de_correios_da_topage = window.servico_de_correios_da_topage || 0;
-										switch (window.servico_de_correios_da_topage) {
-											case 0: {
-												MbgNotification.openNotification({
-													type: 'info',
-													variation: 'fixed',
-													duration: 'fixed',
-													text: 'Olá Mundo',
-													actionButton: true,
-													actionText: 'fechar',
-													action: (teste) => {
-														MbgNotification.closeFixedNotif(teste.id);
-													}
-												});
-												break;
-											}
-											case 1: {
-												MbgNotification.openNotification({
-													type: 'warn',
-													variation: 'fixed',
-													duration: 15000,
-													text: 'Olá Mundo',
-													actionButton: true
-												});
-												break;
-											}
-											case 2: {
-												MbgNotification.openNotification({
-													type: 'error',
-													variation: 'fixed',
-													duration: 4000,
-													text: 'Olá Mundo'
-												});
-												break;
-											}
-											case 3: {
-												MbgNotification.openNotification({
-													type: 'success',
-													variation: 'float',
-													duration: 6000,
-													text: 'Olá Mundo'
-												});
-												break;
-											}
-											default: {
-												MbgNotification.openNotification({
-													type: 'info',
-													variation: 'float',
-													message: 'Olá Mundo',
-													duration: 4000
-												});
-											}
-										}
-										window.servico_de_correios_da_topage += 1;
-									}
-								},
-								{
-									type: 'btn', label: 'Teste', actionType: 'state', action: 'app.teste'
-								},
-								{
-									type: 'btn', label: 'Footer', actionType: 'state', action: 'app.footer'
-								},
-								{
-									type: 'btn', label: 'Promoções', actionType: 'link', action: '#5'
-								},
-								{
-									type: 'btn', label: 'Troca', actionType: 'link', action: '#6'
-								},
-								{
-									type: 'btn', label: 'Consignado', actionType: 'link', action: '#7'
-								},
-								{
-									type: 'btn', label: 'Catálogo', actionType: 'link', action: '#8'
-								},
-								{
-									type: 'btn', label: 'Consulta', actionType: 'link', action: '#9'
 								}
-							]
+								window.servico_de_correios_da_topage += 1;
+							}
 						},
+						{
+							type: 'btn', label: 'Teste', actionType: 'state', action: 'app.teste'
+						},
+						{
+							type: 'btn', label: 'Footer', actionType: 'state', action: 'app.footer'
+						},
+						{
+							type: 'btn', label: 'Promoções', actionType: 'link', action: '#5'
+						},
+						{
+							type: 'btn', label: 'Troca', actionType: 'link', action: '#6'
+						},
+						{
+							type: 'btn', label: 'Consignado', actionType: 'link', action: '#7'
+						},
+						{
+							type: 'btn', label: 'Catálogo', actionType: 'link', action: '#8'
+						},
+						{
+							type: 'btn', label: 'Consulta', actionType: 'link', action: '#9'
+						}
+					]
+				},
+				{
+					type: 'category',
+					label: 'Menu',
+					children: [
 						{
 							type: 'sub-category',
 							label: 'Financeiro',
