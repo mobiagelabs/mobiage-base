@@ -79,6 +79,8 @@
 
 				@media screen and (max-width: 768px) {
 					display: block;
+					margin-left: 12px;
+					margin-right: 12px;
 				}
 			}
 
@@ -100,6 +102,10 @@
 					@media screen and (max-width: 768px) {
 						padding-left: 0px;
 						padding-top: 20px;
+						flex: 1;
+						mb-t-search {
+							display: none;
+						}
 					}
 				}
 
@@ -115,7 +121,17 @@
 					z-index: 550;
 					font-size: 16px;
 					min-width: 300px;
+					@media screen and (max-width: 768px) {
+						// flex: 1;
+					}
 				}
+
+				@media screen and (max-width: 768px) {
+					> .mb-t-user-container {
+						min-width: auto;
+					}
+				}
+
 			}
 		} // mb-t-container
 

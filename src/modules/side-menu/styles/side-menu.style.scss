@@ -1,5 +1,24 @@
 @import "../../themes/themes.style.scss";
 
+
+.mb-backdrop {
+	position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+	transition: opacity 750ms ease;
+	will-change: transform;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 9999;
+	&.active {
+		pointer-events: all;
+		opacity: .6;
+	}
+}
+
 .mb[side-menu] {
 	font-family: 'MontSerrat', sans-serif;
 	height: calc(100% - #{$topbarHeight});
@@ -23,9 +42,9 @@
 		right: auto;
 		transform: translate3d(-100%, 0, 0);
 		height: 100%;
+		z-index: 99999;
 
 		&.active {
-			z-index: 1000;
 			background-color: #fff;
 			transform: translate3d(0%, 0, 0);
 		}

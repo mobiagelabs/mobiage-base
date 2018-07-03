@@ -116,7 +116,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 
 		$scope.configMenu = {
 			quickMenu: {
-				enabled: false,
+				enabled: true,
 				buttonText: 'Cadastro',
 				links: [{
 					label: 'Clientes',
@@ -138,7 +138,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					iconSrc: 'fontawesome',
 					icon: 'fas fa-ambulance',
 					label: 'Estoque',
-					showItens: 4,
+					showItens: 2,
 					children: [
 						{
 							type: 'btn',
@@ -184,7 +184,8 @@ angular.module('app', ['mbg.base', 'ui.router'])
 							label: 'Notificação',
 							actionType: 'function',
 							action: () => {
-								window.servico_de_correios_da_topage = window.servico_de_correios_da_topage || 0;
+								window.servico_de_correios_da_topage = 1;
+								// window.servico_de_correios_da_topage = window.servico_de_correios_da_topage || 0;
 								switch (window.servico_de_correios_da_topage) {
 									case 0: {
 										MbgNotification.openNotification({
@@ -204,8 +205,9 @@ angular.module('app', ['mbg.base', 'ui.router'])
 										MbgNotification.openNotification({
 											type: 'warn',
 											variation: 'fixed',
-											duration: 15000,
-											text: 'Olá Mundo',
+											duration: 99999999999,
+											actionText: 'Ir para retransmissão',
+											text: 'É necessário realizar a retransmissão.',
 											actionButton: true
 										});
 										break;
@@ -439,7 +441,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			name: 'app.home',
 			url: '/',
 			template: `
-				<h4>inicio</h4>
+				<h4></h4>
 			`
 		});
 		$stateProvider.state({

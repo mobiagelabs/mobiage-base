@@ -90,6 +90,10 @@
 			justify-content: space-around;
 			align-content: center;
 
+			@media screen and (max-width: 768px) {
+				padding: 0 14px;
+			}
+
 			.mb-n-text {
 				height: 100%;
 				color: #fff;
