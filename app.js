@@ -305,6 +305,10 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					]
 				},
 				{
+					type: 'category',
+					label: '',
+				},		
+				{
 					type: 'html',
 					html:
 						`<div class="suporte">
@@ -314,7 +318,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 							<a href="tel:08800 989 0803"> 08800 989 0803 </a>
 						</div>
 						`
-				},
+				},		
 				{
 					type: 'html',
 					html: '<div class="versao">1.21.1-SNAPSHOT</div>'
