@@ -1,5 +1,5 @@
 angular.module('app', ['mbg.base', 'ui.router'])
-	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent) => {
+	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService) => {
 		$scope.configBase = {
 			theme: 'theme12'
 		};
@@ -112,6 +112,15 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					}
 				]
 			}
+		};
+
+		$scope.teste = () => {
+			CashierService.updateCashier({
+				open: false,
+				date: '12/07/18',
+				openState: 'app.teste',
+				closeState: 'app.home'
+			});
 		};
 
 		$scope.configMenu = {
@@ -307,7 +316,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 				{
 					type: 'category',
 					label: '',
-				},		
+				},
 				{
 					type: 'html',
 					html:
@@ -318,7 +327,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 							<a href="tel:08800 989 0803"> 08800 989 0803 </a>
 						</div>
 						`
-				},		
+				},
 				{
 					type: 'html',
 					html: '<div class="versao">1.21.1-SNAPSHOT</div>'
@@ -398,8 +407,16 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			]
 		};
 	})
-	.run(($state, $timeout, MbgSideContent) => {
+	.run(($state, $timeout, MbgSideContent, CashierService) => {
 		$state.go('app.home');
+
+		CashierService.setCashier({
+			open: false,
+			date: '12/07/18',
+			openState: 'app.teste',
+			closeState: 'app.home'
+		});
+
 		MbgSideContent.add({
 			template: '<h3> Example Template </h3>',
 			iconColor: 'white',
@@ -452,6 +469,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			name: 'app.teste',
 			url: '/teste',
 			template: `
+			<button ng-click="teste()">clica ae</button>
 				<div class="conteudoTeste">TESTE</div>
 				<div class="conteudoTeste"></div>
 				<div class="conteudoTeste"></div>

@@ -1,0 +1,44 @@
+.mb[cashier] {
+	.mb-bt-cashier {
+		width: 270px;
+		height: 45px;
+		border-radius: 25px;
+		line-height: 45px;
+		text-align: center;
+		overflow: hidden;
+
+		span {
+			font-weight: bold;
+			i {
+				margin-right: 15px;
+			}
+		}
+
+		&.open {
+			background-color: transparent;
+			border: 1px solid #c4c4c4;
+			color: #c4c4c4;
+			cursor: pointer;
+		}
+		&.close {
+			background-color: #ff1f14;
+			border: 1px solid #ff1f14;
+			color: #fff;
+			cursor: pointer;
+		}
+
+		.mb-box-cashier {
+			transition: transform 300ms ease;
+			&:hover {
+				transform: translateY(-50%);
+			}
+			span {
+				display: block;
+			}
+		}
+
+
+	
+		
+	}
+}

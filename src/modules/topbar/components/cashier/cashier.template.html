@@ -1,0 +1,16 @@
+<div class="mb"
+		 cashier>
+	<div class="mb-bt-cashier open" ng-click="goCashierState()" ng-class="setting.open ? 'close' : 'open'">
+		<span ng-hide="setting.open">
+			<i class="fas fa-coins"></i> Abrir novo Caixa
+		</span>
+		<div class="mb-box-cashier">
+			<span>
+				<i class="fas fa-coins"></i> Caixa Aberto: {{setting.date}}
+			</span>
+			<span>
+				<i class="fas fa-coins"></i> Fechar Caixa
+			</span>
+		</div>
+	</div>
+</div>
