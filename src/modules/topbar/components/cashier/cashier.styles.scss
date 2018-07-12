@@ -14,13 +14,13 @@
 			}
 		}
 
-		&.open {
+		&.ca-open {
 			background-color: transparent;
 			border: 1px solid #c4c4c4;
 			color: #c4c4c4;
 			cursor: pointer;
 		}
-		&.close {
+		&.ca-close {
 			background-color: #ff1f14;
 			border: 1px solid #ff1f14;
 			color: #fff;
