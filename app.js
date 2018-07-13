@@ -116,7 +116,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 
 		$scope.teste = () => {
 			CashierService.updateCashier({
-				open: false,
+				open: true,
 				date: '12/07/18',
 				openState: 'app.teste',
 				closeState: 'app.home'
