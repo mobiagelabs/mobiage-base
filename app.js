@@ -425,7 +425,6 @@ angular.module('app', ['mbg.base', 'ui.router'])
 		});
 
 		MbgSideContent.add({
-			template: '<h3> Example Template </h3>',
 			iconColor: 'white',
 			btnBgColor: '#d6df24',
 			onOpen: () => {

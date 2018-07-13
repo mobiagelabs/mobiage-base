@@ -19,7 +19,9 @@ const controller = function ($scope, $timeout, MbgSideContent, $compile) {
 			vm.bgHide = false;
 			const active = () => {
 				$timeout(() => {
-					vm.active = true;
+					if (content.template !== '') {
+						vm.active = true;
+					}
 				});
 			};
 			document.addEventListener('click', vm.close);

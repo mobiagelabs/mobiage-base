@@ -11,8 +11,10 @@ const controller = function (MbgSideContent, $timeout) {
 
 	vm.open = () => {
 		$timeout(() => {
-			vm.right = -400;
-			vm.active = true;
+			if (vm.contentOpen) {
+				vm.right = -400;
+				vm.active = true;
+			}
 		});
 	};
 
