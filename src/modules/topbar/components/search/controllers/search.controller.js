@@ -208,7 +208,6 @@ const controller = function ($scope, $timeout, mbSidemenuService, hotkeys) {
 
 	const extractMenuLinksFromConfig = (config) => {
 		const links = [];
-
 		const prepareLink = (link) => {
 			if ((link.type === 'category' || link.type === 'sub-category') && link.children !== undefined && link.children.length > 0) {
 				link.children.forEach((element) => {
@@ -223,12 +222,11 @@ const controller = function ($scope, $timeout, mbSidemenuService, hotkeys) {
 				});
 			}
 		};
-
-		if (config.quickMenu !== undefined && config.quickMenu.links !== undefined && config.quickMenu.links.length > 0) {
-			config.quickMenu.links.forEach((element) => {
-				prepareLink(element);
-			});
-		}
+		// if (config.quickMenu !== undefined && config.quickMenu.links !== undefined && config.quickMenu.links.length > 0) {
+		// 	config.quickMenu.links.forEach((element) => {
+		// 		prepareLink(element);
+		// 	});
+		// }
 		if (config.structure !== undefined && config.structure.length > 0) {
 			config.structure.forEach((element) => {
 				prepareLink(element);

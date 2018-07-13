@@ -150,6 +150,13 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					showItens: 2,
 					children: [
 						{
+							label: 'Produtos',
+							iconSrc: 'fontawesome',
+							icon: 'far fa-sticky-note',
+							action: '#produtos',
+							actionType: 'link'
+						},
+						{
 							type: 'btn',
 							label: 'Notificação Fixed',
 							actionType: 'function',
