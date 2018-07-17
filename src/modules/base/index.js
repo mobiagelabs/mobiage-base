@@ -12,6 +12,7 @@ import '../side-content';
 import template from './templates/base.template.html';
 import controller from './controllers/base.controller';
 import './styles/base.style.scss';
+import './styles/base.flex.scss';
 
 import container from './components/container';
 import contentContainer from './components/content-container';
