@@ -1,3 +1,4 @@
+@import "../../../themes/themes.style.scss";
 .mb[cashier] {
 	.mb-bt-cashier {
 		width: 270px;
@@ -21,8 +22,12 @@
 			cursor: pointer;
 		}
 		&.ca-close {
-			background-color: #ff1f14;
-			border: 1px solid #ff1f14;
+			background-color: #ff0758;
+			border-color: #ff0758;
+			border: 1px;
+			@include themify(background-color, quickMenuBtnBackground);
+			@include themify(border-color, quickMenuBtnBackground);
+
 			color: #fff;
 			cursor: pointer;
 		}
@@ -36,9 +41,5 @@
 				display: block;
 			}
 		}
-
-
-	
-		
 	}
 }
