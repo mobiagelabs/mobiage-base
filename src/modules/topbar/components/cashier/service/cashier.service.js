@@ -15,9 +15,7 @@ const cashierService = function () {
 
 	service.updateCashier = (setting) => {
 		service.configCashier = setting;
-		if (execAfterRegister) {
-			service.startFunction();
-		}
+		service.startFunction();
 		service.updateComponent();
 	};
 

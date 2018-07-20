@@ -417,7 +417,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 	.run(($state, $timeout, MbgSideContent, CashierService) => {
 		$state.go('app.home');
 
-		CashierService.setCashier({
+		CashierService.updateCashier({
 			open: false,
 			date: '12/07/18',
 			openState: 'app.teste',
