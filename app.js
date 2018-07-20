@@ -416,15 +416,14 @@ angular.module('app', ['mbg.base', 'ui.router'])
 	})
 	.run(($state, $timeout, MbgSideContent, CashierService) => {
 		$state.go('app.home');
-
-		CashierService.updateCashier({
-			open: false,
-			date: '12/07/18',
-			openState: 'app.teste',
-			closeState: 'app.home'
-		});
-
-
+		$timeout(() => {
+			CashierService.updateCashier({
+				open: false,
+				date: '12/07/18',
+				openState: 'app.teste',
+				closeState: 'app.home'
+			});
+		}, 2000);
 		MbgSideContent.add({
 			iconColor: 'white',
 			btnBgColor: '#d6df24',
