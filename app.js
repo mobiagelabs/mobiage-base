@@ -424,6 +424,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			closeState: 'app.home'
 		});
 
+
 		MbgSideContent.add({
 			iconColor: 'white',
 			btnBgColor: '#d6df24',
