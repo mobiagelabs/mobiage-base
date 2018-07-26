@@ -1,24 +1,27 @@
 @import "../../../themes/themes.style.scss";
 .mb[cashier] {
 	.mb-bt-cashier {
-		width: 270px;
-		height: 45px;
+		width: 202px;
+		height: 42px;
+		margin: 0px 10px;
 		border-radius: 25px;
-		line-height: 45px;
+		line-height: 42px;
 		text-align: center;
 		overflow: hidden;
+		box-shadow: 0 3px 14px rgb(177, 177, 177);
 
 		span {
-			font-weight: bold;
+			font-weight: 700;
+			font-size: 12px;
 			i.m-t {
-				margin-right: 15px;
+				margin-right: 8px;
 			}
 		}
 
 		&.ca-open {
 			background-color: transparent;
-			border: 1px solid #c4c4c4;
-			color: #c4c4c4;
+			border: 1px solid #b5b5b5;
+			color: #b5b5b5;
 			cursor: pointer;
 		}
 		&.ca-close {
