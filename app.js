@@ -1,7 +1,8 @@
 angular.module('app', ['mbg.base', 'ui.router'])
 	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService) => {
+		
 		$scope.configBase = {
-			theme: 'theme12'
+			theme: 'cssVariable'
 		};
 
 		$scope.configTopbar = {

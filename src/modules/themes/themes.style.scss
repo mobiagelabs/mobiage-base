@@ -11,6 +11,20 @@ $neutral: (
 	Temas:
 */
 $themes: (
+	cssVariable: (
+		color1: var(--color1),
+		color2: var(--color2),
+		color3: var(--color3),
+		color4: var(--color4),
+		neutral1: var(--neutral1),
+		neutral2: var(--neutral2),
+		neutral3: var(--neutral3),
+		logoDetail: var(--logoDetail),
+		quickMenuBtnBackground: var(--contrast),
+		quickMenuBackground: var(--quickMenuBackground),
+		backgroundSideMenu: var(--bgColor),
+		backgroundTopBar: var(--backgroundTopBar)
+	), 
 	theme1: (
 		color1: #0747a6,
 		color2: #eaf2f6,

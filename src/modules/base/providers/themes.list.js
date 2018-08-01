@@ -1,4 +1,7 @@
 const themes = {
+	cssVariable: {
+
+	},
 	theme1: {
 		primary: '#063c8e',
 		secundary: '#0747a6',
