@@ -125,3 +125,28 @@ os-theme-thin-dark
 .os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical {
 	right: -3px;
 }
+
+
+/*
+	inicio dos padding da lateral
+*/
+
+.mb[topbar]>.mb-t-content>.mb-t-container, .mb[base-container] {
+	padding: 0 164px;
+}
+
+@media screen and (max-width: 1454px) {
+	.mb[topbar]>.mb-t-content>.mb-t-container, .mb[base-container] {
+		padding: 0 124px;
+	}
+}
+
+@media screen and (max-width: 1348px) {
+	.mb[topbar]>.mb-t-content>.mb-t-container, .mb[base-container] {
+		padding: 0;
+	}
+}
+
+/*
+	FIM
+*/
