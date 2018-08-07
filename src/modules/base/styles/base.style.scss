@@ -135,15 +135,32 @@ os-theme-thin-dark
 	padding: 0 164px;
 }
 
+.mb[base-container] {
+	padding-right: 0;
+}
+
+mb-content .os-content .mb-cc-content {
+	padding-right: 164px;
+}
+
 @media screen and (max-width: 1454px) {
 	.mb[topbar]>.mb-t-content>.mb-t-container, .mb[base-container] {
 		padding: 0 124px;
+	}
+	.mb[base-container] {
+		padding-right: 0;
+	}
+	mb-content .os-content .mb-cc-content {
+		padding-right: 124px;
 	}
 }
 
 @media screen and (max-width: 1348px) {
 	.mb[topbar]>.mb-t-content>.mb-t-container, .mb[base-container] {
 		padding: 0;
+	}
+	mb-content .os-content .mb-cc-content {
+		padding-right: 0px;
 	}
 }
 
