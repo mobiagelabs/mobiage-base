@@ -14,6 +14,9 @@
 	&.mobiage-base-topage-enter {
 		animation: topAgeEnterEnterInvert 750ms linear infinite, topAgeWobble 1s linear infinite;
 	}
+	&.cssVariable {
+		background-color: var(--bgColor);
+	}
 }
 
 /* 

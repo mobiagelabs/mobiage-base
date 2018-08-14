@@ -1,11 +1,29 @@
-<div ng-class="{'mb-tsal-link-active': $ctrl.selected[0] === $ctrl.index[0] && $ctrl.selected[1] === $ctrl.index[1]}" ng-mouseenter="$ctrl.onSelect({ index: $ctrl.index })" class="mb" autocomplete-line>
-	<a tabindex="-1" class="mb-tsal-link" ng-if="$ctrl.line.actionType === 'state'" ui-sref="{{$ctrl.line.action}}">
-		<span ng-repeat="text in maintext" class="mb-tsal-link-text" ng-class="{'mb-tsal-highlight':text.highLight}">{{text.text}}</span>
+<div ng-class="{'mb-tsal-link-active': $ctrl.selected[0] === $ctrl.index[0] && $ctrl.selected[1] === $ctrl.index[1]}"
+     ng-mouseenter="$ctrl.onSelect({ index: $ctrl.index })"
+     class="mb"
+     autocomplete-line>
+	<a tabindex="-1"
+	   class="mb-tsal-link"
+	   ng-if="$ctrl.line.actionType === 'state'"
+	   ui-sref="{{$ctrl.line.action}}">
+		<span ng-repeat="text in maintext"
+		      class="mb-tsal-link-text"
+		      ng-class="{'mb-tsal-highlight':text.highLight}">{{text.text}}</span>
 	</a>
-	<a tabindex="-1" class="mb-tsal-link" ng-if="$ctrl.line.actionType === 'link'" href="{{$ctrl.line.action}}">
-		<span ng-repeat="text in maintext" class="mb-tsal-link-text" ng-class="{'mb-tsal-highlight':text.highLight}">{{text.text}}</span>
+	<a tabindex="-1"
+	   class="mb-tsal-link"
+	   ng-if="$ctrl.line.actionType === 'link'"
+	   href="{{$ctrl.line.action}}">
+		<span ng-repeat="text in maintext"
+		      class="mb-tsal-link-text"
+		      ng-class="{'mb-tsal-highlight':text.highLight}">{{text.text}}</span>
 	</a>
-	<a tabindex="-1" class="mb-tsal-link" ng-if="$ctrl.line.actionType === 'function'" ng-click="$ctrl.line.action()">
-		<span ng-repeat="text in maintext" class="mb-tsal-link-text" ng-class="{'mb-tsal-highlight':text.highLight}">{{text.text}}</span>
+	<a tabindex="-1"
+	   class="mb-tsal-link"
+	   ng-if="$ctrl.line.actionType === 'function'"
+	   ng-click="$ctrl.line.action()">
+		<span ng-repeat="text in maintext"
+		      class="mb-tsal-link-text"
+		      ng-class="{'mb-tsal-highlight':text.highLight}">{{text.text}}</span>
 	</a>
 </div>
