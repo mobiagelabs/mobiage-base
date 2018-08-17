@@ -2,7 +2,9 @@ import 'angular-sanitize/angular-sanitize.min';
 import 'overlayscrollbars/js/jquery.overlayScrollbars.min';
 import 'overlayscrollbars/css/OverlayScrollbars.min.css';
 import 'angular-hotkeys/build/hotkeys.min';
+import 'angular-input-masks';
 
+import '../components';
 import '../side-menu';
 import '../topbar';
 import '../top-notifications';
@@ -30,6 +32,7 @@ const component = {
 };
 
 angular.module('mbg.base', [
+	'mb.components',
 	'mb.sidemenu',
 	'mb.topbar',
 	'mb.notifications',
@@ -38,7 +41,7 @@ angular.module('mbg.base', [
 	'mb.sidecontent',
 	'cfp.hotkeys'
 ])
-	.component('mbgBase', component)
-	.component('mbContainer', container)
-	.component('mbContent', contentContainer)
-	.provider('mbTheme', themeProvider);
+.component('mbgBase', component)
+.component('mbContainer', container)
+.component('mbContent', contentContainer)
+.provider('mbTheme', themeProvider);

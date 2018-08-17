@@ -48,11 +48,14 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.18",
     "angular": "1.6.10",
     "angular-animate": "1.6.10",
     "angular-hotkeys": "^1.7.0",
+    "angular-input-masks": "^1.5.2",
     "angular-sanitize": "1.6.10",
-    "jquery": "^3.3.1",
+    "jquery": "^3.2.1",
+    "jquery-maskmoney": "^3.0.2",
     "overlayscrollbars": "^1.4.1",
     "sanitize.css": "^5.0.0"
   },

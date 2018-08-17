@@ -1,6 +1,6 @@
 angular.module('app', ['mbg.base', 'ui.router'])
 	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService) => {
-		
+
 		$scope.configBase = {
 			theme: 'cssVariable'
 		};
@@ -416,7 +416,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 		};
 	})
 	.run(($state, $timeout, MbgSideContent, CashierService) => {
-		$state.go('app.home');
+		$state.go('app.components');
 		$timeout(() => {
 			CashierService.updateCashier({
 				open: false,
@@ -469,7 +469,91 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			name: 'app.home',
 			url: '/',
 			template: `
-				<h4></h4>
+				
+			`
+		});
+		$stateProvider.state({
+			name: 'app.components',
+			url: '/components',
+			controller: function ($scope) {
+			},
+			template: ` <br><br><br><br>
+			<form name="myForm" style="padding: 0 54px;">
+				<div class="row">
+				
+					<div class="col-md-3">
+						<label>Money: {{ valor }}</label>				
+						<mb-input-money 
+							ng-model="valor"
+							ng-required="true"
+							placeholder="Digite o valor total">
+						</mb-input-money>
+					</div>
+
+					<div class="col-md-3">
+						<label>CPF: {{ cpf }}</label>
+						<mb-input-cpf 
+							ng-model="cpf"
+							ng-required="true"
+							placeholder="Digite o número do CPF">
+						</mb-input-cpf>
+					</div>
+
+					<div class="col-md-3">
+						<label>CNPJ: {{ cnpj }}</label>
+						<mb-input-cnpj 
+							ng-model="cnpj"
+							ng-required="true"
+							placeholder="Digite o número do CNPJ">
+						</mb-input-cnpj>
+					</div>
+
+					<div class="col-md-3">
+						<label>CPF/CNPJ: {{ cpfcnpj }}</label>
+						<mb-input-cpfcnpj 
+							ng-model="cpfcnpj"
+							ng-required="true"
+							placeholder="Digite o número do CPF ou CNPJ">
+						</mb-input-cpfcnpj>
+					</div>
+
+				</div>
+
+				<div class="row" style="margin-top: 34px;">
+				
+					<div class="col-md-3">
+						<label>Telefone: {{ phone }}</label>				
+						<mb-input-phone 
+							ng-model="phone"
+							ng-required="true"
+							placeholder="Digite seu número de telefone">
+						</mb-input-phone>
+					</div>
+
+					<div class="col-md-3">
+						<label>Nome: {{ name }}</label>				
+						<mb-input-name 
+							ng-model="name"
+							ng-init="name = 'block'"
+							ng-required="true"
+							placeholder="Digite seu nome completo">
+						</mb-input-name>
+					</div>
+
+					<div class="col-md-3">
+						<label>Texto: {{ text }}</label>
+
+						<mb-input-text 
+							ng-model="text"
+							ng-required="true"
+							ng-disabled="name === 'Block'"
+							placeholder="Digite qualquer texto">
+						</mb-input-text>
+
+					</div>
+
+				</div>
+			</form>
 			`
 		});
 		$stateProvider.state({
