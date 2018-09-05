@@ -1,4 +1,4 @@
-const controller = function ($scope, $timeout, mbUserService) {
+const controller = function ($scope, $timeout, mbUserService, $state) {
 	$scope.changeZIndex = false;
 	$scope.focus = '';
 	$scope.menuPage = 'user';

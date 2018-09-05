@@ -97,6 +97,7 @@
 				</div>
 				<div class="mb-tu-menu-company-line"></div>
 				<mb-t-u-link ng-if="user.actualOrganization.editAction !== undefined && user.actualOrganization.editActionType !== undefined"
+			
 				             action-type="user.actualOrganization.editActionType"
 				             action="user.actualOrganization.editAction"
 				             close-menu="closeMenu()">
@@ -111,6 +112,14 @@
 					Trocar organização
 					<i class="fas fa-exchange-alt"></i>
 				</div>
+				<div class="more-company-wrapper">
+					<mb-t-u-btn config="link"
+					            close-menu="closeMenu()"
+					            other-organizations="user.otherOrganizations"
+					            internal-callback="internalCallback(action)"
+					            ng-repeat="link in user.moreCompanyLinks"></mb-t-u-btn>
+				</div>
+
 			</div>
 		</div>
 	</div>

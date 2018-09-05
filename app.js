@@ -5,6 +5,15 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			theme: 'cssVariable'
 		};
 
+		const logoutOption = {
+			label: 'Sair',
+			iconSrc: 'fontawesome',
+			icon: 'fas fa-sign-out-alt',
+			iconSize: '22',
+			actionType: 'link',
+			action: '#logout'
+		};
+
 		$scope.configTopbar = {
 			logo: 'assets/img/logo.png',
 			logoActionType: 'state',
@@ -45,15 +54,9 @@ angular.module('app', ['mbg.base', 'ui.router'])
 						actionType: 'link',
 						action: '#trocarconta'
 					},
-					{
-						label: 'Sair',
-						iconSrc: 'fontawesome',
-						icon: 'fas fa-sign-out-alt',
-						iconSize: '22',
-						actionType: 'link',
-						action: '#logout'
-					}
+					logoutOption
 				],
+				moreCompanyLinks: [logoutOption],
 				actualOrganization: {
 					name: 'Spotify',
 					subTitle: 'Spotify Limitada ME.',

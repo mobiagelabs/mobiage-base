@@ -469,4 +469,18 @@
 			visibility: hidden;
 		}
 	}
+	.more-company-wrapper {
+		mb-t-u-btn {
+			mb-t-u-link {
+				a {
+					div.mb {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						padding: 10px 28px 10px 21px;
+					} 
+				}
+			}
+		}
+	}
 }
