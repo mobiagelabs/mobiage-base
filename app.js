@@ -1,5 +1,5 @@
 angular.module('app', ['mbg.base', 'ui.router'])
-	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService) => {
+	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService, $state) => {
 
 		$scope.configBase = {
 			theme: 'cssVariable'
@@ -122,8 +122,12 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			CashierService.updateCashier({
 				open: true,
 				date: '12/07/18',
-				openState: 'app.teste',
-				closeState: 'app.home'
+				openState: (() => {
+					$state.go('app.teste');
+				}),
+				closeState: (() => {
+					$state.go('app.home');
+				})
 			});
 		};
 
@@ -424,8 +428,12 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			CashierService.updateCashier({
 				open: false,
 				date: '12/07/18',
-				openState: 'app.teste',
-				closeState: 'app.home'
+				openState: (() => {
+					$state.go('app.teste');
+				}),
+				closeState: (() => {
+					$state.go('app.home');
+				})
 			});
 		}, 2000);
 		MbgSideContent.add({
