@@ -158,15 +158,12 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					showItens: 2,
 					children: [
 						{
-							label: 'Produtos',
-							iconSrc: 'fontawesome',
-							icon: 'far fa-sticky-note',
-							action: '#produtos',
-							actionType: 'link'
-						},
-						{
 							type: 'btn',
-							label: 'Notificação Fixed',
+							label: 'Notificação',
+							tag: {
+								label: 'Novo',
+								color: '#8600b8'
+							},
 							actionType: 'function',
 							action: () => {
 								MbgNotification.openNotification({

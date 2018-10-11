@@ -10,6 +10,7 @@ const controller = function () {
 			vm.opened = true;
 		}
 	};
+
 };
 
 export default controller;

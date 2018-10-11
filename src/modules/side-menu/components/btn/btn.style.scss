@@ -16,6 +16,19 @@
 	padding-top: 5px;
 	padding-bottom: 5px;
 
+	.mbg-tag {
+		border-radius: 5px;
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: 600;
+		text-shadow: none;
+		font-size: 9px;
+		padding: 3px 8px;
+		text-rendering: optimizeSpeed;
+		-webkit-font-smoothing: antialiased;
+		line-height: 1;
+	}
+
 	> .mb-smb-icon {
 		font-size: 14px;
 		margin-right: 5px;

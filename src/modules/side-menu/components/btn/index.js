@@ -13,6 +13,7 @@ const btn = {
 		iconSide: '@',
 		firstChild: '<',
 		lastChild: '<',
+		tag: '=?',
 		hotkey: '@'
 	},
 	template,

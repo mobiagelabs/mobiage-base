@@ -17,11 +17,11 @@
 		     ng-if="vm.iconSrc === 'material'"
 		     ng-style="{ 'height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'width' : vm.iconSize ? 'auto' : undefined }">
 			<i class="material-icons"
-			   ng-style="{'font-size': vm.iconSize ? vm.iconSize + 'px' : undefined, 'line-height' : vm.iconSize ? vm.iconSize + 'px' : undefined }">{{ vm.icon }}</i>
+			   ng-style="{'font-size': vm.iconSize ? vm.iconSize + 'px' : undefined, 'line-height' : vm.iconSize ? vm.iconSize + 'px' : undefined }">{{
+				vm.icon }}</i>
 		</div>
 		<div class="mb-smb-icon"
 		     ng-if="vm.iconSrc !== 'material' && vm.iconSrc !== 'fontawesome' && vm.iconSrc !== undefined && vm.iconSrc.length > 0"
-	
 		     ng-style="{ 'height' : vm.iconSize ? vm.iconSize + 'px' : undefined, 'width' : vm.iconSize ? 'auto' : undefined }">
 			<img class="mb-smb-custom-icon"
 			     ng-src="{{ vm.iconSrc }}"
@@ -31,6 +31,11 @@
 		<div class="mb-smb-text"
 		     ng-if="vm.iconSide !== 'right'">
 			{{ vm.label }}
+			<span ng-if="vm.tag"
+				  ng-style="{background: vm.tag.color}"
+			      class="mbg-tag">
+				{{ vm.tag.label }}
+			</span>
 		</div>
 	</div>
 </mb-sm-link>
