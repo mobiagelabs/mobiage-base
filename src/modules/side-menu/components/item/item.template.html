@@ -3,6 +3,7 @@
   <mb-sm-item ng-repeat="item in vm.config.children"
               first-child="$first"
               last-child="$last"
+              keys="vm.keys"
               config="item">
   </mb-sm-item>
 </mb-sm-category>
@@ -11,15 +12,16 @@
                    icon-src="{{vm.config.iconSrc}}"
                    icon="{{vm.config.icon}}"
                    icon-size="{{vm.config.iconSize}}"
-                   ng-if="vm.config.type === 'sub-category'"
+                   ng-if="vm.config.type === 'sub-category' && vm.showSubCategory()"
                    label="{{vm.config.label}}">
   <mb-sm-item ng-repeat="item in vm.config.children"
               first-child="$first"
               last-child="$last"
+              keys="vm.keys"
               config="item">
   </mb-sm-item>
 </mb-sm-subcategory>
-<mb-sm-btn ng-if="vm.config.type === 'btn'"
+<mb-sm-btn ng-if="vm.config.type === 'btn' && vm.isKey()"
            icon-src="{{vm.config.iconSrc}}"
            icon="{{vm.config.icon}}"
            icon-size="{{vm.config.iconSize}}"
@@ -27,6 +29,7 @@
            action="vm.config.action"
            action-type="vm.config.actionType"
            hotkey="{{vm.config.hotkey}}"
+           config="vm.config"
            first-child="vm.firstChild"
            tag="vm.config.tag"
            last-child="vm.lastChild">

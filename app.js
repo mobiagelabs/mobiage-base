@@ -132,6 +132,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 		};
 
 		$scope.configMenu = {
+			keys: ['CRUD_NOTIFICATION', 'CAIXA', 'Tributação'],
 			quickMenu: {
 				enabled: true,
 				buttonText: 'Cadastro',
@@ -160,6 +161,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 						{
 							type: 'btn',
 							label: 'Notificação',
+							key: 'CRUD_NOTIFICATION',
 							tag: {
 								label: 'Novo',
 								color: '#8600b8'
@@ -295,7 +297,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 							label: 'Financeiro',
 							children: [
 								{
-									type: 'btn', label: 'Conta caixa', actionType: 'link', action: '#10'
+									type: 'btn', key: 'CAIXA', label: 'Conta caixa', actionType: 'link', action: '#10'
 								},
 								{
 									type: 'btn', label: 'Abertura PDV', actionType: 'link', action: '#11'
@@ -316,10 +318,10 @@ angular.module('app', ['mbg.base', 'ui.router'])
 							label: 'Fiscal',
 							children: [
 								{
-									type: 'btn', label: 'Tributação', actionType: 'link', action: '#15'
+									type: 'btn', key: 'Tributação', label: 'Tributação', actionType: 'link', action: '#15'
 								},
 								{
-									type: 'btn', label: 'Notas', actionType: 'link', action: '#16'
+									type: 'btn', key: 'Notas', label: 'Notas', actionType: 'link', action: '#16'
 								}
 							]
 						}

@@ -1,6 +1,6 @@
 {
   "name": "@mobiage/base",
-  "version": "2.13.7-rc",
+  "version": "2.14.0-rc",
   "description": "Base para os sistemas da mobiage",
   "repository": {
     "type": "private",

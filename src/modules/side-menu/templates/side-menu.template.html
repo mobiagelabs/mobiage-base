@@ -11,11 +11,12 @@
 		<mb-sm-quickmenu config="quickMenu"></mb-sm-quickmenu>
 	</div>
 	<div id="mb-sm-cc"
-	     class="mb-sm-content-container"
-	     ng-style="{'height':vm.config.quickMenu.enabled === true ? 'calc(100% - 75px)' : 'calc(100%)'}">
+		class="mb-sm-content-container"
+		ng-style="{'height':vm.config.quickMenu.enabled === true ? 'calc(100% - 75px)' : 'calc(100%)'}">
 		<div class="mb-sm-content">
 			<mb-sm-item ng-repeat="item in structure"
-			            config="item">
+					  config="item"
+					  keys="vm.config.keys">
 			</mb-sm-item>
 		</div>
 	</div>
