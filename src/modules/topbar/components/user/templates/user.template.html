@@ -106,6 +106,16 @@
 						<i class="fas fa-edit"></i>
 					</div>
 				</mb-t-u-link>
+				<mb-t-u-link ng-if="user.actualOrganization.inviteAction !== undefined"
+			
+				             action-type="user.actualOrganization.invateType"
+				             action="user.actualOrganization.inviteAction"
+				             close-menu="closeMenu()">
+					<div class="mb-tu-menu-company-bottom-btn">
+						Convidar Pessoas
+						<i class="far fa-envelope"></i>
+					</div>
+				</mb-t-u-link>
 				<div ng-if="user.otherOrganizations !== undefined && user.otherOrganizations.length > 0"
 				     class="mb-tu-menu-company-bottom-btn"
 				     ng-click="openChangeAccount()">

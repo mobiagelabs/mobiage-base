@@ -64,7 +64,11 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					editAction: () => {
 						console.log('EDITAR');
 					},
+					inviteAction: () => {
+						console.log('CONVIDAR');
+					},
 					editActionType: 'function',
+					invateType: 'function',
 					info: [
 						{ title: 'Razão Social', text: 'Spotify Stream Digital World' },
 						{ title: 'Nome Fantasia', text: 'Spotify Brasil' },
