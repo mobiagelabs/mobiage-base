@@ -17,7 +17,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 		$scope.configTopbar = {
 			logo: 'assets/img/logo.png',
 			logoActionType: 'state',
-			logoAction: 'app.home',
+			logoAction: 'app.teste',
 			user: {
 				name: 'Amália Fernandes',
 				avatar: 'assets/img/perfil.png',
@@ -64,11 +64,9 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					editAction: () => {
 						console.log('EDITAR');
 					},
-					inviteAction: () => {
-						console.log('CONVIDAR');
-					},
+					inviteAction: 'app.home',
 					editActionType: 'function',
-					invateType: 'function',
+					inviteActionType: 'state',
 					info: [
 						{ title: 'Razão Social', text: 'Spotify Stream Digital World' },
 						{ title: 'Nome Fantasia', text: 'Spotify Brasil' },
