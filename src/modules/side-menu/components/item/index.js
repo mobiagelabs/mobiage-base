@@ -13,9 +13,6 @@ const item = {
 		const vm = this
 
 		vm.$onInit = () => {
-			if (vm.config.label == 'Fiscal') {
-				console.log(vm)
-			}
 		}
 
 		vm.showSubCategory = () => {
