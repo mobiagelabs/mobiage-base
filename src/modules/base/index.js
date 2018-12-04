@@ -30,7 +30,6 @@ const component = {
 };
 
 angular.module('mbg.base', [
-	'mb.components',
 	'mb.sidemenu',
 	'mb.topbar',
 	'mb.notifications',
