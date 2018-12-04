@@ -1,6 +1,6 @@
 {
   "name": "@mobiage/base",
-  "version": "2.15.2-rc",
+  "version": "2.15.3-rc",
   "description": "Base para os sistemas da mobiage",
   "repository": {
     "type": "private",
@@ -16,8 +16,8 @@
     "lint:css": "stylelint ./src/**/*.scss ./src/**/*.css"
   },
   "author": {
-    "name": "Alfredo Peres",
-    "email": "alfredoperes.filho@gmail.com"
+    "name": "Mobiage Team",
+    "email": "mobiagelabs@gmail.com"
   },
   "license": "ISC",
   "devDependencies": {
@@ -52,7 +52,6 @@
     "angular": "1.6.10",
     "angular-animate": "1.6.10",
     "angular-hotkeys": "^1.7.0",
-    "angular-input-masks": "^1.5.2",
     "angular-sanitize": "1.6.10",
     "jquery": "^3.2.1",
     "jquery-maskmoney": "^3.0.2",
