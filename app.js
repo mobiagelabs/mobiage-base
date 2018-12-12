@@ -34,7 +34,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 
 								$timeout(() => {
 									MbgPageLoader.endPromise();
-								}, 30000);
+								}, 3000000);
 							}, 10);
 						}
 					},
