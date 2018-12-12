@@ -1,5 +1,6 @@
 const service = function UserService() {
 	this.user = {};
+	this.onUpdateUser = () => { };
 	this.userComponentCallback = () => { };
 	/* Usamos o object assign para que não seja substituido o objeto inteiro ao passar apenas algumas configurações */
 	this.setUser = (newUser) => {
