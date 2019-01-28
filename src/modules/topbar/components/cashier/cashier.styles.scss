@@ -2,6 +2,11 @@
 .mb[cashier] {
 	.mb-bt-cashier {
 		width: 202px;
+
+		@media (max-width: 800px) {
+			width: 260px;
+		}
+
 		height: 42px;
 		margin: 0px 10px;
 		border-radius: 25px;
@@ -9,6 +14,7 @@
 		text-align: center;
 		overflow: hidden;
 		box-shadow: 0 3px 14px rgb(177, 177, 177);
+		word-wrap: normal;
 
 		span {
 			font-weight: 700;
