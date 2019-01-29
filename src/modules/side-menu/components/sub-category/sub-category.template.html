@@ -28,7 +28,7 @@
 	</div>
 	<div class="mg-smsc-container"
 	     ng-style="{
-				'max-height': vm.opened === true ? (vm.btnHeight * vm.qtdSubItens) + 'px' : (vm.btnHeight * vm.showItens) + 'px',
+				'max-height': vm.opened !== true ? (vm.btnHeight * vm.showItens) + 'px': (vm.btnHeight * (vm.qtdSubItens + vm.showItens + 1)) + 'px',
 				'padding-left': vm.icon !== undefined && vm.icon.length > 0 ? '30px' : '0px'	
 			}"
 	     ng-transclude>
