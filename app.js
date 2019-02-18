@@ -124,6 +124,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			CashierService.updateCashier({
 				open: true,
 				date: '12/07/18',
+				name: 'PDV do Luis',
 				openState: (() => {
 					$state.go('app.teste');
 				}),

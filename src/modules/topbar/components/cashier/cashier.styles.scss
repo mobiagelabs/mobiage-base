@@ -10,13 +10,13 @@
 		height: 42px;
 		margin: 0px 10px;
 		border-radius: 25px;
-		line-height: 42px;
 		text-align: center;
 		overflow: hidden;
 		box-shadow: 0 3px 14px rgb(177, 177, 177);
 		word-wrap: normal;
 
 		span {
+			line-height: 42px;
 			font-weight: 700;
 			font-size: 12px;
 			i.m-t {
@@ -48,6 +48,28 @@
 			}
 			span {
 				display: block;
+			}
+		}
+
+		.caixa-aberto {
+			height: 42px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		.nome-pdv {
+			font-size: 10px;
+			font-weight: 600;
+		}
+
+		.caixa-aberto-text {
+			font-weight: 700;
+			font-size: 12px;
+			i.m-t {
+				display: initial;
+				margin-right: 8px;
 			}
 		}
 	}
