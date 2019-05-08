@@ -60,7 +60,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 				actualOrganization: {
 					name: 'Spotify',
 					subTitle: 'Spotify Limitada ME.',
-					avatar: 'assets/img/logo_company.png',
+					avatar: 'https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/dc/f5/86/dcf586b2-a0ea-b76c-f3b2-1a47b2fea252/NetAppNewIcon-0-1x_U007emarketing-0-0-85-220-0-7.png/246x0w.jpg',
 					editAction: () => {
 						console.log('EDITAR');
 					},
@@ -70,8 +70,6 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					info: [
 						{ title: 'Razão Social', text: 'Spotify Stream Digital World' },
 						{ title: 'Nome Fantasia', text: 'Spotify Brasil' },
-						{ title: 'CNPJ', text: '910293.28201.1234' },
-						{ title: 'Inscrição Social', text: '910293.29201.1234' }
 					]
 				},
 				otherOrganizations: [

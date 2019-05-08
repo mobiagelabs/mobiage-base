@@ -120,7 +120,7 @@
 					position: relative;
 					z-index: 550;
 					font-size: 16px;
-					min-width: 300px;
+					min-width: fit-content;
 					@media screen and (max-width: 768px) {
 						// flex: 1;
 					}

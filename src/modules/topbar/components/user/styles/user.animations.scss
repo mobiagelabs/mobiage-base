@@ -1,27 +1,27 @@
 @keyframes mb-tu-anim-focus-In {
 	0% {
-		transform: translate3d(0%, 0%, 0) scale(1);
+		transform: translate3d(0%, 0%, 0) scale(.8);
 	}
 
 	33% {
-		transform: translate3d(5%, -5%, 0) scale(1);
+		transform: translate3d(5%, -5%, 0) scale(.8);
 	}
 
 	100% {
-		transform: translate3d(-50%, 25%, 0) scale(0.5);
+		transform: translate3d(50%, 0%, 0) scale(0.5);
 	}
 }
 
 @keyframes mb-tu-anim-focus-out {
 	0% {
-		transform: translate3d(-50%, 25%, 0px) scale(0.5);
+		transform: translate3d(50%, 0%, 0px) scale(0.5);
 	}
 
 	33% {
-		transform: translate3d(-55%, 30%, 0px) scale(0.4);
+		transform: translate3d(55%, 0%, 0px) scale(0.4);
 	}
 
 	100% {
-		transform: translate3d(0%, 0%, 0px) scale(1);
+		transform: translate3d(0%, 0%, 0px) scale(.8);
 	}
 }

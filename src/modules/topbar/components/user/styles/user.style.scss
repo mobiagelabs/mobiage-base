@@ -3,7 +3,8 @@
 
 .mb[topbar-user] {
 	height: 100%;
-	padding-right: 15px;
+	padding-right: 0;
+	position: relative;
 
 	> .mb-tu-button {
 		height: 100%;
@@ -15,9 +16,6 @@
 		padding-right: 5px;
 		padding-left: 20px;
 		z-index: 700;
-		background-color: #ffffff;
-
-		@include themify(background-color, backgroundTopBar);
 
 		transition: width 500ms ease;
 		will-change: width;
@@ -103,14 +101,11 @@
 			flex-direction: row;
 			justify-content: center;
 			align-items: center;
-			margin-right: 15px;
+			margin-right: 0;
 			cursor: pointer;
 
 			> .mb-tu-button-arrow {
-				color: #8034ad;
-
-				@include themify(color, color1);
-
+				color: #7C7C7C;
 				font-size: 19px;
 				transform: rotateZ(0deg);
 				transition: transform 0.5s ease;
@@ -122,7 +117,7 @@
 		}
 
 		> .mb-tu-avatar-container {
-			width: 55px;
+			width: 64px;
 			height: 55px;
 			position: relative;
 
@@ -133,7 +128,7 @@
 				bottom: 0px;
 				width: 55px;
 				height: 55px;
-				border-radius: 30px;
+				border-radius: 50%;
 				font-size: 30px;
 				line-height: 55px;
 				color: white;
@@ -144,20 +139,20 @@
 				will-change: transform, z-index;
 				cursor: pointer;
 				overflow: hidden;
-				box-shadow: 0px 2px 10px #d7d7d7;
 
 				&.mb-tua-user {
 					top: 0px;
 					right: 0px;
-					transform: rotate3d(0px, 0px, 0px) scale(1);
+					transform: rotate3d(0px, 0px, 0px) scale(.8);
 
 					&.mb-tua-focus-company {
-						animation: mb-tu-anim-focus-In 1000ms ease;
-						transform: translate3d(-50%, 25%, 0) scale(0.5);
+						animation: mb-tu-anim-focus-In 0ms ease;
+						transform: translate3d(50%, 0%, 0px) scale(0.5);
 					}
-
+					
 					&.mb-tua-focus-user {
-						animation: mb-tu-anim-focus-out 1000ms ease;
+						border-radius: 5px;
+						animation: mb-tu-anim-focus-out 0ms ease;
 					}
 
 					&.mb-tua-focus-z-index {
@@ -168,16 +163,17 @@
 				&.mb-tua-company {
 					top: auto;
 					right: auto;
-					transform: translate3d(-50%, 25%, 0px) scale(0.5);
+					transform: translate3d(50%, 0%, 0px) scale(0.5);
 
 					&.mb-tua-focus-company {
-						animation: mb-tu-anim-focus-out 1000ms ease;
-						transform: translate3d(0%, 0%, 0px) scale(1);
+						border-radius: 5px;
+						animation: mb-tu-anim-focus-out 0ms ease;
+						transform: translate3d(0%, 0%, 0px) scale(.8);
 					}
 
 					&.mb-tua-focus-user {
-						animation: mb-tu-anim-focus-In 1000ms ease;
-						transform: translate3d(-50%, 25%, 0px) scale(0.5);
+						animation: mb-tu-anim-focus-In 0ms ease;
+						transform: translate3d(50%, 0%, 0px) scale(0.5);
 					}
 
 					&.mb-tua-focus-z-index {
@@ -189,30 +185,47 @@
 	}
 
 	> .mb-tu-menu {
-		top: calc(100% - 30px);
-		left: 0px;
-		right: 15px;
+		top: 100%;
+		left: -100%;
 		position: absolute;
 		height: auto;
-		padding-top: 30px;
 		background-color: #fff;
 		z-index: 600;
 		transform-origin: top center;
 		transition: transform 500ms ease, opacity 200ms linear;
-		transform: translate3d(0%, -15%, 0px);
+		transform: translate3d(0%, -3%, 0px);
 		opacity: 0;
-		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1), 0px 0px 70px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px -10px 24px rgba(0,0,0,.1), 0 0 22px rgba(0,0,0,.009);
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
 
 		.mb-tu-menu-content {
-			border-top: 3px solid #8034ad;
-
-			@include themify(border-color, color1);
-
 			transition: opacity 250ms 500ms linear;
 			position: relative;
 			z-index: 700;
+			border: 0 solid #f5f5f5;
+			&:after, &:before {
+				bottom: 100%;
+				right: 28px;
+				border: 2px solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+			}
+			
+			&:after {
+				border-color: rgba(136, 183, 213, 0);
+				border-bottom-color: #FFF;
+				border-width: 12px;
+			}
+			&:before {
+				border-color: rgba(194, 225, 245, 0);
+				border-bottom-color: #f5f5f5;
+				border-width: 12px;
+			}
+			
 
 			> .mb-tu-menu-company-content {
 				width: 100%;
@@ -231,7 +244,7 @@
 						padding-right: 15px;
 						padding-bottom: 15px;
 						width: 100%;
-						text-align: left;
+						text-align: right;
 
 						.mb-tu-menu-company-info-title {
 							color: #ccc;
