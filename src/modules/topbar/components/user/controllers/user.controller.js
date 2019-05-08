@@ -184,6 +184,7 @@ const controller = function ($scope, $timeout, mbUserService, $state) {
 		mbUserService.setComponentCallback((user) => { $scope.user = user; });
 		mbUserService.setUser(this.config);
 		$scope.user = mbUserService.getUser();
+		$scope.focusCompany()
 	};
 };
 

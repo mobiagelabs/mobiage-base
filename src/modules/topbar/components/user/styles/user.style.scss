@@ -152,12 +152,12 @@
 					transform: rotate3d(0px, 0px, 0px) scale(1);
 
 					&.mb-tua-focus-company {
-						animation: mb-tu-anim-focus-In 1000ms ease;
+						animation: mb-tu-anim-focus-In 0ms ease;
 						transform: translate3d(-50%, 25%, 0) scale(0.5);
 					}
 
 					&.mb-tua-focus-user {
-						animation: mb-tu-anim-focus-out 1000ms ease;
+						animation: mb-tu-anim-focus-out 0ms ease;
 					}
 
 					&.mb-tua-focus-z-index {
@@ -171,12 +171,12 @@
 					transform: translate3d(-50%, 25%, 0px) scale(0.5);
 
 					&.mb-tua-focus-company {
-						animation: mb-tu-anim-focus-out 1000ms ease;
+						animation: mb-tu-anim-focus-out 0ms ease;
 						transform: translate3d(0%, 0%, 0px) scale(1);
 					}
 
 					&.mb-tua-focus-user {
-						animation: mb-tu-anim-focus-In 1000ms ease;
+						animation: mb-tu-anim-focus-In 0ms ease;
 						transform: translate3d(-50%, 25%, 0px) scale(0.5);
 					}
 
@@ -231,7 +231,7 @@
 						padding-right: 15px;
 						padding-bottom: 15px;
 						width: 100%;
-						text-align: left;
+						text-align: right;
 
 						.mb-tu-menu-company-info-title {
 							color: #ccc;

@@ -56,7 +56,6 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					},
 					logoutOption
 				],
-				moreCompanyLinks: [logoutOption],
 				actualOrganization: {
 					name: 'Spotify',
 					subTitle: 'Spotify Limitada ME.',
@@ -69,9 +68,18 @@ angular.module('app', ['mbg.base', 'ui.router'])
 					inviteActionType: 'state',
 					info: [
 						{ title: 'Razão Social', text: 'Spotify Stream Digital World' },
-						{ title: 'Nome Fantasia', text: 'Spotify Brasil' },
-						{ title: 'CNPJ', text: '910293.28201.1234' },
-						{ title: 'Inscrição Social', text: '910293.29201.1234' }
+						{ title: 'Nome Fantasia', text: 'Spotify Brasil' }
+					],
+					links: [
+						{
+							label: 'Ir para o Finance',
+							iconSrc: 'fontawesome',
+							icon: 'fas fa-suitcase',
+							iconSize: '22',
+							actionType: 'link',
+							action: '#trocarconta'
+						},
+						logoutOption
 					]
 				},
 				otherOrganizations: [
