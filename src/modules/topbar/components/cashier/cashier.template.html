@@ -1,8 +1,31 @@
 <div class="mb"
-     cashier>
+	 ng-class="{'active' : setting.open}"
+	 cashier>
 	<div class="mb-bt-cashier"
-	     ng-click="goCashierState()"
-	     ng-class="setting.open ? 'ca-close' : 'ca-open'">
+		 ng-click="goCashierState()"
+		 ng-class="setting.open ? 'ca-close' : 'ca-open'">
+
+		<!-- <svg ng-class="{'active' : setting.open}"
+			 data-name="background-button"
+			 xmlns="http://www.w3.org/2000/svg"
+			 viewBox="0 0 234.0052 45">
+			<path d="M126,.5H1.5s17.1331,8,19.4174,23c2.2844,20,18.2753,21,28.5551,21h133.555c10.28,0,26.2707-1,28.5551-21C213.8669,8.5,231,.5,231,.5Z"
+				  transform="translate(0.7526)" />
+		</svg> -->
+
+		<svg ng-class="{'active' : setting.open}"
+			 data-name="background-button"
+			 xmlns="http://www.w3.org/2000/svg"
+			 viewBox="0 0 232 45">
+			<path d="M130.5.5H-.5c14,0,19,3,19,18,1,22,9.72,26,20,26h154c10.28,0,19-4,20-26,0-15,5-18,19-18Z"
+				  transform="translate(0.5)" />
+		</svg>
+		<!-- <svg ng-class="{'active' : setting.open}"
+			data-name="background-button"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 232.5182 45">
+			<path d="M.5.5h230s-18,3-23,31c-1.2285,7.7406-7,13-14.7658,13H34.5c-9,0-16-3-17-14C14.5,6.5.5.5.5.5Z"
+				 transform="translate(1.936 0)" /></svg> -->
 		<span ng-show="cashierIsEmpty()">
 			<i class="fas fa-spinner fa-spin"></i>
 		</span>
@@ -11,7 +34,8 @@
 		</span>
 
 		<div class="mb-box-cashier"
-		     ng-hide="cashierIsEmpty()">
+			 ng-class="{'active' : setting.open}"
+			 ng-hide="cashierIsEmpty()">
 
 			<div class="caixa-aberto">
 				<div class="nome-pdv">{{setting.name}}</div>

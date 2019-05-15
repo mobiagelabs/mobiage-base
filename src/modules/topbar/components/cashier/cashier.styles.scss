@@ -1,21 +1,49 @@
 @import "../../../themes/themes.style.scss";
 .mb[cashier] {
+	width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0px;
+	z-index: 999999999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+	padding: 0 26%;
+	height: 1px;
+	background-color: #f5f5f5;
+	filter: drop-shadow( 1px 2px 1px rgba(102, 102, 102, .1));
+
+	&.active {
+		background-color: #ff0758;
+		@include themify(background-color, quickMenuBtnBackground);
+	}
+
 	.mb-bt-cashier {
-		width: 202px;
-
-		@media (max-width: 800px) {
-			width: 260px;
-		}
-
-		height: 42px;
+		width: 226px;
+    	transform: translateY(50%);
+		height: 47px;
 		margin: 0px 10px;
-		border-radius: 25px;
 		text-align: center;
 		overflow: hidden;
-		box-shadow: 0 3px 14px rgb(177, 177, 177);
 		word-wrap: normal;
 
+		svg {
+			transform: translateY(0px);
+			fill: #f5f5f5;
+			position: absolute;
+			left: 0px;
+			top: -1px;
+			z-index: 0;
+			filter: drop-shadow( 1px 2px 1px rgba(102, 102, 102, .1));
+			&.active {
+				fill: #ff0758;
+				@include themify(fill, quickMenuBtnBackground);
+			}
+		}
+
 		span {
+			position: relative;
+			z-index: 9;
 			line-height: 42px;
 			font-weight: 700;
 			font-size: 12px;
@@ -26,25 +54,24 @@
 
 		&.ca-open {
 			background-color: transparent;
-			border: 1px solid #b5b5b5;
 			color: #b5b5b5;
 			cursor: pointer;
 		}
 		&.ca-close {
-			background-color: #ff0758;
-			border-color: #ff0758;
-			border: 1px;
-			@include themify(background-color, quickMenuBtnBackground);
-			@include themify(border-color, quickMenuBtnBackground);
-
 			color: #fff;
 			cursor: pointer;
 		}
 
 		.mb-box-cashier {
 			transition: transform 300ms ease;
-			&:hover {
-				transform: translateY(-50%);
+			z-index: 8;
+			position: relative;
+			transform: translateY(2px);
+			&.active {
+				transform: none;
+				&:hover {
+					transform: translateY(-50%);
+				}
 			}
 			span {
 				display: block;
@@ -52,7 +79,7 @@
 		}
 
 		.caixa-aberto {
-			height: 42px;
+			height: 40px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -71,6 +98,9 @@
 				display: initial;
 				margin-right: 8px;
 			}
+		}
+		@media (max-width: 800px) {
+			width: 260px;
 		}
 	}
 }
