@@ -1,8 +1,18 @@
 <div class="mb"
-     cashier>
+	 ng-class="{'active' : setting.open}"
+	 ng-style="setting.open && $ctrl.activeColor && {'background-color': $ctrl.activeColor }"
+	 cashier>
 	<div class="mb-bt-cashier"
-	     ng-click="goCashierState()"
-	     ng-class="setting.open ? 'ca-close' : 'ca-open'">
+		 ng-click="goCashierState()"
+		 ng-class="setting.open ? 'ca-close' : 'ca-open'">
+		<svg ng-class="{'active' : setting.open}"
+			 ng-style="setting.open && $ctrl.activeColor && {'fill': $ctrl.activeColor }"
+			 data-name="background-button"
+			 xmlns="http://www.w3.org/2000/svg"
+			 viewBox="0 0 232 45">
+			<path d="M130.5.5H-.5c14,0,19,3,19,18,1,22,9.72,26,20,26h154c10.28,0,19-4,20-26,0-15,5-18,19-18Z"
+				  transform="translate(0.5)" />
+		</svg>
 		<span ng-show="cashierIsEmpty()">
 			<i class="fas fa-spinner fa-spin"></i>
 		</span>
@@ -11,7 +21,8 @@
 		</span>
 
 		<div class="mb-box-cashier"
-		     ng-hide="cashierIsEmpty()">
+			 ng-class="{'active' : setting.open}"
+			 ng-hide="cashierIsEmpty()">
 
 			<div class="caixa-aberto">
 				<div class="nome-pdv">{{setting.name}}</div>

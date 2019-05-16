@@ -4,7 +4,8 @@ import './cashier.styles.scss';
 
 const component = {
 	bindings: {
-		config: '='
+		config: '=',
+		activeColor: '@?'
 	},
 	template,
 	controller
