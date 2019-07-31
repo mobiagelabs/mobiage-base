@@ -4,7 +4,7 @@ const controller = ($scope, $timeout, baseNotificationService) => {
   vm.notifications = baseNotificationService.notifications
 
   baseNotificationService.onNotificationChange((notifications) => {
-    this.$timeout(() => {
+    $timeout(() => {
       vm.notifications = notifications
     })
   })
