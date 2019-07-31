@@ -25,6 +25,21 @@ const controller = ($scope, $timeout, baseNotificationService) => {
     }
   }
 
+  vm.handleClickNotification = (evt, notification, action) => {
+    if (notification.actions && notification.actions.length > 0) {
+      evt.preventDefault()
+      evt.stopPropagation()
+      if (action) {
+        onClickOutside()
+        notification.onClick(notification, action)
+      }
+    } else {
+      if (notification.onClick) {
+        notification.onClick(notification, action)
+      }
+    }
+  }
+
 };
 
 export default controller;

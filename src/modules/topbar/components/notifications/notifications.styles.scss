@@ -113,6 +113,25 @@ mb-topbar-notifications {
 					font-size: 12px;
 					line-height: 1.4;
         }
+        .notification-actions {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          margin-top: 8px;
+          button {
+            font-size: 12px;
+            line-height: 1.4;
+            border-radius: 4px;
+            color: #666;
+            padding: 5px 8px;
+            cursor: pointer;
+            outline: none;
+            &:hover {
+              @include themify(color, color1);
+              @include themify(border-color, color1);
+            }
+          }
+        }
       }
     }
     .empty-notification {
