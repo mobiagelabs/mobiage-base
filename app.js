@@ -1,5 +1,27 @@
 angular.module('app', ['mbg.base', 'ui.router'])
-	.controller('appController', ($scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService, $state) => {
+	.controller('appController', (baseNotificationService, $scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService, $state) => {
+
+		// baseNotificationService.setNotifications([
+		// 	{
+		// 		time: `17 de abril 2019`,
+		// 		icon: `far fa-envelope`,
+		// 		title: `Uma nova transferencia`,
+		// 		body: `Recebemos 5 itens da marisa filial 05 uma mensagem maior para ver a merda`,
+		// 		onClick: (notification) => {
+		// 			console.log(`foi`, notification)
+		// 		}
+		// 	},
+		// 	{
+		// 		icon: `far fa-envelope`,
+		// 		title: `Uma nova transferencia`,
+		// 		body: `Recebemos 5 itens da marisa filial 05`
+		// 	},
+		// 	{
+		// 		icon: `far fa-envelope`,
+		// 		title: `Uma nova transferencia`,
+		// 		body: `Recebemos 5 itens da marisa filial 05`
+		// 	}
+		// ])
 
 		$scope.configBase = {
 			theme: 'cssVariable'

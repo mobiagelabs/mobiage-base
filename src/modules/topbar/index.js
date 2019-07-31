@@ -7,6 +7,7 @@ import cashier from './components/cashier';
 import service from './components/cashier/service/cashier.service';
 import './components/search';
 import './components/user';
+import baseNotificationService from './services/base-notification-service'
 
 const component = {
 	bindings: {
@@ -21,4 +22,5 @@ angular.module('mb.topbar', ['mb.topbar.search', 'mb.topbar.user'])
 	.component('mbTopbar', component)
 	.component('mbCashier', cashier)
 	.component('mbTopbarNotifications', notifications)
-	.service('CashierService', service);
+	.service('CashierService', service)
+	.service('baseNotificationService', baseNotificationService)
