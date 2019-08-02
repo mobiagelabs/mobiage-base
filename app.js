@@ -5,8 +5,8 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			{
 				time: `17 de abril 2019`,
 				icon: `far fa-envelope`,
-				title: `Uma nova transferencia`,
-				body: `Recebemos 5 itens da marisa filial 05 uma mensagem maior para ver a merda`,
+				title: `Nova transferencia`,
+				body: `<b>Miranda SDK</b> te enviou <b>18</b> itens`,
 				actions: [
 					{
 						label: `Conferir`,

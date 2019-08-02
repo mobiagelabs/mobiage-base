@@ -45,12 +45,11 @@
 				<i ng-class="notification.icon"></i>
 			</div>
 			<div class="notification-metadata">
+				<label class="notification-title">{{ notification.title }}</label>
 				<label class="notification-time">
-					<i class="far fa-clock"></i>
 					{{ notification.time }}
 				</label>
-				<label class="notification-title">{{ notification.title }}</label>
-				<label class="notification-body">{{ notification.body }}</label>
+				<label class="notification-body" ng-bind-html="notification.body"></label>
 				<div class="notification-actions"
 						 ng-show="notification.actions.length > 0">
 					<button ng-repeat="action in notification.actions"
