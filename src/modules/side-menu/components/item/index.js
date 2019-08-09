@@ -1,4 +1,5 @@
 import template from './item.template.html';
+import { type } from 'os';
 
 const item = {
 	bindings: {
@@ -17,9 +18,10 @@ const item = {
 
 		vm.showSubCategory = () => {
 			if (vm.config && vm.config.children) {
-				return vm.config.children.filter((children) => {
-					return !children.key || (vm.keys || []).indexOf(children.key) !== -1
-				}).length > 0
+				if (typeof children.key === 'function') {
+					return vm.config.children.filter((children) => !children.key || (vm.keys || []).indexOf(children.key) !== -1).length > 0
+				}
+				return vm.config.children.filter((children) => !children.key || (vm.keys || []).indexOf(children.key) !== -1).length > 0
 			}
 			return true
 		}
