@@ -183,6 +183,11 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			});
 		};
 
+		$timeout(() => {
+			$scope.configMenu.keys = ['CRUD_NOTIFICATION', 'Tributação']
+			console.log('ATUALIZOU')
+		}, 5000)
+
 		$scope.configMenu = {
 			keys: ['CRUD_NOTIFICATION', 'CAIXA', 'Tributação'],
 			quickMenu: {
