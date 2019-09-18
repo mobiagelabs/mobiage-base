@@ -59,6 +59,14 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			logo: 'assets/img/logo.png',
 			logoActionType: 'state',
 			logoAction: 'app.teste',
+			usersBirthday: {
+				getUsers: async () => {
+					return [{}, {}]
+				},
+				onClick: (users) => {
+					console.log(users)
+				}
+			},
 			user: {
 				name: 'Amália Fernandes',
 				avatar: 'assets/img/perfil.png',

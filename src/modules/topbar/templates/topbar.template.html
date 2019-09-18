@@ -1,39 +1,39 @@
 <header class="mb"
-        topbar
-        ng-class="vm.config.theme">
+				topbar
+				ng-class="vm.config.theme">
 	<div class="mb-t-content">
 		<div class="mb-t-container">
 
 			<a class="mb-t-logo-link"
-			   tabindex="-1"
-			   ng-if="vm.config.logoActionType === 'state'"
-			   ui-sref="{{vm.config.logoAction}}">
+				 tabindex="-1"
+				 ng-if="vm.config.logoActionType === 'state'"
+				 ui-sref="{{vm.config.logoAction}}">
 				<div class="mb-t-logo-container">
 					<div class="mb-t-logo"
-					     ng-style="{'background-image': 'url(' + vm.config.logo + ')'}"></div>
+							 ng-style="{'background-image': 'url(' + vm.config.logo + ')'}"></div>
 				</div>
 			</a>
 			<a class="mb-t-logo-link"
-			   tabindex="-1"
-			   ng-if="vm.config.logoActionType === 'link'"
-			   ng-href="{{vm.config.logoAction}}">
+				 tabindex="-1"
+				 ng-if="vm.config.logoActionType === 'link'"
+				 ng-href="{{vm.config.logoAction}}">
 				<div class="mb-t-logo-container">
 					<div class="mb-t-logo"
-					     ng-style="{'background-image': 'url(' + vm.config.logo + ')'}"></div>
+							 ng-style="{'background-image': 'url(' + vm.config.logo + ')'}"></div>
 				</div>
 			</a>
 			<a class="mb-t-logo-link"
-			   tabindex="-1"
-			   ng-if="vm.config.logoActionType === 'function'"
-			   ng-click="vm.action()">
+				 tabindex="-1"
+				 ng-if="vm.config.logoActionType === 'function'"
+				 ng-click="vm.action()">
 				<div class="mb-t-logo-container">
 					<div class="mb-t-logo"
-					     ng-style="{'background-image': 'url(' + vm.config.logo + ')'}"></div>
+							 ng-style="{'background-image': 'url(' + vm.config.logo + ')'}"></div>
 				</div>
 			</a>
 
 			<div class="mb-t-buguer-btn-container"
-			     ng-click="vm.openMenu()">
+					 ng-click="vm.openMenu()">
 				<i class="fas fa-bars"></i>
 			</div>
 			<div class="mb-t-inside-content">
@@ -48,6 +48,17 @@
 				<div class="mb-t-cashier">
 					<mb-cashier config="vm.config.user"></mb-cashier>
 				</div>
+				<div class="mb-birthday-wrapper"
+						 ng-show="vm.config.usersBirthday.users.length > 0"
+						 ng-click="vm.config.usersBirthday.onClick(vm.config.usersBirthday.users)">
+					<i class="fas fa-gift"></i>
+					<div class="mb-tn-number">
+						{{ vm.config.usersBirthday.users.length }}
+					</div>
+				</div>
+
+				<mb-topbar-notifications></mb-topbar-notifications>
+
 				<div class="mb-t-user-container">
 					<mb-t-user config="vm.config.user"></mb-t-user>
 				</div>

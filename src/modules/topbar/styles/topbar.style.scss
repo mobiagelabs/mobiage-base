@@ -115,12 +115,45 @@
 					position: relative;
 				}
 
+				> .mb-birthday-wrapper {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 25px;
+					position: relative;
+					height: 50px;
+					width: 50px;
+					text-align: center;
+					cursor: pointer;
+					i {
+						color: #8034ad;
+						@include themify(color, color1);
+					}
+					.mb-tn-number {
+						position: absolute;
+						top: 0;
+						right: 0;
+						line-height: 23px;
+						width: 23px;
+						height: 23px;
+						border-radius: 11.5px;
+						background-color: map-get($semantic, error);
+						font-size: 12px;
+						font-weight: 700;
+						color: white;
+					}
+					.mb-tn-number, i.bell {
+						transition: transform 350ms ease;
+					}
+				}
+
 				> .mb-t-user-container {
 					height: 100%;
 					position: relative;
 					z-index: 550;
 					font-size: 16px;
-					min-width: 300px;
+					min-width: 256px;
+					margin-left: 8px;
 					@media screen and (max-width: 768px) {
 						// flex: 1;
 					}

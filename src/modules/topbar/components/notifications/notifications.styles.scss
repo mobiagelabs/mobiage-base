@@ -1,8 +1,8 @@
 @import "../../../themes/themes.style.scss";
 
 mb-topbar-notifications {
-  position: absolute;
-  left: 0;
+  // position: absolute;
+  // left: 0;
   z-index: 7000;
   height: 100%;
   display: flex;
@@ -23,12 +23,6 @@ mb-topbar-notifications {
   transition: transform 350ms ease;
   .mb-tn-number, i.bell {
     transition: transform 350ms ease;
-  }
-  &:hover {
-    > .mb-tn-number,
-    i.bell {
-      transform: scale(1.08);
-    }
   }
 
   > .mb-tn-number {
