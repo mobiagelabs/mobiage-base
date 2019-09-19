@@ -52,8 +52,8 @@
 						 ng-click="vm.config.usersBirthday.onClick(vm.config.usersBirthday.users)">
 					<i class="fas fa-gift"></i>
 					<div class="mb-tn-number"
-							 ng-show="vm.config.usersBirthday.countShow()">
-						{{ vm.config.usersBirthday.users.length }}
+							 ng-show="vm.config.usersBirthday.count(vm.config.usersBirthday.users) > 0">
+						{{ vm.config.usersBirthday.count(vm.config.usersBirthday.users) }}
 					</div>
 				</div>
 
