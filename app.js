@@ -60,6 +60,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			logoActionType: 'state',
 			logoAction: 'app.teste',
 			usersBirthday: {
+				countShow: () => true,
 				getUsers: async () => {
 					return [{}, {}]
 				},

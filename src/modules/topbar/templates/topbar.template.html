@@ -49,10 +49,10 @@
 					<mb-cashier config="vm.config.user"></mb-cashier>
 				</div>
 				<div class="mb-birthday-wrapper"
-						 ng-show="vm.config.usersBirthday.users.length > 0"
 						 ng-click="vm.config.usersBirthday.onClick(vm.config.usersBirthday.users)">
 					<i class="fas fa-gift"></i>
-					<div class="mb-tn-number">
+					<div class="mb-tn-number"
+							 ng-show="m.config.usersBirthday.countShow()">
 						{{ vm.config.usersBirthday.users.length }}
 					</div>
 				</div>
