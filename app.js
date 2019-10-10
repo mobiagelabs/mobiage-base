@@ -519,7 +519,8 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			},
 			onClose: () => {
 				console.log('Fechou');
-			}
+			},
+			bgHide: false,
 		});
 	})
 	.config(($stateProvider) => {

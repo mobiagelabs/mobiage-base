@@ -1,16 +1,20 @@
 .mb[side-content] {
   .mb-sc-content-container{
-    width: 350px;
+    width: 400px;
     height: 100vh;
     position: fixed;
     right: 0px;
     top: 0px;
     left: auto;
     bottom: 0px;
-    // background-color: #fff;
+    background-color: #fff;
     z-index: 1002;
     transform: translateX(100%);
     transition: transform 500ms ease, box-shadow 250ms linear;
+
+    &.mb-sc-bg-hide {
+      background-color: transparent;
+    }
 
     &.mb-sc-preview {
       transform: translateX(95%);
@@ -41,8 +45,8 @@
   }
 
   .mb-sc-background {
-    // opacity: 0;
-    // background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    background-color: rgba(0,0,0,0.5);
     width: 100%;
     height: 100vh;
     position: fixed;

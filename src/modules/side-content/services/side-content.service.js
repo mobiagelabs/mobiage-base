@@ -14,7 +14,8 @@ const sideContentService = function () {
 			iconColor: '#fff',
 			btnBgColor: '#00d5d2',
 			onOpen: () => {},
-			onClose: () => {}
+			onClose: () => {},
+			bgHide: false,
 		}, content, { id: Math.random().toString(36).slice(2) });
 		service.contentBuffer.push(conteudo);
 		service.updateComponent();

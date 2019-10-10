@@ -16,7 +16,7 @@ const controller = function ($scope, $timeout, MbgSideContent, $compile) {
 			$compile(document.getElementById('mb-sc-content'))(scope);
 			vm.activeContent.onOpen(content);
 			animationInProgress = true;
-			vm.bgHide = false;
+			vm.bgHide = typeof content.bgHide === 'undefined' ? false : content.bgHide;
 			const active = () => {
 				$timeout(() => {
 					if (content.template !== '') {
@@ -24,6 +24,7 @@ const controller = function ($scope, $timeout, MbgSideContent, $compile) {
 					}
 				});
 			};
+			console.log(document)
 			document.addEventListener('click', vm.close);
 			requestAnimationFrame(active);
 			$timeout(() => {
