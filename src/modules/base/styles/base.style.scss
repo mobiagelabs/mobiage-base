@@ -146,12 +146,9 @@ body[padding] {
 		padding-right: 164px;
 	}
 	
-	@media screen and (max-width: 1454px) {
+	@media screen and (max-width: 1680px) {
 		.mb[topbar]>.mb-t-content>.mb-t-container, .mb[base-container] {
 			padding: 0 124px;
-		}
-		.mb[base-container] {
-			padding-right: 0;
 		}
 		mb-content .os-content .mb-cc-content {
 			padding-right: 124px;
