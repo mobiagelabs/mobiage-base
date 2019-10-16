@@ -1,5 +1,7 @@
 angular.module('app', ['mbg.base', 'ui.router'])
-	.controller('appController', (baseNotificationService, $scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService, $state) => {
+	.controller('appController', (baseNotificationService, $scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService, $state, environmentService) => {
+
+		environmentService.setIsDemo(false)
 
 		baseNotificationService.setNotifications([
 			{
