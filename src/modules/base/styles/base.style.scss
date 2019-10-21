@@ -1,22 +1,22 @@
 @import "./base.animations.scss";
 
 .mb[base] {
-	width: 100%;
-	height: 100vh;
-	background-color: #fcfcfc;
-	line-height: normal;
-	overflow: hidden;
-	text-align: center;
-	will-change: transform, height;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
+  background-color: #fcfcfc;
+  line-height: normal;
+  overflow: hidden;
+  text-align: center;
+  will-change: transform, height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-	&.mobiage-base-topage-enter {
-		animation: topAgeEnterEnterInvert 750ms linear infinite, topAgeWobble 1s linear infinite;
-	}
-	&.cssVariable {
-		background-color: var(--bgColor);
-	}
+  &.mobiage-base-topage-enter {
+    animation: topAgeEnterEnterInvert 750ms linear infinite, topAgeWobble 1s linear infinite;
+  }
+  &.cssVariable {
+    background-color: var(--bgColor);
+  }
 }
 
 /* 
@@ -25,147 +25,153 @@ os-theme-thin-dark
 */
 
 .os-theme-thin-dark > .os-scrollbar-horizontal {
-	right: 14px;
-	height: 14px;
-	padding: 0px 6px;
+  right: 14px;
+  height: 14px;
+  padding: 0px 6px;
 }
 
 .os-theme-thin-dark > .os-scrollbar-vertical {
-	bottom: 14px;
-	width: 14px;
-	padding: 6px 0px;
+  bottom: 14px;
+  width: 14px;
+  padding: 6px 0px;
 }
 
 .os-theme-thin-dark.os-host-rtl > .os-scrollbar-horizontal {
-	left: 14px;
-	right: 0;
+  left: 14px;
+  right: 0;
 }
 
 .os-theme-thin-dark > .os-scrollbar-corner {
-	height: 14px;
-	width: 14px;
-	background-color: transparent;
+  height: 14px;
+  width: 14px;
+  background-color: transparent;
 }
 
 .os-theme-thin-dark > .os-scrollbar > .os-scrollbar-track {
-	background: transparent;
+  background: transparent;
 }
 
 .os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track:before,
 .os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track:before {
-	content: '';
-	display: block;
-	position: absolute;
-	background: rgba(0, 0, 0, 0.15);
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track:before,
 .os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle:before {
-	left: 0;
-	right: 0;
-	height: 2px;
-	top: 50%;
-	margin-top: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
 }
 
 .os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track:before,
 .os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle:before {
-	top: 0;
-	bottom: 0;
-	width: 2px;
-	left: 50%;
-	margin-left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  left: 50%;
+  margin-left: -1px;
 }
 
 .os-theme-thin-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:before {
-	content: '';
-	display: block;
-	position: absolute;
-	background: rgba(0, 0, 0, 0.5);
-	border-radius: 10px;
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle:hover:before,
 .os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle.active:before {
-	height: 4px;
-	margin-top: -2px;
+  height: 4px;
+  margin-top: -2px;
 }
 
 .os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle:hover:before,
 .os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle.active:before {
-	width: 4px;
-	margin-left: -2px;
+  width: 4px;
+  margin-left: -2px;
 }
 
 .os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle:hover:before,
 .os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle:hover:before {
-	background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle.active:before,
 .os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle.active:before {
-	background: #000;
+  background: #000;
 }
 
 .os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle {
-	height: 100%;
-	min-width: 30px;
+  height: 100%;
+  min-width: 30px;
 }
 
 .os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle {
-	width: 100%;
-	min-height: 30px;
+  width: 100%;
+  min-height: 30px;
 }
 
 .os-theme-thin-dark.os-host-transition > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle:before {
-	transition: height 0.3s, margin-top 0.3s, background 0.2s;
+  transition: height 0.3s, margin-top 0.3s, background 0.2s;
 }
 
 .os-theme-thin-dark.os-host-transition > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle:before {
-	transition: width 0.3s, margin-left 0.3s, background 0.2s;
+  transition: width 0.3s, margin-left 0.3s, background 0.2s;
 }
 
 .os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical {
-	right: -3px;
+  right: -3px;
 }
-
 
 /*
 	inicio dos padding da lateral
 */
 body[padding] {
-	.mb[topbar]>.mb-t-content>.mb-t-container, .mb[base-container] {
-		padding: 0 164px;
-	}
-	
-	.mb[base-container] {
-		padding-right: 0;
-	}
-	
-	mb-content .os-content .mb-cc-content {
-		padding-right: 164px;
-	}
-	
-	@media screen and (max-width: 1454px) {
-		.mb[topbar]>.mb-t-content>.mb-t-container, .mb[base-container] {
+  .mb[topbar] > .mb-t-content > .mb-t-container, .mb[base-container] {
+    padding: 0 164px;
+  }
+
+  .mb[base-container] {
+    padding-right: 0;
+  }
+
+  mb-content .os-content .mb-cc-content {
+    padding-right: 164px;
+  }
+
+  @media screen and (max-width: 1680px) {
+    .mb[topbar] > .mb-t-content > .mb-t-container, .mb[base-container] {
 			padding: 0 124px;
 		}
+	
 		.mb[base-container] {
 			padding-right: 0;
 		}
+	
 		mb-content .os-content .mb-cc-content {
 			padding-right: 124px;
 		}
-	}
-	
-	@media screen and (max-width: 1348px) {
-		.mb[topbar]>.mb-t-content>.mb-t-container, .mb[base-container] {
+  }
+
+  @media screen and (max-width: 768px) {
+    .mb[topbar] > .mb-t-content > .mb-t-container, .mb[base-container] {
 			padding: 0;
 		}
-		mb-content .os-content .mb-cc-content {
-			padding-right: 0px;
+	
+		.mb[base-container] {
+			padding: 0;
 		}
-	}
+	
+		mb-content .os-content .mb-cc-content {
+			padding: 124px;
+		}
+  }
 }
 /*
 	FIM

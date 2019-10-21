@@ -46,7 +46,8 @@
 					<mb-topbar-notifications></mb-topbar-notifications>
 				</div> -->
 				<div class="mb-t-cashier">
-					<mb-cashier config="vm.config.user"></mb-cashier>
+					<mb-cashier config="vm.config.user"
+											ng-if="!vm.config.hideCashier"></mb-cashier>
 				</div>
 				<div class="mb-birthday-wrapper"
 						 ng-click="vm.config.usersBirthday.onClick(vm.config.usersBirthday.users)">
@@ -62,7 +63,6 @@
 				<div class="mb-t-user-container">
 					<mb-t-user config="vm.config.user"></mb-t-user>
 				</div>
-
 			</div>
 		</div>
 	</div>
