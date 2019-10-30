@@ -85,6 +85,7 @@ const controller = function ($scope, $timeout, MbgSideContent, $compile) {
 
 	vm.$onDestroy = () => {
 		MbgSideContent.contentBuffer = []
+		MbgSideContent.btnBuffer = []
 		vm.updateComponent()
 	};
 };
