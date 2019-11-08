@@ -24,7 +24,7 @@ const controller = function ($scope, $timeout, MbgSideContent, $compile) {
 					}
 				});
 			};
-			document.addEventListener('click', vm.close);
+			// document.addEventListener('click', vm.close);
 			requestAnimationFrame(active);
 			$timeout(() => {
 				animationInProgress = false;
