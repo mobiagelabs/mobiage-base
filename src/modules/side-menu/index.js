@@ -5,7 +5,6 @@ import './styles/side-menu.style.scss';
 
 /* Componentes */
 import quickMenu from './components/quick-menu';
-import toggleMenu from './components/toggle-menu';
 import link from './components/link';
 import btn from './components/btn';
 import category from './components/category';
@@ -24,7 +23,6 @@ const component = {
 
 angular.module('mb.sidemenu', ['ngSanitize'])
 	.component('mbSmQuickmenu', quickMenu)
-	.component('mbToggleMenu', toggleMenu)
 	.component('mbSmItem', item)
 	.component('mbSmCategory', category)
 	.component('mbSmSubcategory', subCategory)
