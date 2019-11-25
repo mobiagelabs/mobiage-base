@@ -1,0 +1,41 @@
+<div class="mb-toggle-wrapper">
+	<div ng-class="{'active': active === 1}"
+		 ng-click="toggleNav(1)"
+		 class="item">
+		<span>L</span>
+	</div>
+	<div ng-class="{'active': active === 2}"
+		 ng-click="toggleNav(2)"
+		 class="item finance">
+		<span>F</span>
+	</div>
+</div>
+<div class="mb-selected-nav"
+	 ng-class="{'finance': active === 2}">
+	<span ng-class="{'active' : active === 2}">Financeiro</span>
+	<span ng-class="{'active' : active === 1}">Loja</span>
+	<!-- <div class="change-nav">
+		<i class="fas fa-sync-alt"></i>
+	</div> -->
+</div>
+
+
+<!-- <div class="mb-toggle-wrapper">
+	<div ng-class="{'active': active === 1}"
+		 ng-click="toggleNav(1)"
+		 class="item">
+		<span>L</span>
+	</div>
+	<div ng-class="{'active': active === 2}"
+		 ng-click="toggleNav(2)"
+		 class="item">
+		<span>F</span>
+	</div>
+</div>
+<div class="mb-selected-nav">
+	<span ng-class="{'active' : active === 2}">Financeiro</span>
+	<span ng-class="{'active' : active === 1}">Loja</span>
+	<div class="change-nav">
+		<i class="fas fa-sync-alt"></i>
+	</div>
+</div> -->
