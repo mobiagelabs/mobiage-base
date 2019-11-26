@@ -4,7 +4,7 @@ import controller from './quick-menu.controller';
 
 const quickMenu = {
 	bindings: {
-		config: '<'
+		config: '=?'
 	},
 	controller,
 	controllerAs: 'vm',

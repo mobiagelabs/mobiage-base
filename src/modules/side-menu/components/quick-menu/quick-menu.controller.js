@@ -1,9 +1,20 @@
-const controller = function ($scope, $timeout) {
+const controller = function ($scope, $timeout, $interval) {
+
 	$scope.state = {
 		quickMenuOpen: false,
 		animationInProgress: false,
 		menuBottomY: 0
 	};
+
+	$timeout(() => {
+		if (this.config.enableAutoToggle) {
+			$scope.toggleQuickMenu()
+			$timeout(() => {
+				$scope.toggleQuickMenu()
+			}, 2000)
+		}
+	}, 1000)
+
 
 	const toggleAnimationInProgress = () => {
 		$scope.state.animationInProgress = true;

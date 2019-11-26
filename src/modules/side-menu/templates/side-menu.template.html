@@ -8,13 +8,13 @@
      ng-class="vm.config.theme">
 	<div ng-if="vm.config.quickMenu.enabled === true"
 		 class="mb-sm-quick-container">
-		<mb-sm-quickmenu config="quickMenu"></mb-sm-quickmenu>
+		<mb-sm-quickmenu config="vm.config.quickMenu"></mb-sm-quickmenu>
 	</div>
 	<div id="mb-sm-cc"
 		class="mb-sm-content-container"
 		ng-style="{'height':vm.config.quickMenu.enabled === true ? 'calc(100% - 75px)' : 'calc(100%)'}">
 		<div class="mb-sm-content">
-			<mb-sm-item ng-repeat="item in structure"
+			<mb-sm-item ng-repeat="item in vm.config.structure"
 					  config="item"
 					  keys="vm.config.keys">
 			</mb-sm-item>

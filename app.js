@@ -196,20 +196,41 @@ angular.module('app', ['mbg.base', 'ui.router'])
 
 		$timeout(() => {
 			$scope.configMenu.keys = ['CRUD_NOTIFICATION', 'Tributação']
-			console.log('ATUALIZOU')
+			$scope.configMenu.quickMenu = {
+				enabled: true,
+				buttonText: 'asdasd2s',
+				links: [{
+					label: 'Mudar 2',
+					iconSrc: 'fontawesome',
+					icon: 'far fa-user',
+					action: () => {
+						
+					},
+					actionType: 'function'
+				}, {
+					label: 'Produtos',
+					iconSrc: 'fontawesome',
+					icon: 'far fa-sticky-note',
+					action: '#produtos',
+					actionType: 'link'
+				}]
+			}
 		}, 5000)
 
 		$scope.configMenu = {
 			keys: ['CRUD_NOTIFICATION', 'CAIXA', 'Tributação'],
 			quickMenu: {
 				enabled: true,
+				enableAutoToggle: true,
 				buttonText: 'Cadastro',
 				links: [{
-					label: 'Clientes',
+					label: 'Mudar',
 					iconSrc: 'fontawesome',
 					icon: 'far fa-user',
-					action: '#clientes',
-					actionType: 'link'
+					action: () => {
+						
+					},
+					actionType: 'function'
 				}, {
 					label: 'Produtos',
 					iconSrc: 'fontawesome',
