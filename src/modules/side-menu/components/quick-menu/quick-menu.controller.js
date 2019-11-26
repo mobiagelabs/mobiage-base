@@ -7,10 +7,12 @@ const controller = function ($scope, $timeout, $interval) {
 	};
 
 	$timeout(() => {
-		if (this.config.enableAutoToggle) {
+		if (this.config.enableAutoToggle && !$scope.debounce) {
+			$scope.debounce = true
 			$scope.toggleQuickMenu()
 			$timeout(() => {
 				$scope.toggleQuickMenu()
+			$scope.debounce = false
 			}, 2000)
 		}
 	}, 1000)
