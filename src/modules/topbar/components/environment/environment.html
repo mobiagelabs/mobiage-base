@@ -1,4 +1,4 @@
-<div class="environment-wrapper"
+<!-- <div class="environment-wrapper"
 		 ng-show="isDemo != undefined"
 		 ng-class="{ 'is-demo': isDemo, 'is-prod': !isDemo }"
 		 ng-click="handleClick()">
@@ -9,5 +9,16 @@
 	<div class="environment-content production">
 		<b>{{ !isDemo ? 'Modo' : 'Ir para' }}</b> <br>
 		<label>Produção</label>
+	</div>
+</div> -->
+
+
+<div class="environment-wrapper" ng-show="isDemo">
+	<div class="environment-content">
+		<div class="environment-alert">
+			<i class="fas fa-exclamation-circle"></i>
+			<span><b>Atenção:</b> Você está operando em modo teste</span>
+		</div>
+		<button class="btn" ng-click="handleClick()">Ir para produção</button>
 	</div>
 </div>

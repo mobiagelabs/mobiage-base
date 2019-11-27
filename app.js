@@ -1,7 +1,7 @@
 angular.module('app', ['mbg.base', 'ui.router'])
 	.controller('appController', (baseNotificationService, $scope, MbgNotification, MbgPageLoader, $timeout, MbgSideContent, CashierService, $state, environmentService) => {
 
-		environmentService.setIsDemo(false)
+		environmentService.setIsDemo(true)
 
 		baseNotificationService.setNotifications([
 			{
@@ -552,6 +552,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			abstract: true,
 			template: `
 				<mbg-base config="configBase">
+				<mb-environment></mb-environment>
 					<mb-topbar config="configTopbar"></mb-topbar>
 					<mb-container>
 						<mb-sidemenu config="configMenu"></mb-sidemenu>
