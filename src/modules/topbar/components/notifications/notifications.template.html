@@ -40,7 +40,9 @@
 
 		<div class="notifition-item"
 				 ng-repeat="notification in notifications"
-				 ng-click="handleClickNotification($event, notification)">
+				 ng-click="handleClickNotification($event, notification)"
+				 first="{{ $first }}"
+				 last="{{ $last }}">
 			<div class="notification-icon">
 				<i ng-class="notification.icon"></i>
 			</div>
