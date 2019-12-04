@@ -1,4 +1,4 @@
-const controller = ($scope, $timeout, baseNotificationService) => {
+const controller = ($scope, $timeout, baseNotificationService, $sce) => {
   const vm = $scope
 
   vm.notifications = baseNotificationService.notifications
@@ -14,6 +14,10 @@ const controller = ($scope, $timeout, baseNotificationService) => {
       vm.notificationOpen = false
       $timeout(() => document.removeEventListener('click', onClickOutside))
     })
+  }
+
+  vm.trustAsHtml = function (string) {
+    return $sce.trustAsHtml(string)
   }
 
   vm.toogle = () => {
