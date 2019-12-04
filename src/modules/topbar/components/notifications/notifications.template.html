@@ -38,29 +38,31 @@
 			<label>Sem novidades no momento</label>
 		</div>
 
-		<div class="notifition-item"
-				 ng-repeat="notification in notifications"
-				 ng-click="handleClickNotification($event, notification)"
-				 first="{{ $first }}"
-				 last="{{ $last }}">
-			<div class="notification-icon">
-				<i ng-class="notification.icon"></i>
-			</div>
-			<div class="notification-metadata">
-				<label class="notification-title"
-							 ng-bind-html="trustAsHtml(notification.title)"></label>
-				<label class="notification-time">
-					{{ notification.time }}
-				</label>
-				<label class="notification-body"
-							 ng-bind-html="trustAsHtml(notification.body)"></label>
-				<div class="notification-actions"
-						 ng-show="notification.actions.length > 0">
-					<button ng-repeat="action in notification.actions"
-									ng-class="action.style"
-									ng-click="handleClickNotification($event, notification, action)">
-						{{ action.label }}
-					</button>
+		<div style="max-height: 450px;overflow: auto;">
+			<div class="notifition-item"
+					 ng-repeat="notification in notifications"
+					 ng-click="handleClickNotification($event, notification)"
+					 first="{{ $first }}"
+					 last="{{ $last }}">
+				<div class="notification-icon">
+					<i ng-class="notification.icon"></i>
+				</div>
+				<div class="notification-metadata">
+					<label class="notification-title"
+								 ng-bind-html="trustAsHtml(notification.title)"></label>
+					<label class="notification-time">
+						{{ notification.time }}
+					</label>
+					<label class="notification-body"
+								 ng-bind-html="trustAsHtml(notification.body)"></label>
+					<div class="notification-actions"
+							 ng-show="notification.actions.length > 0">
+						<button ng-repeat="action in notification.actions"
+										ng-class="action.style"
+										ng-click="handleClickNotification($event, notification, action)">
+							{{ action.label }}
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
