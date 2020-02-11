@@ -219,6 +219,11 @@ angular.module('app', ['mbg.base', 'ui.router'])
 
 		$scope.configMenu = {
 			keys: ['CRUD_NOTIFICATION', 'CAIXA', 'Tributação'],
+			// authAccess: () => new Promise((resolve, reject) => {
+			// 	$timeout(() => {
+			// 		resolve(false)
+			// 	}, 2000)
+			// }),
 			quickMenu: {
 				enabled: true,
 				enableAutoToggle: true,
