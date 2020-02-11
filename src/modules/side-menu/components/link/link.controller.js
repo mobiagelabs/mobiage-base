@@ -11,7 +11,10 @@ const controller = function ($state, mbSidemenuService, MbgNotification, $timeou
 		if (access) {
 			switch (vm.actionType) {
 				case 'state':
-					$state.go(vm.action)
+					const regexParams = new RegExp(/\((.*?)\)/gm).exec(vm.action)
+					const state = vm.action.replace(new RegExp(/\((.*?)\)/, 'gm'), '')
+					const params = (regexParams || []).length > 0 ? regexParams[1] : {}
+					$state.go(state, params)
 					break
 				case 'link':
 					location.href = vm.action

@@ -360,7 +360,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 							}
 						},
 						{
-							type: 'btn', label: 'Teste', actionType: 'state', action: 'app.teste'
+							type: 'btn', label: 'Teste', actionType: 'state', action: 'app.teste({id:131231})'
 						},
 						{
 							type: 'btn', label: 'Footer', actionType: 'state', action: 'app.footer'
