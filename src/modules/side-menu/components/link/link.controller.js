@@ -5,8 +5,8 @@ const controller = function ($state, mbSidemenuService, MbgNotification, $timeou
 
 	this.pressBtn = async (vm) => {
 		let access = true
-		if (!!vm.config.key && (vm.keys || []).indexOf(vm.config.key) === -1) {
-			access = await this.authAccess()
+		if (vm.config && !!vm.config.key && (vm.keys || []).indexOf(vm.config.key) === -1) {
+			access = await this.authAccess(vm.config)
 		}
 		if (access) {
 			switch (vm.actionType) {
@@ -35,10 +35,10 @@ const controller = function ($state, mbSidemenuService, MbgNotification, $timeou
 		}
 	}
 
-	this.authAccess = async () => {
+	this.authAccess = async (data) => {
 		const config = mbSidemenuService.getMenuConfig()
 		if (config.authAccess) {
-			return config.authAccess()
+			return config.authAccess(data)
 		} else {
 			return true
 		}
