@@ -13,7 +13,7 @@ const controller = function ($state, mbSidemenuService, MbgNotification, $timeou
 				case 'state':
 					const regexParams = new RegExp(/\((.*?)\)/gm).exec(vm.action)
 					const state = vm.action.replace(new RegExp(/\((.*?)\)/, 'gm'), '')
-					const params = (regexParams || []).length > 0 ? regexParams[1] : {}
+					const params = (regexParams || []).length > 0 ? JSON.parse(regexParams[1].replace(new RegExp(/'/, 'gm'), `"`)) : {}
 					$state.go(state, params)
 					break
 				case 'link':
