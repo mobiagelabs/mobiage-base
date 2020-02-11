@@ -21,7 +21,7 @@
               config="item">
   </mb-sm-item>
 </mb-sm-subcategory>
-<mb-sm-btn ng-if="vm.config.type === 'btn' && vm.isKey()"
+<mb-sm-btn ng-if="vm.config.type === 'btn'"
            icon-src="{{vm.config.iconSrc}}"
            icon="{{vm.config.icon}}"
            icon-size="{{vm.config.iconSize}}"
@@ -32,6 +32,7 @@
            config="vm.config"
            first-child="vm.firstChild"
            tag="vm.config.tag"
+           keys="vm.keys"
            last-child="vm.lastChild">
 </mb-sm-btn>
 <mb-sm-html ng-if="vm.config.type === 'html'"

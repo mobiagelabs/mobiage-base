@@ -15,7 +15,8 @@ const btn = {
 		lastChild: '<',
 		tag: '=?',
 		config: '=?',
-		hotkey: '@'
+		hotkey: '@',
+		keys: '=?'
 	},
 	template,
 	controller,

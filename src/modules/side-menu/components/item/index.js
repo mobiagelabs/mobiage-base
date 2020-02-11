@@ -1,5 +1,4 @@
 import template from './item.template.html';
-import { type } from 'os';
 
 const item = {
 	bindings: {
@@ -21,10 +20,6 @@ const item = {
 				return vm.config.children.filter((children) => !children.key || (vm.keys || []).indexOf(children.key) !== -1).length > 0
 			}
 			return true
-		}
-
-		vm.isKey = () => {
-			return !vm.config.key || (vm.keys || []).indexOf(vm.config.key) !== -1
 		}
 
 	}]

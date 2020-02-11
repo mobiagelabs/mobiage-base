@@ -5,7 +5,9 @@ import './link.style.scss';
 const component = {
 	bindings: {
 		actionType: '<',
-		action: '<'
+		action: '<',
+		keys: '=?',
+		config: '=?'
 	},
 	controller,
 	controllerAs: 'vm',

@@ -3,19 +3,19 @@
    smb-link
    ng-transclude
    ng-if="vm.actionType === 'state'"
-   ui-sref="{{vm.action}}">
+   ng-click="vm.pressBtn(vm)">
 </a>
 <a tabindex="-1"
    class="mb"
    smb-link
    ng-transclude
    ng-if="vm.actionType === 'link'"
-   ng-href="{{vm.action}}">
+   ng-click="vm.pressBtn(vm)">
 </a>
 <a tabindex="-1"
    class="mb"
    smb-link
    ng-transclude
    ng-if="vm.actionType === 'function'"
-   ng-click="vm.action()">
+   ng-click="vm.pressBtn(vm)">
 </a>
