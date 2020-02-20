@@ -1,67 +1,80 @@
 <div class="mb"
-		 notifications
-		 ng-click="toogle()">
+	 notifications
+	 ng-click="toogle()">
 	<i class="far fa-bell"
-		 class="bell"></i>
+	   class="bell"></i>
 	<div class="mb-tn-number"
-			 ng-show="notifications.length > 0">
+		 ng-show="notifications.length > 0">
 		{{ notifications.length }}
 	</div>
 	<div class="mb-tn-wrapper"
-			 ng-class="{open: notificationOpen}">
+		 ng-class="{open: notificationOpen}">
 
 		<div class="empty-notification"
-				 ng-show="notifications.length == 0">
+			 ng-show="notifications.length == 0">
 			<svg xmlns="http://www.w3.org/2000/svg"
-					 xmlns:xlink="http://www.w3.org/1999/xlink"
-					 version="1.1"
-					 x="0px"
-					 y="0px"
-					 viewBox="0 0 100 100"
-					 enable-background="new 0 0 100 100"
-					 xml:space="preserve">
+				 xmlns:xlink="http://www.w3.org/1999/xlink"
+				 version="1.1"
+				 x="0px"
+				 y="0px"
+				 viewBox="0 0 100 100"
+				 enable-background="new 0 0 100 100"
+				 xml:space="preserve">
 				<path fill="#000000"
-							d="M78.382,69.688c-1.328,0-2.812-2.807-2.812-6.562V44.125h-0.015c-0.13-11.322-8.998-20.726-20.66-22.731  c-0.243-2.356-2.217-4.206-4.638-4.206c-2.421,0-4.395,1.85-4.638,4.206c-11.662,2.005-20.53,11.409-20.66,22.731h-0.015v19.001  c0,3.755-1.485,6.562-2.812,6.562c-1.551,0-2.812,1.261-2.812,2.812c0,1.551,1.262,2.812,2.812,2.812h19.783  c0.473,4.208,4.01,7.5,8.343,7.5c4.332,0,7.87-3.292,8.342-7.5h19.783c1.551,0,2.812-1.262,2.812-2.812  C81.194,70.949,79.933,69.688,78.382,69.688z M50.257,19.062c1.287,0,2.364,0.874,2.695,2.056c-0.887-0.088-1.784-0.137-2.695-0.137  c-0.912,0-1.81,0.049-2.696,0.137C47.893,19.936,48.969,19.062,50.257,19.062z M26.819,63.125v-18.75  c0-11.865,10.514-21.519,23.438-21.519c12.923,0,23.438,9.653,23.438,21.519v18.75c0,2.725,0.661,5.041,1.708,6.562H25.11  C26.158,68.166,26.819,65.85,26.819,63.125z M50.257,80.938c-3.298,0-6.008-2.454-6.468-5.625h12.935  C56.264,78.484,53.554,80.938,50.257,80.938z M78.382,73.438h-56.25c-0.516,0-0.938-0.421-0.938-0.938  c0-0.517,0.421-0.938,0.938-0.938h56.25c0.516,0,0.938,0.421,0.938,0.938C79.319,73.017,78.898,73.438,78.382,73.438z" />
+					  d="M78.382,69.688c-1.328,0-2.812-2.807-2.812-6.562V44.125h-0.015c-0.13-11.322-8.998-20.726-20.66-22.731  c-0.243-2.356-2.217-4.206-4.638-4.206c-2.421,0-4.395,1.85-4.638,4.206c-11.662,2.005-20.53,11.409-20.66,22.731h-0.015v19.001  c0,3.755-1.485,6.562-2.812,6.562c-1.551,0-2.812,1.261-2.812,2.812c0,1.551,1.262,2.812,2.812,2.812h19.783  c0.473,4.208,4.01,7.5,8.343,7.5c4.332,0,7.87-3.292,8.342-7.5h19.783c1.551,0,2.812-1.262,2.812-2.812  C81.194,70.949,79.933,69.688,78.382,69.688z M50.257,19.062c1.287,0,2.364,0.874,2.695,2.056c-0.887-0.088-1.784-0.137-2.695-0.137  c-0.912,0-1.81,0.049-2.696,0.137C47.893,19.936,48.969,19.062,50.257,19.062z M26.819,63.125v-18.75  c0-11.865,10.514-21.519,23.438-21.519c12.923,0,23.438,9.653,23.438,21.519v18.75c0,2.725,0.661,5.041,1.708,6.562H25.11  C26.158,68.166,26.819,65.85,26.819,63.125z M50.257,80.938c-3.298,0-6.008-2.454-6.468-5.625h12.935  C56.264,78.484,53.554,80.938,50.257,80.938z M78.382,73.438h-56.25c-0.516,0-0.938-0.421-0.938-0.938  c0-0.517,0.421-0.938,0.938-0.938h56.25c0.516,0,0.938,0.421,0.938,0.938C79.319,73.017,78.898,73.438,78.382,73.438z" />
 				<ellipse fill="#000000"
-								 cx="40.881"
-								 cy="50.938"
-								 rx="1.875"
-								 ry="2.812" />
+						 cx="40.881"
+						 cy="50.938"
+						 rx="1.875"
+						 ry="2.812" />
 				<ellipse fill="#000000"
-								 cx="59.632"
-								 cy="50.938"
-								 rx="1.875"
-								 ry="2.812" />
+						 cx="59.632"
+						 cy="50.938"
+						 rx="1.875"
+						 ry="2.812" />
 				<path fill="#000000"
-							d="M55.907,56.562c-0.518,0-0.938,0.419-0.938,0.938c0,2.586-2.102,4.688-4.688,4.688s-4.688-2.102-4.688-4.688  c0-0.518-0.419-0.938-0.938-0.938S43.72,56.982,43.72,57.5c0,3.619,2.944,6.563,6.562,6.563s6.562-2.944,6.562-6.563  C56.845,56.982,56.425,56.562,55.907,56.562z" />
+					  d="M55.907,56.562c-0.518,0-0.938,0.419-0.938,0.938c0,2.586-2.102,4.688-4.688,4.688s-4.688-2.102-4.688-4.688  c0-0.518-0.419-0.938-0.938-0.938S43.72,56.982,43.72,57.5c0,3.619,2.944,6.563,6.562,6.563s6.562-2.944,6.562-6.563  C56.845,56.982,56.425,56.562,55.907,56.562z" />
 			</svg>
 			<label>Sem novidades no momento</label>
 		</div>
 
 		<div style="max-height: 450px;overflow: auto;">
 			<div class="notifition-item"
-					 ng-repeat="notification in notifications"
-					 ng-click="handleClickNotification($event, notification)"
-					 first="{{ $first }}"
-					 last="{{ $last }}">
+				 ng-repeat="notification in notifications"
+				 ng-click="handleClickNotification($event, notification)"
+				 first="{{ $first }}"
+				 last="{{ $last }}">
 				<div class="notification-icon">
-					<i ng-class="notification.icon"></i>
+					<i ng-class="notification.icon"
+					   ng-show="notification.type !== 'IMPORTATION_PROGRESS'"></i>
+					<i ng-class="{[notification.icon] : notification.data.progress < 100, 'fas fa-check-circle': notification.data.progress == 100 && !notification.data.failed, 'fas fa-times-circle': notification.data.progress == 100 && notification.data.failed}"
+					   ng-show="notification.type === 'IMPORTATION_PROGRESS'"></i>
 				</div>
 				<div class="notification-metadata">
 					<label class="notification-title"
-								 ng-bind-html="trustAsHtml(notification.title)"></label>
+						   ng-bind-html="trustAsHtml(notification.title)"></label>
 					<label class="notification-time">
 						{{ notification.time }}
 					</label>
-					<label class="notification-body"
-								 ng-bind-html="trustAsHtml(notification.body)"></label>
 					<div class="notification-actions"
-							 ng-show="notification.actions.length > 0">
+						 ng-show="notification.actions.length > 0">
 						<button ng-repeat="action in notification.actions"
-										ng-class="action.style"
-										ng-click="handleClickNotification($event, notification, action)">
+								ng-class="action.style"
+								ng-click="handleClickNotification($event, notification, action)">
 							{{ action.label }}
 						</button>
+					</div>
+					<label class="notification-body"
+						   ng-bind-html="trustAsHtml(notification.body)"></label>
+					<div class="progress-wrapper"
+						 ng-if="notification.type === 'IMPORTATION_PROGRESS'">
+						<div class="mbg-progress-bar"
+							 style="--percentage: {{notification.data.progress}}%">
+						</div>
+						<label class="progress-label">{{notification.data.progress}}%</label>
+					</div>
+					<div class="info-import">
+						<span ng-show="notification.data.total">{{notification.data.current}}/{{notification.data.total}}</span>
 					</div>
 				</div>
 			</div>
