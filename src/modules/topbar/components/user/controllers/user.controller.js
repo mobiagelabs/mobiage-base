@@ -10,9 +10,6 @@ const controller = function ($scope, $timeout, mbUserService, $state) {
 	$scope.user = {};
 	$scope.organizationSelected = undefined;
 
-	$timeout(() => {
-		console.log(this.config)
-	})
 
 	/* Função para limitar o tamanho de informações */
 	$scope.maxSize = (info, maxSize, end) => {
@@ -113,6 +110,9 @@ const controller = function ($scope, $timeout, mbUserService, $state) {
 		if (page === 'user') {
 			$scope.menuPage = 'user';
 			$scope.hideUserContent = false;
+			if (this.disabledUserFocus) {
+				$scope.hideCompanyContent = false;
+			}
 			$timeout(() => {
 				$scope.menuOpen = true;
 				document.addEventListener('click', onClickOutside);
@@ -141,7 +141,12 @@ const controller = function ($scope, $timeout, mbUserService, $state) {
 		document.removeEventListener('click', onClickOutside);
 		$scope.organizationSelected = undefined;
 		$scope.menuOpen = false;
-		$scope.menuPage = 'user';
+		if (this.disabledUserFocus) {
+			$scope.menuPage = 'company';
+		} else {
+			$scope.menuPage = 'user';
+		}
+
 		$timeout(() => {
 			$scope.hideUserContent = true;
 			$scope.hideCompanyContent = true;
