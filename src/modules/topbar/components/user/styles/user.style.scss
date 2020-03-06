@@ -1,3 +1,495 @@
+// @import "../../../../themes/themes.style.scss";
+// @import "./user.animations.scss";
+
+// .mb[topbar-user] {
+// 	height: 100%;
+// 	padding-right: 15px;
+
+// 	> .mb-tu-button {
+// 		height: 100%;
+// 		display: flex;
+// 		flex-direction: row;
+// 		justify-content: flex-end;
+// 		align-items: center;
+// 		position: relative;
+// 		padding-right: 5px;
+// 		padding-left: 20px;
+// 		z-index: 700;
+// 		background-color: #ffffff;
+
+// 		@include themify(background-color, backgroundTopBar);
+
+// 		transition: width 500ms ease;
+// 		will-change: width;
+
+// 		@media screen and (max-width: 768px) {
+// 			width: 130px;
+
+// 			&.mb-tu-button-active {
+// 				width: 250px;
+// 			}
+// 		}
+
+// 		> .mb-tu-button-names-container {
+// 			height: 100%;
+// 			position: relative;
+// 			overflow: hidden;
+// 			cursor: pointer;
+
+// 			@media screen and (max-width: 768px) {
+// 				position: absolute;
+// 				left: 20px;
+// 				opacity: 0;
+// 				will-change: opacity;
+// 				transition: opacity 200ms 0ms linear;
+
+// 				&.mb-tu-button-active {
+// 					transition: opacity 200ms 250ms linear;
+// 					opacity: 1;
+// 				}
+// 			}
+
+// 			.mb-tu-button-names {
+// 				position: relative;
+// 				height: 100%;
+// 				display: flex;
+// 				flex-direction: column;
+// 				justify-content: center;
+// 				align-items: flex-end;
+// 				transition: transform 1000ms ease;
+// 				word-break: keep-all;
+// 				white-space: nowrap;
+
+// 				&.mb-tu-user {
+// 					&.mb-tu-focus-company {
+// 						transform: translate3d(0%, -100%, 0px);
+// 					}
+// 				}
+
+// 				&.mb-tu-company {
+// 					&.mb-tu-focus-company {
+// 						transform: translate3d(0%, -100%, 0px);
+// 					}
+// 				}
+
+// 				> .mb-tu-button-subtitle {
+// 					text-align: right;
+// 					color: #ccc;
+
+// 					@include themify(color, neutral3);
+
+// 					font-size: 12px;
+// 					font-weight: 400;
+// 					user-select: none;
+// 				}
+
+// 				> .mb-tu-button-title {
+// 					text-align: right;
+// 					color: #8034ad;
+
+// 					@include themify(color, color1);
+
+// 					font-weight: 700;
+// 					user-select: none;
+// 					font-size: 14px;
+// 				}
+// 			}
+// 		}
+
+// 		> .mb-tu-button-arrow-container {
+// 			width: 30px;
+// 			height: 100%;
+// 			display: flex;
+// 			flex-direction: row;
+// 			justify-content: center;
+// 			align-items: center;
+// 			margin-right: 15px;
+// 			cursor: pointer;
+
+// 			> .mb-tu-button-arrow {
+// 				color: #8034ad;
+
+// 				@include themify(color, color1);
+
+// 				font-size: 19px;
+// 				transform: rotateZ(0deg);
+// 				transition: transform 0.5s ease;
+
+// 				&.mb-tu-button-active {
+// 					transform: rotateZ(180deg);
+// 				}
+// 			}
+// 		}
+
+// 		> .mb-tu-avatar-container {
+// 			width: 55px;
+// 			height: 55px;
+// 			position: relative;
+
+// 			.mb-tu-avatar {
+// 				user-select: none;
+// 				position: absolute;
+// 				left: 0px;
+// 				bottom: 0px;
+// 				width: 55px;
+// 				height: 55px;
+// 				border-radius: 30px;
+// 				font-size: 30px;
+// 				line-height: 55px;
+// 				color: white;
+// 				font-weight: 700;
+// 				text-align: center;
+// 				background-position: center center;
+// 				background-size: contain;
+// 				will-change: transform, z-index;
+// 				cursor: pointer;
+// 				overflow: hidden;
+// 				box-shadow: 0px 2px 10px #d7d7d7;
+
+// 				&.mb-tua-user {
+// 					top: 0px;
+// 					right: 0px;
+// 					transform: rotate3d(0px, 0px, 0px) scale(1);
+
+// 					&.mb-tua-focus-company {
+// 						animation: mb-tu-anim-focus-In 0ms ease;
+// 						transform: translate3d(-50%, 25%, 0) scale(0.5);
+// 					}
+
+// 					&.mb-tua-focus-user {
+// 						animation: mb-tu-anim-focus-out 0ms ease;
+// 					}
+
+// 					&.mb-tua-focus-z-index {
+// 						z-index: 1;
+// 					}
+// 				}
+
+// 				&.mb-tua-company {
+// 					top: auto;
+// 					right: auto;
+// 					transform: translate3d(-50%, 25%, 0px) scale(0.5);
+
+// 					&.mb-tua-focus-company {
+// 						animation: mb-tu-anim-focus-out 0ms ease;
+// 						transform: translate3d(0%, 0%, 0px) scale(1);
+// 					}
+
+// 					&.mb-tua-focus-user {
+// 						animation: mb-tu-anim-focus-In 0ms ease;
+// 						transform: translate3d(-50%, 25%, 0px) scale(0.5);
+// 					}
+
+// 					&.mb-tua-focus-z-index {
+// 						z-index: 0;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	> .mb-tu-menu {
+// 		top: calc(100% - 30px);
+// 		left: 0px;
+// 		right: 15px;
+// 		position: absolute;
+// 		height: auto;
+// 		padding-top: 30px;
+// 		background-color: #fff;
+// 		z-index: 600;
+// 		transform-origin: top center;
+// 		transition: transform 500ms ease, opacity 200ms linear;
+// 		transform: translate3d(0%, -15%, 0px);
+// 		opacity: 0;
+// 		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1), 0px 0px 70px rgba(0, 0, 0, 0.25);
+// 		border-bottom-left-radius: 15px;
+// 		border-bottom-right-radius: 15px;
+
+
+// 		.mb-tu-menu-content {
+// 			border-top: 3px solid #8034ad;
+
+// 			@include themify(border-color, color1);
+
+// 			transition: opacity 250ms 500ms linear;
+// 			position: relative;
+// 			z-index: 700;
+
+// 			> .mb-tu-menu-company-content {
+// 				width: 100%;
+// 				padding-top: 15px;
+// 				display: flex;
+// 				flex-direction: column;
+// 				justify-content: center;
+
+// 				.mb-tu-menu-company-info-container {
+// 					display: flex;
+// 					flex-direction: column;
+// 					justify-content: flex-start;
+
+// 					.mb-tu-menu-company-info {
+// 						padding-left: 15px;
+// 						padding-right: 15px;
+// 						padding-bottom: 15px;
+// 						width: 100%;
+// 						text-align: right;
+
+// 						.mb-tu-menu-company-info-title {
+// 							color: #ccc;
+
+// 							@include themify(color, color1);
+
+// 							font-weight: 700;
+// 							font-size: 12px;
+// 						}
+
+// 						.mb-tu-menu-company-info-text {
+// 							color: #ccc;
+
+// 							@include themify(color, neutral2);
+
+// 							font-weight: 400;
+// 							font-size: 14px;
+// 						}
+// 					}
+// 				}
+
+// 				.mb-tu-menu-company-line {
+// 					width: calc(100% - 30px);
+// 					height: 1px;
+// 					background-color: #ddd;
+// 					align-self: center;
+// 				}
+
+// 				.mb-tu-menu-company-bottom-btn {
+// 					// background-color: #ccc;
+// 					user-select: none;
+
+// 					// @include themify(background-color, neutral3);
+
+// 					width: 100%;
+// 					height: 50px;
+// 					font-weight: 700;
+// 					padding-left: 20px;
+// 					padding-right: 25px;
+// 					font-size: 12px;
+// 					display: flex;
+// 					justify-content: space-between;
+// 					align-items: center;
+// 					flex-direction: row;
+// 					color: #fff;
+
+// 					@include themify(color, neutral2);
+
+// 					cursor: pointer;
+
+// 					> .fas {
+// 						font-size: 16px;
+// 					}
+
+// 					> .far {
+// 						font-size: 16px;
+// 					}
+
+// 					&:last-child {
+// 						// @include themify(background-color, neutral2);
+
+// 						border-bottom-left-radius: 15px;
+// 						border-bottom-right-radius: 15px;
+// 					}
+// 				}
+// 			}
+
+// 			> .mb-tu-menu-change-account {
+// 				width: 100%;
+// 				height: auto;
+
+// 				> .mb-tu-m-ca-title {
+// 					width: 100%;
+// 					height: 80px;
+// 					text-align: left;
+// 					position: relative;
+// 					overflow: hidden;
+// 					padding: 15px 25px 15px 25px;
+// 					user-select: none;
+
+// 					> .mb-tu-m-ca-t-back {
+// 						display: inline-block;
+// 						color: #ccc;
+// 						font-size: 14px;
+
+// 						@include themify(color, color1);
+
+// 						cursor: pointer;
+// 					}
+
+// 					> .mb-tu-m-ca-t-text {
+// 						color: #ccc;
+
+// 						@include themify(color, neutral2);
+
+// 						font-weight: 700;
+// 						font-size: 16px;
+// 					}
+
+// 					> .mb-tu-m-ca-t-detail-container {
+// 						position: absolute;
+// 						top: 60px;
+// 						left: -20px;
+
+// 						> .mb-tu-m-ca-t-detail {
+// 							width: 80px;
+
+// 							> .mb-tu-m-ca-t-d-path {
+// 								fill: #ccc;
+
+// 								@include themify(fill, neutral3);
+
+// 								stroke: #ccc;
+
+// 								@include themify(stroke, neutral3);
+
+// 								stroke-miterlimit: 10;
+// 								stroke-width: 2px;
+// 							}
+// 						}
+// 					}
+// 				}
+
+// 				> .mb-tu-m-ca-company {
+// 					width: 100%;
+// 					display: flex;
+// 					justify-content: flex-start;
+// 					font-size: 14px;
+// 					padding: 10px 15px 10px 25px;
+// 					align-items: center;
+// 					flex-direction: row;
+// 					font-weight: 700;
+// 					transition: transform 250ms ease;
+// 					transform: translateX(0%);
+// 					cursor: pointer;
+// 					position: relative;
+
+// 					> .mb-tu-m-ca-company-avatar {
+// 						min-height: 40px;
+// 						min-width: 40px;
+// 						background-color: #ccc;
+
+// 						@include themify(background-color, neutral3);
+
+// 						border-radius: 20px;
+// 						line-height: 40px;
+// 						text-align: center;
+// 						color: white;
+// 						font-size: 18px;
+// 						background-size: contain;
+// 						background-position: center center;
+// 						box-shadow: 0px 2px 10px #d7d7d7;
+// 					}
+
+// 					> .mb-tu-m-ca-company-name {
+// 						margin-left: 10px;
+// 						color: #ccc;
+// 						transition: 200ms linear;
+// 						text-align: left;
+
+// 						@include themify(color, neutral2);
+// 					}
+
+// 					> .mb-tu-m-ca-company-confirm {
+// 						position: absolute;
+// 						right: 25px;
+// 						color: map-get($semantic, sucess);
+// 						transition: transform 500ms ease, opacity 100ms linear;
+// 						transform: translateY(20%);
+// 						opacity: 0;
+
+// 						&.mb-tu-m-ca-selected {
+// 							transform: translateY(0%);
+// 							opacity: 1;
+// 						}
+
+// 						> .far {
+// 							font-size: 20px;
+// 						}
+// 					}
+
+// 					// &:hover {
+// 					// 	transform: translateX(0.5%);
+
+// 					// 	> .mb-tu-m-ca-company-name {
+// 					// 		color: #ccc;
+
+// 					// 		@include themify(color, color1);
+// 					// 	}
+// 					// }
+			
+// 				}
+
+// 				> .mb-tu-m-ca-btn {
+// 					margin-top: 5px;
+// 					background-color: #ccc;
+// 					user-select: none;
+
+// 					@include themify(background-color, neutral3);
+
+// 					border-bottom-left-radius: 15px;
+// 					border-bottom-right-radius: 15px;
+// 					width: 100%;
+// 					height: 60px;
+// 					font-weight: 700;
+// 					padding-left: 20px;
+// 					padding-right: 25px;
+// 					font-size: 14px;
+// 					display: flex;
+// 					justify-content: space-between;
+// 					align-items: center;
+// 					flex-direction: row;
+// 					color: #fff;
+// 					cursor: default;
+// 					transition: background-color 250ms linear;
+
+// 					&.mb-tu-m-ca-btn-active {
+// 						background-color: #ccc;
+// 						cursor: pointer;
+
+// 						@include themify(background-color, color1);
+// 					}
+
+// 					> .fas {
+// 						font-size: 20px;
+// 					}
+// 				}
+// 			}
+// 		}
+
+// 		&.mb-tu-menu-active {
+// 			transform: translate3d(0%, 0%, 0px);
+// 			opacity: 1;
+// 		}
+
+// 		&.mb-tu-menu-hide {
+// 			pointer-events: none;
+// 			display: none;
+// 			visibility: hidden;
+// 		}
+// 	}
+// 	.more-company-wrapper {
+// 		mb-t-u-btn {
+// 			mb-t-u-link {
+// 				a {
+// 					div.mb {
+// 						display: flex;
+// 						align-items: center;
+// 						justify-content: space-between;
+// 						padding: 10px 28px 10px 21px;
+// 					} 
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
 @import "../../../../themes/themes.style.scss";
 @import "./user.animations.scss";
 
@@ -152,12 +644,12 @@
 					transform: rotate3d(0px, 0px, 0px) scale(1);
 
 					&.mb-tua-focus-company {
-						animation: mb-tu-anim-focus-In 0ms ease;
+						animation: mb-tu-anim-focus-In 1000ms ease;
 						transform: translate3d(-50%, 25%, 0) scale(0.5);
 					}
 
 					&.mb-tua-focus-user {
-						animation: mb-tu-anim-focus-out 0ms ease;
+						animation: mb-tu-anim-focus-out 1000ms ease;
 					}
 
 					&.mb-tua-focus-z-index {
@@ -171,12 +663,12 @@
 					transform: translate3d(-50%, 25%, 0px) scale(0.5);
 
 					&.mb-tua-focus-company {
-						animation: mb-tu-anim-focus-out 0ms ease;
+						animation: mb-tu-anim-focus-out 1000ms ease;
 						transform: translate3d(0%, 0%, 0px) scale(1);
 					}
 
 					&.mb-tua-focus-user {
-						animation: mb-tu-anim-focus-In 0ms ease;
+						animation: mb-tu-anim-focus-In 1000ms ease;
 						transform: translate3d(-50%, 25%, 0px) scale(0.5);
 					}
 
@@ -205,7 +697,6 @@
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
 
-
 		.mb-tu-menu-content {
 			border-top: 3px solid #8034ad;
 
@@ -232,7 +723,7 @@
 						padding-right: 15px;
 						padding-bottom: 15px;
 						width: 100%;
-						text-align: right;
+						text-align: left;
 
 						.mb-tu-menu-company-info-title {
 							color: #ccc;

@@ -9,7 +9,8 @@ import loading from './components/loading';
 
 const component = {
 	bindings: {
-		config: '='
+		config: '=',
+		disabledUserFocus: '=?'
 	},
 	controller,
 	controllerAs: 'vm',

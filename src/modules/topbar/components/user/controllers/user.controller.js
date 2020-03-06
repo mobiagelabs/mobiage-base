@@ -10,6 +10,10 @@ const controller = function ($scope, $timeout, mbUserService, $state) {
 	$scope.user = {};
 	$scope.organizationSelected = undefined;
 
+	$timeout(() => {
+		console.log(this.config)
+	})
+
 	/* Função para limitar o tamanho de informações */
 	$scope.maxSize = (info, maxSize, end) => {
 		if (info !== undefined && info !== null) {

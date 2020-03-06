@@ -61,6 +61,7 @@ angular.module('app', ['mbg.base', 'ui.router'])
 			logo: 'assets/img/logo.png',
 			logoActionType: 'state',
 			logoAction: 'app.teste',
+			disabledUserFocus: true,
 			usersBirthday: {
 				countShow: () => true,
 				getUsers: async () => {
