@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.18",
-    "angular": "1.6.10",
+    "angular": "1.7.9",
     "angular-animate": "1.6.10",
     "angular-hotkeys": "^1.7.0",
     "angular-sanitize": "1.6.10",
